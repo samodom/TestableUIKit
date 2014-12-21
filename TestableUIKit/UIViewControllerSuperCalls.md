@@ -1,0 +1,31 @@
+### Capturing calls to overridden `UIViewController` methods
+
+ - `var calledLoadView: Bool`
+ - `var calledViewDidLoad: Bool`
+ - `var calledViewWillAppear: Bool`
+ - `var viewWillAppearAnimated: Bool?`
+ - `var calledViewDidAppear: Bool`
+ - `var viewDidAppearAnimated: Bool?`
+ - `var calledViewWillDisappear: Bool`
+ - `var viewWillDisappearAnimated: Bool?`
+ - `var calledViewDidDisappear: Bool`
+ - `var viewDidDisappearAnimated: Bool?`
+ - `var calledDidReceiveMemoryWarning: Bool`
+ - `var calledUpdateViewConstraints: Bool`
+ - `var calledAddChildViewController: Bool`
+ - `var addedChildViewController: UIKit.UIViewController?`
+ - `var calledRemoveFromParentViewController: Bool`
+ - `var calledTransitionFromViewController: Bool`
+ - `var viewControllerToTransitionFrom: UIKit.UIViewController?`
+ - `var viewControllerToTransitionTo: UIKit.UIViewController?`
+ - `var transitionDuration: NSTimeInterval?`
+ - `var transitionAnimationOptions: UIViewAnimationOptions?`
+ - `var transitionAnimations: UIViewAnimationsClosure?`
+ - `var transitionCompletion: UIViewAnimationCompletionClosure?`
+ - `var calledSetEditing: Bool`
+ - `var setEditingEditing: Bool?`
+ - `var setEditingAnimated: Bool?`
+ - `var calledEncodeRestorableStateWithCoder: Bool`
+ - `var encodeRestorableStateCoder: NSCoder?`
+ - `var calledDecodeRestorableStateWithCoder: Bool`
+ - `var decodeRestorableStateCoder: NSCoder?`

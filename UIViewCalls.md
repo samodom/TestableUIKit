@@ -3,19 +3,19 @@
 Each of the methods below have spy method equivalents that capture the calls to the method and any parameters, if available.  The properties listed below the method names list the new properties of `UIView` that you can use to validate method calls.
 
 `setNeedsLayout`
- - `var setNeedsLayoutCalled`
+ - `var setNeedsLayoutCalled: Bool`
 
 `invalidateIntrinsicContentSize`
- - `var invalidateIntrinsicContentSizeCalled`
+ - `var invalidateIntrinsicContentSizeCalled: Bool`
 
 `setNeedsUpdateConstraints`
- - `var setNeedsUpdateConstraintsCalled`
+ - `var setNeedsUpdateConstraintsCalled: Bool`
 
 `setNeedsDisplay`
- - `var setNeedsDisplayCalled`
+ - `var setNeedsDisplayCalled: Bool`
 
 `setNeedsDisplayInRect:`
- - `var setNeedsDisplayInRectCalled`
+ - `var setNeedsDisplayInRectCalled: Bool`
  - `var setNeedsDisplayInRectRect: CGRect?`
 
 

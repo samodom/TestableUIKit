@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A363CF31A468CCE00DD9995 /* UIViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */; };
+		0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
+		0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
 		0A85BD991A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
 		0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
 		0A85BD9B1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */; };
@@ -63,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCallsTests.swift; sourceTree = "<group>"; };
+		0A363CF41A468F5600DD9995 /* UIViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCalls.swift; sourceTree = "<group>"; };
 		0A85BD931A468C3600E0700D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSuperCalls.swift; sourceTree = "<group>"; };
 		0A85BD961A468C3600E0700D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				0A85BD931A468C3600E0700D /* UIView.swift */,
+				0A363CF41A468F5600DD9995 /* UIViewCalls.swift */,
 				0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */,
 			);
 			path = UIView;
@@ -197,6 +203,7 @@
 		0AF379721A452031004606F6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */,
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
 				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
 				0AF379B21A465595004606F6 /* UIViewSuperCallsTests.swift */,
@@ -377,6 +384,7 @@
 				0A85BD9B1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */,
 				0A85BD991A468C3600E0700D /* UIView.swift in Sources */,
 				0A85BD9F1A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
+				0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0A85BD9D1A468C3600E0700D /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +396,7 @@
 				0A85BD9E1A468C3600E0700D /* UIViewController.swift in Sources */,
 				0A85BDA01A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0AF379B01A45EF95004606F6 /* GoodViewControllerSubclass.swift in Sources */,
+				0A363CF31A468CCE00DD9995 /* UIViewCallsTests.swift in Sources */,
 				0AF379C11A465931004606F6 /* GoodViewSubclass.swift in Sources */,
 				0AF379AD1A4547D7004606F6 /* EmptyViewController.swift in Sources */,
 				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
@@ -400,6 +409,7 @@
 				0A85BDA21A468C3600E0700D /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF379741A452054004606F6 /* UIViewControllerSuperCallsTests.swift in Sources */,
 				0AF379A71A453A0B004606F6 /* GoodViewController.swift in Sources */,
+				0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0AF379B81A4655E8004606F6 /* BadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

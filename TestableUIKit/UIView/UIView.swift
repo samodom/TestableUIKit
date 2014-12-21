@@ -80,4 +80,6 @@ public class UIView: UIKit.UIView {
     */
     public var setNeedsDisplayInRectRect: CGRect?
 
+    internal var blockerList = ShimMethodForwardingBlockerList()
+
 }

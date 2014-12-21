@@ -27,6 +27,15 @@ class UIViewCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testViewShimForwarding() {
+        let view = UIView()
+        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        view.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should be registered to be blocked from forwarding")
+        view.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be registered to be blocked from forwarding")
+    }
+
     func testSetNeedsLayoutCall() {
         for view in capturedViews {
             XCTAssertFalse(view.setNeedsLayoutCalled, "The view should not indicate having had setNeedsLayout called by default")

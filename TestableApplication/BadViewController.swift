@@ -10,59 +10,59 @@ import UIKit
 
 internal class BadViewController: UIViewController {
 
-    override internal func loadView() {
+    internal override func loadView() {
         super.loadView()
     }
 
-    override internal func viewDidLoad() {
+    internal override func viewDidLoad() {
 
     }
 
-    override internal func viewWillAppear(animated: Bool) {
+    internal override func viewWillAppear(animated: Bool) {
 
     }
 
-    override internal func viewDidAppear(animated: Bool) {
+    internal override func viewDidAppear(animated: Bool) {
 
     }
 
-    override internal func viewWillDisappear(animated: Bool) {
+    internal override func viewWillDisappear(animated: Bool) {
 
     }
 
-    override internal func viewDidDisappear(animated: Bool) {
+    internal override func viewDidDisappear(animated: Bool) {
 
     }
 
-    override internal func didReceiveMemoryWarning() {
+    internal override func didReceiveMemoryWarning() {
 
     }
 
-    override internal func updateViewConstraints() {
+    internal override func updateViewConstraints() {
 
     }
 
-    override internal func addChildViewController(childController: UIKit.UIViewController) {
+    internal override func addChildViewController(childController: UIKit.UIViewController) {
 
     }
 
-    override internal func removeFromParentViewController() {
+    internal override func removeFromParentViewController() {
 
     }
 
-    override internal func transitionFromViewController(fromViewController: UIKit.UIViewController, toViewController: UIKit.UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
+    internal override func transitionFromViewController(fromViewController: UIKit.UIViewController, toViewController: UIKit.UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
 
     }
 
-    override internal func setEditing(editing: Bool, animated: Bool) {
+    internal override func setEditing(editing: Bool, animated: Bool) {
 
     }
 
-    override internal func encodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
 
     }
 
-    override internal func decodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
 
     }
 

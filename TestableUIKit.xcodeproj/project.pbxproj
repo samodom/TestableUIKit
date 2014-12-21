@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A85BD8A1A46811E00E0700D /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD891A46811E00E0700D /* UIViewControllerSuperCalls.swift */; };
+		0A85BD8B1A46811E00E0700D /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD891A46811E00E0700D /* UIViewControllerSuperCalls.swift */; };
+		0A85BD8D1A46813F00E0700D /* UIViewControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD8C1A46813F00E0700D /* UIViewControllerCalls.swift */; };
+		0A85BD8E1A46813F00E0700D /* UIViewControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD8C1A46813F00E0700D /* UIViewControllerCalls.swift */; };
+		0A85BD901A46820200E0700D /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD8F1A46820200E0700D /* UIViewSuperCalls.swift */; };
+		0A85BD911A46820200E0700D /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD8F1A46820200E0700D /* UIViewSuperCalls.swift */; };
 		0AF3795C1A451FC7004606F6 /* TestableUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3795B1A451FC7004606F6 /* TestableUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF379621A451FC7004606F6 /* TestableUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF379561A451FC7004606F6 /* TestableUIKit.framework */; };
-		0AF379741A452054004606F6 /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379731A452054004606F6 /* UIViewControllerTests.swift */; };
-		0AF379761A452091004606F6 /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379751A452091004606F6 /* UIViewControllerSuperCalls.swift */; };
-		0AF379771A452091004606F6 /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379751A452091004606F6 /* UIViewControllerSuperCalls.swift */; };
+		0AF379741A452054004606F6 /* UIViewControllerSuperCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */; };
+		0AF379761A452091004606F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379751A452091004606F6 /* UIViewController.swift */; };
+		0AF379771A452091004606F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379751A452091004606F6 /* UIViewController.swift */; };
 		0AF379851A452579004606F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379841A452579004606F6 /* AppDelegate.swift */; };
 		0AF3798A1A452579004606F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF379881A452579004606F6 /* Main.storyboard */; };
 		0AF3798C1A452579004606F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF3798B1A452579004606F6 /* Images.xcassets */; };
@@ -32,10 +38,11 @@
 		0AF379B91A4655E8004606F6 /* BadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379B71A4655E8004606F6 /* BadView.swift */; };
 		0AF379BB1A4656A6004606F6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BA1A4656A6004606F6 /* EmptyView.swift */; };
 		0AF379BC1A4656A6004606F6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BA1A4656A6004606F6 /* EmptyView.swift */; };
-		0AF379BE1A4656DB004606F6 /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BD1A4656DB004606F6 /* UIViewSuperCalls.swift */; };
-		0AF379BF1A465732004606F6 /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BD1A4656DB004606F6 /* UIViewSuperCalls.swift */; };
+		0AF379BE1A4656DB004606F6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BD1A4656DB004606F6 /* UIView.swift */; };
+		0AF379BF1A465732004606F6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379BD1A4656DB004606F6 /* UIView.swift */; };
 		0AF379C11A465931004606F6 /* GoodViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379C01A465931004606F6 /* GoodViewSubclass.swift */; };
 		0AF379C21A465931004606F6 /* GoodViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379C01A465931004606F6 /* GoodViewSubclass.swift */; };
+		0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A85BD891A46811E00E0700D /* UIViewControllerSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSuperCalls.swift; sourceTree = "<group>"; };
+		0A85BD8C1A46813F00E0700D /* UIViewControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCalls.swift; sourceTree = "<group>"; };
+		0A85BD8F1A46820200E0700D /* UIViewSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSuperCalls.swift; sourceTree = "<group>"; };
 		0AF379561A451FC7004606F6 /* TestableUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestableUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF3795A1A451FC7004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF3795B1A451FC7004606F6 /* TestableUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestableUIKit.h; sourceTree = "<group>"; };
 		0AF379611A451FC7004606F6 /* TestableUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF379671A451FC7004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AF379731A452054004606F6 /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
-		0AF379751A452091004606F6 /* UIViewControllerSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSuperCalls.swift; sourceTree = "<group>"; };
+		0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSuperCallsTests.swift; sourceTree = "<group>"; };
+		0AF379751A452091004606F6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0AF379801A452579004606F6 /* TestableApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF379831A452579004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF379841A452579004606F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +87,9 @@
 		0AF379B41A4655DD004606F6 /* GoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodView.swift; sourceTree = "<group>"; };
 		0AF379B71A4655E8004606F6 /* BadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadView.swift; sourceTree = "<group>"; };
 		0AF379BA1A4656A6004606F6 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		0AF379BD1A4656DB004606F6 /* UIViewSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSuperCalls.swift; sourceTree = "<group>"; };
+		0AF379BD1A4656DB004606F6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0AF379C01A465931004606F6 /* GoodViewSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewSubclass.swift; sourceTree = "<group>"; };
+		0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCallsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +144,11 @@
 			children = (
 				0AF379591A451FC7004606F6 /* Supporting Files */,
 				0AF3795B1A451FC7004606F6 /* TestableUIKit.h */,
-				0AF379751A452091004606F6 /* UIViewControllerSuperCalls.swift */,
-				0AF379BD1A4656DB004606F6 /* UIViewSuperCalls.swift */,
+				0AF379BD1A4656DB004606F6 /* UIView.swift */,
+				0AF379751A452091004606F6 /* UIViewController.swift */,
+				0A85BD8C1A46813F00E0700D /* UIViewControllerCalls.swift */,
+				0A85BD891A46811E00E0700D /* UIViewControllerSuperCalls.swift */,
+				0A85BD8F1A46820200E0700D /* UIViewSuperCalls.swift */,
 			);
 			path = TestableUIKit;
 			sourceTree = "<group>";
@@ -167,7 +181,8 @@
 		0AF379721A452031004606F6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0AF379731A452054004606F6 /* UIViewControllerTests.swift */,
+				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
+				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
 				0AF379B21A465595004606F6 /* UIViewSuperCallsTests.swift */,
 			);
 			path = Tests;
@@ -342,8 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF379BE1A4656DB004606F6 /* UIViewSuperCalls.swift in Sources */,
-				0AF379761A452091004606F6 /* UIViewControllerSuperCalls.swift in Sources */,
+				0A85BD901A46820200E0700D /* UIViewSuperCalls.swift in Sources */,
+				0AF379BE1A4656DB004606F6 /* UIView.swift in Sources */,
+				0A85BD8A1A46811E00E0700D /* UIViewControllerSuperCalls.swift in Sources */,
+				0A85BD8D1A46813F00E0700D /* UIViewControllerCalls.swift in Sources */,
+				0AF379761A452091004606F6 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,15 +370,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF379B01A45EF95004606F6 /* GoodViewControllerSubclass.swift in Sources */,
+				0A85BD8E1A46813F00E0700D /* UIViewControllerCalls.swift in Sources */,
 				0AF379C11A465931004606F6 /* GoodViewSubclass.swift in Sources */,
-				0AF379BF1A465732004606F6 /* UIViewSuperCalls.swift in Sources */,
+				0AF379BF1A465732004606F6 /* UIView.swift in Sources */,
 				0AF379AD1A4547D7004606F6 /* EmptyViewController.swift in Sources */,
+				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
 				0AF379AA1A453A15004606F6 /* BadViewController.swift in Sources */,
-				0AF379771A452091004606F6 /* UIViewControllerSuperCalls.swift in Sources */,
+				0AF379771A452091004606F6 /* UIViewController.swift in Sources */,
+				0A85BD911A46820200E0700D /* UIViewSuperCalls.swift in Sources */,
 				0AF379B31A465595004606F6 /* UIViewSuperCallsTests.swift in Sources */,
+				0A85BD8B1A46811E00E0700D /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF379B51A4655DD004606F6 /* GoodView.swift in Sources */,
 				0AF379BB1A4656A6004606F6 /* EmptyView.swift in Sources */,
-				0AF379741A452054004606F6 /* UIViewControllerTests.swift in Sources */,
+				0AF379741A452054004606F6 /* UIViewControllerSuperCallsTests.swift in Sources */,
 				0AF379A71A453A0B004606F6 /* GoodViewController.swift in Sources */,
 				0AF379B81A4655E8004606F6 /* BadView.swift in Sources */,
 			);
@@ -613,6 +635,7 @@
 				0AF3796E1A451FC7004606F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AF3796F1A451FC7004606F6 /* Build configuration list for PBXNativeTarget "TestableUIKitTests" */ = {
 			isa = XCConfigurationList;
@@ -621,6 +644,7 @@
 				0AF379711A451FC7004606F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AF3799C1A45257A004606F6 /* Build configuration list for PBXNativeTarget "TestableApplication" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +653,7 @@
 				0AF3799E1A45257A004606F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

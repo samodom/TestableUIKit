@@ -10,19 +10,19 @@ import UIKit
 
 internal class GoodView: UIView {
 
-    override internal func updateConstraints() {
+    internal override func updateConstraints() {
         super.updateConstraints()
     }
 
-    override internal func drawRect(rect: CGRect) {
+    internal override func drawRect(rect: CGRect) {
         super.drawRect(rect)
     }
 
-    override internal func encodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
         super.encodeRestorableStateWithCoder(coder)
     }
 
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
         super.decodeRestorableStateWithCoder(coder)
     }
 

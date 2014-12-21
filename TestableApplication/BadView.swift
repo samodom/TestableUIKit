@@ -10,19 +10,19 @@ import UIKit
 
 internal class BadView: UIView {
 
-    override internal func updateConstraints() {
+    internal override func updateConstraints() {
 
     }
 
-    override internal func drawRect(rect: CGRect) {
+    internal override func drawRect(rect: CGRect) {
 
     }
 
-    override internal func encodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
 
     }
 
-    override internal func decodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
 
     }
 

@@ -7,4 +7,6 @@ Much, much more will be coming shortly.  For now, here is what the framework con
 
 [[UIViewController]]
  - [Superclass calls](UIViewControllerSuperCalls.md)
- 
+
+ [[UIView]]
+ - [Superclass calls](UIViewSuperCalls.md)

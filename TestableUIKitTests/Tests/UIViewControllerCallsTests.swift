@@ -28,6 +28,11 @@ class UIViewControllerCallsTests: XCTestCase {
         }
 
         capturedControllers = [customController, plainController, subController, emptyController]
+        for controller in capturedControllers {
+            controller.setShouldForwardMethodCallWithSelector("performSegueWithIdentifier:sender:", false)
+            controller.setShouldForwardMethodCallWithSelector("showViewController:sender:", false)
+            controller.setShouldForwardMethodCallWithSelector("showDetailViewController:sender:", false)
+        }
     }
     
     override func tearDown() {
@@ -36,12 +41,12 @@ class UIViewControllerCallsTests: XCTestCase {
 
     func testViewControllerShimForwarding() {
         let controller = UIViewController()
-        XCTAssertFalse(controller.shouldForwardByDefault, "This shim should not forward methods by default")
-        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded by default")
-        controller.setShouldForwardMethodCallWithSelector("someSelector", true)
-        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded")
+        XCTAssertTrue(controller.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
         controller.setShouldForwardMethodCallWithSelector("someSelector", false)
-        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded again")
+        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be forwarded")
+        controller.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
     }
 
     func testPerformSegueWithIdentifierCall() {

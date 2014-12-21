@@ -66,7 +66,7 @@ public extension UIViewController {
 extension UIViewController: ShimMethodForwarding {
 
     /**
-      The UIViewController shim should not forward spied messages by default.
+      The UIViewController shim should forward spied messages by default.
     */
     public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
 

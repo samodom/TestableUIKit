@@ -247,6 +247,6 @@ public class UIViewController: UIKit.UIViewController {
     */
     public var showDetailViewControllerSender: AnyObject?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: false)
+    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
 
 }

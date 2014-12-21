@@ -56,12 +56,17 @@ public extension UIView {
 extension UIView: ShimMethodForwarding {
 
     /**
+      The UIView shim should forward spied messages by default.
+    */
+    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
+
+    /**
       This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
       @param        selector Selector of spy method to check for forwarding status.
       @return       Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
     public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return blockerList.shouldForwardMethodCallWithSelector(selector)
+        return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
     /**
@@ -70,7 +75,7 @@ extension UIView: ShimMethodForwarding {
       @param        Boolean value indicating whether or not the method calls should be forwarded.
     */
     public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        blockerList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
+        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 
 }

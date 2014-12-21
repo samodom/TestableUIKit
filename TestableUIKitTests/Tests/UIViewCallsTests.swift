@@ -29,11 +29,12 @@ class UIViewCallsTests: XCTestCase {
 
     func testViewShimForwarding() {
         let view = UIView()
+        XCTAssertTrue(view.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
         view.setShouldForwardMethodCallWithSelector("someSelector", false)
-        XCTAssertFalse(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should be registered to be blocked from forwarding")
+        XCTAssertFalse(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
         view.setShouldForwardMethodCallWithSelector("someSelector", true)
-        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be registered to be blocked from forwarding")
+        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
     }
 
     func testSetNeedsLayoutCall() {

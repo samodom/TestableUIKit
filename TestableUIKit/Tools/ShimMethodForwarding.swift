@@ -11,23 +11,29 @@ import Foundation
 public protocol ShimMethodForwarding {
     func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool
     func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool)
+    var shouldForwardByDefault: Bool { get }
 }
 
-internal class ShimMethodForwardingBlockerList: ShimMethodForwarding {
+internal class ShimMethodForwardingList: ShimMethodForwarding {
 
-    private var blockerList = [Selector:Selector]()
+    private var forwardingList = [Selector:Bool]()
+    internal var shouldForwardByDefault: Bool
+
+    internal init(shouldForwardByDefault: Bool) {
+        self.shouldForwardByDefault = shouldForwardByDefault
+    }
 
     internal func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return blockerList[selector] == nil
+        if let shouldForward = forwardingList[selector] {
+            return shouldForward
+        }
+        else {
+            return shouldForwardByDefault
+        }
     }
 
     internal func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        if !shouldForward {
-            blockerList[selector] = selector
-        }
-        else {
-            blockerList[selector] = nil
-        }
+        forwardingList[selector] = shouldForward
     }
 
 }

@@ -34,6 +34,16 @@ class UIViewControllerCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testViewControllerShimForwarding() {
+        let controller = UIViewController()
+        XCTAssertFalse(controller.shouldForwardByDefault, "This shim should not forward methods by default")
+        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded by default")
+        controller.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded")
+        controller.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded again")
+    }
+
     func testPerformSegueWithIdentifierCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.performSegueWithIdentifierCalled, "The controller should not indicate having had performSegueWithIdentifier called by default")

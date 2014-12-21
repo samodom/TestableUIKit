@@ -12,6 +12,7 @@
 		0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
 		0A363CFC1A46961700DD9995 /* ShimMethodForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */; };
 		0A363CFD1A46961700DD9995 /* ShimMethodForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */; };
+		0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */; };
 		0A85BD991A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
 		0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
 		0A85BD9B1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */; };
@@ -71,6 +72,7 @@
 		0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCallsTests.swift; sourceTree = "<group>"; };
 		0A363CF41A468F5600DD9995 /* UIViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCalls.swift; sourceTree = "<group>"; };
 		0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwarding.swift; sourceTree = "<group>"; };
+		0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwardingListTests.swift; sourceTree = "<group>"; };
 		0A85BD931A468C3600E0700D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSuperCalls.swift; sourceTree = "<group>"; };
 		0A85BD961A468C3600E0700D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		0AF379721A452031004606F6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */,
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
 				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
@@ -425,6 +428,7 @@
 				0AF379A71A453A0B004606F6 /* GoodViewController.swift in Sources */,
 				0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0AF379B81A4655E8004606F6 /* BadView.swift in Sources */,
+				0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

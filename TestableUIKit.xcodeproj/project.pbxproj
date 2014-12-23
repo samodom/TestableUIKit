@@ -22,6 +22,11 @@
 		0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
 		0A363CFC1A46961700DD9995 /* ShimMethodForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */; };
 		0A363CFD1A46961700DD9995 /* ShimMethodForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */; };
+		0A459F1B1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */; };
+		0A459F1E1A494D54005DDCFB /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A459F1D1A494D54005DDCFB /* UINavigationController.swift */; };
+		0A459F1F1A494D58005DDCFB /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A459F1D1A494D54005DDCFB /* UINavigationController.swift */; };
+		0A459F211A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A459F201A494D68005DDCFB /* UINavigationControllerCalls.swift */; };
+		0A459F221A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A459F201A494D68005DDCFB /* UINavigationControllerCalls.swift */; };
 		0A5E63EA1A48F36D00F3A0A4 /* UITableViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */; };
 		0A5E63F11A48F50E00F3A0A4 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F01A48F50E00F3A0A4 /* UITableView.swift */; };
 		0A5E63F21A48F50E00F3A0A4 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F01A48F50E00F3A0A4 /* UITableView.swift */; };
@@ -98,6 +103,9 @@
 		0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCallsTests.swift; sourceTree = "<group>"; };
 		0A363CF41A468F5600DD9995 /* UIViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCalls.swift; sourceTree = "<group>"; };
 		0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwarding.swift; sourceTree = "<group>"; };
+		0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCallsTests.swift; sourceTree = "<group>"; };
+		0A459F1D1A494D54005DDCFB /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		0A459F201A494D68005DDCFB /* UINavigationControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCalls.swift; sourceTree = "<group>"; };
 		0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCallsTests.swift; sourceTree = "<group>"; };
 		0A5E63F01A48F50E00F3A0A4 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		0A5E63F31A48F53B00F3A0A4 /* UITableViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCalls.swift; sourceTree = "<group>"; };
@@ -187,6 +195,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		0A459F1C1A494D37005DDCFB /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0A459F1D1A494D54005DDCFB /* UINavigationController.swift */,
+				0A459F201A494D68005DDCFB /* UINavigationControllerCalls.swift */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
 		0A5E63EF1A48F50E00F3A0A4 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +269,7 @@
 				0AF3795B1A451FC7004606F6 /* TestableUIKit.h */,
 				0A363CFA1A4695F900DD9995 /* Tools */,
 				0A5E63F91A49214100F3A0A4 /* UICollectionView */,
+				0A459F1C1A494D37005DDCFB /* UINavigationController */,
 				0A5E63EF1A48F50E00F3A0A4 /* UITableView */,
 				0A0B8A2D1A493E85001C6CF6 /* UITextField */,
 				0A0B8A361A494967001C6CF6 /* UITextView */,
@@ -291,6 +309,7 @@
 			children = (
 				0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */,
 				0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */,
+				0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */,
 				0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */,
 				0A0B8A2B1A4935BD001C6CF6 /* UITextFieldCallsTests.swift */,
 				0A0B8A341A4948D9001C6CF6 /* UITextViewCallsTests.swift */,
@@ -471,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A459F211A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */,
 				0A0B8A3B1A494967001C6CF6 /* UITextViewCalls.swift in Sources */,
 				0A85BDA11A468C3600E0700D /* UIViewControllerSuperCalls.swift in Sources */,
 				0A85BD9B1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */,
@@ -480,6 +500,7 @@
 				0A85BD9F1A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0A5E63F11A48F50E00F3A0A4 /* UITableView.swift in Sources */,
 				0A0B8A391A494967001C6CF6 /* UITextView.swift in Sources */,
+				0A459F1E1A494D54005DDCFB /* UINavigationController.swift in Sources */,
 				0A0B8A321A493F3D001C6CF6 /* UITextFieldCalls.swift in Sources */,
 				0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0A5E63FB1A49218600F3A0A4 /* UICollectionView.swift in Sources */,
@@ -504,9 +525,12 @@
 				0A5E63F21A48F50E00F3A0A4 /* UITableView.swift in Sources */,
 				0A0B8A2C1A4935BD001C6CF6 /* UITextFieldCallsTests.swift in Sources */,
 				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
+				0A459F1B1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift in Sources */,
 				0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */,
 				0AF379AA1A453A15004606F6 /* BadViewController.swift in Sources */,
 				0A5E63FF1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */,
+				0A459F1F1A494D58005DDCFB /* UINavigationController.swift in Sources */,
+				0A459F221A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */,
 				0AF379B31A465595004606F6 /* UIViewSuperCallsTests.swift in Sources */,
 				0A5E63F81A491CE400F3A0A4 /* UICollectionViewCallsTests.swift in Sources */,
 				0AF379B51A4655DD004606F6 /* GoodView.swift in Sources */,

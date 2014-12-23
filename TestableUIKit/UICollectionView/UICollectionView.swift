@@ -81,7 +81,7 @@ public class UICollectionView: UIKit.UICollectionView {
     public var deleteItemsCalled = false
 
     /**
-      Provides the index paths that were passed to the `deleteItemsAtIndexPathsn:` method, if called.
+      Provides the index paths that were passed to the `deleteItemsAtIndexPaths:` method, if called.
     */
     public var deleteItemsIndexPaths: [NSIndexPath]?
 

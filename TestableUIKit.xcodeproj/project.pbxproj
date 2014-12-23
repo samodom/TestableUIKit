@@ -14,6 +14,11 @@
 		0A5E63EA1A48F36D00F3A0A4 /* UITableViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */; };
 		0A5E63F81A491CE400F3A0A4 /* UICollectionViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */; };
 		0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */; };
+		0AD4E7171A4A04950091747D /* UIWebViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */; };
+		0AD4E71B1A4A06E30091747D /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7191A4A06E30091747D /* UIWebView.swift */; };
+		0AD4E71C1A4A06E30091747D /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7191A4A06E30091747D /* UIWebView.swift */; };
+		0AD4E71D1A4A06E30091747D /* UIWebViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */; };
+		0AD4E71E1A4A06E30091747D /* UIWebViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */; };
 		0AF08E4E1A49E9BA00FF48D7 /* UIResponderCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderCallsTests.swift */; };
 		0AF08E501A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */; };
 		0AF08E6F1A49F1BD00FF48D7 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E591A49F1BD00FF48D7 /* UIResponder.swift */; };
@@ -105,6 +110,9 @@
 		0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCallsTests.swift; sourceTree = "<group>"; };
 		0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCallsTests.swift; sourceTree = "<group>"; };
 		0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwardingListTests.swift; sourceTree = "<group>"; };
+		0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewCallsTests.swift; sourceTree = "<group>"; };
+		0AD4E7191A4A06E30091747D /* UIWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewCalls.swift; sourceTree = "<group>"; };
 		0AF08E4C1A49E9BA00FF48D7 /* UIResponderCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderCallsTests.swift; sourceTree = "<group>"; };
 		0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerCallsTests.swift; sourceTree = "<group>"; };
 		0AF08E591A49F1BD00FF48D7 /* UIResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
@@ -185,6 +193,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		0AD4E7181A4A06E30091747D /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				0AD4E7191A4A06E30091747D /* UIWebView.swift */,
+				0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */,
+			);
+			path = UIWebView;
+			sourceTree = "<group>";
+		};
 		0AF08E581A49F1BD00FF48D7 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +220,7 @@
 				0AF08E621A49F1BD00FF48D7 /* UIView.swift */,
 				0AF08E631A49F1BD00FF48D7 /* UIViewCalls.swift */,
 				0AF08E641A49F1BD00FF48D7 /* UIViewSuperCalls.swift */,
+				0AD4E7181A4A06E30091747D /* UIWebView */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -336,6 +354,7 @@
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
 				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
 				0AF379B21A465595004606F6 /* UIViewSuperCallsTests.swift */,
+				0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -515,6 +534,7 @@
 				0AF08E8D1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF08E811A49F1BD00FF48D7 /* UINavigationController.swift in Sources */,
 				0AF08E831A49F1BD00FF48D7 /* UINavigationControllerCalls.swift in Sources */,
+				0AD4E71D1A4A06E30091747D /* UIWebViewCalls.swift in Sources */,
 				0AF08E711A49F1BD00FF48D7 /* UIResponderCalls.swift in Sources */,
 				0AF08E751A49F1BD00FF48D7 /* UICollectionViewCalls.swift in Sources */,
 				0AF08E851A49F1BD00FF48D7 /* UITabBarController.swift in Sources */,
@@ -526,6 +546,7 @@
 				0AF08E961A49F47500FF48D7 /* UIPageViewControllerCalls.swift in Sources */,
 				0AF08E871A49F1BD00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
 				0AF08E7D1A49F1BD00FF48D7 /* UIViewCalls.swift in Sources */,
+				0AD4E71B1A4A06E30091747D /* UIWebView.swift in Sources */,
 				0AF08E791A49F1BD00FF48D7 /* UITableViewCalls.swift in Sources */,
 				0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
 			);
@@ -538,6 +559,8 @@
 				0AF08E7C1A49F1BD00FF48D7 /* UIView.swift in Sources */,
 				0AF08E501A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift in Sources */,
 				0AF08E861A49F1BD00FF48D7 /* UITabBarController.swift in Sources */,
+				0AD4E71E1A4A06E30091747D /* UIWebViewCalls.swift in Sources */,
+				0AD4E7171A4A04950091747D /* UIWebViewCallsTests.swift in Sources */,
 				0AF379B01A45EF95004606F6 /* GoodViewControllerSubclass.swift in Sources */,
 				0A363CF31A468CCE00DD9995 /* UIViewCallsTests.swift in Sources */,
 				0AF08E801A49F1BD00FF48D7 /* UIViewSuperCalls.swift in Sources */,
@@ -551,6 +574,7 @@
 				0AF08E4E1A49E9BA00FF48D7 /* UIResponderCallsTests.swift in Sources */,
 				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
 				0AF08E8A1A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
+				0AD4E71C1A4A06E30091747D /* UIWebView.swift in Sources */,
 				0AF08E8E1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF08E701A49F1BD00FF48D7 /* UIResponder.swift in Sources */,
 				0AF08E761A49F1BD00FF48D7 /* UICollectionViewCalls.swift in Sources */,

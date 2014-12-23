@@ -30,6 +30,7 @@ class UIViewControllerCallsTests: XCTestCase {
         capturedControllers = [customController, plainController, subController, emptyController]
         for controller in capturedControllers {
             controller.setShouldForwardMethodCallWithSelector("performSegueWithIdentifier:sender:", false)
+            controller.setShouldForwardMethodCallWithSelector("presentViewController:animated:completion:", false)
             controller.setShouldForwardMethodCallWithSelector("showViewController:sender:", false)
             controller.setShouldForwardMethodCallWithSelector("showDetailViewController:sender:", false)
         }

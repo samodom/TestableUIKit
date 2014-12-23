@@ -21,3 +21,6 @@ Much, much more will be coming shortly.  For now, here is what the framework con
 
 ### `UITextField`
 - [Capturing instance calls](UITextFieldCalls.md)
+
+### `UITextView`
+- [Capturing instance calls](UITextViewCalls.md)

@@ -1,5 +1,5 @@
 //
-//  UITextFieldCalls.swift
+//  UIResponderCalls.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITextField {
+public extension UIResponder {
 
     public override func becomeFirstResponder() -> Bool {
         becomeFirstResponderCalled = true
@@ -34,10 +34,10 @@ public extension UITextField {
 
 }
 
-extension UITextField: ShimMethodForwarding {
+extension UIResponder: ShimMethodForwarding {
 
     /**
-      The UITextField shim should forward spied messages by default.
+      The UIResponder shim should forward spied messages by default.
     */
     public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
 

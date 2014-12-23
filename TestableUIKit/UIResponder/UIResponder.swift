@@ -1,5 +1,5 @@
 //
-//  UITextView.swift
+//  UIResponder.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UITextView: UIKit.UITextView {
+public class UIResponder: UIKit.UIResponder {
 
     /**
       Indicates whether or not the `becomeFirstResponder` method has been called on this object.

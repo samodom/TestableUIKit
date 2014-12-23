@@ -5,25 +5,19 @@ This is a framework that uses the same class names as some classes from UIKit an
 
 Much, much more will be coming shortly.  For now, here is what the framework contains:
 
-### `UIView`
- - [Capturing superclass calls](UIViewSuperCalls.md)
- - [Capturing instance calls](UIViewCalls.md)
+- `UIResponder`
+  - [Capturing instance calls](UIResponderCalls.md)
+    - `UIView`
+      - [Capturing superclass calls](UIViewSuperCalls.md)
+      - [Capturing instance calls](UIViewCalls.md)
+      - `UICollectionView`
+        - [Capturing instance calls](UICollectionViewCalls.md)
+      - `UITableView`
+        - [Capturing instance calls](UITableViewCalls.md)
 
-### `UITableView`
-- [Capturing instance calls](UITableViewCalls.md)
 
-### `UICollectionView`
-- [Capturing instance calls](UICollectionViewCalls.md)
-
-### `UITextField`
-- [Capturing instance calls](UITextFieldCalls.md)
-
-### `UITextView`
-- [Capturing instance calls](UITextViewCalls.md)
-
-### `UIViewController`
-- [Capturing superclass calls](UIViewControllerSuperCalls.md)
-- [Capturing instance calls](UIViewControllerCalls.md)
-
-### `UINavigationController`
-- [Capturing instance calls](UINavigationControllerCalls.md)
+- `UIViewController`
+  - [Capturing superclass calls](UIViewControllerSuperCalls.md)
+  - [Capturing instance calls](UIViewControllerCalls.md)
+  - `UINavigationController`
+    - [Capturing instance calls](UINavigationControllerCalls.md)

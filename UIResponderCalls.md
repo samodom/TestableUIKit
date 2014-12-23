@@ -1,6 +1,6 @@
-### Capturing calls to `UITextField` methods
+### Capturing calls to `UIResponder` methods
 
-Each of the methods below have spy method equivalents that capture the calls to the method and any parameters, if available.  The properties listed below the method names list the new properties of `UITextField` that you can use to validate method calls.
+Each of the methods below have spy method equivalents that capture the calls to the method and any parameters, if available.  The properties listed below the method names list the new properties of `UIResponder` that you can use to validate method calls.
 
 `becomeFirstResponder`
  - `var becomeFirstResponderCalled: Bool`

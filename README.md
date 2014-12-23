@@ -12,3 +12,6 @@ Much, much more will be coming shortly.  For now, here is what the framework con
 ### `UIView`
  - [Capturing superclass calls](UIViewSuperCalls.md)
  - [Capturing instance calls](UIViewCalls.md)
+
+### `UITableView`
+- [Capturing instance calls](UITableViewCalls.md)

@@ -43,6 +43,11 @@
 		0AF08E4A1A49E93700FF48D7 /* UIResponderCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E471A49E93700FF48D7 /* UIResponderCalls.swift */; };
 		0AF08E4B1A49E93700FF48D7 /* UIResponderCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E471A49E93700FF48D7 /* UIResponderCalls.swift */; };
 		0AF08E4E1A49E9BA00FF48D7 /* UIResponderCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderCallsTests.swift */; };
+		0AF08E501A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */; };
+		0AF08E541A49EFAC00FF48D7 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E521A49EFAC00FF48D7 /* UITabBarController.swift */; };
+		0AF08E551A49EFAC00FF48D7 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E521A49EFAC00FF48D7 /* UITabBarController.swift */; };
+		0AF08E561A49EFAC00FF48D7 /* UITabBarControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E531A49EFAC00FF48D7 /* UITabBarControllerCalls.swift */; };
+		0AF08E571A49EFAC00FF48D7 /* UITabBarControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E531A49EFAC00FF48D7 /* UITabBarControllerCalls.swift */; };
 		0AF3795C1A451FC7004606F6 /* TestableUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3795B1A451FC7004606F6 /* TestableUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF379621A451FC7004606F6 /* TestableUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF379561A451FC7004606F6 /* TestableUIKit.framework */; };
 		0AF379741A452054004606F6 /* UIViewControllerSuperCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */; };
@@ -110,6 +115,9 @@
 		0AF08E461A49E93700FF48D7 /* UIResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		0AF08E471A49E93700FF48D7 /* UIResponderCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderCalls.swift; sourceTree = "<group>"; };
 		0AF08E4C1A49E9BA00FF48D7 /* UIResponderCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderCallsTests.swift; sourceTree = "<group>"; };
+		0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerCallsTests.swift; sourceTree = "<group>"; };
+		0AF08E521A49EFAC00FF48D7 /* UITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		0AF08E531A49EFAC00FF48D7 /* UITabBarControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerCalls.swift; sourceTree = "<group>"; };
 		0AF379561A451FC7004606F6 /* TestableUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestableUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF3795A1A451FC7004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF3795B1A451FC7004606F6 /* TestableUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestableUIKit.h; sourceTree = "<group>"; };
@@ -225,6 +233,15 @@
 			path = UIResponder;
 			sourceTree = "<group>";
 		};
+		0AF08E511A49EFAC00FF48D7 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0AF08E521A49EFAC00FF48D7 /* UITabBarController.swift */,
+				0AF08E531A49EFAC00FF48D7 /* UITabBarControllerCalls.swift */,
+			);
+			path = UITabBarController;
+			sourceTree = "<group>";
+		};
 		0AF3794C1A451FC7004606F6 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +271,7 @@
 				0A5E63F91A49214100F3A0A4 /* UICollectionView */,
 				0A459F1C1A494D37005DDCFB /* UINavigationController */,
 				0AF08E451A49E93700FF48D7 /* UIResponder */,
+				0AF08E511A49EFAC00FF48D7 /* UITabBarController */,
 				0A5E63EF1A48F50E00F3A0A4 /* UITableView */,
 				0A85BD921A468C3600E0700D /* UIView */,
 				0A85BD951A468C3600E0700D /* UIViewController */,
@@ -289,6 +307,7 @@
 		0AF379721A452031004606F6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */,
 				0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */,
 				0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */,
 				0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */,
@@ -472,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A459F211A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */,
+				0AF08E541A49EFAC00FF48D7 /* UITabBarController.swift in Sources */,
 				0A85BDA11A468C3600E0700D /* UIViewControllerSuperCalls.swift in Sources */,
 				0A85BD9B1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */,
 				0AF08E4A1A49E93700FF48D7 /* UIResponderCalls.swift in Sources */,
@@ -479,6 +499,7 @@
 				0AF08E481A49E93700FF48D7 /* UIResponder.swift in Sources */,
 				0A85BD991A468C3600E0700D /* UIView.swift in Sources */,
 				0A5E63F41A48F53B00F3A0A4 /* UITableViewCalls.swift in Sources */,
+				0AF08E561A49EFAC00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
 				0A85BD9F1A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0A5E63F11A48F50E00F3A0A4 /* UITableView.swift in Sources */,
 				0A459F1E1A494D54005DDCFB /* UINavigationController.swift in Sources */,
@@ -494,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5E63FC1A49218600F3A0A4 /* UICollectionView.swift in Sources */,
+				0AF08E501A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift in Sources */,
 				0A85BD9E1A468C3600E0700D /* UIViewController.swift in Sources */,
 				0A85BDA01A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0AF379B01A45EF95004606F6 /* GoodViewControllerSubclass.swift in Sources */,
@@ -509,6 +531,7 @@
 				0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */,
 				0AF379AA1A453A15004606F6 /* BadViewController.swift in Sources */,
 				0A5E63FF1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */,
+				0AF08E551A49EFAC00FF48D7 /* UITabBarController.swift in Sources */,
 				0A459F1F1A494D58005DDCFB /* UINavigationController.swift in Sources */,
 				0A459F221A494D68005DDCFB /* UINavigationControllerCalls.swift in Sources */,
 				0AF379B31A465595004606F6 /* UIViewSuperCallsTests.swift in Sources */,
@@ -523,6 +546,7 @@
 				0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0AF379B81A4655E8004606F6 /* BadView.swift in Sources */,
 				0AF08E491A49E93700FF48D7 /* UIResponder.swift in Sources */,
+				0AF08E571A49EFAC00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
 				0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */,
 				0A5E63EA1A48F36D00F3A0A4 /* UITableViewCallsTests.swift in Sources */,
 			);

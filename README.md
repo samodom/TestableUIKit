@@ -21,3 +21,5 @@ Much, much more will be coming shortly.  For now, here is what the framework con
   - [Capturing instance calls](UIViewControllerCalls.md)
   - `UINavigationController`
     - [Capturing instance calls](UINavigationControllerCalls.md)
+  - `UITabBarController`
+    - [Capturing instance calls](UITabBarControllerCalls.md)

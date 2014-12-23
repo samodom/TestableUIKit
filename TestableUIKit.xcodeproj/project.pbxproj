@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0B8A2C1A4935BD001C6CF6 /* UITextFieldCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B8A2B1A4935BD001C6CF6 /* UITextFieldCallsTests.swift */; };
+		0A0B8A2F1A493E92001C6CF6 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B8A2E1A493E92001C6CF6 /* UITextField.swift */; };
+		0A0B8A301A493E95001C6CF6 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B8A2E1A493E92001C6CF6 /* UITextField.swift */; };
+		0A0B8A321A493F3D001C6CF6 /* UITextFieldCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B8A311A493F3D001C6CF6 /* UITextFieldCalls.swift */; };
+		0A0B8A331A493F42001C6CF6 /* UITextFieldCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B8A311A493F3D001C6CF6 /* UITextFieldCalls.swift */; };
 		0A363CF31A468CCE00DD9995 /* UIViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */; };
 		0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
 		0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CF41A468F5600DD9995 /* UIViewCalls.swift */; };
@@ -79,6 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0B8A2B1A4935BD001C6CF6 /* UITextFieldCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldCallsTests.swift; sourceTree = "<group>"; };
+		0A0B8A2E1A493E92001C6CF6 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		0A0B8A311A493F3D001C6CF6 /* UITextFieldCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldCalls.swift; sourceTree = "<group>"; };
 		0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCallsTests.swift; sourceTree = "<group>"; };
 		0A363CF41A468F5600DD9995 /* UIViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCalls.swift; sourceTree = "<group>"; };
 		0A363CFB1A46961700DD9995 /* ShimMethodForwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwarding.swift; sourceTree = "<group>"; };
@@ -145,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0B8A2D1A493E85001C6CF6 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				0A0B8A2E1A493E92001C6CF6 /* UITextField.swift */,
+				0A0B8A311A493F3D001C6CF6 /* UITextFieldCalls.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		0A363CFA1A4695F900DD9995 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +236,7 @@
 				0A363CFA1A4695F900DD9995 /* Tools */,
 				0A5E63F91A49214100F3A0A4 /* UICollectionView */,
 				0A5E63EF1A48F50E00F3A0A4 /* UITableView */,
+				0A0B8A2D1A493E85001C6CF6 /* UITextField */,
 				0A85BD921A468C3600E0700D /* UIView */,
 				0A85BD951A468C3600E0700D /* UIViewController */,
 			);
@@ -256,6 +274,7 @@
 				0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */,
 				0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */,
 				0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */,
+				0A0B8A2B1A4935BD001C6CF6 /* UITextFieldCallsTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */,
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
 				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
@@ -440,10 +459,12 @@
 				0A5E63F41A48F53B00F3A0A4 /* UITableViewCalls.swift in Sources */,
 				0A85BD9F1A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0A5E63F11A48F50E00F3A0A4 /* UITableView.swift in Sources */,
+				0A0B8A321A493F3D001C6CF6 /* UITextFieldCalls.swift in Sources */,
 				0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0A5E63FB1A49218600F3A0A4 /* UICollectionView.swift in Sources */,
 				0A5E63FE1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */,
 				0A85BD9D1A468C3600E0700D /* UIViewController.swift in Sources */,
+				0A0B8A2F1A493E92001C6CF6 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +481,7 @@
 				0AF379C11A465931004606F6 /* GoodViewSubclass.swift in Sources */,
 				0AF379AD1A4547D7004606F6 /* EmptyViewController.swift in Sources */,
 				0A5E63F21A48F50E00F3A0A4 /* UITableView.swift in Sources */,
+				0A0B8A2C1A4935BD001C6CF6 /* UITextFieldCallsTests.swift in Sources */,
 				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
 				0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */,
 				0AF379AA1A453A15004606F6 /* BadViewController.swift in Sources */,
@@ -473,6 +495,8 @@
 				0A85BDA21A468C3600E0700D /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF379741A452054004606F6 /* UIViewControllerSuperCallsTests.swift in Sources */,
 				0AF379A71A453A0B004606F6 /* GoodViewController.swift in Sources */,
+				0A0B8A301A493E95001C6CF6 /* UITextField.swift in Sources */,
+				0A0B8A331A493F42001C6CF6 /* UITextFieldCalls.swift in Sources */,
 				0A363CF61A468F5600DD9995 /* UIViewCalls.swift in Sources */,
 				0AF379B81A4655E8004606F6 /* BadView.swift in Sources */,
 				0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */,

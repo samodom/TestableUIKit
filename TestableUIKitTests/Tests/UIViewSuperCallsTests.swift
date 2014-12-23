@@ -71,7 +71,7 @@ class UIViewSuperCallsTests: XCTestCase {
         badView.encodeRestorableStateWithCoder(coder)
         coder.finishEncoding()
         XCTAssertFalse(badView.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method is not called by the bad view")
-        XCTAssertTrue(badView.encodeRestorableStateCoder == nil, "The coder should still be missing")
+        XCTAssertNil(badView.encodeRestorableStateCoder, "The coder should still be missing")
     }
 
     func testGoodDecodeRestorableStateWithCoderSuperCall() {
@@ -97,7 +97,7 @@ class UIViewSuperCallsTests: XCTestCase {
         let decoder = NSKeyedUnarchiver(forReadingWithData: data)
         badView.decodeRestorableStateWithCoder(decoder)
         XCTAssertFalse(badView.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method is not called by the bad view")
-        XCTAssertTrue(badView.decodeRestorableStateCoder == nil, "The coder should still be missing")
+        XCTAssertNil(badView.decodeRestorableStateCoder, "The coder should still be missing")
     }
 
 }

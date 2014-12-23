@@ -54,7 +54,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testInsertSectionsCall() {
         XCTAssertFalse(table.insertSectionsCalled, "The table view should not indicate having had insertSections called by default")
-        XCTAssertTrue(table.insertSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(table.insertSectionsIndexSet, "The index set should be missing by default")
         XCTAssertTrue(table.insertSectionsRowAnimation == nil, "The row animation should be missing by default")
         let indexSet = NSIndexSet(index: 1)
         table.insertSections(indexSet, withRowAnimation: .Fade)
@@ -65,7 +65,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testDeleteSectionsCall() {
         XCTAssertFalse(table.deleteSectionsCalled, "The table view should not indicate having had deleteSections called by default")
-        XCTAssertTrue(table.deleteSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(table.deleteSectionsIndexSet, "The index set should be missing by default")
         XCTAssertTrue(table.deleteSectionsRowAnimation == nil, "The row animation should be missing by default")
         table.deleteSections(sectionIndexSet, withRowAnimation: .Top)
         XCTAssertTrue(table.deleteSectionsCalled, "The table view should now indicate having had deleteSections called")
@@ -75,7 +75,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testReloadSectionsCall() {
         XCTAssertFalse(table.reloadSectionsCalled, "The table view should not indicate having had reloadSections called by default")
-        XCTAssertTrue(table.reloadSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(table.reloadSectionsIndexSet, "The index set should be missing by default")
         XCTAssertTrue(table.reloadSectionsRowAnimation == nil, "The row animation should be missing by default")
         table.reloadSections(sectionIndexSet, withRowAnimation: .Automatic)
         XCTAssertTrue(table.reloadSectionsCalled, "The table view should now indicate having had reloadSections called")
@@ -85,8 +85,8 @@ class UITableViewCallsTests: XCTestCase {
 
     func testMoveSectionCall() {
         XCTAssertFalse(table.moveSectionCalled, "The table view should not indicate having had moveSection called by default")
-        XCTAssertTrue(table.moveSectionFromIndex == nil, "The from index should be missing by default")
-        XCTAssertTrue(table.moveSectionToIndex == nil, "The to index should be missing by default")
+        XCTAssertNil(table.moveSectionFromIndex, "The from index should be missing by default")
+        XCTAssertNil(table.moveSectionToIndex, "The to index should be missing by default")
         table.moveSection(2, toSection: 0)
         XCTAssertTrue(table.moveSectionCalled, "The table view should now indicate having had moveSection called")
         XCTAssertEqual(table.moveSectionFromIndex!, 2, "The from index should be captured")
@@ -103,7 +103,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testInsertRowsCall() {
         XCTAssertFalse(table.insertRowsCalled, "The table view should not indicate having had insertRows called by default")
-        XCTAssertTrue(table.insertRowsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(table.insertRowsIndexPaths, "The index paths should be missing by default")
         XCTAssertTrue(table.insertRowsRowAnimation == nil, "The row animation should be missing by default")
         table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Left)
         XCTAssertTrue(table.insertRowsCalled, "The table view should now indicate having had insertRows called")
@@ -115,7 +115,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testDeleteRowsCall() {
         XCTAssertFalse(table.deleteRowsCalled, "The table view should not indicate having had deleteRows called by default")
-        XCTAssertTrue(table.deleteRowsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(table.deleteRowsIndexPaths, "The index paths should be missing by default")
         XCTAssertTrue(table.deleteRowsRowAnimation == nil, "The row animation should be missing by default")
         table.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
         XCTAssertTrue(table.deleteRowsCalled, "The table view should now indicate having had deleteRows called")
@@ -127,7 +127,7 @@ class UITableViewCallsTests: XCTestCase {
 
     func testReloadRowsCall() {
         XCTAssertFalse(table.reloadRowsCalled, "The table view should not indicate having had reloadRows called by default")
-        XCTAssertTrue(table.reloadRowsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(table.reloadRowsIndexPaths, "The index paths should be missing by default")
         XCTAssertTrue(table.reloadRowsRowAnimation == nil, "The row animation should be missing by default")
         table.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         XCTAssertTrue(table.reloadRowsCalled, "The table view should now indicate having had reloadRows called")
@@ -139,8 +139,8 @@ class UITableViewCallsTests: XCTestCase {
 
     func testMoveRowCall() {
         XCTAssertFalse(table.moveRowCalled, "The table view should not indicate having had moveRow called by default")
-        XCTAssertTrue(table.moveRowFromIndexPath == nil, "The from index path should be missing by default")
-        XCTAssertTrue(table.moveRowToIndexPath == nil, "The to index path should be missing by default")
+        XCTAssertNil(table.moveRowFromIndexPath, "The from index path should be missing by default")
+        XCTAssertNil(table.moveRowToIndexPath, "The to index path should be missing by default")
         table.moveRowAtIndexPath(indexPaths[0], toIndexPath: indexPaths[1])
         XCTAssertTrue(table.moveRowCalled, "The table view should now indicate having had moveRow called")
         XCTAssertEqual(table.moveRowFromIndexPath!, indexPaths[0], "The from index path should be captured")

@@ -46,7 +46,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testInsertSectionsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("insertSections:", false)
         XCTAssertFalse(collectionView.insertSectionsCalled, "The collection view should not indicate having had insertSections called by default")
-        XCTAssertTrue(collectionView.insertSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(collectionView.insertSectionsIndexSet, "The index set should be missing by default")
         let indexSet = NSIndexSet(index: 1)
         collectionView.insertSections(indexSet)
         XCTAssertTrue(collectionView.insertSectionsCalled, "The collection view should now indicate having had insertSections called")
@@ -56,7 +56,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testDeleteSectionsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("deleteSections:", false)
         XCTAssertFalse(collectionView.deleteSectionsCalled, "The collection view should not indicate having had deleteSections called by default")
-        XCTAssertTrue(collectionView.deleteSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(collectionView.deleteSectionsIndexSet, "The index set should be missing by default")
         collectionView.deleteSections(sectionIndexSet)
         XCTAssertTrue(collectionView.deleteSectionsCalled, "The collection view should now indicate having had deleteSections called")
         XCTAssertEqual(collectionView.deleteSectionsIndexSet!, sectionIndexSet, "The index set should be captured")
@@ -65,7 +65,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testReloadSectionsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("reloadSections:", false)
         XCTAssertFalse(collectionView.reloadSectionsCalled, "The collection view should not indicate having had reloadSections called by default")
-        XCTAssertTrue(collectionView.reloadSectionsIndexSet == nil, "The index set should be missing by default")
+        XCTAssertNil(collectionView.reloadSectionsIndexSet, "The index set should be missing by default")
         collectionView.reloadSections(sectionIndexSet)
         XCTAssertTrue(collectionView.reloadSectionsCalled, "The collection view should now indicate having had reloadSections called")
         XCTAssertEqual(collectionView.reloadSectionsIndexSet!, sectionIndexSet, "The index set should be captured")
@@ -74,8 +74,8 @@ class UICollectionViewCallsTests: XCTestCase {
     func testMoveSectionCall() {
         collectionView.setShouldForwardMethodCallWithSelector("moveSection:toSection:", false)
         XCTAssertFalse(collectionView.moveSectionCalled, "The collection view should not indicate having had moveSection called by default")
-        XCTAssertTrue(collectionView.moveSectionFromIndex == nil, "The from index should be missing by default")
-        XCTAssertTrue(collectionView.moveSectionToIndex == nil, "The to index should be missing by default")
+        XCTAssertNil(collectionView.moveSectionFromIndex, "The from index should be missing by default")
+        XCTAssertNil(collectionView.moveSectionToIndex, "The to index should be missing by default")
         collectionView.moveSection(2, toSection: 0)
         XCTAssertTrue(collectionView.moveSectionCalled, "The collection view should now indicate having had moveSection called")
         XCTAssertEqual(collectionView.moveSectionFromIndex!, 2, "The from index should be captured")
@@ -87,7 +87,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testInsertItemsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("insertItemsAtIndexPaths:", false)
         XCTAssertFalse(collectionView.insertItemsCalled, "The table view should not indicate having had insertItems called by default")
-        XCTAssertTrue(collectionView.insertItemsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(collectionView.insertItemsIndexPaths, "The index paths should be missing by default")
         collectionView.insertItemsAtIndexPaths(indexPaths)
         XCTAssertTrue(collectionView.insertItemsCalled, "The table view should now indicate having had insertItems called")
         XCTAssertEqual(collectionView.insertItemsIndexPaths!.count, 2, "The index paths should be captured")
@@ -98,7 +98,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testDeleteItemsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("deleteItemsAtIndexPaths:", false)
         XCTAssertFalse(collectionView.deleteItemsCalled, "The table view should not indicate having had deleteItems called by default")
-        XCTAssertTrue(collectionView.deleteItemsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(collectionView.deleteItemsIndexPaths, "The index paths should be missing by default")
         collectionView.deleteItemsAtIndexPaths(indexPaths)
         XCTAssertTrue(collectionView.deleteItemsCalled, "The table view should now indicate having had deleteItems called")
         XCTAssertEqual(collectionView.deleteItemsIndexPaths!.count, 2, "The index paths should be captured")
@@ -109,7 +109,7 @@ class UICollectionViewCallsTests: XCTestCase {
     func testReloadItemsCall() {
         collectionView.setShouldForwardMethodCallWithSelector("reloadItemsAtIndexPaths:", false)
         XCTAssertFalse(collectionView.reloadItemsCalled, "The table view should not indicate having had reloadItems called by default")
-        XCTAssertTrue(collectionView.reloadItemsIndexPaths == nil, "The index paths should be missing by default")
+        XCTAssertNil(collectionView.reloadItemsIndexPaths, "The index paths should be missing by default")
         collectionView.reloadItemsAtIndexPaths(indexPaths)
         XCTAssertTrue(collectionView.reloadItemsCalled, "The table view should now indicate having had reloadItems called")
         XCTAssertEqual(collectionView.reloadItemsIndexPaths!.count, 2, "The index paths should be captured")
@@ -120,8 +120,8 @@ class UICollectionViewCallsTests: XCTestCase {
     func testMoveItemCall() {
         collectionView.setShouldForwardMethodCallWithSelector("moveItemAtIndexPath:toIndexPath:", false)
         XCTAssertFalse(collectionView.moveItemCalled, "The table view should not indicate having had moveItem called by default")
-        XCTAssertTrue(collectionView.moveItemFromIndexPath == nil, "The from index path should be missing by default")
-        XCTAssertTrue(collectionView.moveItemToIndexPath == nil, "The to index path should be missing by default")
+        XCTAssertNil(collectionView.moveItemFromIndexPath, "The from index path should be missing by default")
+        XCTAssertNil(collectionView.moveItemToIndexPath, "The to index path should be missing by default")
         collectionView.moveItemAtIndexPath(indexPaths[0], toIndexPath: indexPaths[1])
         XCTAssertTrue(collectionView.moveItemCalled, "The table view should now indicate having had moveItem called")
         XCTAssertEqual(collectionView.moveItemFromIndexPath!, indexPaths[0], "The from index path should be captured")

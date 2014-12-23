@@ -12,7 +12,7 @@ Each of the methods below have spy method equivalents that capture the calls to 
  - `var setNeedsUpdateConstraintsCalled: Bool`
 
 `setNeedsDisplay`
- - `var setNeedsDisplayCalled: Bool`
+ - `var setNeedsDisplayCalled: Bool` (you may need to explicitly reset this value to `false` before invoking code that should call the method)
 
 `setNeedsDisplayInRect:`
  - `var setNeedsDisplayInRectCalled: Bool`

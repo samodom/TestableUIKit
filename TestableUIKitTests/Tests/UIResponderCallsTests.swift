@@ -36,7 +36,7 @@ class UIResponderCallsTests: XCTestCase {
         XCTAssertTrue(accepted, "The default implementation of this class returns `true`")
     }
 
-    func testResignFirstResponderCall() {
+    func testForwardedResignFirstResponderCall() {
         XCTAssertFalse(responder.resignFirstResponderCalled, "The responder should not indicate having been asked to resign first responder status by default")
         let resigned = responder.resignFirstResponder()
         XCTAssertTrue(responder.resignFirstResponderCalled, "The responder should now indicate having been asked to resign first responder status")

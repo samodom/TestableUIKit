@@ -17,6 +17,11 @@
 		0A5E63F21A48F50E00F3A0A4 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F01A48F50E00F3A0A4 /* UITableView.swift */; };
 		0A5E63F41A48F53B00F3A0A4 /* UITableViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F31A48F53B00F3A0A4 /* UITableViewCalls.swift */; };
 		0A5E63F51A48F53B00F3A0A4 /* UITableViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F31A48F53B00F3A0A4 /* UITableViewCalls.swift */; };
+		0A5E63F81A491CE400F3A0A4 /* UICollectionViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */; };
+		0A5E63FB1A49218600F3A0A4 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63FA1A49218600F3A0A4 /* UICollectionView.swift */; };
+		0A5E63FC1A49218600F3A0A4 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63FA1A49218600F3A0A4 /* UICollectionView.swift */; };
+		0A5E63FE1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63FD1A4922B200F3A0A4 /* UICollectionViewCalls.swift */; };
+		0A5E63FF1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E63FD1A4922B200F3A0A4 /* UICollectionViewCalls.swift */; };
 		0A6128AE1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */; };
 		0A85BD991A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
 		0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85BD931A468C3600E0700D /* UIView.swift */; };
@@ -80,6 +85,9 @@
 		0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCallsTests.swift; sourceTree = "<group>"; };
 		0A5E63F01A48F50E00F3A0A4 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		0A5E63F31A48F53B00F3A0A4 /* UITableViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCalls.swift; sourceTree = "<group>"; };
+		0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCallsTests.swift; sourceTree = "<group>"; };
+		0A5E63FA1A49218600F3A0A4 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		0A5E63FD1A4922B200F3A0A4 /* UICollectionViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCalls.swift; sourceTree = "<group>"; };
 		0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimMethodForwardingListTests.swift; sourceTree = "<group>"; };
 		0A85BD931A468C3600E0700D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0A85BD941A468C3600E0700D /* UIViewSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSuperCalls.swift; sourceTree = "<group>"; };
@@ -154,6 +162,15 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		0A5E63F91A49214100F3A0A4 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E63FA1A49218600F3A0A4 /* UICollectionView.swift */,
+				0A5E63FD1A4922B200F3A0A4 /* UICollectionViewCalls.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
 		0A85BD921A468C3600E0700D /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +217,7 @@
 				0AF379591A451FC7004606F6 /* Supporting Files */,
 				0AF3795B1A451FC7004606F6 /* TestableUIKit.h */,
 				0A363CFA1A4695F900DD9995 /* Tools */,
+				0A5E63F91A49214100F3A0A4 /* UICollectionView */,
 				0A5E63EF1A48F50E00F3A0A4 /* UITableView */,
 				0A85BD921A468C3600E0700D /* UIView */,
 				0A85BD951A468C3600E0700D /* UIViewController */,
@@ -236,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				0A6128AD1A476D4C00B69BBC /* ShimMethodForwardingListTests.swift */,
+				0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */,
 				0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */,
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
@@ -422,6 +441,8 @@
 				0A85BD9F1A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0A5E63F11A48F50E00F3A0A4 /* UITableView.swift in Sources */,
 				0A363CF51A468F5600DD9995 /* UIViewCalls.swift in Sources */,
+				0A5E63FB1A49218600F3A0A4 /* UICollectionView.swift in Sources */,
+				0A5E63FE1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */,
 				0A85BD9D1A468C3600E0700D /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5E63FC1A49218600F3A0A4 /* UICollectionView.swift in Sources */,
 				0A85BD9E1A468C3600E0700D /* UIViewController.swift in Sources */,
 				0A85BDA01A468C3600E0700D /* UIViewControllerCalls.swift in Sources */,
 				0AF379B01A45EF95004606F6 /* GoodViewControllerSubclass.swift in Sources */,
@@ -441,7 +463,9 @@
 				0AF379C41A465D43004606F6 /* UIViewControllerCallsTests.swift in Sources */,
 				0A85BD9A1A468C3600E0700D /* UIView.swift in Sources */,
 				0AF379AA1A453A15004606F6 /* BadViewController.swift in Sources */,
+				0A5E63FF1A4922B200F3A0A4 /* UICollectionViewCalls.swift in Sources */,
 				0AF379B31A465595004606F6 /* UIViewSuperCallsTests.swift in Sources */,
+				0A5E63F81A491CE400F3A0A4 /* UICollectionViewCallsTests.swift in Sources */,
 				0AF379B51A4655DD004606F6 /* GoodView.swift in Sources */,
 				0A5E63F51A48F53B00F3A0A4 /* UITableViewCalls.swift in Sources */,
 				0A85BD9C1A468C3600E0700D /* UIViewSuperCalls.swift in Sources */,

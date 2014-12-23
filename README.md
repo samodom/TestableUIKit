@@ -15,3 +15,6 @@ Much, much more will be coming shortly.  For now, here is what the framework con
 
 ### `UITableView`
 - [Capturing instance calls](UITableViewCalls.md)
+
+### `UICollectionView`
+- [Capturing instance calls](UICollectionViewCalls.md)

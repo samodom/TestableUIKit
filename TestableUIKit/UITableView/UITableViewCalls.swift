@@ -91,7 +91,7 @@ public extension UITableView {
         insertRowsIndexPaths = indexPaths as? [NSIndexPath]
         insertRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("insertRowsAtIndexPaths:withRowAnimation") {
+        if shouldForwardMethodCallWithSelector("insertRowsAtIndexPaths:withRowAnimation:") {
             super.insertRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }
@@ -101,7 +101,7 @@ public extension UITableView {
         deleteRowsIndexPaths = indexPaths as? [NSIndexPath]
         deleteRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("deleteRowsAtIndexPaths:withRowAnimation") {
+        if shouldForwardMethodCallWithSelector("deleteRowsAtIndexPaths:withRowAnimation:") {
             super.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }
@@ -111,7 +111,7 @@ public extension UITableView {
         reloadRowsIndexPaths = indexPaths as? [NSIndexPath]
         reloadRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("reloadRowsAtIndexPaths:withRowAnimation") {
+        if shouldForwardMethodCallWithSelector("reloadRowsAtIndexPaths:withRowAnimation:") {
             super.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }

@@ -88,7 +88,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadViewWillAppearSuperCall() {
         badController.viewWillAppear(true)
         XCTAssertFalse(badController.calledViewWillAppear, "The superclass's viewWillAppear method is not called by the bad subclass")
-        XCTAssertTrue(badController.viewWillAppearAnimated == nil, "The animated flag should still be missing")
+        XCTAssertNil(badController.viewWillAppearAnimated, "The animated flag should still be missing")
     }
 
     func testGoodViewDidAppearSuperCall() {
@@ -108,7 +108,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadViewDidAppearSuperCall() {
         badController.viewDidAppear(true)
         XCTAssertFalse(badController.calledViewDidAppear, "The superclass's viewDidAppear method is not called by the bad subclass")
-        XCTAssertTrue(badController.viewDidAppearAnimated == nil, "The animated flag should still be missing")
+        XCTAssertNil(badController.viewDidAppearAnimated, "The animated flag should still be missing")
     }
 
     func testGoodViewWillDisappearSuperCall() {
@@ -128,7 +128,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadViewWillDisappearSuperCall() {
         badController.viewWillDisappear(true)
         XCTAssertFalse(badController.calledViewWillDisappear, "The superclass's viewWillDisappear method is not called by the bad subclass")
-        XCTAssertTrue(badController.viewWillDisappearAnimated == nil, "The animated flag should still be missing")
+        XCTAssertNil(badController.viewWillDisappearAnimated, "The animated flag should still be missing")
     }
 
     func testGoodViewDidDisappearSuperCall() {
@@ -148,7 +148,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadViewDidDisappearSuperCall() {
         badController.viewDidDisappear(true)
         XCTAssertFalse(badController.calledViewDidDisappear, "The superclass's viewDidDisappear method is not called by the bad subclass")
-        XCTAssertTrue(badController.viewDidDisappearAnimated == nil, "The animated flag should still be missing")
+        XCTAssertNil(badController.viewDidDisappearAnimated, "The animated flag should still be missing")
     }
 
     func testGoodDidReceiveMemoryWarningSuperCall() {
@@ -186,7 +186,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadAddChildViewControllerSuperCall() {
         badController.addChildViewController(childController)
         XCTAssertFalse(badController.calledAddChildViewController, "The superclass's addChildViewController method is not called by the bad controller")
-        XCTAssertTrue(badController.addedChildViewController == nil, "The added child controller should still be missing")
+        XCTAssertNil(badController.addedChildViewController, "The added child controller should still be missing")
     }
 
     func testGoodRemoveFromParentViewControllerSuperCall() {
@@ -227,9 +227,9 @@ class UIViewControllerSuperCallsTests: XCTestCase {
         badController.addChildViewController(child2)
         badController.transitionFromViewController(child1, toViewController: child2, duration: 1.23, options: animationOptions, animations: animations, completion: completion)
         XCTAssertFalse(badController.calledTransitionFromViewController, "The superclass's transitionFromViewController method is not called by the bad controller")
-        XCTAssertTrue(badController.viewControllerToTransitionTo == nil, "The old child controller should still be missing")
-        XCTAssertTrue(badController.viewControllerToTransitionFrom == nil, "The new child controller should still be missing")
-        XCTAssertTrue(badController.transitionDuration == nil, "The transition duration should still be missing")
+        XCTAssertNil(badController.viewControllerToTransitionTo, "The old child controller should still be missing")
+        XCTAssertNil(badController.viewControllerToTransitionFrom, "The new child controller should still be missing")
+        XCTAssertNil(badController.transitionDuration, "The transition duration should still be missing")
         XCTAssertTrue(badController.transitionAnimationOptions == nil, "The transition animation options should still be missing")
         XCTAssertTrue(badController.transitionAnimations == nil, "The transition animations closure should still be missing")
         XCTAssertTrue(badController.transitionCompletion == nil, "The transition animation completion closure should still be missing")
@@ -255,8 +255,8 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testBadSetEditingSuperCall() {
         badController.setEditing(true, animated: true)
         XCTAssertFalse(badController.calledSetEditing, "The superclass's setEditing method is not called by the bad controller")
-        XCTAssertTrue(badController.setEditingEditing == nil, "The editing flag should still be missing")
-        XCTAssertTrue(badController.setEditingAnimated == nil, "The animated flag should still be missing")
+        XCTAssertNil(badController.setEditingEditing, "The editing flag should still be missing")
+        XCTAssertNil(badController.setEditingAnimated, "The animated flag should still be missing")
     }
 
     func testGoodEncodeRestorableStateWithCoderSuperCall() {
@@ -274,7 +274,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
         badController.encodeRestorableStateWithCoder(coder)
         coder.finishEncoding()
         XCTAssertFalse(badController.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method is not called by the bad controller")
-        XCTAssertTrue(badController.encodeRestorableStateCoder == nil, "The coder should still be missing")
+        XCTAssertNil(badController.encodeRestorableStateCoder, "The coder should still be missing")
     }
 
     func testGoodDecodeRestorableStateWithCoderSuperCall() {
@@ -300,7 +300,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
         let decoder = NSKeyedUnarchiver(forReadingWithData: data)
         badController.decodeRestorableStateWithCoder(decoder)
         XCTAssertFalse(badController.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method is not called by the bad controller")
-        XCTAssertTrue(badController.decodeRestorableStateCoder == nil, "The coder should still be missing")
+        XCTAssertNil(badController.decodeRestorableStateCoder, "The coder should still be missing")
     }
 
 }

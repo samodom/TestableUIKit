@@ -5,10 +5,31 @@ This is a framework that uses the same class names as some classes from UIKit an
 
 Much, much more will be coming shortly.  For now, here is what the framework contains:
 
-### `UIViewController`
- - [Superclass calls](UIViewControllerSuperCalls.md)
- - [Other calls](UIViewControllerCalls.md)
+- `UIResponder`
+  - [Capturing instance calls](UIResponderCalls.md)
+    - `UIView`
+      - [Capturing superclass calls](UIViewSuperCalls.md)
+      - [Capturing instance calls](UIViewCalls.md)
+      - `UICollectionView`
+        - [Capturing instance calls](UICollectionViewCalls.md)
+      - `UINavigationBar`
+        - [Capturing instance calls](UINavigationBarCalls.md)
+      - `UITableView`
+        - [Capturing instance calls](UITableViewCalls.md)
+      - `UIToolbar`
+        - [Capturing instance calls](UIToolbarCalls.md)
+      - `UIWebView`
+        - [Capturing instance calls](UIWebViewCalls.md)
+      - `UIWindow`
+        - [Capturing instance calls](UIWindowCalls.md)
 
-### `UIView`
- - [Superclass calls](UIViewSuperCalls.md)
- - [Other calls](UIViewCalls.md)
+
+- `UIViewController`
+  - [Capturing superclass calls](UIViewControllerSuperCalls.md)
+  - [Capturing instance calls](UIViewControllerCalls.md)
+  - `UINavigationController`
+    - [Capturing instance calls](UINavigationControllerCalls.md)
+  - `UIPageViewController`
+    - [Capturing instance calls](UIPageViewControllerCalls.md)
+  - `UITabBarController`
+    - [Capturing instance calls](UITabBarControllerCalls.md)

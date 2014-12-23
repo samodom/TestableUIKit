@@ -30,6 +30,7 @@ class UIViewControllerCallsTests: XCTestCase {
         capturedControllers = [customController, plainController, subController, emptyController]
         for controller in capturedControllers {
             controller.setShouldForwardMethodCallWithSelector("performSegueWithIdentifier:sender:", false)
+            controller.setShouldForwardMethodCallWithSelector("presentViewController:animated:completion:", false)
             controller.setShouldForwardMethodCallWithSelector("showViewController:sender:", false)
             controller.setShouldForwardMethodCallWithSelector("showDetailViewController:sender:", false)
         }
@@ -52,7 +53,7 @@ class UIViewControllerCallsTests: XCTestCase {
     func testPerformSegueWithIdentifierCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.performSegueWithIdentifierCalled, "The controller should not indicate having had performSegueWithIdentifier called by default")
-            XCTAssertTrue(controller.performSegueWithIdentifierSegueIdentifier == nil, "The segue identifier to perform should be missing by default")
+            XCTAssertNil(controller.performSegueWithIdentifierSegueIdentifier, "The segue identifier to perform should be missing by default")
             XCTAssertNil(controller.performSegueWithIdentifierSender, "The sender asking to perform the segue should be missing by default")
 
             controller.performSegueWithIdentifier("Sample Segue", sender: self)
@@ -65,8 +66,8 @@ class UIViewControllerCallsTests: XCTestCase {
     func testPresentViewControllerCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.presentViewControllerCalled, "The controller should not indicate having had presentViewController called by default")
-            XCTAssertTrue(controller.viewControllerToPresent == nil, "The view controller to present should be missing by default")
-            XCTAssertTrue(controller.presentViewControllerAnimated == nil, "The animation flag should be missing by default")
+            XCTAssertNil(controller.viewControllerToPresent, "The view controller to present should be missing by default")
+            XCTAssertNil(controller.presentViewControllerAnimated, "The animation flag should be missing by default")
             XCTAssertTrue(controller.presentViewControllerCompletion == nil, "The presentation completion closure should be missing by default")
 
             let presentable = GoodViewController()
@@ -83,7 +84,7 @@ class UIViewControllerCallsTests: XCTestCase {
     func testDismissViewControllerCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.dismissViewControllerCalled, "The controller should not indicate having had dismissViewController called by default")
-            XCTAssertTrue(controller.dismissViewControllerAnimated == nil, "The animation flag should be missing by default")
+            XCTAssertNil(controller.dismissViewControllerAnimated, "The animation flag should be missing by default")
             XCTAssertTrue(controller.dismissViewControllerCompletion == nil, "The dismissal completion closure should be missing by default")
 
             controller.dismissViewControllerAnimated(true, completion: completion)
@@ -98,7 +99,7 @@ class UIViewControllerCallsTests: XCTestCase {
     func testShowViewControllerCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.showViewControllerCalled, "The controller should not indicate having had showViewController called by default")
-            XCTAssertTrue(controller.viewControllerToShow == nil, "The view controller to show should be missing by default")
+            XCTAssertNil(controller.viewControllerToShow, "The view controller to show should be missing by default")
             XCTAssertNil(controller.showViewControllerSender, "The sender asking to show the view controller should be missing by default")
 
             let sampleController = UIViewController()
@@ -112,7 +113,7 @@ class UIViewControllerCallsTests: XCTestCase {
     func testShowDetailViewControllerCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.showDetailViewControllerCalled, "The controller should not indicate having had showDetailViewController called by default")
-            XCTAssertTrue(controller.detailViewControllerToShow == nil, "The view controller to show should be missing by default")
+            XCTAssertNil(controller.detailViewControllerToShow, "The view controller to show should be missing by default")
             XCTAssertNil(controller.showDetailViewControllerSender, "The sender asking to show the view controller should be missing by default")
 
             let sampleController = UIViewController()

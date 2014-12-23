@@ -10,13 +10,13 @@ import UIKit
 
 public class UIResponder: UIKit.UIResponder {
 
-    /**
-      Indicates whether or not the `becomeFirstResponder` method has been called on this object.
+    /*!
+        Indicates whether or not the `becomeFirstResponder` method has been called on this object.
     */
     public var becomeFirstResponderCalled = false
 
-    /**
-      Indicates whether or not the `resignFirstResponder` method has been called on this object.
+    /*!
+        Indicates whether or not the `resignFirstResponder` method has been called on this object.
     */
     public var resignFirstResponderCalled = false
 

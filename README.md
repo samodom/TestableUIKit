@@ -16,6 +16,8 @@ Much, much more will be coming shortly.  For now, here is what the framework con
         - [Capturing instance calls](UITableViewCalls.md)
       - `UIWebView`
         - [Capturing instance calls](UIWebViewCalls.md)
+      - `UIWindow`
+        - [Capturing instance calls](UIWindowCalls.md)
 
 
 - `UIViewController`

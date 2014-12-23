@@ -19,7 +19,7 @@ Each of the methods below have spy method equivalents that capture the calls to 
  - `var setNeedsDisplayInRectRect: CGRect?`
 
 
-> After capturing the call to the method, these spies forward the call to the superclass implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:
+> After capturing the call to the method, these spies forward the call to the superclass (real) implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:
 >
 > `myView.setShouldForwardMethodCallWithSelector("setNeedsDisplayInRect:", false)`
 >

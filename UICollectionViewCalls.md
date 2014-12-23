@@ -4,41 +4,41 @@ Each of the methods below have spy method equivalents that capture the calls to 
 
 
 `reloadData`
- - var reloadDataCalled
+ - `var reloadDataCalled: Bool`
 
 `insertSections:`
- - var insertSectionsCalled
- - var insertSectionsIndexSet: NSIndexSet?
+ - `var insertSectionsCalled: Bool`
+ - `var insertSectionsIndexSet: NSIndexSet?`
 
 `deleteSections:`
- - var deleteSectionsCalled
- - var deleteSectionsIndexSet: NSIndexSet?
+ - `var deleteSectionsCalled: Bool`
+ - `var deleteSectionsIndexSet: NSIndexSet?`
 
 `reloadSections:`
- - var reloadSectionsCalled
- - var reloadSectionsIndexSet: NSIndexSet?
+ - `var reloadSectionsCalled: Bool`
+ - `var reloadSectionsIndexSet: NSIndexSet?`
 
 `moveSection:toSection:`
- - var moveSectionCalled
- - var moveSectionFromIndex: Int?
- - var moveSectionToIndex: Int?
+ - `var moveSectionCalled: Bool`
+ - `var moveSectionFromIndex: Int?`
+ - `var moveSectionToIndex: Int?`
 
 `insertItemsAtIndexPaths:`
- - var insertItemsCalled
- - var insertItemsIndexPaths: [NSIndexPath]?
+ - `var insertItemsCalled: Bool`
+ - `var insertItemsIndexPaths: [NSIndexPath]?`
 
 `deleteItemsAtIndexPaths:`
- - var deleteItemsCalled
- - var deleteItemsIndexPaths: [NSIndexPath]?
+ - `var deleteItemsCalled: Bool`
+ - `var deleteItemsIndexPaths: [NSIndexPath]?`
 
 `reloadItemsAtIndexPaths:`
- - var reloadItemsCalled
- - var reloadItemsIndexPaths: [NSIndexPath]?
+ - `var reloadItemsCalled: Bool`
+ - `var reloadItemsIndexPaths: [NSIndexPath]?`
 
 `moveItemAtIndexPath:toIndexPath:`
- - var moveItemCalled
- - var moveItemFromIndexPath: NSIndexPath?
- - var moveItemToIndexPath: NSIndexPath?
+ - `var moveItemCalled: Bool`
+ - `var moveItemFromIndexPath: NSIndexPath?`
+ - `var moveItemToIndexPath: NSIndexPath?`
 
 
 > After capturing the call to the method, these spies forward the call to the superclass (real) implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:

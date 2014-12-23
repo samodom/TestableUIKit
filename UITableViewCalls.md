@@ -4,56 +4,56 @@ Each of the methods below have spy method equivalents that capture the calls to 
 
 
 `reloadData`
- - var reloadDataCalled
+ - `var reloadDataCalled: Bool`
 
 `beginUpdates`
- - var beginUpdatesCalled
+ - `var beginUpdatesCalled: Bool`
 
 `endUpdates`
- - var endUpdatesCalled
+ - `var endUpdatesCalled: Bool`
 
 `insertSections:withRowAnimation:`
- - var insertSectionsCalled
- - var insertSectionsIndexSet: NSIndexSet?
- - var insertSectionsRowAnimation: UITableViewRowAnimation?
+ - `var insertSectionsCalled: Bool`
+ - `var insertSectionsIndexSet: NSIndexSet?`
+ - `var insertSectionsRowAnimation: UITableViewRowAnimation?`
 
 `deleteSections:withRowAnimation:`
- - var deleteSectionsCalled
- - var deleteSectionsIndexSet: NSIndexSet?
- - var deleteSectionsRowAnimation: UITableViewRowAnimation?
+ - `var deleteSectionsCalled: Bool`
+ - `var deleteSectionsIndexSet: NSIndexSet?`
+ - `var deleteSectionsRowAnimation: UITableViewRowAnimation?`
 
 `reloadSections:withRowAnimation:`
- - var reloadSectionsCalled
- - var reloadSectionsIndexSet: NSIndexSet?
- - var reloadSectionsRowAnimation: UITableViewRowAnimation?
+ - `var reloadSectionsCalled: Bool`
+ - `var reloadSectionsIndexSet: NSIndexSet?`
+ - `var reloadSectionsRowAnimation: UITableViewRowAnimation?`
 
 `moveSection:toSection:`
- - var moveSectionCalled
- - var moveSectionFromIndex: Int?
- - var moveSectionToIndex: Int?
+ - `var moveSectionCalled: Bool`
+ - `var moveSectionFromIndex: Int?`
+ - `var moveSectionToIndex: Int?`
 
 `reloadSectionIndexTitles`
- - var reloadSectionIndexTitlesCalled
+ - `var reloadSectionIndexTitlesCalled: Bool`
 
 `insertRowsAtIndexPaths:withRowAnimation:`
- - var insertRowsCalled
- - var insertRowsIndexPaths: [NSIndexPath]?
- - var insertRowsRowAnimation: UITableViewRowAnimation?
+ - `var insertRowsCalled: Bool`
+ - `var insertRowsIndexPaths: [NSIndexPath]?`
+ - `var insertRowsRowAnimation: UITableViewRowAnimation?`
 
 `deleteRowsAtIndexPaths:withRowAnimation:`
- - var deleteRowsCalled
- - var deleteRowsIndexPaths: [NSIndexPath]?
- - var deleteRowsRowAnimation: UITableViewRowAnimation?
+ - `var deleteRowsCalled: Bool`
+ - `var deleteRowsIndexPaths: [NSIndexPath]?`
+ - `var deleteRowsRowAnimation: UITableViewRowAnimation?`
 
 `reloadRowsAtIndexPaths:withRowAnimation:`
- - var reloadRowsCalled
- - var reloadRowsIndexPaths: [NSIndexPath]?
- - var reloadRowsRowAnimation: UITableViewRowAnimation?
+ - `var reloadRowsCalled: Bool`
+ - `var reloadRowsIndexPaths: [NSIndexPath]?`
+ - `var reloadRowsRowAnimation: UITableViewRowAnimation?`
 
 `moveRowAtIndexPath:toIndexPath:`
- - var moveRowCalled
- - var moveRowFromIndexPath: NSIndexPath?
- - var moveRowToIndexPath: NSIndexPath?
+ - `var moveRowCalled: Bool`
+ - `var moveRowFromIndexPath: NSIndexPath?`
+ - `var moveRowToIndexPath: NSIndexPath?`
 
 
 > After capturing the call to the method, these spies forward the call to the superclass (real) implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:

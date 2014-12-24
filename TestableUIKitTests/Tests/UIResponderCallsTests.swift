@@ -21,6 +21,15 @@ class UIResponderCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(responder.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(responder.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        responder.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(responder.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        responder.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(responder.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testForwardedBecomeFirstResponderCall() {
         XCTAssertFalse(responder.becomeFirstResponderCalled, "The responder should not indicate having been asked to become first responder by default")
         let accepted = responder.becomeFirstResponder()

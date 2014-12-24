@@ -26,6 +26,15 @@ class UIWebViewCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertFalse(webView.shouldForwardByDefault, "This shim should not forward methods by default")
+        XCTAssertFalse(webView.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded by default")
+        webView.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(webView.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded")
+        webView.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(webView.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be forwarded")
+    }
+
     func testLoadDataCall() {
         XCTAssertFalse(webView.loadDataCalled, "The web view should not indicate having had loadData called by default")
         XCTAssertNil(webView.loadDataData, "The data should be missing by default")

@@ -40,14 +40,13 @@ class UIViewControllerCallsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testViewControllerShimForwarding() {
-        let controller = UIViewController()
-        XCTAssertTrue(controller.shouldForwardByDefault, "This shim should forward methods by default")
-        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
-        controller.setShouldForwardMethodCallWithSelector("someSelector", false)
-        XCTAssertFalse(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be forwarded")
-        controller.setShouldForwardMethodCallWithSelector("someSelector", true)
-        XCTAssertTrue(controller.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    func testShimMethodForwarding() {
+        XCTAssertTrue(plainController.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        plainController.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should no longer be forwarded")
+        plainController.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
     }
 
     func testPerformSegueWithIdentifierCall() {

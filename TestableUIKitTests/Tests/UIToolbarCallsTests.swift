@@ -21,6 +21,15 @@ class UIToolbarCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(bar.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        bar.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        bar.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testSetItemsCall() {
         let item1 = UIBarButtonItem(title: "Item 1", style: .Plain, target: nil, action: Selector("foobar"))
         let item2 = UIBarButtonItem(title: "Item 2", style: .Plain, target: nil, action: Selector("barfoo"))

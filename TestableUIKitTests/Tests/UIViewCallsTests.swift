@@ -27,14 +27,13 @@ class UIViewCallsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testViewShimForwarding() {
-        let view = UIView()
-        XCTAssertTrue(view.shouldForwardByDefault, "This shim should forward methods by default")
-        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
-        view.setShouldForwardMethodCallWithSelector("someSelector", false)
-        XCTAssertFalse(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
-        view.setShouldForwardMethodCallWithSelector("someSelector", true)
-        XCTAssertTrue(view.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    func testShimMethodForwarding() {
+        XCTAssertTrue(plainView.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        plainView.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        plainView.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
     }
 
     func testSetNeedsLayoutCall() {

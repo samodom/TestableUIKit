@@ -21,6 +21,15 @@ class UIWindowCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(window.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(window.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        window.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(window.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        window.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(window.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testMakeKeyWindowCall() {
         XCTAssertFalse(window.makeKeyWindowCalled, "The window should not indicate having had makeKeyWindow called by default")
         window.makeKeyWindow()

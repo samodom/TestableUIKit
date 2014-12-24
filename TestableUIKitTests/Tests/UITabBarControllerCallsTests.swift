@@ -21,6 +21,15 @@ class UITabBarControllerCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(tabController.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(tabController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        tabController.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(tabController.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        tabController.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(tabController.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testSetViewControllersCall() {
         XCTAssertFalse(tabController.setViewControllersCalled, "The controller should not indicate having had setViewControllers called by default")
         XCTAssertNil(tabController.setViewControllersViewControllers, "The view controllers should be missing by default")

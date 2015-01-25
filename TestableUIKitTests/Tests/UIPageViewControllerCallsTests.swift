@@ -27,6 +27,15 @@ class UIPageViewControllerCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(pageController.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(pageController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        pageController.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(pageController.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        pageController.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(pageController.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testSetViewControllersCall() {
         XCTAssertFalse(pageController.setViewControllersCalled, "The controller should not indicate having had setViewControllers called by default")
         XCTAssertNil(pageController.setViewControllersViewControllers, "The view controllers should be missing by default")

@@ -21,6 +21,15 @@ class UINavigationBarCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(bar.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        bar.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        bar.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testPushNavigationItemCall() {
         XCTAssertFalse(bar.pushNavigationItemCalled, "The navigation bar should not indicate having had pushNavigationItem called by default");
         XCTAssertNil(bar.pushNavigationItemNavigationItem, "The navigation item should be missing by default")

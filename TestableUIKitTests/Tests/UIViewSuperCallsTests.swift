@@ -28,6 +28,15 @@ class UIViewSuperCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(plainView.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        plainView.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        plainView.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testGoodUpdateConstraintsSuperCall() {
         for view in callingViews {
             view.updateConstraints()

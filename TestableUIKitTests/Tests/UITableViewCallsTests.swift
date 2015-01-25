@@ -23,7 +23,7 @@ class UITableViewCallsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testTableViewShimForwarding() {
+    func testShimMethodForwarding() {
         XCTAssertTrue(table.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(table.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
         table.setShouldForwardMethodCallWithSelector("someSelector", false)

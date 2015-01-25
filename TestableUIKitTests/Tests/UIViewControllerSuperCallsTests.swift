@@ -43,6 +43,15 @@ class UIViewControllerSuperCallsTests: XCTestCase {
         super.tearDown()
     }
 
+    func testShimMethodForwarding() {
+        XCTAssertTrue(plainController.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        plainController.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        plainController.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    }
+
     func testGoodLoadViewSuperCall() {
         let noncallingControllers = [goodController, subController]
         for controller in noncallingControllers {

@@ -11,7 +11,6 @@ import XCTest
 
 class UINavigationControllerCallsTests: XCTestCase {
 
-    let window = UIWindow()
     let navController = UINavigationController()
 
     override func setUp() {
@@ -23,6 +22,15 @@ class UINavigationControllerCallsTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+    }
+
+    func testShimMethodForwarding() {
+        XCTAssertTrue(navController.shouldForwardByDefault, "This shim should forward methods by default")
+        XCTAssertTrue(navController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
+        navController.setShouldForwardMethodCallWithSelector("someSelector", false)
+        XCTAssertFalse(navController.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
+        navController.setShouldForwardMethodCallWithSelector("someSelector", true)
+        XCTAssertTrue(navController.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
     }
 
     func testPushViewControllerCall() {

@@ -26,7 +26,7 @@ class UICollectionViewCallsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testCollectionViewShimForwarding() {
+    func testShimMethodForwarding() {
         XCTAssertTrue(collectionView.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(collectionView.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
         collectionView.setShouldForwardMethodCallWithSelector("someSelector", false)

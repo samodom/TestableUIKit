@@ -12,7 +12,7 @@ public extension UITabBarController {
 
     public override func setViewControllers(viewControllers: [AnyObject], animated: Bool) {
         setViewControllersCalled = true
-        setViewControllersViewControllers = viewControllers as [UIViewController]
+        setViewControllersViewControllers = viewControllers as! [UIViewController]
         setViewControllersAnimated = animated
 
         if shouldForwardMethodCallWithSelector("setViewControllers:animated:") {

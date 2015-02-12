@@ -12,7 +12,7 @@ public extension UIPageViewController {
 
     public override func setViewControllers(viewControllers: [AnyObject]!, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)!) {
         setViewControllersCalled = true
-        setViewControllersViewControllers = viewControllers as [UIViewController]
+        setViewControllersViewControllers = viewControllers as! [UIViewController]
         setViewControllersDirection = direction
         setViewControllersAnimated = animated
         setViewControllersCompletion = completion

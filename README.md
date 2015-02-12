@@ -6,30 +6,30 @@ This is a framework that uses the same class names as some classes from UIKit an
 Much, much more will be coming shortly.  For now, here is what the framework contains:
 
 - `UIResponder`
-  - [Capturing instance calls](UIResponderCalls.md)
+  - [Capturing instance calls](Docs/UIResponderCalls.md)
     - `UIView`
-      - [Capturing superclass calls](UIViewSuperCalls.md)
-      - [Capturing instance calls](UIViewCalls.md)
+      - [Capturing superclass calls](Docs/UIViewSuperCalls.md)
+      - [Capturing instance calls](Docs/UIViewCalls.md)
       - `UICollectionView`
-        - [Capturing instance calls](UICollectionViewCalls.md)
+        - [Capturing instance calls](Docs/UICollectionViewCalls.md)
       - `UINavigationBar`
-        - [Capturing instance calls](UINavigationBarCalls.md)
+        - [Capturing instance calls](Docs/UINavigationBarCalls.md)
       - `UITableView`
-        - [Capturing instance calls](UITableViewCalls.md)
+        - [Capturing instance calls](Docs/UITableViewCalls.md)
       - `UIToolbar`
-        - [Capturing instance calls](UIToolbarCalls.md)
+        - [Capturing instance calls](Docs/UIToolbarCalls.md)
       - `UIWebView`
-        - [Capturing instance calls](UIWebViewCalls.md)
+        - [Capturing instance calls](Docs/UIWebViewCalls.md)
       - `UIWindow`
-        - [Capturing instance calls](UIWindowCalls.md)
+        - [Capturing instance calls](Docs/UIWindowCalls.md)
 
 
 - `UIViewController`
-  - [Capturing superclass calls](UIViewControllerSuperCalls.md)
-  - [Capturing instance calls](UIViewControllerCalls.md)
+  - [Capturing superclass calls](Docs/UIViewControllerSuperCalls.md)
+  - [Capturing instance calls](Docs/UIViewControllerCalls.md)
   - `UINavigationController`
-    - [Capturing instance calls](UINavigationControllerCalls.md)
+    - [Capturing instance calls](Docs/UINavigationControllerCalls.md)
   - `UIPageViewController`
-    - [Capturing instance calls](UIPageViewControllerCalls.md)
+    - [Capturing instance calls](Docs/UIPageViewControllerCalls.md)
   - `UITabBarController`
-    - [Capturing instance calls](UITabBarControllerCalls.md)
+    - [Capturing instance calls](Docs/UITabBarControllerCalls.md)

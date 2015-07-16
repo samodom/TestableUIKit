@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import TestableUIKit
 
 class ShimMethodForwardingListTests: XCTestCase {
 

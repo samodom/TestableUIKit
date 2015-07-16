@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UINavigationController {
+public extension TestableUIKit.UINavigationController {
 
     public override func pushViewController(viewController: UIKit.UIViewController, animated: Bool) {
         pushViewControllerCalled = true
@@ -32,7 +32,7 @@ public extension UINavigationController {
         }
     }
 
-    public override func popToRootViewControllerAnimated(animated: Bool) -> [AnyObject]? {
+    public override func popToRootViewControllerAnimated(animated: Bool) -> [UIKit.UIViewController]? {
         popToRootViewControllerCalled = true
         popToRootViewControllerAnimated = animated
 
@@ -44,7 +44,7 @@ public extension UINavigationController {
         }
     }
 
-    public override func popToViewController(viewController: UIKit.UIViewController, animated: Bool) -> [AnyObject]? {
+    public override func popToViewController(viewController: UIKit.UIViewController, animated: Bool) -> [UIKit.UIViewController]? {
         popToViewControllerCalled = true
         popToViewControllerAnimated = animated
         popToViewControllerViewController = viewController

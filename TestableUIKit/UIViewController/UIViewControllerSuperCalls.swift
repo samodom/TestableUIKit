@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIViewController {
+public extension TestableUIKit.UIViewController {
 
     public override func loadView() {
         calledLoadView = true

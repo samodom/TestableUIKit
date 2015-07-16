@@ -8,11 +8,11 @@
 
 import UIKit
 
-public extension UIToolbar {
+public extension TestableUIKit.UIToolbar {
 
-    public override func setItems(items: [AnyObject]?, animated: Bool) {
+    public override func setItems(items: [UIBarButtonItem]?, animated: Bool) {
         setItemsCalled = true
-        setItemsItems = items as? [UIBarItem]
+        setItemsItems = items
         setItemsAnimated = animated
 
         if shouldForwardMethodCallWithSelector("setItems:animated:") {
@@ -21,7 +21,7 @@ public extension UIToolbar {
     }
 }
 
-extension UIToolbar: ShimMethodForwarding {
+extension TestableUIKit.UIToolbar: ShimMethodForwarding {
 
     /*!
         The UIToolbar shim should forward spied messages by default.

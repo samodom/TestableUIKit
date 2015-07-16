@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Swagger Soft. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import TestableUIKit
 
 class UIPageViewControllerCallsTests: XCTestCase {
 

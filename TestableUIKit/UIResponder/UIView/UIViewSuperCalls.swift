@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+public extension TestableUIKit.UIView {
 
     public override func updateConstraints() {
         calledUpdateConstraints = true

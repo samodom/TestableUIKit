@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIWindow {
+public extension TestableUIKit.UIWindow {
 
     public override func makeKeyWindow() {
         makeKeyWindowCalled = true
@@ -28,7 +28,7 @@ public extension UIWindow {
 
 }
 
-extension UIWindow: ShimMethodForwarding {
+extension TestableUIKit.UIWindow: ShimMethodForwarding {
 
     /*!
         The UIWindow shim should forward spied messages by default.

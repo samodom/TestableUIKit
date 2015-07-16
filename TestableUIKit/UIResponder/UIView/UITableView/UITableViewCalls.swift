@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITableView {
+public extension TestableUIKit.UITableView {
 
     public override func reloadData() {
         reloadDataCalled = true
@@ -86,9 +86,9 @@ public extension UITableView {
 
     //  MARK: Rows
 
-    public override func insertRowsAtIndexPaths(indexPaths: [AnyObject], withRowAnimation animation: UITableViewRowAnimation) {
+    public override func insertRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         insertRowsCalled = true
-        insertRowsIndexPaths = indexPaths as? [NSIndexPath]
+        insertRowsIndexPaths = indexPaths
         insertRowsRowAnimation = animation
 
         if shouldForwardMethodCallWithSelector("insertRowsAtIndexPaths:withRowAnimation:") {
@@ -96,9 +96,9 @@ public extension UITableView {
         }
     }
 
-    public override func deleteRowsAtIndexPaths(indexPaths: [AnyObject], withRowAnimation animation: UITableViewRowAnimation) {
+    public override func deleteRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         deleteRowsCalled = true
-        deleteRowsIndexPaths = indexPaths as? [NSIndexPath]
+        deleteRowsIndexPaths = indexPaths
         deleteRowsRowAnimation = animation
 
         if shouldForwardMethodCallWithSelector("deleteRowsAtIndexPaths:withRowAnimation:") {
@@ -106,9 +106,9 @@ public extension UITableView {
         }
     }
 
-    public override func reloadRowsAtIndexPaths(indexPaths: [AnyObject], withRowAnimation animation: UITableViewRowAnimation) {
+    public override func reloadRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         reloadRowsCalled = true
-        reloadRowsIndexPaths = indexPaths as? [NSIndexPath]
+        reloadRowsIndexPaths = indexPaths
         reloadRowsRowAnimation = animation
 
         if shouldForwardMethodCallWithSelector("reloadRowsAtIndexPaths:withRowAnimation:") {
@@ -129,7 +129,7 @@ public extension UITableView {
 }
 
 
-extension UITableView: ShimMethodForwarding {
+extension TestableUIKit.UITableView: ShimMethodForwarding {
 
     /*!
         The UITableView shim should forward spied messages by default.

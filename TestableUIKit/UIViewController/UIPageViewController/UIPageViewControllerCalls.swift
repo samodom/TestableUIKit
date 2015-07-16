@@ -8,11 +8,11 @@
 
 import UIKit
 
-public extension UIPageViewController {
+public extension TestableUIKit.UIPageViewController {
 
-    public override func setViewControllers(viewControllers: [AnyObject]!, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)!) {
+    public override func setViewControllers(viewControllers: [UIKit.UIViewController]?, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)!) {
         setViewControllersCalled = true
-        setViewControllersViewControllers = viewControllers as! [UIViewController]
+        setViewControllersViewControllers = viewControllers
         setViewControllersDirection = direction
         setViewControllersAnimated = animated
         setViewControllersCompletion = completion
@@ -24,7 +24,7 @@ public extension UIPageViewController {
 
 }
 
-extension UIPageViewController: ShimMethodForwarding {
+extension TestableUIKit.UIPageViewController: ShimMethodForwarding {
 
     /*!
         The UIPageViewController shim should forward spied messages by default.

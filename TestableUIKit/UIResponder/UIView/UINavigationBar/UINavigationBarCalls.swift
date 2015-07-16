@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UINavigationBar {
+public extension TestableUIKit.UINavigationBar {
 
     public override func pushNavigationItem(item: UINavigationItem, animated: Bool) {
         pushNavigationItemCalled = true
@@ -32,9 +32,9 @@ public extension UINavigationBar {
         }
     }
 
-    public override func setItems(items: [AnyObject]!, animated: Bool) {
+    public override func setItems(items: [UINavigationItem]!, animated: Bool) {
         setItemsCalled = true
-        setItemsItems = items as? [UINavigationItem]
+        setItemsItems = items
         setItemsAnimated = animated
 
         if shouldForwardMethodCallWithSelector("setItems:animated:") {
@@ -43,7 +43,7 @@ public extension UINavigationBar {
     }
 }
 
-extension UINavigationBar: ShimMethodForwarding {
+extension TestableUIKit.UINavigationBar: ShimMethodForwarding {
 
     /*!
         The UINavigationBar shim should forward spied messages by default.

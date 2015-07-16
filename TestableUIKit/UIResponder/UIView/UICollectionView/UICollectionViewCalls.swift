@@ -59,27 +59,27 @@ public extension UICollectionView {
 
     //  MARK: Items
 
-    public override func insertItemsAtIndexPaths(indexPaths: [AnyObject]) {
+    public override func insertItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
         insertItemsCalled = true
-        insertItemsIndexPaths = indexPaths as? [NSIndexPath]
+        insertItemsIndexPaths = indexPaths
 
         if shouldForwardMethodCallWithSelector("insertItemsAtIndexPaths:") {
             super.insertItemsAtIndexPaths(indexPaths)
         }
     }
 
-    public override func deleteItemsAtIndexPaths(indexPaths: [AnyObject]) {
+    public override func deleteItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
         deleteItemsCalled = true
-        deleteItemsIndexPaths = indexPaths as? [NSIndexPath]
+        deleteItemsIndexPaths = indexPaths
 
         if shouldForwardMethodCallWithSelector("deleteItemsAtIndexPaths:") {
             super.deleteItemsAtIndexPaths(indexPaths)
         }
     }
 
-    public override func reloadItemsAtIndexPaths(indexPaths: [AnyObject]) {
+    public override func reloadItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
         reloadItemsCalled = true
-        reloadItemsIndexPaths = indexPaths as? [NSIndexPath]
+        reloadItemsIndexPaths = indexPaths
 
         if shouldForwardMethodCallWithSelector("reloadItemsAtIndexPaths:") {
             super.reloadItemsAtIndexPaths(indexPaths)

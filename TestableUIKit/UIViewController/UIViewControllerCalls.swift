@@ -8,9 +8,9 @@
 
 import UIKit
 
-public extension UIViewController {
+public extension TestableUIKit.UIViewController {
 
-    public override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
+    public override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
         performSegueWithIdentifierCalled = true
         performSegueWithIdentifierSegueIdentifier = identifier
         performSegueWithIdentifierSender = sender
@@ -63,7 +63,7 @@ public extension UIViewController {
 
 }
 
-extension UIViewController: ShimMethodForwarding {
+extension TestableUIKit.UIViewController: ShimMethodForwarding {
 
     /*!
         The UIViewController shim should forward spied messages by default.

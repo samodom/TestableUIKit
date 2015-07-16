@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIResponder {
+public extension TestableUIKit.UIResponder {
 
     public override func becomeFirstResponder() -> Bool {
         becomeFirstResponderCalled = true
@@ -34,7 +34,7 @@ public extension UIResponder {
 
 }
 
-extension UIResponder: ShimMethodForwarding {
+extension TestableUIKit.UIResponder: ShimMethodForwarding {
 
     /*!
         The UIResponder shim should forward spied messages by default.

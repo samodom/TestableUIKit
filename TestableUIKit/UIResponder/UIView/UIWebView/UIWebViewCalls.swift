@@ -8,9 +8,9 @@
 
 import UIKit
 
-public extension UIWebView {
+public extension TestableUIKit.UIWebView {
 
-    public override func loadData(data: NSData!, MIMEType: String!, textEncodingName: String!, baseURL: NSURL!) {
+    public override func loadData(data: NSData, MIMEType: String, textEncodingName: String, baseURL: NSURL) {
         loadDataCalled = true
         loadDataData = data
         loadDataMIMEType = MIMEType
@@ -22,7 +22,7 @@ public extension UIWebView {
         }
     }
 
-    public override func loadHTMLString(string: String!, baseURL: NSURL!) {
+    public override func loadHTMLString(string: String, baseURL: NSURL?) {
         loadHTMLStringCalled = true
         loadHTMLStringHTMLString = string
         loadHTMLStringBaseURL = baseURL
@@ -75,7 +75,7 @@ public extension UIWebView {
 
 }
 
-extension UIWebView: ShimMethodForwarding {
+extension TestableUIKit.UIWebView: ShimMethodForwarding {
 
     /*!
         The UIWebView shim should not forward spied messages by default.

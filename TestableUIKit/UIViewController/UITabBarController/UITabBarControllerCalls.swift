@@ -8,11 +8,11 @@
 
 import UIKit
 
-public extension UITabBarController {
+public extension TestableUIKit.UITabBarController {
 
-    public override func setViewControllers(viewControllers: [AnyObject], animated: Bool) {
+    public override func setViewControllers(viewControllers: [UIKit.UIViewController]?, animated: Bool) {
         setViewControllersCalled = true
-        setViewControllersViewControllers = viewControllers as! [UIViewController]
+        setViewControllersViewControllers = viewControllers
         setViewControllersAnimated = animated
 
         if shouldForwardMethodCallWithSelector("setViewControllers:animated:") {
@@ -22,7 +22,7 @@ public extension UITabBarController {
 
 }
 
-extension UITabBarController: ShimMethodForwarding {
+extension TestableUIKit.UITabBarController: ShimMethodForwarding {
 
     /*!
         The UITabBarController shim should forward spied messages by default.

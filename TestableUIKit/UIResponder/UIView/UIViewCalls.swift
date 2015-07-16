@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+public extension TestableUIKit.UIView {
 
     public override func setNeedsLayout() {
         setNeedsLayoutCalled = true
@@ -53,7 +53,7 @@ public extension UIView {
 
 }
 
-extension UIView: ShimMethodForwarding {
+extension TestableUIKit.UIView: ShimMethodForwarding {
 
     /*!
         The UIView shim should forward spied messages by default.

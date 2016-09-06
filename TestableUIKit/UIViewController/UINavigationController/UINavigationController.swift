@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UINavigationController: UIKit.UINavigationController {
+public class UINavigationController: UIKit.UINavigationController, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `pushViewController:animated:` method has been called on this object.
@@ -60,6 +60,26 @@ public class UINavigationController: UIKit.UINavigationController {
     */
     public var popToViewControllerAnimated: Bool?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UINavigationControllerTestableSelectors {
+        public static let PushViewController = #selector(
+            UINavigationController.pushViewController(_:animated:)
+        )
+
+        public static let PopViewController = #selector(
+            UINavigationController.popViewControllerAnimated(_:)
+        )
+
+        public static let PopToRootViewController = #selector(
+            UINavigationController.popToRootViewControllerAnimated(_:)
+        )
+
+        public static let PopToViewController = #selector(
+            UINavigationController.popToViewController(_:animated:)
+        )
+    }
 
 }

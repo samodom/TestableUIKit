@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIWindow: UIKit.UIWindow {
+public class UIWindow: UIKit.UIWindow, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `makeKeyWindow` method has been called on this object.
@@ -20,6 +20,18 @@ public class UIWindow: UIKit.UIWindow {
     */
     public var makeKeyAndVisibleCalled = false
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIWindowTestableSelectors {
+        public static let MakeKeyWindow = #selector(
+            UIWindow.makeKeyWindow
+        )
+
+        public static let MakeKeyWindowAndVisible = #selector(
+            UIWindow.makeKeyAndVisible
+        )
+    }
 
 }

@@ -13,7 +13,8 @@ public extension TestableUIKit.UITableView {
     public override func reloadData() {
         reloadDataCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadData") {
+        let selector = UITableViewTestableSelectors.ReloadData
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadData()
         }
     }
@@ -21,7 +22,8 @@ public extension TestableUIKit.UITableView {
     public override func beginUpdates() {
         beginUpdatesCalled = true
 
-        if shouldForwardMethodCallWithSelector("beginUpdates") {
+        let selector = UITableViewTestableSelectors.BeginUpdates
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.beginUpdates()
         }
     }
@@ -29,7 +31,8 @@ public extension TestableUIKit.UITableView {
     public override func endUpdates() {
         endUpdatesCalled = true
 
-        if shouldForwardMethodCallWithSelector("endUpdates") {
+        let selector = UITableViewTestableSelectors.EndUpdates
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.endUpdates()
         }
     }
@@ -41,7 +44,8 @@ public extension TestableUIKit.UITableView {
         insertSectionsIndexSet = sections
         insertSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("insertSections:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.InsertSections
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.insertSections(sections, withRowAnimation: animation)
         }
     }
@@ -51,7 +55,8 @@ public extension TestableUIKit.UITableView {
         deleteSectionsIndexSet = sections
         deleteSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("deleteSections:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.DeleteSections
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.deleteSections(sections, withRowAnimation: animation)
         }
     }
@@ -61,7 +66,8 @@ public extension TestableUIKit.UITableView {
         reloadSectionsIndexSet = sections
         reloadSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("reloadSections:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.ReloadSections
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadSections(sections, withRowAnimation: animation)
         }
     }
@@ -71,7 +77,8 @@ public extension TestableUIKit.UITableView {
         moveSectionFromIndex = section
         moveSectionToIndex = newSection
 
-        if shouldForwardMethodCallWithSelector("moveSection:toSection:") {
+        let selector = UITableViewTestableSelectors.MoveSection
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.moveSection(section, toSection: newSection)
         }
     }
@@ -79,7 +86,8 @@ public extension TestableUIKit.UITableView {
     public override func reloadSectionIndexTitles() {
         reloadSectionIndexTitlesCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadSectionIndexTitles") {
+        let selector = UITableViewTestableSelectors.ReloadSectionIndexTitles
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadSectionIndexTitles()
         }
     }
@@ -91,7 +99,8 @@ public extension TestableUIKit.UITableView {
         insertRowsIndexPaths = indexPaths
         insertRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("insertRowsAtIndexPaths:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.InsertRows
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.insertRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }
@@ -101,7 +110,8 @@ public extension TestableUIKit.UITableView {
         deleteRowsIndexPaths = indexPaths
         deleteRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("deleteRowsAtIndexPaths:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.DeleteRows
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }
@@ -111,7 +121,8 @@ public extension TestableUIKit.UITableView {
         reloadRowsIndexPaths = indexPaths
         reloadRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("reloadRowsAtIndexPaths:withRowAnimation:") {
+        let selector = UITableViewTestableSelectors.ReloadRows
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
         }
     }
@@ -121,37 +132,10 @@ public extension TestableUIKit.UITableView {
         moveRowFromIndexPath = indexPath
         moveRowToIndexPath = newIndexPath
 
-        if shouldForwardMethodCallWithSelector("moveRowAtIndexPath:toIndexPath:") {
+        let selector = UITableViewTestableSelectors.MoveRow
+        if UITableView.shouldForwardMethodCallWithSelector(selector) {
             super.moveRowAtIndexPath(indexPath, toIndexPath: newIndexPath)
         }
-    }
-
-}
-
-
-extension TestableUIKit.UITableView: ShimMethodForwarding {
-
-    /*!
-        The UITableView shim should forward spied messages by default.
-    */
-    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
-
-    /*!
-        This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method to check for forwarding status.
-        :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
-    */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return forwardingList.shouldForwardMethodCallWithSelector(selector)
-    }
-
-    /*!
-        Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method of which to change the forwarding status.
-        :param: Boolean value indicating whether or not the method calls should be forwarded.
-    */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 
 }

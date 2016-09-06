@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIView: UIKit.UIView {
+public class UIView: UIKit.UIView, ShimMethodForwarding {
 
     //  MARK: Superclass calls
 
@@ -80,6 +80,30 @@ public class UIView: UIKit.UIView {
     */
     public var setNeedsDisplayInRectRect: CGRect?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIViewTestableSelectors {
+        public static let SetNeedsLayout = #selector(
+            UIView.setNeedsLayout
+        )
+
+        public static let InvalidateIntrinsicContentSize = #selector(
+            UIView.invalidateIntrinsicContentSize
+        )
+
+        public static let SetNeedsUpdateConstraints = #selector(
+            UIView.setNeedsUpdateConstraints
+        )
+
+        public static let SetNeedsDisplay = #selector(
+            UIView.setNeedsDisplay
+        )
+
+        public static let SetNeedsDisplayInRect = #selector(
+            UIView.setNeedsDisplayInRect(_:)
+        )
+    }
 
 }

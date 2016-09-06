@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UITabBarController: UIKit.UITabBarController {
+public class UITabBarController: UIKit.UITabBarController, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `setViewControllers:animated:` method has been called on this object.
@@ -25,6 +25,14 @@ public class UITabBarController: UIKit.UITabBarController {
     */
     public var setViewControllersAnimated: Bool?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UITabBarControllerTestableSelectors {
+        public static let SetViewControllers = #selector(
+            UITabBarController.setViewControllers(_:animated:)
+        )
+    }
 
 }

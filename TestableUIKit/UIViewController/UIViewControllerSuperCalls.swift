@@ -60,7 +60,15 @@ public extension TestableUIKit.UIViewController {
         super.addChildViewController(childController)
     }
 
-    public override func transitionFromViewController(fromViewController: UIKit.UIViewController, toViewController: UIKit.UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: UIViewAnimationsClosure?, completion: UIViewAnimationCompletionClosure?) {
+    public override func transitionFromViewController(
+        fromViewController: UIKit.UIViewController,
+        toViewController: UIKit.UIViewController,
+        duration: NSTimeInterval,
+        options: UIViewAnimationOptions,
+        animations: UIViewAnimationsHandler?,
+        completion: UIViewAnimationCompletionHandler?
+        ) {
+
         calledTransitionFromViewController = true
         viewControllerToTransitionFrom = fromViewController
         viewControllerToTransitionTo = toViewController
@@ -68,9 +76,17 @@ public extension TestableUIKit.UIViewController {
         transitionAnimationOptions = options
         transitionAnimations = animations
         transitionCompletion = completion
-        super.transitionFromViewController(fromViewController, toViewController: toViewController, duration: duration, options: options, animations: animations, completion: completion)
-    }
 
+        super.transitionFromViewController(
+            fromViewController,
+            toViewController: toViewController,
+            duration: duration,
+            options: options,
+            animations: animations,
+            completion: completion
+        )
+    }
+    
     public override func removeFromParentViewController() {
         calledRemoveFromParentViewController = true
         super.removeFromParentViewController()

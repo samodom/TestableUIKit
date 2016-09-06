@@ -1,12 +1,17 @@
 TestableUIKit
 =============
 
-This is a framework that uses the same class names as some classes from UIKit and extends them using the fully qualified name of the real class.  This allows for a *shim* layer between your application code and UIKit **only while testing**.
+* ![](https://img.shields.io/badge/platform-_iOS_8,_9-lightgrey.svg?style=flat-square)
+* ![](https://img.shields.io/badge/language-Swift_2.2-orange.svg?style=flat-square)
+* ![](https://img.shields.io/badge/version-0.8.0-green.svg?style=flat-square)
+
+
+This is a library that uses the same class names as some classes from UIKit and extends them using the fully qualified name of the real class.  This allows for a *shim* layer between your application code and UIKit **only while testing**.
 
 Much, much more will be coming shortly.  For now, here is what the framework contains:
 
 - `UIResponder`
-  - [Capturing instance calls](Docs/UIResponderCalls.md)
+ - [Capturing instance calls](Docs/UIResponderCalls.md)
     - `UIView`
       - [Capturing superclass calls](Docs/UIViewSuperCalls.md)
       - [Capturing instance calls](Docs/UIViewCalls.md)

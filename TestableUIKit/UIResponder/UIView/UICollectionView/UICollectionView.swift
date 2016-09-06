@@ -9,7 +9,7 @@
 import UIKit
 
 
-public class UICollectionView: UIKit.UICollectionView {
+public class UICollectionView: UIKit.UICollectionView, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `reloadData` method has been called on this object.
@@ -110,6 +110,47 @@ public class UICollectionView: UIKit.UICollectionView {
     */
     public var moveItemToIndexPath: NSIndexPath?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UICollectionViewTestableSelectors {
+        public static let ReloadData = #selector(
+            UICollectionView.reloadData
+        )
+
+        public static let InsertSections = #selector(
+            UICollectionView.insertSections(_:)
+        )
+
+        public static let DeleteSections = #selector(
+            UICollectionView.deleteSections(_:)
+        )
+
+        public static let ReloadSections = #selector(
+            UICollectionView.reloadSections(_:)
+        )
+
+        public static let MoveSection = #selector(
+            UICollectionView.moveSection(_:toSection:)
+        )
+
+        public static let InsertItems = #selector(
+            UICollectionView.insertItemsAtIndexPaths(_:)
+        )
+
+        public static let DeleteItems = #selector(
+            UICollectionView.deleteItemsAtIndexPaths(_:)
+        )
+
+        public static let ReloadItems = #selector(
+            UICollectionView.reloadItemsAtIndexPaths(_:)
+        )
+
+        public static let MoveItem = #selector(
+            UICollectionView.moveItemAtIndexPath(_:toIndexPath:)
+        )
+    }
 
 }

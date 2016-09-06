@@ -15,7 +15,8 @@ public extension TestableUIKit.UINavigationController {
         pushViewControllerViewController = viewController
         pushViewControllerAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("pushViewController:animated:") {
+        let selector = UINavigationControllerTestableSelectors.PushViewController
+        if UINavigationController.shouldForwardMethodCallWithSelector(selector) {
             super.pushViewController(viewController, animated: animated)
         }
     }
@@ -24,24 +25,18 @@ public extension TestableUIKit.UINavigationController {
         popViewControllerCalled = true
         popViewControllerAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("popViewControllerAnimated:") {
-            return super.popViewControllerAnimated(animated)
-        }
-        else {
-            return nil
-        }
+        let selector = UINavigationControllerTestableSelectors.PopViewController
+        return UINavigationController.shouldForwardMethodCallWithSelector(selector) ?
+            super.popViewControllerAnimated(animated) : nil
     }
 
     public override func popToRootViewControllerAnimated(animated: Bool) -> [UIKit.UIViewController]? {
         popToRootViewControllerCalled = true
         popToRootViewControllerAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("popToRootViewControllerAnimated:") {
-            return super.popToRootViewControllerAnimated(animated)
-        }
-        else {
-            return nil
-        }
+        let selector = UINavigationControllerTestableSelectors.PopToRootViewController
+        return UINavigationController.shouldForwardMethodCallWithSelector(selector) ?
+            super.popToRootViewControllerAnimated(animated): nil
     }
 
     public override func popToViewController(viewController: UIKit.UIViewController, animated: Bool) -> [UIKit.UIViewController]? {
@@ -49,39 +44,9 @@ public extension TestableUIKit.UINavigationController {
         popToViewControllerAnimated = animated
         popToViewControllerViewController = viewController
 
-        if shouldForwardMethodCallWithSelector("popToViewController:animated:") {
-            return super.popToViewController(viewController, animated: animated)
-        }
-        else {
-            return nil
-        }
+        let selector = UINavigationControllerTestableSelectors.PopToViewController
+        return UINavigationController.shouldForwardMethodCallWithSelector(selector) ?
+            super.popToViewController(viewController, animated: animated) : nil
     }
-
-}
-
-extension UINavigationController: ShimMethodForwarding {
-
-    /*!
-        The UINavigationController shim should forward spied messages by default.
-    */
-    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
-
-    /*!
-        This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method to check for forwarding status.
-        :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
-    */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return forwardingList.shouldForwardMethodCallWithSelector(selector)
-    }
-
-    /*!
-        Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method of which to change the forwarding status.
-        :param: Boolean value indicating whether or not the method calls should be forwarded.
-    */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
-    }
-
+    
 }

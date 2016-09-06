@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UINavigationBar: UIKit.UINavigationBar {
+public class UINavigationBar: UIKit.UINavigationBar, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `pushNavigationItem:animated:` method has been called on this object.
@@ -51,6 +51,22 @@ public class UINavigationBar: UIKit.UINavigationBar {
     public var setItemsAnimated: Bool?
 
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public static var shouldForwardMethodsByDefault = true
+
+    public enum UINavigationBarTestableSelectors {
+        public static let PushNavigationItem = #selector(
+            UINavigationBar.pushNavigationItem(_:animated:)
+        )
+
+        public static let PopNavigationItem = #selector(
+            UINavigationBar.popNavigationItemAnimated(_:)
+        )
+
+        public static let SetItems = #selector(
+            UINavigationBar.setItems(_:animated:)
+        )
+    }
 
 }

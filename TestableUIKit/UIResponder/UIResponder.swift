@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIResponder: UIKit.UIResponder {
+public class UIResponder: UIKit.UIResponder, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `becomeFirstResponder` method has been called on this object.
@@ -20,6 +20,18 @@ public class UIResponder: UIKit.UIResponder {
     */
     public var resignFirstResponderCalled = false
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = false
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIResponderTestableSelectors {
+        public static let BecomeFirstResponder = #selector(
+            UIResponder.becomeFirstResponder
+        )
+
+        public static let ResignFirstResponder = #selector(
+            UIResponder.resignFirstResponder
+        )
+    }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UITableView: UIKit.UITableView {
+public class UITableView: UIKit.UITableView, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `reloadData` method has been called on this object.
@@ -155,6 +155,58 @@ public class UITableView: UIKit.UITableView {
     */
     public var moveRowToIndexPath: NSIndexPath?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UITableViewTestableSelectors {
+        public static let ReloadData = #selector(
+            UITableView.reloadData
+        )
+
+        public static let BeginUpdates = #selector(
+            UITableView.beginUpdates
+        )
+
+        public static let EndUpdates = #selector(
+            UITableView.endUpdates
+        )
+
+        public static let InsertSections = #selector(
+            UITableView.insertSections(_:withRowAnimation:)
+        )
+
+        public static let DeleteSections = #selector(
+            UITableView.deleteSections(_:withRowAnimation:)
+        )
+
+        public static let ReloadSections = #selector(
+            UITableView.reloadSections(_:withRowAnimation:)
+        )
+
+        public static let MoveSection = #selector(
+            UITableView.moveSection(_:toSection:)
+        )
+
+        public static let ReloadSectionIndexTitles = #selector(
+            UITableView.reloadSectionIndexTitles
+        )
+
+        public static let InsertRows = #selector(
+            UITableView.insertRowsAtIndexPaths(_:withRowAnimation:)
+        )
+
+        public static let DeleteRows = #selector(
+            UITableView.deleteRowsAtIndexPaths(_:withRowAnimation:)
+        )
+
+        public static let ReloadRows = #selector(
+            UITableView.reloadRowsAtIndexPaths(_:withRowAnimation:)
+        )
+
+        public static let MoveRow = #selector(
+            UITableView.moveRowAtIndexPath(_:toIndexPath:)
+        )
+    }
 
 }

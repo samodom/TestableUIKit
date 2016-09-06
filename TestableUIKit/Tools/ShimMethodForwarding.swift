@@ -8,32 +8,32 @@
 
 import Foundation
 
+public typealias ShimMethodForwardingList = [Selector: Bool]
+
 public protocol ShimMethodForwarding {
-    func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool
-    func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool)
-    var shouldForwardByDefault: Bool { get }
+    static var methodForwardingList: ShimMethodForwardingList { get set }
+    static var shouldForwardMethodsByDefault: Bool { get set }
 }
 
-internal class ShimMethodForwardingList: ShimMethodForwarding {
 
-    private var forwardingList = [Selector:Bool]()
-    internal var shouldForwardByDefault: Bool
+public extension ShimMethodForwarding {
 
-    internal init(shouldForwardByDefault: Bool) {
-        self.shouldForwardByDefault = shouldForwardByDefault
+    /*!
+     This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
+     :param: selector Selector of spy method to check for forwarding status.
+     :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
+     */
+    public static func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+        return methodForwardingList[selector] ?? shouldForwardMethodsByDefault
     }
 
-    internal func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        if let shouldForward = forwardingList[selector] {
-            return shouldForward
-        }
-        else {
-            return shouldForwardByDefault
-        }
-    }
-
-    internal func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList[selector] = shouldForward
+    /*!
+     Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
+     :param: selector Selector of spy method of which to change the forwarding status.
+     :param: Boolean value indicating whether or not the method calls should be forwarded.
+     */
+    public static func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+        methodForwardingList[selector] = shouldForward
     }
 
 }

@@ -15,28 +15,31 @@ public extension TestableUIKit.UIViewController {
         performSegueWithIdentifierSegueIdentifier = identifier
         performSegueWithIdentifierSender = sender
 
-        if shouldForwardMethodCallWithSelector("performSegueWithIdentifier:sender:") {
+        let selector = UIViewControllerTestableSelectors.PerformSegue
+        if UIViewController.shouldForwardMethodCallWithSelector(selector) {
             super.performSegueWithIdentifier(identifier, sender: sender)
         }
     }
 
-    public override func presentViewController(viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: UIViewControllerPresentationCompletionClosure?) {
+    public override func presentViewController(viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: UIViewControllerPresentationCompletionHandler?) {
         presentViewControllerCalled = true
         self.viewControllerToPresent = viewControllerToPresent
         presentViewControllerAnimated = flag
         presentViewControllerCompletion = completion
 
-        if shouldForwardMethodCallWithSelector("presentViewController:animated:completion:") {
+        let selector = UIViewControllerTestableSelectors.PresentViewController
+        if UIViewController.shouldForwardMethodCallWithSelector(selector) {
             super.presentViewController(viewControllerToPresent, animated: flag, completion: completion)
         }
     }
 
-    public override func dismissViewControllerAnimated(flag: Bool, completion: UIViewControllerDismissalCompletionClosure?) {
+    public override func dismissViewControllerAnimated(flag: Bool, completion: UIViewControllerDismissalCompletionHandler?) {
         dismissViewControllerCalled = true
         dismissViewControllerAnimated = flag
         dismissViewControllerCompletion = completion
 
-        if shouldForwardMethodCallWithSelector("dismissViewControllerAnimated:completion:") {
+        let selector = UIViewControllerTestableSelectors.DismissViewController
+        if UIViewController.shouldForwardMethodCallWithSelector(selector) {
             super.dismissViewControllerAnimated(flag, completion: completion)
         }
     }
@@ -46,7 +49,8 @@ public extension TestableUIKit.UIViewController {
         viewControllerToShow = viewController
         showViewControllerSender = sender
 
-        if shouldForwardMethodCallWithSelector("showViewController:sender:") {
+        let selector = UIViewControllerTestableSelectors.ShowViewController
+        if UIViewController.shouldForwardMethodCallWithSelector(selector) {
             super.showViewController(viewController, sender: sender)
         }
     }
@@ -56,36 +60,10 @@ public extension TestableUIKit.UIViewController {
         detailViewControllerToShow = viewController
         showDetailViewControllerSender = sender
 
-        if shouldForwardMethodCallWithSelector("showDetailViewController:sender:") {
+        let selector = UIViewControllerTestableSelectors.ShowDetailViewController
+        if UIViewController.shouldForwardMethodCallWithSelector(selector) {
             super.showDetailViewController(viewController, sender: sender)
         }
-    }
-
-}
-
-extension TestableUIKit.UIViewController: ShimMethodForwarding {
-
-    /*!
-        The UIViewController shim should forward spied messages by default.
-    */
-    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
-
-    /*!
-        This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method to check for forwarding status.
-        :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
-    */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return forwardingList.shouldForwardMethodCallWithSelector(selector)
-    }
-
-    /*!
-        Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method of which to change the forwarding status.
-        :param: Boolean value indicating whether or not the method calls should be forwarded.
-    */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 
 }

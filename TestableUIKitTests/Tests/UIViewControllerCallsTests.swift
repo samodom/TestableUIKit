@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TestableUIKit
+import TestableUIKit
 
 class UIViewControllerCallsTests: XCTestCase {
 

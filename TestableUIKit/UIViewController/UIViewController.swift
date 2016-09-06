@@ -8,14 +8,14 @@
 
 import UIKit
 
-public typealias UIViewAnimationsClosure = () -> ()
-public typealias UIViewAnimationCompletionClosure = (Bool) -> ()
+public typealias UIViewAnimationsHandler = () -> ()
+public typealias UIViewAnimationCompletionHandler = (Bool) -> ()
 
-public typealias UIViewControllerPresentationCompletionClosure = () -> ()
-public typealias UIViewControllerDismissalCompletionClosure = () -> ()
+public typealias UIViewControllerPresentationCompletionHandler = () -> ()
+public typealias UIViewControllerDismissalCompletionHandler = () -> ()
 
 
-public class UIViewController: UIKit.UIViewController {
+public class UIViewController: UIKit.UIViewController, ShimMethodForwarding {
 
     //  MARK: Superclass calls
 
@@ -122,12 +122,12 @@ public class UIViewController: UIKit.UIViewController {
     /*!
         Provides the animation closure that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionAnimations: UIViewAnimationsClosure?
+    public var transitionAnimations: UIViewAnimationsHandler?
 
     /*!
         Provides the completion closure that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionCompletion: UIViewAnimationCompletionClosure?
+    public var transitionCompletion: UIViewAnimationCompletionHandler?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `setEditing:animated:`.
@@ -200,7 +200,7 @@ public class UIViewController: UIKit.UIViewController {
     /*!
         Provides the completion closure that was passed to the `presentViewController:animated:completion:` method on this object, if called.
     */
-    public var presentViewControllerCompletion: UIViewControllerPresentationCompletionClosure?
+    public var presentViewControllerCompletion: UIViewControllerPresentationCompletionHandler?
 
     /*!
         Indicates whether or not the `dismissViewControllerAnimated:completion:` method has been called on this object.
@@ -215,7 +215,7 @@ public class UIViewController: UIKit.UIViewController {
     /*!
         Provides the completion closure that was passed to the `dismissViewControllerAnimated:completion:` method on this object, if called.
     */
-    public var dismissViewControllerCompletion: UIViewControllerDismissalCompletionClosure?
+    public var dismissViewControllerCompletion: UIViewControllerDismissalCompletionHandler?
 
     /*!
         Indicates whether or not the `showViewController:sender:` method has been called on this object.
@@ -247,6 +247,30 @@ public class UIViewController: UIKit.UIViewController {
     */
     public var showDetailViewControllerSender: AnyObject?
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var shouldForwardMethodsByDefault = true
+
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIViewControllerTestableSelectors {
+        public static let PerformSegue = #selector(
+            UIViewController.performSegueWithIdentifier(_:sender:)
+        )
+
+        public static let PresentViewController = #selector(
+            UIViewController.presentViewController(_:animated:completion:)
+        )
+
+        public static let DismissViewController = #selector(
+            UIViewController.dismissViewControllerAnimated(_:completion:)
+        )
+
+        public static let ShowViewController = #selector(
+            UIViewController.showViewController(_:sender:)
+        )
+
+        public static let ShowDetailViewController = #selector(
+            UIViewController.showDetailViewController(_:sender:)
+        )
+    }
 
 }

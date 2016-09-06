@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIWebView: UIKit.UIWebView {
+public class UIWebView: UIKit.UIWebView, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `loadData:MIMEType:textEncodingName:baseURL:` method has been called on this object.
@@ -80,7 +80,38 @@ public class UIWebView: UIKit.UIWebView {
     */
     public var goForwardCalled = false
 
+    public static var shouldForwardMethodsByDefault = false
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: false)
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIWebViewTestableSelectors {
+        public static let LoadData = #selector(
+            UIWebView.loadData(_:MIMEType:textEncodingName:baseURL:)
+        )
+
+        public static let LoadHTMLString = #selector(
+            UIWebView.loadHTMLString(_:baseURL:)
+        )
+
+        public static let LoadRequest = #selector(
+            UIWebView.loadRequest(_:)
+        )
+
+        public static let StopLoading = #selector(
+            UIWebView.stopLoading
+        )
+
+        public static let Reload = #selector(
+            UIWebView.reload
+        )
+
+        public static let GoBack = #selector(
+            UIWebView.goBack
+        )
+
+        public static let GoForward = #selector(
+            UIWebView.goForward
+        )
+    }
 
 }

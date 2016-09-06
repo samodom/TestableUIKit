@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TestableUIKit
+import TestableUIKit
 
 class UICollectionViewCallsTests: XCTestCase {
 
@@ -20,10 +20,6 @@ class UICollectionViewCallsTests: XCTestCase {
 
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    override func tearDown() {
-        super.tearDown()
     }
 
     func testShimMethodForwarding() {

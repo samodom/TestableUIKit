@@ -8,12 +8,13 @@
 
 import UIKit
 
-public extension UICollectionView {
+public extension TestableUIKit.UICollectionView {
 
     public override func reloadData() {
         reloadDataCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadData") {
+        let selector = UICollectionViewTestableSelectors.ReloadData
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadData()
         }
     }
@@ -24,7 +25,8 @@ public extension UICollectionView {
         insertSectionsCalled = true
         insertSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("insertSections:") {
+        let selector = UICollectionViewTestableSelectors.InsertSections
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.insertSections(sections)
         }
     }
@@ -33,7 +35,8 @@ public extension UICollectionView {
         deleteSectionsCalled = true
         deleteSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("deleteSections:") {
+        let selector = UICollectionViewTestableSelectors.DeleteSections
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.deleteSections(sections)
         }
     }
@@ -42,7 +45,8 @@ public extension UICollectionView {
         reloadSectionsCalled = true
         reloadSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("reloadSections:") {
+        let selector = UICollectionViewTestableSelectors.ReloadSections
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadSections(sections)
         }
     }
@@ -52,7 +56,8 @@ public extension UICollectionView {
         moveSectionFromIndex = section
         moveSectionToIndex = newSection
 
-        if shouldForwardMethodCallWithSelector("moveSection:toSection:") {
+        let selector = UICollectionViewTestableSelectors.MoveSection
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.moveSection(section, toSection: newSection)
         }
     }
@@ -63,7 +68,8 @@ public extension UICollectionView {
         insertItemsCalled = true
         insertItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("insertItemsAtIndexPaths:") {
+        let selector = UICollectionViewTestableSelectors.InsertItems
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.insertItemsAtIndexPaths(indexPaths)
         }
     }
@@ -72,7 +78,8 @@ public extension UICollectionView {
         deleteItemsCalled = true
         deleteItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("deleteItemsAtIndexPaths:") {
+        let selector = UICollectionViewTestableSelectors.DeleteItems
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.deleteItemsAtIndexPaths(indexPaths)
         }
     }
@@ -81,7 +88,8 @@ public extension UICollectionView {
         reloadItemsCalled = true
         reloadItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("reloadItemsAtIndexPaths:") {
+        let selector = UICollectionViewTestableSelectors.ReloadItems
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.reloadItemsAtIndexPaths(indexPaths)
         }
     }
@@ -91,37 +99,10 @@ public extension UICollectionView {
         moveItemFromIndexPath = indexPath
         moveItemToIndexPath = newIndexPath
 
-        if shouldForwardMethodCallWithSelector("moveItemAtIndexPath:toIndexPath:") {
+        let selector = UICollectionViewTestableSelectors.MoveItem
+        if UICollectionView.shouldForwardMethodCallWithSelector(selector) {
             super.moveItemAtIndexPath(indexPath, toIndexPath: newIndexPath)
         }
-    }
-
-}
-
-
-extension UICollectionView: ShimMethodForwarding {
-
-    /*!
-        The `UICollectionView` shim should forward spied messages by default.
-    */
-    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
-
-    /**
-        This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method to check for forwarding status.
-        :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
-    */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return forwardingList.shouldForwardMethodCallWithSelector(selector)
-    }
-
-    /*!
-        Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method of which to change the forwarding status.
-        :param: Boolean value indicating whether or not the method calls should be forwarded.
-    */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 
 }

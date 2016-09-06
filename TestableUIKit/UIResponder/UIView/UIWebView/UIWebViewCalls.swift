@@ -17,7 +17,8 @@ public extension TestableUIKit.UIWebView {
         loadDataTextEncodingName = textEncodingName
         loadDataBaseURL = baseURL
 
-        if shouldForwardMethodCallWithSelector("loadData:MIMEType:textEncodingName:baseURL:") {
+        let selector = UIWebViewTestableSelectors.LoadData
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.loadData(data, MIMEType: MIMEType, textEncodingName: textEncodingName, baseURL: baseURL)
         }
     }
@@ -27,7 +28,8 @@ public extension TestableUIKit.UIWebView {
         loadHTMLStringHTMLString = string
         loadHTMLStringBaseURL = baseURL
 
-        if shouldForwardMethodCallWithSelector("loadHTMLString:baseURL:") {
+        let selector = UIWebViewTestableSelectors.LoadHTMLString
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.loadHTMLString(string, baseURL: baseURL)
         }
     }
@@ -36,7 +38,8 @@ public extension TestableUIKit.UIWebView {
         loadRequestCalled = true
         loadRequestRequest = request
 
-        if shouldForwardMethodCallWithSelector("loadRequest:") {
+        let selector = UIWebViewTestableSelectors.LoadRequest
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.loadRequest(request)
         }
     }
@@ -44,7 +47,8 @@ public extension TestableUIKit.UIWebView {
     public override func stopLoading() {
         stopLoadingCalled = true
 
-        if shouldForwardMethodCallWithSelector("stopLoading") {
+        let selector = UIWebViewTestableSelectors.StopLoading
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.stopLoading()
         }
     }
@@ -52,7 +56,8 @@ public extension TestableUIKit.UIWebView {
     public override func reload() {
         reloadCalled = true
 
-        if shouldForwardMethodCallWithSelector("reload") {
+        let selector = UIWebViewTestableSelectors.Reload
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.reload()
         }
     }
@@ -60,7 +65,8 @@ public extension TestableUIKit.UIWebView {
     public override func goBack() {
         goBackCalled = true
 
-        if shouldForwardMethodCallWithSelector("goBack") {
+        let selector = UIWebViewTestableSelectors.GoBack
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.goBack()
         }
     }
@@ -68,36 +74,10 @@ public extension TestableUIKit.UIWebView {
     public override func goForward() {
         goForwardCalled = true
 
-        if shouldForwardMethodCallWithSelector("goForward") {
+        let selector = UIWebViewTestableSelectors.GoForward
+        if UIWebView.shouldForwardMethodCallWithSelector(selector) {
             super.goForward()
         }
-    }
-
-}
-
-extension TestableUIKit.UIWebView: ShimMethodForwarding {
-
-    /*!
-        The UIWebView shim should not forward spied messages by default.
-    */
-    public var shouldForwardByDefault: Bool { return forwardingList.shouldForwardByDefault }
-
-    /*!
-        This method indicates whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method to check for forwarding status.
-        :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
-    */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
-        return forwardingList.shouldForwardMethodCallWithSelector(selector)
-    }
-
-    /*!
-        Calls to this method control whether or not the spy for the provided selector forwards the method call to the superclass implementation.
-        :param: selector Selector of spy method of which to change the forwarding status.
-        :param: Boolean value indicating whether or not the method calls should be forwarded.
-    */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
-        forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UIToolbar: UIKit.UIToolbar {
+public class UIToolbar: UIKit.UIToolbar, ShimMethodForwarding {
 
     /*!
         Indicates whether or not the `setItems:animated:` method has been called on this object.
@@ -25,7 +25,14 @@ public class UIToolbar: UIKit.UIToolbar {
     */
     public var setItemsAnimated: Bool?
 
+    public static var shouldForwardMethodsByDefault = true
 
-    internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
+    public static var methodForwardingList = ShimMethodForwardingList()
+
+    public enum UIToolbarTestableSelectors {
+        public static let SetItems = #selector(
+            UIToolbar.setItems(_:animated:)
+        )
+    }
 
 }

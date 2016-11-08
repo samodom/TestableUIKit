@@ -8,34 +8,34 @@
 
 import UIKit
 
-public typealias UIPageViewControllerCompletionClosure = Bool -> ()
+public typealias UIPageViewControllerCompletionClosure = (Bool) -> ()
 
-public class UIPageViewController: UIKit.UIPageViewController {
+open class UIPageViewController: UIKit.UIPageViewController {
 
     /*!
         Indicates whether or not the `setViewControllers:direction:animated:completion:` method has been called on this object.
     */
-    public var setViewControllersCalled = false
+    open var setViewControllersCalled = false
 
     /*!
         Provides the view controllers that were passed to the `setViewControllers:direction:animated:completion:` method, if called.
     */
-    public var setViewControllersViewControllers: [UIKit.UIViewController]?
+    open var setViewControllersViewControllers: [UIKit.UIViewController]?
 
     /*!
         Provides the navigation direction that was passed to the `setViewControllers:direction:animated:completion:` method, if called.
     */
-    public var setViewControllersDirection: UIPageViewControllerNavigationDirection?
+    open var setViewControllersDirection: UIPageViewControllerNavigationDirection?
 
     /*!
         Provides the animation flag that was passed to the `setViewControllers:direction:animated:completion:` method, if called.
     */
-    public var setViewControllersAnimated: Bool?
+    open var setViewControllersAnimated: Bool?
 
     /*!
         Provides the completion closure that was passed to the `setViewControllers:direction:animated:completion:` method, if called.
     */
-    public var setViewControllersCompletion: UIPageViewControllerCompletionClosure?
+    open var setViewControllersCompletion: UIPageViewControllerCompletionClosure?
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
 

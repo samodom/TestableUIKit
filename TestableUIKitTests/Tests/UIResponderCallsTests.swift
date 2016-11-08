@@ -13,14 +13,6 @@ class UIResponderCallsTests: XCTestCase {
 
     let responder = UIResponder()
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(responder.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(responder.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")

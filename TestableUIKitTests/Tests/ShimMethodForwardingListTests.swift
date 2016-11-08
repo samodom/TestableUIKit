@@ -13,14 +13,6 @@ class ShimMethodForwardingListTests: XCTestCase {
 
     var forwardingList: ShimMethodForwardingList!
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testForwardingListWithDefaultForwarding() {
         forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
         XCTAssertTrue(forwardingList.shouldForwardByDefault, "This forwarding list should forward shim methods by default")

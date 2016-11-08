@@ -16,12 +16,8 @@ class UINavigationControllerCallsTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let window = UIApplication.sharedApplication().delegate!.window!!
+        let window = UIApplication.shared.delegate!.window!!
         window.rootViewController = navController
-    }
-    
-    override func tearDown() {
-        super.tearDown()
     }
 
     func testShimMethodForwarding() {
@@ -48,10 +44,10 @@ class UINavigationControllerCallsTests: XCTestCase {
         let controller = UIViewController()
         navController.pushViewController(controller, animated: true)
         XCTAssertFalse(navController.popViewControllerCalled, "The navigation controller should not indicate having had popViewController called by default")
-        XCTAssertNil(navController.popViewControllerAnimated, "The animated flag should be missing by default")
-        let poppedController = navController.popViewControllerAnimated(true)
+        XCTAssertNil(navController.popViewController, "The animated flag should be missing by default")
+        let poppedController = navController.popViewController(animated: true)
         XCTAssertTrue(navController.popViewControllerCalled, "The navigation controller should now indicate having had popViewController called")
-        XCTAssertTrue(navController.popViewControllerAnimated!, "The animated flag should be captured")
+        XCTAssertTrue(navController.popViewControllerAnimated, "The animated flag should be captured")
         XCTAssertNil(poppedController, "The true implementation should return the controller that was popped, but it is not working correctly")
     }
 
@@ -60,42 +56,42 @@ class UINavigationControllerCallsTests: XCTestCase {
         let controller = UIViewController()
         navController.pushViewController(controller, animated: false)
         XCTAssertFalse(navController.popViewControllerCalled, "The navigation controller should not indicate having had popViewController called by default")
-        XCTAssertNil(navController.popViewControllerAnimated, "The animated flag should be missing by default")
-        let poppedController = navController.popViewControllerAnimated(true)
+        XCTAssertNil(navController.popViewController, "The animated flag should be missing by default")
+        let poppedController = navController.popViewController(animated: true)
         XCTAssertTrue(navController.popViewControllerCalled, "The navigation controller should now indicate having had popViewController called")
-        XCTAssertTrue(navController.popViewControllerAnimated!, "The animated flag should be captured")
+        XCTAssertTrue(navController.popViewControllerAnimated, "The animated flag should be captured")
         XCTAssertNil(poppedController, "The spy implementation should not return a controller when popping")
     }
 
     func testForwardedPopToRootViewControllerCall() {
         XCTAssertFalse(navController.popToRootViewControllerCalled, "The navigation controller should not indicate having had popToRootViewController called by default")
-        XCTAssertNil(navController.popToRootViewControllerAnimated, "The animated flag should be missing by default")
+        XCTAssertNil(navController.popToRootViewController, "The animated flag should be missing by default")
         let controller1 = UIViewController()
         navController.pushViewController(controller1, animated: false)
         let controller2 = UIViewController()
         navController.pushViewController(controller2, animated: false)
         let controller3 = UIViewController()
         navController.pushViewController(controller3, animated: false)
-        let poppedControllers = navController.popToRootViewControllerAnimated(true) as? [UIViewController]
+        let poppedControllers = navController.popToRootViewController(animated: true) as? [UIViewController]
         XCTAssertTrue(navController.popToRootViewControllerCalled, "The navigation controller should now indicate having had popToRootViewController called")
-        XCTAssertTrue(navController.popToRootViewControllerAnimated!, "The animated flag should be captured")
+        XCTAssertTrue(navController.popToRootViewControllerAnimated, "The animated flag should be captured")
         XCTAssertNil(poppedControllers, "The true implementation should return the controllers that were popped, but it is not working correctly")
     }
 
     func testUnforwardedPopToRootViewControllerCall() {
         navController.setShouldForwardMethodCallWithSelector("popToRootViewControllerAnimated:", false)
         XCTAssertFalse(navController.popToRootViewControllerCalled, "The navigation controller should not indicate having had popToRootViewController called by default")
-        XCTAssertNil(navController.popToRootViewControllerAnimated, "The animated flag should be missing by default")
+        XCTAssertNil(navController.popToRootViewController, "The animated flag should be missing by default")
         let controller1 = UIViewController()
         navController.pushViewController(controller1, animated: false)
         let controller2 = UIViewController()
         navController.pushViewController(controller2, animated: false)
         let controller3 = UIViewController()
         navController.pushViewController(controller3, animated: false)
-        let poppedControllers = navController.popToRootViewControllerAnimated(false)
-        navController.popToRootViewControllerAnimated(true)
+        let poppedControllers = navController.popToRootViewController(animated: false)
+        navController.popToRootViewController(animated: true)
         XCTAssertTrue(navController.popToRootViewControllerCalled, "The navigation controller should now indicate having had popToRootViewController called")
-        XCTAssertTrue(navController.popToRootViewControllerAnimated!, "The animated flag should be captured")
+        XCTAssertTrue(navController.popToRootViewControllerAnimated, "The animated flag should be captured")
         XCTAssertNil(poppedControllers, "The spy implementation should not return controllers when popping")
     }
 

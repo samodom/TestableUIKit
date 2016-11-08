@@ -8,22 +8,22 @@
 
 import UIKit
 
-public class UIToolbar: UIKit.UIToolbar {
+open class UIToolbar: UIKit.UIToolbar {
 
     /*!
         Indicates whether or not the `setItems:animated:` method has been called on this object.
     */
-    public var setItemsCalled = false
+    open var setItemsCalled = false
 
     /*!
         Provides the item passed to the `setItems:animated:` method, if called.
     */
-    public var setItemsItems: [UIBarItem]?
+    open var setItemsItems: [UIBarItem]?
 
     /*!
         Provides the animation flag passed to the `setItems:animated:` method, if called.
     */
-    public var setItemsAnimated: Bool?
+    open var setItemsAnimated: Bool?
 
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)

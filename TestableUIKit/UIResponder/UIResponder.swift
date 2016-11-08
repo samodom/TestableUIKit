@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class UIResponder: UIKit.UIResponder {
+open class UIResponder: UIKit.UIResponder {
 
     /*!
         Indicates whether or not the `becomeFirstResponder` method has been called on this object.
     */
-    public var becomeFirstResponderCalled = false
+    open var becomeFirstResponderCalled = false
 
     /*!
         Indicates whether or not the `resignFirstResponder` method has been called on this object.
     */
-    public var resignFirstResponderCalled = false
+    open var resignFirstResponderCalled = false
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
 

@@ -18,19 +18,19 @@ internal class GoodViewControllerSubclass: GoodViewController {
         super.viewDidLoad()
     }
 
-    internal override func viewWillAppear(animated: Bool) {
+    internal override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    internal override func viewDidAppear(animated: Bool) {
+    internal override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
-    internal override func viewWillDisappear(animated: Bool) {
+    internal override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
 
-    internal override func viewDidDisappear(animated: Bool) {
+    internal override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
 
@@ -42,7 +42,7 @@ internal class GoodViewControllerSubclass: GoodViewController {
         super.updateViewConstraints()
     }
 
-    internal override func addChildViewController(childController: UIKit.UIViewController) {
+    internal override func addChildViewController(_ childController: UIKit.UIViewController) {
         super.addChildViewController(childController)
     }
 
@@ -50,35 +50,35 @@ internal class GoodViewControllerSubclass: GoodViewController {
         super.removeFromParentViewController()
     }
 
-    internal override func transitionFromViewController(fromViewController: UIKit.UIViewController, toViewController: UIKit.UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
-        super.transitionFromViewController(fromViewController, toViewController: toViewController, duration: duration, options: options, animations: animations, completion: completion)
+    internal override func transition(from fromViewController: UIKit.UIViewController, to toViewController: UIKit.UIViewController, duration: TimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
+        super.transition(from: fromViewController, to: toViewController, duration: duration, options: options, animations: animations, completion: completion)
     }
 
-    internal override func setEditing(editing: Bool, animated: Bool) {
+    internal override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
     }
 
-    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        super.encodeRestorableStateWithCoder(coder)
+    internal override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
     }
 
-    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        super.decodeRestorableStateWithCoder(coder)
+    internal override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
     }
 
-    internal override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
+    internal override func performSegue(withIdentifier identifier: String?, sender: Any?) {
 
     }
 
-    internal override func presentViewController(viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: (() -> ())?) {
+    internal override func present(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: (() -> ())?) {
         
     }
 
-    internal override func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?) {
+    internal override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
 
     }
 
-    internal override func showViewController(vc: UIKit.UIViewController, sender: AnyObject?) {
+    internal override func show(_ vc: UIKit.UIViewController, sender: Any?) {
 
     }
 

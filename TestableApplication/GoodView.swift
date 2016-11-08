@@ -14,16 +14,16 @@ internal class GoodView: UIView {
         super.updateConstraints()
     }
 
-    internal override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    internal override func draw(_ rect: CGRect) {
+        super.draw(rect)
     }
 
-    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        super.encodeRestorableStateWithCoder(coder)
+    internal override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
     }
 
-    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        super.decodeRestorableStateWithCoder(coder)
+    internal override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
     }
 
 }

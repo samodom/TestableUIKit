@@ -8,77 +8,77 @@
 
 import UIKit
 
-public class UIWebView: UIKit.UIWebView {
+open class UIWebView: UIKit.UIWebView {
 
     /*!
         Indicates whether or not the `loadData:MIMEType:textEncodingName:baseURL:` method has been called on this object.
     */
-    public var loadDataCalled = false
+    open var loadDataCalled = false
 
     /*!
         Provides the data that was passed to the `loadData:MIMEType:textEncodingName:baseURL:` method, if called.
     */
-    public var loadDataData: NSData?
+    open var loadDataData: Data?
 
     /*!
         Provides the MIME type that was passed to the `loadData:MIMEType:textEncodingName:baseURL:` method, if called.
     */
-    public var loadDataMIMEType: String?
+    open var loadDataMIMEType: String?
 
     /*!
         Provides the text encoding name that was passed to the `loadData:MIMEType:textEncodingName:baseURL:` method, if called.
     */
-    public var loadDataTextEncodingName: String?
+    open var loadDataTextEncodingName: String?
 
     /*!
         Provides the base URL that was passed to the `loadData:MIMEType:textEncodingName:baseURL:` method, if called.
     */
-    public var loadDataBaseURL: NSURL?
+    open var loadDataBaseURL: URL?
 
     /*!
         Indicates whether or not the `loadHTMLString:baseURL:` method has been called on this object.
     */
-    public var loadHTMLStringCalled = false
+    open var loadHTMLStringCalled = false
 
     /*!
         Provides the HTML string that was passed to the `loadHTMLString:baseURL:` method, if called.
     */
-    public var loadHTMLStringHTMLString: String?
+    open var loadHTMLStringHTMLString: String?
 
     /*!
         Provides the base URL that was passed to the `loadHTMLString:baseURL:` method, if called.
     */
-    public var loadHTMLStringBaseURL: NSURL?
+    open var loadHTMLStringBaseURL: URL?
 
     /*!
         Indicates whether or not the `loadRequest:` method has been called on this object.
     */
-    public var loadRequestCalled = false
+    open var loadRequestCalled = false
 
     /*!
         Provides the URL request that was passed to the `loadRequest:` method, if called.
     */
-    public var loadRequestRequest: NSURLRequest?
+    open var loadRequestRequest: URLRequest?
 
     /*!
         Indicates whether or not the `stopLoading` method has been called on this object.
     */
-    public var stopLoadingCalled = false
+    open var stopLoadingCalled = false
 
     /*!
         Indicates whether or not the `reload` method has been called on this object.
     */
-    public var reloadCalled = false
+    open var reloadCalled = false
 
     /*!
         Indicates whether or not the `goBack` method has been called on this object.
     */
-    public var goBackCalled = false
+    open var goBackCalled = false
 
     /*!
         Indicates whether or not the `goForward` method has been called on this object.
     */
-    public var goForwardCalled = false
+    open var goForwardCalled = false
 
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: false)

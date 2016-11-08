@@ -8,29 +8,29 @@
 
 import UIKit
 
-public extension TestableUIKit.UIView {
+extension TestableUIKit.UIView {
 
-    public override func updateConstraints() {
+    open override func updateConstraints() {
         calledUpdateConstraints = true
         super.updateConstraints()
     }
 
-    public override func drawRect(rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         calledDrawRect = true
         drawRectRect = rect
-        super.drawRect(rect)
+        super.draw(rect)
     }
 
-    public override func encodeRestorableStateWithCoder(coder: NSCoder) {
+    open override func encodeRestorableState(with coder: NSCoder) {
         calledEncodeRestorableStateWithCoder = true
         encodeRestorableStateCoder = coder
-        super.encodeRestorableStateWithCoder(coder)
+        super.encodeRestorableState(with: coder)
     }
 
-    public override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    open override func decodeRestorableState(with coder: NSCoder) {
         calledDecodeRestorableStateWithCoder = true
         decodeRestorableStateCoder = coder
-        super.decodeRestorableStateWithCoder(coder)
+        super.decodeRestorableState(with: coder)
     }
 
 }

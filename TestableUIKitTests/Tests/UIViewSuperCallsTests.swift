@@ -23,10 +23,6 @@ class UIViewSuperCallsTests: XCTestCase {
 
         callingViews += [goodView, plainView, emptyView, subView]
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
 
     func testShimMethodForwarding() {
         XCTAssertTrue(plainView.shouldForwardByDefault, "This shim should forward methods by default")
@@ -52,7 +48,7 @@ class UIViewSuperCallsTests: XCTestCase {
     func testGoodDrawRectSuperCall() {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
         for view in callingViews {
-            view.drawRect(rect)
+            view.draw(rect)
             XCTAssertTrue(view.calledDrawRect, "The superclass's drawRect method should be called by the view")
             XCTAssertEqual(view.drawRectRect!, rect, "The rect should be passed to the superclass")
         }
@@ -67,8 +63,8 @@ class UIViewSuperCallsTests: XCTestCase {
 
     func testGoodEncodeRestorableStateWithCoderSuperCall() {
         for view in callingViews {
-            let coder = NSKeyedArchiver(forWritingWithMutableData: NSMutableData())
-            view.encodeRestorableStateWithCoder(coder)
+            let coder = NSKeyedArchiver(forWritingWith: NSMutableData())
+            view.encodeRestorableState(with: coder)
             coder.finishEncoding()
             XCTAssertTrue(view.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method should be called by the view")
             XCTAssertEqual(view.encodeRestorableStateCoder!, coder, "The coder should be passed to the superclass")
@@ -76,7 +72,7 @@ class UIViewSuperCallsTests: XCTestCase {
     }
 
     func testBadEncodeRestorableStateWithCoderSuperCall() {
-        let coder = NSKeyedArchiver(forWritingWithMutableData: NSMutableData())
+        let coder = NSKeyedArchiver(forWritingWith: NSMutableData())
         badView.encodeRestorableStateWithCoder(coder)
         coder.finishEncoding()
         XCTAssertFalse(badView.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method is not called by the bad view")
@@ -86,12 +82,12 @@ class UIViewSuperCallsTests: XCTestCase {
     func testGoodDecodeRestorableStateWithCoderSuperCall() {
         for view in callingViews {
             let data = NSMutableData()
-            let encoder = NSKeyedArchiver(forWritingWithMutableData: data)
-            view.encodeRestorableStateWithCoder(encoder)
+            let encoder = NSKeyedArchiver(forWritingWith: data)
+            view.encodeRestorableState(with: encoder)
             encoder.finishEncoding()
 
-            let decoder = NSKeyedUnarchiver(forReadingWithData: data)
-            view.decodeRestorableStateWithCoder(decoder)
+            let decoder = NSKeyedUnarchiver(forReadingWith: data as Data)
+            view.decodeRestorableState(with: decoder)
             XCTAssertTrue(view.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method should be called by the view")
             XCTAssertEqual(view.decodeRestorableStateCoder!, decoder, "The coder should be passed to the superclass")
         }
@@ -99,11 +95,11 @@ class UIViewSuperCallsTests: XCTestCase {
 
     func testBadDecodeRestorableStateWithCoderSuperCall() {
         let data = NSMutableData()
-        let encoder = NSKeyedArchiver(forWritingWithMutableData: data)
+        let encoder = NSKeyedArchiver(forWritingWith: data)
         badView.encodeRestorableStateWithCoder(encoder)
         encoder.finishEncoding()
 
-        let decoder = NSKeyedUnarchiver(forReadingWithData: data)
+        let decoder = NSKeyedUnarchiver(forReadingWith: data as Data)
         badView.decodeRestorableStateWithCoder(decoder)
         XCTAssertFalse(badView.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method is not called by the bad view")
         XCTAssertNil(badView.decodeRestorableStateCoder, "The coder should still be missing")

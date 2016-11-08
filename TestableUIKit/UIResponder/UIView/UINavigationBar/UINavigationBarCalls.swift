@@ -8,36 +8,36 @@
 
 import UIKit
 
-public extension TestableUIKit.UINavigationBar {
+extension TestableUIKit.UINavigationBar {
 
-    public override func pushNavigationItem(item: UINavigationItem, animated: Bool) {
+    open override func pushItem(_ item: UINavigationItem, animated: Bool) {
         pushNavigationItemCalled = true
         pushNavigationItemNavigationItem = item
         pushNavigationItemAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("pushNavigationItem:animated:") {
-            super.pushNavigationItem(item, animated: animated)
+        if shouldForwardMethodCallWithSelector(#selector(UINavigationBar.pushItem(_:animated:))) {
+            super.pushItem(item, animated: animated)
         }
     }
 
-    public override func popNavigationItemAnimated(animated: Bool) -> UINavigationItem? {
+    open override func popItem(animated: Bool) -> UINavigationItem? {
         popNavigationItemCalled = true
         popNavigationItemAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("popNavigationItemAnimated:") {
-            return super.popNavigationItemAnimated(animated)
+        if shouldForwardMethodCallWithSelector(#selector(UINavigationBar.popItem(animated:))) {
+            return super.popItem(animated: animated)
         }
         else {
             return nil
         }
     }
 
-    public override func setItems(items: [UINavigationItem]!, animated: Bool) {
+    open override func setItems(_ items: [UINavigationItem]!, animated: Bool) {
         setItemsCalled = true
         setItemsItems = items
         setItemsAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("setItems:animated:") {
+        if shouldForwardMethodCallWithSelector(#selector(UINavigationBar.setItems(_:animated:))) {
             super.setItems(items, animated: animated)
         }
     }
@@ -55,7 +55,7 @@ extension TestableUIKit.UINavigationBar: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -64,7 +64,7 @@ extension TestableUIKit.UINavigationBar: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

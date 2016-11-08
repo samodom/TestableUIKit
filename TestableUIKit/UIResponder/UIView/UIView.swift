@@ -8,44 +8,44 @@
 
 import UIKit
 
-public class UIView: UIKit.UIView {
+open class UIView: UIKit.UIView {
 
     //  MARK: Superclass calls
 
     /*!
         Indicates whether or not this class called the superclass implementation of `updateConstraints`.
     */
-    public var calledUpdateConstraints = false
+    open var calledUpdateConstraints = false
 
     /*!
         Indicates whether or not this class called the superclass implementation of `drawRect:`.
     */
-    public var calledDrawRect = false
+    open var calledDrawRect = false
 
     /*!
         Provides the rect that was passed to the superclass implementation of `drawRect:`, if called.
     */
-    public var drawRectRect: CGRect?
+    open var drawRectRect: CGRect?
 
     /*!
         Indicates whether or not this class called the superclass implementation of `encodeRestorableStateWithCoder:`.
     */
-    public var calledEncodeRestorableStateWithCoder = false
+    open var calledEncodeRestorableStateWithCoder = false
 
     /*!
         Provides the coder that was passed to the superclass implementation of `encodeRestorableStateWithCoder:`, if called.
     */
-    public var encodeRestorableStateCoder: NSCoder?
+    open var encodeRestorableStateCoder: NSCoder?
 
     /*!
         Indicates whether or not this class called the superclass implementation of `decodeRestorableStateWithCoder:`.
     */
-    public var calledDecodeRestorableStateWithCoder = false
+    open var calledDecodeRestorableStateWithCoder = false
 
     /*!
         Provides the coder that was passed to the superclass implementation of `decodeRestorableStateWithCoder:`, if called.
     */
-    public var decodeRestorableStateCoder: NSCoder?
+    open var decodeRestorableStateCoder: NSCoder?
 
 
     //  MARK: Class spies
@@ -53,32 +53,32 @@ public class UIView: UIKit.UIView {
     /*!
         Indicates whether or not the `setNeedsLayout` method has been called on this object.
     */
-    public var setNeedsLayoutCalled = false
+    open var setNeedsLayoutCalled = false
 
     /*!
         Indicates whether or not the `invalidateIntrinsicContentSize` method has been called on this object.
     */
-    public var invalidateIntrinsicContentSizeCalled = false
+    open var invalidateIntrinsicContentSizeCalled = false
 
     /*!
         Indicates whether or not the `setNeedsUpdateConstraints` method has been called on this object.
     */
-    public var setNeedsUpdateConstraintsCalled = false
+    open var setNeedsUpdateConstraintsCalled = false
 
     /*!
         Indicates whether or not the `setNeedsDisplay` method has been called on this object.
     */
-    public var setNeedsDisplayCalled = false
+    open var setNeedsDisplayCalled = false
 
     /*!
         Indicates whether or not the `setNeedsDisplayInRect:` method has been called on this object.
     */
-    public var setNeedsDisplayInRectCalled = false
+    open var setNeedsDisplayInRectCalled = false
 
     /*!
         Provides the rect passed to the `setNeedsDisplayInRect:` method, if called.
     */
-    public var setNeedsDisplayInRectRect: CGRect?
+    open var setNeedsDisplayInRectRect: CGRect?
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
 

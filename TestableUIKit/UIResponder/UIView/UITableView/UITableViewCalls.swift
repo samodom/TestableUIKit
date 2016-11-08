@@ -8,121 +8,121 @@
 
 import UIKit
 
-public extension TestableUIKit.UITableView {
+extension TestableUIKit.UITableView {
 
-    public override func reloadData() {
+    open override func reloadData() {
         reloadDataCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadData") {
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.reloadData)) {
             super.reloadData()
         }
     }
 
-    public override func beginUpdates() {
+    open override func beginUpdates() {
         beginUpdatesCalled = true
 
-        if shouldForwardMethodCallWithSelector("beginUpdates") {
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.beginUpdates)) {
             super.beginUpdates()
         }
     }
 
-    public override func endUpdates() {
+    open override func endUpdates() {
         endUpdatesCalled = true
 
-        if shouldForwardMethodCallWithSelector("endUpdates") {
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.endUpdates)) {
             super.endUpdates()
         }
     }
 
     //  MARK: Sections
 
-    public override func insertSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    open override func insertSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         insertSectionsCalled = true
         insertSectionsIndexSet = sections
         insertSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("insertSections:withRowAnimation:") {
-            super.insertSections(sections, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.insertSections(_:with:))) {
+            super.insertSections(sections, with: animation)
         }
     }
 
-    public override func deleteSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    open override func deleteSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         deleteSectionsCalled = true
         deleteSectionsIndexSet = sections
         deleteSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("deleteSections:withRowAnimation:") {
-            super.deleteSections(sections, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.deleteSections(_:with:))) {
+            super.deleteSections(sections, with: animation)
         }
     }
 
-    public override func reloadSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    open override func reloadSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         reloadSectionsCalled = true
         reloadSectionsIndexSet = sections
         reloadSectionsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("reloadSections:withRowAnimation:") {
-            super.reloadSections(sections, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.reloadSections(_:with:))) {
+            super.reloadSections(sections, with: animation)
         }
     }
 
-    public override func moveSection(section: Int, toSection newSection: Int) {
+    open override func moveSection(_ section: Int, toSection newSection: Int) {
         moveSectionCalled = true
         moveSectionFromIndex = section
         moveSectionToIndex = newSection
 
-        if shouldForwardMethodCallWithSelector("moveSection:toSection:") {
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.moveSection(_:toSection:))) {
             super.moveSection(section, toSection: newSection)
         }
     }
 
-    public override func reloadSectionIndexTitles() {
+    open override func reloadSectionIndexTitles() {
         reloadSectionIndexTitlesCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadSectionIndexTitles") {
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.reloadSectionIndexTitles)) {
             super.reloadSectionIndexTitles()
         }
     }
 
     //  MARK: Rows
 
-    public override func insertRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    open override func insertRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         insertRowsCalled = true
         insertRowsIndexPaths = indexPaths
         insertRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("insertRowsAtIndexPaths:withRowAnimation:") {
-            super.insertRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.insertRows(at:with:))) {
+            super.insertRows(at: indexPaths, with: animation)
         }
     }
 
-    public override func deleteRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    open override func deleteRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         deleteRowsCalled = true
         deleteRowsIndexPaths = indexPaths
         deleteRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("deleteRowsAtIndexPaths:withRowAnimation:") {
-            super.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.deleteRows(at:with:))) {
+            super.deleteRows(at: indexPaths, with: animation)
         }
     }
 
-    public override func reloadRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    open override func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         reloadRowsCalled = true
         reloadRowsIndexPaths = indexPaths
         reloadRowsRowAnimation = animation
 
-        if shouldForwardMethodCallWithSelector("reloadRowsAtIndexPaths:withRowAnimation:") {
-            super.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: animation)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.reloadRows(at:with:))) {
+            super.reloadRows(at: indexPaths, with: animation)
         }
     }
 
-    public override func moveRowAtIndexPath(indexPath: NSIndexPath, toIndexPath newIndexPath: NSIndexPath) {
+    open override func moveRow(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         moveRowCalled = true
         moveRowFromIndexPath = indexPath
         moveRowToIndexPath = newIndexPath
 
-        if shouldForwardMethodCallWithSelector("moveRowAtIndexPath:toIndexPath:") {
-            super.moveRowAtIndexPath(indexPath, toIndexPath: newIndexPath)
+        if shouldForwardMethodCallWithSelector(#selector(UITableView.moveRow(at:to:))) {
+            super.moveRow(at: indexPath, to: newIndexPath)
         }
     }
 
@@ -141,7 +141,7 @@ extension TestableUIKit.UITableView: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -150,7 +150,7 @@ extension TestableUIKit.UITableView: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

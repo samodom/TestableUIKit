@@ -8,59 +8,59 @@
 
 import UIKit
 
-public extension TestableUIKit.UIViewController {
+extension TestableUIKit.UIViewController {
 
-    public override func loadView() {
+    open override func loadView() {
         calledLoadView = true
         super.loadView()
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         calledViewDidLoad = true
         super.viewDidLoad()
     }
 
-    public override func viewWillAppear(animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         calledViewWillAppear = true
         viewWillAppearAnimated = animated
         super.viewWillAppear(animated)
     }
 
-    public override func viewDidAppear(animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         calledViewDidAppear = true
         viewDidAppearAnimated = animated
         super.viewDidAppear(animated)
     }
 
-    public override func viewWillDisappear(animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         calledViewWillDisappear = true
         viewWillDisappearAnimated = animated
         super.viewWillDisappear(animated)
     }
 
-    public override func viewDidDisappear(animated: Bool) {
+    open override func viewDidDisappear(_ animated: Bool) {
         calledViewDidDisappear = true
         viewDidDisappearAnimated = animated
         super.viewDidDisappear(animated)
     }
 
-    public override func didReceiveMemoryWarning() {
+    open override func didReceiveMemoryWarning() {
         calledDidReceiveMemoryWarning = true
         super.didReceiveMemoryWarning()
     }
 
-    public override func updateViewConstraints() {
+    open override func updateViewConstraints() {
         calledUpdateViewConstraints = true
         super.updateViewConstraints()
     }
 
-    public override func addChildViewController(childController: UIKit.UIViewController) {
+    open override func addChildViewController(_ childController: UIKit.UIViewController) {
         calledAddChildViewController = true
         addedChildViewController = childController
         super.addChildViewController(childController)
     }
 
-    public override func transitionFromViewController(fromViewController: UIKit.UIViewController, toViewController: UIKit.UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: UIViewAnimationsClosure?, completion: UIViewAnimationCompletionClosure?) {
+    open override func transition(from fromViewController: UIKit.UIViewController, to toViewController: UIKit.UIViewController, duration: TimeInterval, options: UIViewAnimationOptions, animations: UIViewAnimationsClosure?, completion: UIViewAnimationCompletionClosure?) {
         calledTransitionFromViewController = true
         viewControllerToTransitionFrom = fromViewController
         viewControllerToTransitionTo = toViewController
@@ -68,30 +68,30 @@ public extension TestableUIKit.UIViewController {
         transitionAnimationOptions = options
         transitionAnimations = animations
         transitionCompletion = completion
-        super.transitionFromViewController(fromViewController, toViewController: toViewController, duration: duration, options: options, animations: animations, completion: completion)
+        super.transition(from: fromViewController, to: toViewController, duration: duration, options: options, animations: animations, completion: completion)
     }
 
-    public override func removeFromParentViewController() {
+    open override func removeFromParentViewController() {
         calledRemoveFromParentViewController = true
         super.removeFromParentViewController()
     }
 
-    public override func setEditing(editing: Bool, animated: Bool) {
+    open override func setEditing(_ editing: Bool, animated: Bool) {
         calledSetEditing = true
         setEditingEditing = editing
         setEditingAnimated = animated
     }
 
-    public override func encodeRestorableStateWithCoder(coder: NSCoder) {
+    open override func encodeRestorableState(with coder: NSCoder) {
         calledEncodeRestorableStateWithCoder = true
         encodeRestorableStateCoder = coder
-        super.encodeRestorableStateWithCoder(coder)
+        super.encodeRestorableState(with: coder)
     }
 
-    public override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    open override func decodeRestorableState(with coder: NSCoder) {
         calledDecodeRestorableStateWithCoder = true
         decodeRestorableStateCoder = coder
-        super.decodeRestorableStateWithCoder(coder)
+        super.decodeRestorableState(with: coder)
     }
 
 }

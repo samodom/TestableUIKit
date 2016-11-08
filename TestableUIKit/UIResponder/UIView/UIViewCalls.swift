@@ -8,46 +8,46 @@
 
 import UIKit
 
-public extension TestableUIKit.UIView {
+extension TestableUIKit.UIView {
 
-    public override func setNeedsLayout() {
+    open override func setNeedsLayout() {
         setNeedsLayoutCalled = true
 
-        if shouldForwardMethodCallWithSelector("setNeedsLayout") {
+        if shouldForwardMethodCallWithSelector(#selector(UIView.setNeedsLayout)) {
             super.setNeedsLayout()
         }
     }
 
-    public override func invalidateIntrinsicContentSize() {
+    open override func invalidateIntrinsicContentSize() {
         invalidateIntrinsicContentSizeCalled = true
 
-        if shouldForwardMethodCallWithSelector("invalidateIntrinsicContentSize") {
+        if shouldForwardMethodCallWithSelector(#selector(UIView.invalidateIntrinsicContentSize)) {
             super.invalidateIntrinsicContentSize()
         }
     }
 
-    public override func setNeedsUpdateConstraints() {
+    open override func setNeedsUpdateConstraints() {
         setNeedsUpdateConstraintsCalled = true
 
-        if shouldForwardMethodCallWithSelector("setNeedsUpdateConstraints") {
+        if shouldForwardMethodCallWithSelector(#selector(UIView.setNeedsUpdateConstraints)) {
             super.setNeedsUpdateConstraints()
         }
     }
 
-    public override func setNeedsDisplay() {
+    open override func setNeedsDisplay() {
         setNeedsDisplayCalled = true
 
-        if shouldForwardMethodCallWithSelector("setNeedsDisplay") {
+        if shouldForwardMethodCallWithSelector(#selector(CALayer.setNeedsDisplay)) {
             super.setNeedsDisplay()
         }
     }
 
-    public override func setNeedsDisplayInRect(rect: CGRect) {
+    open override func setNeedsDisplay(_ rect: CGRect) {
         setNeedsDisplayInRectCalled = true
         setNeedsDisplayInRectRect = rect
 
-        if shouldForwardMethodCallWithSelector("setNeedsDisplayInRect:") {
-            super.setNeedsDisplayInRect(rect)
+        if shouldForwardMethodCallWithSelector(#selector(UIView.setNeedsDisplay(_:))) {
+            super.setNeedsDisplay(rect)
         }
     }
 
@@ -65,7 +65,7 @@ extension TestableUIKit.UIView: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -74,7 +74,7 @@ extension TestableUIKit.UIView: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

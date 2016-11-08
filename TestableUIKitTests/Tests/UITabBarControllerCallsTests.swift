@@ -13,14 +13,6 @@ class UITabBarControllerCallsTests: XCTestCase {
 
     let tabController = UITabBarController()
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(tabController.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(tabController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")

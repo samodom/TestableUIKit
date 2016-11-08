@@ -13,14 +13,6 @@ class UINavigationBarCallsTests: XCTestCase {
 
     let bar = UINavigationBar()
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(bar.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
@@ -35,7 +27,7 @@ class UINavigationBarCallsTests: XCTestCase {
         XCTAssertNil(bar.pushNavigationItemNavigationItem, "The navigation item should be missing by default")
         XCTAssertNil(bar.pushNavigationItemAnimated, "The animation flag should be missing by default")
         let item = UINavigationItem(title: "Sample Item")
-        bar.pushNavigationItem(item, animated: true)
+        bar.pushItem(item, animated: true)
         XCTAssertTrue(bar.pushNavigationItemCalled, "The navigation bar should now indicate having had pushNavigationItem called");
         XCTAssertEqual(bar.pushNavigationItemNavigationItem!, item, "The navigation item should be captured")
         XCTAssertTrue(bar.pushNavigationItemAnimated!, "The animation flag should be captured")
@@ -43,24 +35,24 @@ class UINavigationBarCallsTests: XCTestCase {
 
     func testForwardedPopNavigationItemCall() {
         let item = UINavigationItem(title: "Sample Item")
-        bar.pushNavigationItem(item, animated: true)
+        bar.pushItem(item, animated: true)
         XCTAssertFalse(bar.popNavigationItemCalled, "The navigation bar should not indicate having had popNavigationItem called by default");
-        XCTAssertNil(bar.popNavigationItemAnimated, "The animation flag should be missing by default")
-        let poppedItem = bar.popNavigationItemAnimated(true)
+        XCTAssertNil(bar.popItem, "The animation flag should be missing by default")
+        let poppedItem = bar.popItem(animated: true)
         XCTAssertTrue(bar.popNavigationItemCalled, "The navigation bar should now indicate having had popNavigationItem called");
-        XCTAssertTrue(bar.popNavigationItemAnimated!, "The animation flag should be captured")
+        XCTAssertTrue(bar.popNavigationItemAnimated, "The animation flag should be captured")
         XCTAssertEqual(poppedItem!, item, "The navigation item should be returned when forwarding to the default implementation")
     }
 
     func testUnforwardedPopNavigationItemCall() {
         bar.setShouldForwardMethodCallWithSelector("popNavigationItemAnimated:", false)
         let item = UINavigationItem(title: "Sample Item")
-        bar.pushNavigationItem(item, animated: true)
+        bar.pushItem(item, animated: true)
         XCTAssertFalse(bar.popNavigationItemCalled, "The navigation bar should not indicate having had popNavigationItem called by default");
-        XCTAssertNil(bar.popNavigationItemAnimated, "The animation flag should be missing by default")
-        let poppedItem = bar.popNavigationItemAnimated(true)
+        XCTAssertNil(bar.popItem, "The animation flag should be missing by default")
+        let poppedItem = bar.popItem(animated: true)
         XCTAssertTrue(bar.popNavigationItemCalled, "The navigation bar should now indicate having had popNavigationItem called");
-        XCTAssertTrue(bar.popNavigationItemAnimated!, "The animation flag should be captured")
+        XCTAssertTrue(bar.popNavigationItemAnimated, "The animation flag should be captured")
         XCTAssertNil(poppedItem, "No popped item should be returned when not forwarding to the default implementation")
     }
 

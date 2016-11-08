@@ -8,55 +8,55 @@
 
 import UIKit
 
-public extension TestableUIKit.UIViewController {
+extension TestableUIKit.UIViewController {
 
-    public override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+    open override func performSegue(withIdentifier identifier: String, sender: Any?) {
         performSegueWithIdentifierCalled = true
         performSegueWithIdentifierSegueIdentifier = identifier
-        performSegueWithIdentifierSender = sender
+        performSegueWithIdentifierSender = sender as AnyObject?
 
-        if shouldForwardMethodCallWithSelector("performSegueWithIdentifier:sender:") {
-            super.performSegueWithIdentifier(identifier, sender: sender)
+        if shouldForwardMethodCallWithSelector(#selector(UIViewController.performSegue(withIdentifier:sender:))) {
+            super.performSegue(withIdentifier: identifier, sender: sender)
         }
     }
 
-    public override func presentViewController(viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: UIViewControllerPresentationCompletionClosure?) {
+    open override func present(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: UIViewControllerPresentationCompletionClosure?) {
         presentViewControllerCalled = true
         self.viewControllerToPresent = viewControllerToPresent
         presentViewControllerAnimated = flag
         presentViewControllerCompletion = completion
 
-        if shouldForwardMethodCallWithSelector("presentViewController:animated:completion:") {
-            super.presentViewController(viewControllerToPresent, animated: flag, completion: completion)
+        if shouldForwardMethodCallWithSelector(#selector(UIViewController.present(_:animated:completion:))) {
+            super.present(viewControllerToPresent, animated: flag, completion: completion)
         }
     }
 
-    public override func dismissViewControllerAnimated(flag: Bool, completion: UIViewControllerDismissalCompletionClosure?) {
+    open override func dismiss(animated flag: Bool, completion: UIViewControllerDismissalCompletionClosure?) {
         dismissViewControllerCalled = true
         dismissViewControllerAnimated = flag
         dismissViewControllerCompletion = completion
 
-        if shouldForwardMethodCallWithSelector("dismissViewControllerAnimated:completion:") {
-            super.dismissViewControllerAnimated(flag, completion: completion)
+        if shouldForwardMethodCallWithSelector(#selector(UIViewController.dismiss(animated:completion:))) {
+            super.dismiss(animated: flag, completion: completion)
         }
     }
 
-    public override func showViewController(viewController: UIKit.UIViewController, sender: AnyObject?) {
+    open override func show(_ viewController: UIKit.UIViewController, sender: Any?) {
         showViewControllerCalled = true
         viewControllerToShow = viewController
-        showViewControllerSender = sender
+        showViewControllerSender = sender as AnyObject?
 
-        if shouldForwardMethodCallWithSelector("showViewController:sender:") {
-            super.showViewController(viewController, sender: sender)
+        if shouldForwardMethodCallWithSelector(#selector(UIViewController.show(_:sender:))) {
+            super.show(viewController, sender: sender)
         }
     }
 
-    public override func showDetailViewController(viewController: UIKit.UIViewController, sender: AnyObject?) {
+    open override func showDetailViewController(_ viewController: UIKit.UIViewController, sender: Any?) {
         showDetailViewControllerCalled = true
         detailViewControllerToShow = viewController
-        showDetailViewControllerSender = sender
+        showDetailViewControllerSender = sender as AnyObject?
 
-        if shouldForwardMethodCallWithSelector("showDetailViewController:sender:") {
+        if shouldForwardMethodCallWithSelector(#selector(UIViewController.showDetailViewController(_:sender:))) {
             super.showDetailViewController(viewController, sender: sender)
         }
     }
@@ -75,7 +75,7 @@ extension TestableUIKit.UIViewController: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -84,7 +84,7 @@ extension TestableUIKit.UIViewController: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

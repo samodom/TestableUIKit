@@ -23,10 +23,6 @@ class UIViewCallsTests: XCTestCase {
         capturedViews = [customView, subView, plainView, emptyView]
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(plainView.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(plainView.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
@@ -74,7 +70,7 @@ class UIViewCallsTests: XCTestCase {
             XCTAssertTrue(view.setNeedsDisplayInRectRect == nil, "The rect should be missing by default")
 
             let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
-            view.setNeedsDisplayInRect(rect)
+            view.setNeedsDisplay(rect)
             XCTAssertTrue(view.setNeedsDisplayInRectCalled, "The view should now indicate having had setNeedsDisplayInRect called by default")
             XCTAssertEqual(view.setNeedsDisplayInRectRect!, rect, "The rect should be captured")
         }

@@ -9,21 +9,21 @@
 import Foundation
 
 public protocol ShimMethodForwarding {
-    func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool
-    func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool)
+    func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool
+    func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool)
     var shouldForwardByDefault: Bool { get }
 }
 
 internal class ShimMethodForwardingList: ShimMethodForwarding {
 
-    private var forwardingList = [Selector:Bool]()
+    fileprivate var forwardingList = [Selector:Bool]()
     internal var shouldForwardByDefault: Bool
 
     internal init(shouldForwardByDefault: Bool) {
         self.shouldForwardByDefault = shouldForwardByDefault
     }
 
-    internal func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    internal func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         if let shouldForward = forwardingList[selector] {
             return shouldForward
         }
@@ -32,7 +32,7 @@ internal class ShimMethodForwardingList: ShimMethodForwarding {
         }
     }
 
-    internal func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    internal func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList[selector] = shouldForward
     }
 

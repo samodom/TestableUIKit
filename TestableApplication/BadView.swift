@@ -14,15 +14,15 @@ internal class BadView: UIView {
 
     }
 
-    internal override func drawRect(rect: CGRect) {
+    internal override func draw(_ rect: CGRect) {
 
     }
 
-    internal override func encodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func encodeRestorableState(with coder: NSCoder) {
 
     }
 
-    internal override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    internal override func decodeRestorableState(with coder: NSCoder) {
 
     }
 

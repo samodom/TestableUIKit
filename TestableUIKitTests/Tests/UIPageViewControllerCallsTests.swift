@@ -23,10 +23,6 @@ class UIPageViewControllerCallsTests: XCTestCase {
         }
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(pageController.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(pageController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")

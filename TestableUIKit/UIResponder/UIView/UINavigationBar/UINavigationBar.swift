@@ -8,47 +8,47 @@
 
 import UIKit
 
-public class UINavigationBar: UIKit.UINavigationBar {
+open class UINavigationBar: UIKit.UINavigationBar {
 
     /*!
         Indicates whether or not the `pushNavigationItem:animated:` method has been called on this object.
     */
-    public var pushNavigationItemCalled = false
+    open var pushNavigationItemCalled = false
 
     /*!
         Provides the item passed to the `pushNavigationItem:animated:` method, if called.
     */
-    public var pushNavigationItemNavigationItem: UINavigationItem?
+    open var pushNavigationItemNavigationItem: UINavigationItem?
 
     /*!
         Provides the animation flag passed to the `pushNavigationItem:animated:` method, if called.
     */
-    public var pushNavigationItemAnimated: Bool?
+    open var pushNavigationItemAnimated: Bool?
 
     /*!
         Indicates whether or not the `popNavigationItemAnimated:` method has been called on this object.
     */
-    public var popNavigationItemCalled = false
+    open var popNavigationItemCalled = false
 
     /*!
         Provides the item passed to the `popNavigationItemAnimated:` method, if called.
     */
-    public var popNavigationItemAnimated: Bool?
+    open var popNavigationItemAnimated: Bool?
 
     /*!
         Indicates whether or not the `setItems:animated:` method has been called on this object.
     */
-    public var setItemsCalled = false
+    open var setItemsCalled = false
 
     /*!
         Provides the item passed to the `setItems:animated:` method, if called.
     */
-    public var setItemsItems: [UINavigationItem]?
+    open var setItemsItems: [UINavigationItem]?
 
     /*!
         Provides the animation flag passed to the `setItems:animated:` method, if called.
     */
-    public var setItemsAnimated: Bool?
+    open var setItemsAnimated: Bool?
 
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)

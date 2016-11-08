@@ -8,91 +8,91 @@
 
 import UIKit
 
-public extension UICollectionView {
+extension UICollectionView {
 
-    public override func reloadData() {
+    open override func reloadData() {
         reloadDataCalled = true
 
-        if shouldForwardMethodCallWithSelector("reloadData") {
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.reloadData)) {
             super.reloadData()
         }
     }
 
     //  MARK: Sections
 
-    public override func insertSections(sections: NSIndexSet) {
+    open override func insertSections(_ sections: IndexSet) {
         insertSectionsCalled = true
         insertSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("insertSections:") {
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.insertSections(_:))) {
             super.insertSections(sections)
         }
     }
 
-    public override func deleteSections(sections: NSIndexSet) {
+    open override func deleteSections(_ sections: IndexSet) {
         deleteSectionsCalled = true
         deleteSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("deleteSections:") {
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.deleteSections(_:))) {
             super.deleteSections(sections)
         }
     }
 
-    public override func reloadSections(sections: NSIndexSet) {
+    open override func reloadSections(_ sections: IndexSet) {
         reloadSectionsCalled = true
         reloadSectionsIndexSet = sections
 
-        if shouldForwardMethodCallWithSelector("reloadSections:") {
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.reloadSections(_:))) {
             super.reloadSections(sections)
         }
     }
 
-    public override func moveSection(section: Int, toSection newSection: Int) {
+    open override func moveSection(_ section: Int, toSection newSection: Int) {
         moveSectionCalled = true
         moveSectionFromIndex = section
         moveSectionToIndex = newSection
 
-        if shouldForwardMethodCallWithSelector("moveSection:toSection:") {
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.moveSection(_:toSection:))) {
             super.moveSection(section, toSection: newSection)
         }
     }
 
     //  MARK: Items
 
-    public override func insertItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    open override func insertItems(at indexPaths: [IndexPath]) {
         insertItemsCalled = true
         insertItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("insertItemsAtIndexPaths:") {
-            super.insertItemsAtIndexPaths(indexPaths)
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.insertItems(at:))) {
+            super.insertItems(at: indexPaths)
         }
     }
 
-    public override func deleteItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    open override func deleteItems(at indexPaths: [IndexPath]) {
         deleteItemsCalled = true
         deleteItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("deleteItemsAtIndexPaths:") {
-            super.deleteItemsAtIndexPaths(indexPaths)
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.deleteItems(at:))) {
+            super.deleteItems(at: indexPaths)
         }
     }
 
-    public override func reloadItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    open override func reloadItems(at indexPaths: [IndexPath]) {
         reloadItemsCalled = true
         reloadItemsIndexPaths = indexPaths
 
-        if shouldForwardMethodCallWithSelector("reloadItemsAtIndexPaths:") {
-            super.reloadItemsAtIndexPaths(indexPaths)
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.reloadItems(at:))) {
+            super.reloadItems(at: indexPaths)
         }
     }
 
-    public override func moveItemAtIndexPath(indexPath: NSIndexPath, toIndexPath newIndexPath: NSIndexPath) {
+    open override func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         moveItemCalled = true
         moveItemFromIndexPath = indexPath
         moveItemToIndexPath = newIndexPath
 
-        if shouldForwardMethodCallWithSelector("moveItemAtIndexPath:toIndexPath:") {
-            super.moveItemAtIndexPath(indexPath, toIndexPath: newIndexPath)
+        if shouldForwardMethodCallWithSelector(#selector(UICollectionView.moveItem(at:to:))) {
+            super.moveItem(at: indexPath, to: newIndexPath)
         }
     }
 
@@ -111,7 +111,7 @@ extension UICollectionView: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -120,7 +120,7 @@ extension UICollectionView: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

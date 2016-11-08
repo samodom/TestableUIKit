@@ -8,14 +8,14 @@
 
 import UIKit
 
-public extension TestableUIKit.UITabBarController {
+extension TestableUIKit.UITabBarController {
 
-    public override func setViewControllers(viewControllers: [UIKit.UIViewController]?, animated: Bool) {
+    open override func setViewControllers(_ viewControllers: [UIKit.UIViewController]?, animated: Bool) {
         setViewControllersCalled = true
         setViewControllersViewControllers = viewControllers
         setViewControllersAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("setViewControllers:animated:") {
+        if shouldForwardMethodCallWithSelector(#selector(UITabBarController.setViewControllers(_:animated:))) {
             super.setViewControllers(viewControllers, animated: animated)
         }
     }
@@ -34,7 +34,7 @@ extension TestableUIKit.UITabBarController: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -43,7 +43,7 @@ extension TestableUIKit.UITabBarController: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

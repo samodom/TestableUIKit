@@ -8,14 +8,14 @@
 
 import UIKit
 
-public extension TestableUIKit.UIToolbar {
+extension TestableUIKit.UIToolbar {
 
-    public override func setItems(items: [UIBarButtonItem]?, animated: Bool) {
+    open override func setItems(_ items: [UIBarButtonItem]?, animated: Bool) {
         setItemsCalled = true
         setItemsItems = items
         setItemsAnimated = animated
 
-        if shouldForwardMethodCallWithSelector("setItems:animated:") {
+        if shouldForwardMethodCallWithSelector(#selector(UIToolbar.setItems(_:animated:))) {
             super.setItems(items, animated: animated)
         }
     }
@@ -33,7 +33,7 @@ extension TestableUIKit.UIToolbar: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -42,7 +42,7 @@ extension TestableUIKit.UIToolbar: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

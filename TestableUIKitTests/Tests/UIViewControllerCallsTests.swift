@@ -36,10 +36,6 @@ class UIViewControllerCallsTests: XCTestCase {
         }
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(plainController.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
@@ -55,7 +51,7 @@ class UIViewControllerCallsTests: XCTestCase {
             XCTAssertNil(controller.performSegueWithIdentifierSegueIdentifier, "The segue identifier to perform should be missing by default")
             XCTAssertNil(controller.performSegueWithIdentifierSender, "The sender asking to perform the segue should be missing by default")
 
-            controller.performSegueWithIdentifier("Sample Segue", sender: self)
+            controller.performSegue(withIdentifier: "Sample Segue", sender: self)
             XCTAssertTrue(controller.performSegueWithIdentifierCalled, "The controller should now indicate having had performSegueWithIdentifier called on it")
             XCTAssertEqual(controller.performSegueWithIdentifierSegueIdentifier!, "Sample Segue", "The identifier of the segue to perform should be captured")
             XCTAssertTrue(controller.performSegueWithIdentifierSender === self, "The sender asking to perform the segue should be captured")
@@ -83,12 +79,12 @@ class UIViewControllerCallsTests: XCTestCase {
     func testDismissViewControllerCall() {
         for controller in capturedControllers {
             XCTAssertFalse(controller.dismissViewControllerCalled, "The controller should not indicate having had dismissViewController called by default")
-            XCTAssertNil(controller.dismissViewControllerAnimated, "The animation flag should be missing by default")
+            XCTAssertNil(controller.dismiss, "The animation flag should be missing by default")
             XCTAssertTrue(controller.dismissViewControllerCompletion == nil, "The dismissal completion closure should be missing by default")
 
             controller.dismissViewControllerAnimated(true, completion: completion)
             XCTAssertTrue(controller.dismissViewControllerCalled, "The controller should now indicate having had dismissViewController called")
-            XCTAssertTrue(controller.dismissViewControllerAnimated!, "The animation flag should be captured")
+            XCTAssertTrue(controller.dismissViewControllerAnimated, "The animation flag should be captured")
             XCTAssertTrue(controller.dismissViewControllerCompletion != nil, "The dismissal completion closure should be captured")
             controller.dismissViewControllerCompletion!()
             XCTAssertTrue(invokedCompletionClosure, "The dismissal completion closure should be captured")
@@ -102,7 +98,7 @@ class UIViewControllerCallsTests: XCTestCase {
             XCTAssertNil(controller.showViewControllerSender, "The sender asking to show the view controller should be missing by default")
 
             let sampleController = UIViewController()
-            controller.showViewController(sampleController, sender: self)
+            controller.show(sampleController, sender: self)
             XCTAssertTrue(controller.showViewControllerCalled, "The controller should now indicate having had showViewController called")
             XCTAssertEqual(controller.viewControllerToShow!, sampleController, "The view controller to show should be captured")
             XCTAssertTrue(controller.showViewControllerSender === self, "The sender asking to show the view controller should be captured")

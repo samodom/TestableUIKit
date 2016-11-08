@@ -39,10 +39,6 @@ class UIViewControllerSuperCallsTests: XCTestCase {
         callingControllers += [goodController, emptyController, subController, plainController]
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testShimMethodForwarding() {
         XCTAssertTrue(plainController.shouldForwardByDefault, "This shim should forward methods by default")
         XCTAssertTrue(plainController.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
@@ -270,8 +266,8 @@ class UIViewControllerSuperCallsTests: XCTestCase {
 
     func testGoodEncodeRestorableStateWithCoderSuperCall() {
         for controller in callingControllers {
-            let coder = NSKeyedArchiver(forWritingWithMutableData: NSMutableData())
-            controller.encodeRestorableStateWithCoder(coder)
+            let coder = NSKeyedArchiver(forWritingWith: NSMutableData())
+            controller.encodeRestorableState(with: coder)
             coder.finishEncoding()
             XCTAssertTrue(controller.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method should be called by the controller")
             XCTAssertEqual(controller.encodeRestorableStateCoder!, coder, "The coder should be passed to the superclass")
@@ -279,7 +275,7 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     }
 
     func testBadEncodeRestorableStateWithCoderSuperCall() {
-        let coder = NSKeyedArchiver(forWritingWithMutableData: NSMutableData())
+        let coder = NSKeyedArchiver(forWritingWith: NSMutableData())
         badController.encodeRestorableStateWithCoder(coder)
         coder.finishEncoding()
         XCTAssertFalse(badController.calledEncodeRestorableStateWithCoder, "The superclass's encodeRestorableStateWithCoder method is not called by the bad controller")
@@ -289,12 +285,12 @@ class UIViewControllerSuperCallsTests: XCTestCase {
     func testGoodDecodeRestorableStateWithCoderSuperCall() {
         for controller in callingControllers {
             let data = NSMutableData()
-            let encoder = NSKeyedArchiver(forWritingWithMutableData: data)
-            controller.encodeRestorableStateWithCoder(encoder)
+            let encoder = NSKeyedArchiver(forWritingWith: data)
+            controller.encodeRestorableState(with: encoder)
             encoder.finishEncoding()
 
-            let decoder = NSKeyedUnarchiver(forReadingWithData: data)
-            controller.decodeRestorableStateWithCoder(decoder)
+            let decoder = NSKeyedUnarchiver(forReadingWith: data as Data)
+            controller.decodeRestorableState(with: decoder)
             XCTAssertTrue(controller.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method should be called by the controller")
             XCTAssertEqual(controller.decodeRestorableStateCoder!, decoder, "The coder should be passed to the superclass")
         }
@@ -302,11 +298,11 @@ class UIViewControllerSuperCallsTests: XCTestCase {
 
     func testBadDecodeRestorableStateWithCoderSuperCall() {
         let data = NSMutableData()
-        let encoder = NSKeyedArchiver(forWritingWithMutableData: data)
+        let encoder = NSKeyedArchiver(forWritingWith: data)
         badController.encodeRestorableStateWithCoder(encoder)
         encoder.finishEncoding()
 
-        let decoder = NSKeyedUnarchiver(forReadingWithData: data)
+        let decoder = NSKeyedUnarchiver(forReadingWith: data as Data)
         badController.decodeRestorableStateWithCoder(decoder)
         XCTAssertFalse(badController.calledDecodeRestorableStateWithCoder, "The superclass's decodeRestorableStateWithCoder method is not called by the bad controller")
         XCTAssertNil(badController.decodeRestorableStateCoder, "The coder should still be missing")

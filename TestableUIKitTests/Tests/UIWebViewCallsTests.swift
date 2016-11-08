@@ -13,17 +13,13 @@ class UIWebViewCallsTests: XCTestCase {
 
     let webView = UIWebView()
     let htmlString = "<html><body></body></html>"
-    var data: NSData!
-    let baseURL = NSURL(string: "http://www.example.com/")!
+    var data: Data!
+    let baseURL = URL(string: "http://www.example.com/")!
 
     override func setUp() {
         super.setUp()
 
-        data = htmlString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
-    }
-    
-    override func tearDown() {
-        super.tearDown()
+        data = htmlString.data(using: String.Encoding.utf8, allowLossyConversion: false)!
     }
 
     func testShimMethodForwarding() {
@@ -41,7 +37,7 @@ class UIWebViewCallsTests: XCTestCase {
         XCTAssertNil(webView.loadDataMIMEType, "The MIME type should be missing by default")
         XCTAssertNil(webView.loadDataTextEncodingName, "The encoding name should be missing by default")
         XCTAssertNil(webView.loadDataBaseURL, "The base URL should be missing by default")
-        webView.loadData(data, MIMEType: "application/html", textEncodingName: "utf-8", baseURL: baseURL)
+        webView.load(data, mimeType: "application/html", textEncodingName: "utf-8", baseURL: baseURL)
         XCTAssertTrue(webView.loadDataCalled, "The web view should now indicate having had loadData called")
         XCTAssertEqual(webView.loadDataData!, data, "The data should be captured")
         XCTAssertEqual(webView.loadDataMIMEType!, "application/html", "The MIME type should be captured")
@@ -62,7 +58,7 @@ class UIWebViewCallsTests: XCTestCase {
     func testLoadRequestCall() {
         XCTAssertFalse(webView.loadRequestCalled, "The web view should not indicate having had loadRequest called by default")
         XCTAssertNil(webView.loadRequestRequest, "The request should be missing by default")
-        let request = NSURLRequest(URL: baseURL)
+        let request = URLRequest(url: baseURL)
         webView.loadRequest(request)
         XCTAssertTrue(webView.loadRequestCalled, "The web view should now indicate having had loadRequest called")
         XCTAssertEqual(webView.loadRequestRequest!, request, "The URL request should be captured")

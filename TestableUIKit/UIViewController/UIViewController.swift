@@ -15,154 +15,154 @@ public typealias UIViewControllerPresentationCompletionClosure = () -> ()
 public typealias UIViewControllerDismissalCompletionClosure = () -> ()
 
 
-public class UIViewController: UIKit.UIViewController {
+open class UIViewController: UIKit.UIViewController {
 
     //  MARK: Superclass calls
 
     /*!
         Indicates whether or not this object called the superclass implementation of `loadView`.
     */
-    public var calledLoadView = false
+    open var calledLoadView = false
 
     /*!
         Indicates whether or not this object called the superclass implementation of `viewDidLoad`.
     */
-    public var calledViewDidLoad = false
+    open var calledViewDidLoad = false
 
     /*!
         Indicates whether or not this object called the superclass implementation of `viewWillAppear:`.
     */
-    public var calledViewWillAppear = false
+    open var calledViewWillAppear = false
 
     /*!
         Provides the animation flag that was passed to the superclass implementation of `viewWillAppear:`, if called.
     */
-    public var viewWillAppearAnimated: Bool?
+    open var viewWillAppearAnimated: Bool?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `viewDidAppear:`.
     */
-    public var calledViewDidAppear = false
+    open var calledViewDidAppear = false
 
     /*!
         Provides the animation flag that was passed to the superclass implementation of `viewDidAppear:`, if called.
     */
-    public var viewDidAppearAnimated: Bool?
+    open var viewDidAppearAnimated: Bool?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `viewWillDisappear:`.
     */
-    public var calledViewWillDisappear = false
+    open var calledViewWillDisappear = false
 
     /*!
         Provides the animation flag that was passed to the superclass implementation of `viewWillDisappear:`, if called.
     */
-    public var viewWillDisappearAnimated: Bool?
+    open var viewWillDisappearAnimated: Bool?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `viewDidDisappear:`.
     */
-    public var calledViewDidDisappear = false
+    open var calledViewDidDisappear = false
 
     /*!
         Provides the animation flag that was passed to the superclass implementation of `viewDidDisappear:`, if called.
     */
-    public var viewDidDisappearAnimated: Bool?
+    open var viewDidDisappearAnimated: Bool?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `didReceiveMemoryWarning`.
     */
-    public var calledDidReceiveMemoryWarning = false
+    open var calledDidReceiveMemoryWarning = false
 
     /*!
         Indicates whether or not this object called the superclass implementation of `updateViewConstraints`.
     */
-    public var calledUpdateViewConstraints = false
+    open var calledUpdateViewConstraints = false
 
     /*!
         Indicates whether or not this object called the superclass implementation of `addedChildViewController:`.
     */
-    public var calledAddChildViewController = false
+    open var calledAddChildViewController = false
 
     /*!
         Provides the last controller that was passed to the superclass implementation of `addChildViewController:`, if called.
     */
-    public var addedChildViewController: UIKit.UIViewController?
+    open var addedChildViewController: UIKit.UIViewController?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `removeFromParentViewController`.
     */
-    public var calledRemoveFromParentViewController = false
+    open var calledRemoveFromParentViewController = false
 
     /*!
         Indicates whether or not this object called the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`.
     */
-    public var calledTransitionFromViewController = false
+    open var calledTransitionFromViewController = false
 
     /*!
         Provides the 'from' child controller that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var viewControllerToTransitionFrom: UIKit.UIViewController?
+    open var viewControllerToTransitionFrom: UIKit.UIViewController?
 
     /*!
         Provides the 'to' child controller that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var viewControllerToTransitionTo: UIKit.UIViewController?
+    open var viewControllerToTransitionTo: UIKit.UIViewController?
 
     /*!
         Provides the duration that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionDuration: NSTimeInterval?
+    open var transitionDuration: TimeInterval?
 
     /*!
         Provides the animation options that were passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionAnimationOptions: UIViewAnimationOptions?
+    open var transitionAnimationOptions: UIViewAnimationOptions?
 
     /*!
         Provides the animation closure that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionAnimations: UIViewAnimationsClosure?
+    open var transitionAnimations: UIViewAnimationsClosure?
 
     /*!
         Provides the completion closure that was passed to the superclass implementation of `transitionFromViewController:toViewController:duration:options:animations:completion:`, if called.
     */
-    public var transitionCompletion: UIViewAnimationCompletionClosure?
+    open var transitionCompletion: UIViewAnimationCompletionClosure?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `setEditing:animated:`.
     */
-    public var calledSetEditing = false
+    open var calledSetEditing = false
 
     /*!
         Provides the editing flag that was passed to the superclass implementation of `setEditing:animated:`, if called.
     */
-    public var setEditingEditing: Bool?
+    open var setEditingEditing: Bool?
 
     /*!
         Provides the animation flag that was passed to the superclass implementation of `setEditing:animated:`, if called.
     */
-    public var setEditingAnimated: Bool?
+    open var setEditingAnimated: Bool?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `encodeRestorableStateWithCoder`:.
     */
-    public var calledEncodeRestorableStateWithCoder = false
+    open var calledEncodeRestorableStateWithCoder = false
 
     /*!
         Provides the coder that was passed to the superclass implementation of `encodeRestorableStateWithCoder:`, if called.
     */
-    public var encodeRestorableStateCoder: NSCoder?
+    open var encodeRestorableStateCoder: NSCoder?
 
     /*!
         Indicates whether or not this object called the superclass implementation of `decodeRestorableStateWithCoder:`.
     */
-    public var calledDecodeRestorableStateWithCoder = false
+    open var calledDecodeRestorableStateWithCoder = false
 
     /*!
         Provides the coder that was passed to the superclass implementation of `decodeRestorableStateWithCoder:`, if called.
     */
-    public var decodeRestorableStateCoder: NSCoder?
+    open var decodeRestorableStateCoder: NSCoder?
 
 
     //  MARK: Class spies
@@ -170,82 +170,82 @@ public class UIViewController: UIKit.UIViewController {
     /*!
         Indicates whether or not the `performSegueWithIdentifier:sender:` method has been called on this object.
     */
-    public var performSegueWithIdentifierCalled = false
+    open var performSegueWithIdentifierCalled = false
 
     /*!
         Provides the segue identifier that was passed to the `performSegueWithIdentifier:sender:` method on this object, if called.
     */
-    public var performSegueWithIdentifierSegueIdentifier: String?
+    open var performSegueWithIdentifierSegueIdentifier: String?
 
     /*!
         Provides the sender that was passed to the `performSegueWithIdentifier:sender:` method on this object, if called.
     */
-    public var performSegueWithIdentifierSender: AnyObject?
+    open var performSegueWithIdentifierSender: AnyObject?
 
     /*!
         Indicates whether or not the `presentViewController:animated:completion:` method has been called on this object.
     */
-    public var presentViewControllerCalled = false
+    open var presentViewControllerCalled = false
 
     /*!
         Provides the view controller that was passed to the `presentViewController:animated:completion:` method on this object, if called.
     */
-    public var viewControllerToPresent: UIKit.UIViewController?
+    open var viewControllerToPresent: UIKit.UIViewController?
 
     /*!
         Provides the animation flag that was passed to the `presentViewController:animated:completion:` method on this object, if called.
     */
-    public var presentViewControllerAnimated: Bool?
+    open var presentViewControllerAnimated: Bool?
 
     /*!
         Provides the completion closure that was passed to the `presentViewController:animated:completion:` method on this object, if called.
     */
-    public var presentViewControllerCompletion: UIViewControllerPresentationCompletionClosure?
+    open var presentViewControllerCompletion: UIViewControllerPresentationCompletionClosure?
 
     /*!
         Indicates whether or not the `dismissViewControllerAnimated:completion:` method has been called on this object.
     */
-    public var dismissViewControllerCalled = false
+    open var dismissViewControllerCalled = false
 
     /*!
         Provides the animation flag that was passed to the `dismissViewControllerAnimated:completion:` method on this object, if called.
     */
-    public var dismissViewControllerAnimated: Bool?
+    open var dismissViewControllerAnimated: Bool?
 
     /*!
         Provides the completion closure that was passed to the `dismissViewControllerAnimated:completion:` method on this object, if called.
     */
-    public var dismissViewControllerCompletion: UIViewControllerDismissalCompletionClosure?
+    open var dismissViewControllerCompletion: UIViewControllerDismissalCompletionClosure?
 
     /*!
         Indicates whether or not the `showViewController:sender:` method has been called on this object.
     */
-    public var showViewControllerCalled = false
+    open var showViewControllerCalled = false
 
     /*!
         Provides the view controller that was passed to the `showViewController:sender:` method on this object, if called.
     */
-    public var viewControllerToShow: UIKit.UIViewController?
+    open var viewControllerToShow: UIKit.UIViewController?
 
     /*!
         Provides the sender that was passed to the `showViewController:sender:` method on this object, if called.
     */
-    public var showViewControllerSender: AnyObject?
+    open var showViewControllerSender: AnyObject?
 
     /*!
         Indicates whether or not the `showDetailViewController:sender:` method has been called on this object.
     */
-    public var showDetailViewControllerCalled = false
+    open var showDetailViewControllerCalled = false
 
     /*!
         Provides the detail view controller that was passed to the `showDetailViewController:sender:` method on this object, if called.
     */
-    public var detailViewControllerToShow: UIKit.UIViewController?
+    open var detailViewControllerToShow: UIKit.UIViewController?
 
     /*!
         Provides the sender that was passed to the `showDetailViewController:sender:` method on this object, if called.
     */
-    public var showDetailViewControllerSender: AnyObject?
+    open var showDetailViewControllerSender: AnyObject?
 
     internal var forwardingList = ShimMethodForwardingList(shouldForwardByDefault: true)
 

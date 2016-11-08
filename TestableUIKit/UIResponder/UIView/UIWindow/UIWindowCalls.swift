@@ -8,20 +8,20 @@
 
 import UIKit
 
-public extension TestableUIKit.UIWindow {
+extension TestableUIKit.UIWindow {
 
-    public override func makeKeyWindow() {
+    open override func makeKey() {
         makeKeyWindowCalled = true
 
-        if shouldForwardMethodCallWithSelector("makeKeyWindow") {
-            super.makeKeyWindow()
+        if shouldForwardMethodCallWithSelector(#selector(UIWindow.makeKey)) {
+            super.makeKey()
         }
     }
 
-    public override func makeKeyAndVisible() {
+    open override func makeKeyAndVisible() {
         makeKeyAndVisibleCalled = true
 
-        if shouldForwardMethodCallWithSelector("makeKeyAndVisible") {
+        if shouldForwardMethodCallWithSelector(#selector(UIWindow.makeKeyAndVisible)) {
             super.makeKeyAndVisible()
         }
     }
@@ -40,7 +40,7 @@ extension TestableUIKit.UIWindow: ShimMethodForwarding {
         :param: selector Selector of spy method to check for forwarding status.
         :returns: Boolean value indicating whether or not the spy currently forwards calls to the specified method.
     */
-    public func shouldForwardMethodCallWithSelector(selector: Selector) -> Bool {
+    public func shouldForwardMethodCallWithSelector(_ selector: Selector) -> Bool {
         return forwardingList.shouldForwardMethodCallWithSelector(selector)
     }
 
@@ -49,7 +49,7 @@ extension TestableUIKit.UIWindow: ShimMethodForwarding {
         :param: selector Selector of spy method of which to change the forwarding status.
         :param: Boolean value indicating whether or not the method calls should be forwarded.
     */
-    public func setShouldForwardMethodCallWithSelector(selector: Selector, _ shouldForward: Bool) {
+    public func setShouldForwardMethodCallWithSelector(_ selector: Selector, _ shouldForward: Bool) {
         forwardingList.setShouldForwardMethodCallWithSelector(selector, shouldForward)
     }
 

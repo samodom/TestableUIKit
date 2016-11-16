@@ -1,5 +1,5 @@
 //
-//  GoodViewSubclass.swift
+//  GoodView.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/20/14.
@@ -8,21 +8,21 @@
 
 import UIKit
 
-internal class GoodViewSubclass: GoodView {
+public class GoodView: UIView {
 
-    internal override func updateConstraints() {
+    public override func updateConstraints() {
         super.updateConstraints()
     }
 
-    internal override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
 
-    internal override func encodeRestorableState(with coder: NSCoder) {
+    public override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
     }
 
-    internal override func decodeRestorableState(with coder: NSCoder) {
+    public override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
     }
 

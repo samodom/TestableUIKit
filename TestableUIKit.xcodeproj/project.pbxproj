@@ -456,12 +456,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AF3796C1A451FC7004606F6 /* Build configuration list for PBXNativeTarget "TestableUIKit" */;
 			buildPhases = (
+				1E344A0B2708C7A4F68B3025 /* 📦 Check Pods Manifest.lock */,
 				473C1A8E85D1887EC0E37EC8 /* [CP] Check Pods Manifest.lock */,
 				0AF379511A451FC7004606F6 /* Sources */,
 				0AF379521A451FC7004606F6 /* Frameworks */,
 				0AF379531A451FC7004606F6 /* Headers */,
 				0AF379541A451FC7004606F6 /* Resources */,
 				45D6AF341127B294F3A4F08C /* [CP] Copy Pods Resources */,
+				29240176329BF43576D70059 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -583,6 +585,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E344A0B2708C7A4F68B3025 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29240176329BF43576D70059 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestableUIKit/Pods-TestableUIKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		45D6AF341127B294F3A4F08C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

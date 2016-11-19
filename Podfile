@@ -6,5 +6,5 @@ target 'TestableUIKit' do
   
   target 'TestableUIKitTests' do
     inherit! :search_paths
-   end
+  end
 end

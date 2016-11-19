@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AF379551A451FC7004606F6"
-               BuildableName = "TestableUIKit.framework"
-               BlueprintName = "TestableUIKit"
-               ReferencedContainer = "container:TestableUIKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AF379601A451FC7004606F6"
-               BuildableName = "TestableUIKitTests.xctest"
-               BlueprintName = "TestableUIKitTests"
+               BlueprintIdentifier = "0AE2CBE31DDC15B0001ABEE3"
+               BuildableName = "SampleTypes.framework"
+               BlueprintName = "SampleTypes"
                ReferencedContainer = "container:TestableUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,29 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AF379601A451FC7004606F6"
-               BuildableName = "TestableUIKitTests.xctest"
-               BlueprintName = "TestableUIKitTests"
-               ReferencedContainer = "container:TestableUIKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AF379551A451FC7004606F6"
-            BuildableName = "TestableUIKit.framework"
-            BlueprintName = "TestableUIKit"
-            ReferencedContainer = "container:TestableUIKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -79,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AF379551A451FC7004606F6"
-            BuildableName = "TestableUIKit.framework"
-            BlueprintName = "TestableUIKit"
+            BlueprintIdentifier = "0AE2CBE31DDC15B0001ABEE3"
+            BuildableName = "SampleTypes.framework"
+            BlueprintName = "SampleTypes"
             ReferencedContainer = "container:TestableUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -97,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AF379551A451FC7004606F6"
-            BuildableName = "TestableUIKit.framework"
-            BlueprintName = "TestableUIKit"
+            BlueprintIdentifier = "0AE2CBE31DDC15B0001ABEE3"
+            BuildableName = "SampleTypes.framework"
+            BlueprintName = "SampleTypes"
             ReferencedContainer = "container:TestableUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

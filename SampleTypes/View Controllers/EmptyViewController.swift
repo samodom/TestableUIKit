@@ -8,6 +8,6 @@
 
 import UIKit
 
-public class EmptyViewController: UIViewController {
+open class EmptyViewController: UIViewController {
 
 }

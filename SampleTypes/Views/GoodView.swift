@@ -8,21 +8,21 @@
 
 import UIKit
 
-public class GoodView: UIView {
+open class GoodView: UIView {
 
-    public override func updateConstraints() {
+    open override func updateConstraints() {
         super.updateConstraints()
     }
 
-    public override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
 
-    public override func encodeRestorableState(with coder: NSCoder) {
+    open override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
     }
 
-    public override func decodeRestorableState(with coder: NSCoder) {
+    open override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
     }
 

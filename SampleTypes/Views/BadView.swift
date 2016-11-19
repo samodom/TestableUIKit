@@ -8,21 +8,21 @@
 
 import UIKit
 
-public class BadView: UIView {
+open class BadView: UIView {
 
-    public override func updateConstraints() {
-
-    }
-
-    public override func draw(_ rect: CGRect) {
+    open override func updateConstraints() {
 
     }
 
-    public override func encodeRestorableState(with coder: NSCoder) {
+    open override func draw(_ rect: CGRect) {
 
     }
 
-    public override func decodeRestorableState(with coder: NSCoder) {
+    open override func encodeRestorableState(with coder: NSCoder) {
+
+    }
+
+    open override func decodeRestorableState(with coder: NSCoder) {
 
     }
 

@@ -8,6 +8,6 @@
 
 import UIKit
 
-public class EmptyView: UIView {
+open class EmptyView: UIView {
 
 }

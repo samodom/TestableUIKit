@@ -1,11 +1,11 @@
 PODS:
-  - FoundationSwagger (0.2.2)
+  - FoundationSwagger (0.2.3)
 
 DEPENDENCIES:
   - FoundationSwagger
 
 SPEC CHECKSUMS:
-  FoundationSwagger: b04dd2fc03da95d5e16203b53aa48bb6ffd0652e
+  FoundationSwagger: 4e078cf6feac727cf0374cb6e3578b0de9725c35
 
 PODFILE CHECKSUM: 9af2ee910575aa0de3650aef7e4ada1e07ee6977
 

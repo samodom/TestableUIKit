@@ -1,5 +1,5 @@
 //
-//  UIResponderCalls.swift
+//  UIResponderSpies.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/23/14.
@@ -88,7 +88,7 @@ public extension UIResponder {
 
     /// Spies on calls to `becomeFirstResponder` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnBecomeFirstResponder(_ context: NullaryVoidClosure) {
+    public final func spyOnBecomeFirstResponder(in context: NullaryVoidClosure) {
         SpyAssociations.becomeFirstResponder.withAlternateImplementation(context: context)
         clearSpyKeys(SpyCaptureKeys.becomeFirstResponder)
     }
@@ -124,7 +124,7 @@ public extension UIResponder {
 
     /// Spies on calls to `resignFirstResponder` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnResignFirstResponder(_ context: NullaryVoidClosure) {
+    public final func spyOnResignFirstResponder(in context: NullaryVoidClosure) {
         SpyAssociations.resignFirstResponder.withAlternateImplementation(context: context)
         clearSpyKeys(SpyCaptureKeys.resignFirstResponder)
     }

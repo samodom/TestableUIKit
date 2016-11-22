@@ -1,47 +1,38 @@
 `UIResponder` Spy
 =================
 
+> This spy forwards all methods by default.
+
+
 ## Spying on `becomeFirstResponder`
+
+Use this spy to validate that a responder has been asked to become the first responder.
 
 ### Spy Methods
 
-* `spyOnBecomeFirstResponder(_:)`
+* `spyOnBecomeFirstResponder(in:)`
 * `beginSpyingOnBecomeFirstResponder`
 * `endSpyingOnBecomeFirstResponder`
 
-> After capturing the call to the method, the spy forwards the call to the original (real) implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:
-> `myField.addMethodCallForwardingException(forSelector: #selector(UIResponder.becomeFirstResponder))`
->
-> This can be reversed in your test at any time by calling the following:
-> `myField.removeMethodCallForwardingException(forSelector: #selector(UIResponder.becomeFirstResponder))`
->
-> The spy returns `true` when forwarding is turned off.
-
+> This spy method returns `true` when forwarding is turned off.
 
 ### Spy Variables
 
-`var becomeFirstResponderCalled: Bool`
-
-
+* `var becomeFirstResponderCalled: Bool`
 
 
 ## Spying on `resignFirstResponder`
 
+Use this spy to validate that a responder has been asked to resign first responder status.
+
 ### Spy Methods
 
-* `spyOnResignFirstResponder(_:)`
+* `spyOnResignFirstResponder(in:)`
 * `beginSpyingOnResignFirstResponder`
 * `endSpyingOnResignFirstResponder`
 
+> This spy method returns `true` when forwarding is turned off.
 
 ### Spy Variables
 
-`var resignFirstResponderCalled: Bool`
-
-> After capturing the call to the method, the spy forwards the call to the original (real) implementation.  If you would like for any of these spies to not forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:
-> `myField.addMethodCallForwardingException(forSelector: #selector(UIResponder.resignFirstResponder))`
->
-> This can be reversed in your test at any time by calling the following:
-> `myField.removeMethodCallForwardingException(forSelector: #selector(UIResponder.resignFirstResponder))`
->
-> The spy returns `true` when forwarding is turned off.
+* `var resignFirstResponderCalled: Bool`

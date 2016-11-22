@@ -1,13 +1,13 @@
 TestableUIKit
 =============
 
-This is a framework that uses the same class names as some classes from UIKit and extends them using the fully qualified name of the real class.  This allows for a *shim* layer between your application code and UIKit **only while testing**.
+This is a library that uses method swizzling in UIKit to implement spies for testing.
 
-Much, much more will be coming shortly.  For now, here is what the framework contains:
+> [Spies](Spies.md)
 
-- `UIResponder`
-  - [Capturing instance calls](Docs/UIResponderCalls.md)
-    - `UIView`
+* [`UIResponder`](Docs/UIResponderCalls.md)
+  
+- `UIView`
       - [Capturing superclass calls](Docs/UIViewSuperCalls.md)
       - [Capturing instance calls](Docs/UIViewCalls.md)
       - `UICollectionView`

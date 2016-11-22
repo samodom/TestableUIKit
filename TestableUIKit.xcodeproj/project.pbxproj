@@ -30,6 +30,7 @@
 		0AD4E73A1A4A1B5E0091747D /* UIToolbarCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7371A4A1B5E0091747D /* UIToolbarCalls.swift */; };
 		0A261ED71B5829700070EDFE /* MethodForwardingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6128AD1A476D4C00B69BBC /* MethodForwardingListTests.swift */; };
 		0A312C8A1DE3F33B007A2B76 /* Spy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312C891DE3F33B007A2B76 /* Spy.swift */; };
+		0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312C8E1DE41A3B007A2B76 /* UIResponderEvidence.swift */; };
 		0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* MethodCallForwarding.swift */; };
 		0ABD48BE1DE03EDF005DD470 /* CustomForwardingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD48BD1DE03EDF005DD470 /* CustomForwardingObject.swift */; };
 		0ABD48BF1DE1170E005DD470 /* UIResponderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderTests.swift */; };
@@ -103,6 +104,7 @@
 
 /* Begin PBXFileReference section */
 		0A312C891DE3F33B007A2B76 /* Spy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spy.swift; sourceTree = "<group>"; };
+		0A312C8E1DE41A3B007A2B76 /* UIResponderEvidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderEvidence.swift; sourceTree = "<group>"; };
 		0A363CF21A468CCE00DD9995 /* UIViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCallsTests.swift; sourceTree = "<group>"; };
 		0A363CFB1A46961700DD9995 /* MethodCallForwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodCallForwarding.swift; sourceTree = "<group>"; };
 		0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCallsTests.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		0AF08E581A49F1BD00FF48D7 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
+				0A312C8E1DE41A3B007A2B76 /* UIResponderEvidence.swift */,
 				0AF08E5A1A49F1BD00FF48D7 /* UIResponderSpies.swift */,
 				0AF08E5B1A49F1BD00FF48D7 /* UIView */,
 			);
@@ -317,6 +320,7 @@
 				0AD4E7351A4A1B5E0091747D /* UIToolbar */,
 				0AF08E621A49F1BD00FF48D7 /* UIView.swift */,
 				0AF08E631A49F1BD00FF48D7 /* UIViewCalls.swift */,
+				0A312C8C1DE4197C007A2B76 /* UIViewSpies.swift */,
 				0AF08E641A49F1BD00FF48D7 /* UIViewSuperCalls.swift */,
 				0AD4E7181A4A06E30091747D /* UIWebView */,
 				0AD4E7221A4A116C0091747D /* UIWindow */,
@@ -819,6 +823,7 @@
 				0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
 				0ABD48C11DE11B2D005DD470 /* UIResponderSpies.swift in Sources */,
 				0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */,
+				0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */,
 				0A312C8A1DE3F33B007A2B76 /* Spy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

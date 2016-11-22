@@ -8,12 +8,13 @@
 
 import FoundationSwagger
 
-
 extension NSObject {
-
     open var forwardsMethodCallsByDefault: Bool {
         return true
     }
+}
+
+public extension NSObject {
 
     public final func forwardsMethodCalls(forSelector selector: Selector) -> Bool {
         let isException = methodCallForwardingExceptions.contains(selector)
@@ -33,7 +34,7 @@ extension NSObject {
 
 fileprivate extension NSObject {
 
-    private static let MethodCallForwardingExceptions = UnsafeRawPointer("MethodCallForwardingExceptions")
+    private static let MethodCallForwardingExceptions = ObjectAssociationKey("MethodCallForwardingExceptions")
 
     var methodCallForwardingExceptions: Set<Selector> {
         get {
@@ -56,15 +57,15 @@ fileprivate extension NSObject {
 
     private var forwardingExceptionsSelectorStrings: Set<String> {
         get {
-            let exceptions = associationForKey(NSObject.MethodCallForwardingExceptions) as? Set<String>
+            let exceptions = association(for: NSObject.MethodCallForwardingExceptions) as? Set<String>
             return exceptions ?? []
         }
         set {
             guard !newValue.isEmpty else {
-                return removeAssociationForKey(NSObject.MethodCallForwardingExceptions)
+                return removeAssociation(for: NSObject.MethodCallForwardingExceptions)
             }
 
-            associate(newValue, withKey: NSObject.MethodCallForwardingExceptions)
+            associate(newValue, with: NSObject.MethodCallForwardingExceptions)
         }
     }
 

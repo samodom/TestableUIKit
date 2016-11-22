@@ -6,8 +6,7 @@
 //  Copyright © 2016 Swagger Soft. All rights reserved.
 //
 
-import Foundation
-
+import FoundationSwagger
 
 class CustomForwardingObject: NSObject {
 
@@ -15,16 +14,18 @@ class CustomForwardingObject: NSObject {
 
     override var forwardsMethodCallsByDefault: Bool {
         get {
-            let forwards = associationForKey(CustomForwardingObject.CustomMethodForwardingFlagKey) as? Bool
-            return forwards ?? super.forwardsMethodCallsByDefault
+            return booleanAssociation(
+                for: CustomForwardingObject.CustomMethodForwardingFlagKey,
+                defaultValue: super.forwardsMethodCallsByDefault
+            )
         }
         set {
             let key = CustomForwardingObject.CustomMethodForwardingFlagKey
             guard newValue != super.forwardsMethodCallsByDefault else {
-                return removeAssociationForKey(key)
+                return removeAssociation(for: key)
             }
 
-            associate(newValue, withKey: key)
+            associate(newValue, with: key)
         }
     }
 

@@ -1,5 +1,5 @@
 //
-//  MethodSwizzlingValidation.swift
+//  SpyTestCase.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 11/19/16.
@@ -13,12 +13,12 @@ import FoundationSwagger
 class SpyTestCase: XCTestCase {
 
     var association: MethodAssociation!
-    var contextExecuted = false
-
     var originalImplementation: IMP!
     var alternateImplementation: IMP!
 
-    func inspectImplementations(forAssociation association: MethodAssociation) {
+    var contextExecuted = false
+
+    func inspectImplementations() {
         //  We're only using instance methods for now
         originalImplementation = method_getImplementation(
             class_getInstanceMethod(
@@ -35,27 +35,15 @@ class SpyTestCase: XCTestCase {
         )
     }
 
-    func validateMethodsAreSwizzled(
-        inFile file: String = #file,
-        atLine line: UInt = #line
-        ) {
-
+    func validateMethodsAreSwizzled(inFile file: String = #file, atLine line: UInt = #line) {
         validateMethods(areSwizzled: true, inFile: file, atLine: line)
     }
 
-    func validateMethodsAreNotSwizzled(
-        inFile file: String = #file,
-        atLine line: UInt = #line
-        ) {
-
+    func validateMethodsAreNotSwizzled(inFile file: String = #file, atLine line: UInt = #line) {
         validateMethods(areSwizzled: false, inFile: file, atLine: line)
     }
 
-    func validateMethods(
-        areSwizzled shouldUseAlternate: Bool,
-        inFile file: String = #file,
-        atLine line: UInt = #line
-        ) {
+    func validateMethods(areSwizzled shouldUseAlternate: Bool, inFile file: String, atLine line: UInt) {
 
         let selectorForOriginalImplementation =
             shouldUseAlternate ? association.alternateSelector : association.originalSelector

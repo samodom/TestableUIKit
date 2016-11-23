@@ -1,5 +1,5 @@
 //
-//  UIResponderTests.swift
+//  UIResponderSpyTests.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/22/14.
@@ -10,7 +10,7 @@ import XCTest
 import TestableUIKit
 import FoundationSwagger
 
-class UIResponderTests: SpyTestCase {
+class UIResponderSpyTests: SpyTestCase {
 
     let textField = UITextField()
     var responder = UIResponder()
@@ -32,9 +32,9 @@ class UIResponderTests: SpyTestCase {
     func testDefaultMethodCallForwarding() {
         XCTAssertTrue(responder.forwardsMethodCallsByDefault,
                       "By default this spy should forward method calls")
-        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponder.SpyAssociations.becomeFirstResponder.originalSelector),
+        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponderSpyAssociations.becomeFirstResponder.originalSelector),
                       "By default `UIResponder` should forward spied calls to `becomeFirstResponder`")
-        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponder.SpyAssociations.resignFirstResponder.originalSelector),
+        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponderSpyAssociations.resignFirstResponder.originalSelector),
                       "By default `UIResponder` should forward spied calls to `resignFirstResponder`")
     }
 
@@ -42,8 +42,8 @@ class UIResponderTests: SpyTestCase {
     //  MARK: - `becomeFirstResponder`
 
     func testSpyingOnBecomeFirstResponderWithContext() {
-        association = UIResponder.SpyAssociations.becomeFirstResponder
-        inspectImplementations(forAssociation: association)
+        association = UIResponderSpyAssociations.becomeFirstResponder
+        inspectImplementations()
         responder = textField
 
         XCTAssertFalse(responder.becomeFirstResponderCalled,
@@ -58,6 +58,8 @@ class UIResponderTests: SpyTestCase {
                           "The responder should indicate having been asked to become the first responder")
             XCTAssertTrue(returnValue,
                           "The method call should be forwarded to the original implementation")
+            responder.becomeFirstResponderCalled = false
+            returnValue = false
 
             responder.addMethodCallForwardingException(forSelector: association.originalSelector)
             returnValue = responder.becomeFirstResponder()
@@ -71,8 +73,8 @@ class UIResponderTests: SpyTestCase {
     }
 
     func testSpyingOnBecomeFirstResponderWithoutContext() {
-        association = UIResponder.SpyAssociations.becomeFirstResponder
-        inspectImplementations(forAssociation: association)
+        association = UIResponderSpyAssociations.becomeFirstResponder
+        inspectImplementations()
         responder = textField
 
         XCTAssertFalse(responder.becomeFirstResponderCalled,
@@ -86,6 +88,8 @@ class UIResponderTests: SpyTestCase {
                       "The responder should indicate having been asked to become the first responder")
         XCTAssertTrue(returnValue,
                       "The method call should be forwarded to the original implementation")
+        responder.becomeFirstResponderCalled = false
+        returnValue = false
 
         responder.addMethodCallForwardingException(forSelector: association.originalSelector)
         returnValue = responder.becomeFirstResponder()
@@ -93,7 +97,6 @@ class UIResponderTests: SpyTestCase {
 
         responder.endSpyingOnBecomeFirstResponder()
         validateMethodsAreNotSwizzled()
-
         XCTAssertFalse(responder.becomeFirstResponderCalled,
                        "The flag should be cleared after spying is complete")
     }
@@ -102,8 +105,8 @@ class UIResponderTests: SpyTestCase {
     //  MARK: - `resignFirstResponder`
 
     func testSpyingOnResignFirstResponderWithContext() {
-        association = UIResponder.SpyAssociations.resignFirstResponder
-        inspectImplementations(forAssociation: association)
+        association = UIResponderSpyAssociations.resignFirstResponder
+        inspectImplementations()
         responder = textField
 
         XCTAssertFalse(responder.resignFirstResponderCalled,
@@ -119,6 +122,8 @@ class UIResponderTests: SpyTestCase {
                           "The responder should indicate having been asked to resign first responder status")
             XCTAssertTrue(returnValue,
                           "The method call should be forwarded to the original implementation")
+            responder.resignFirstResponderCalled = false
+            returnValue = false
 
             responder.addMethodCallForwardingException(forSelector: association.originalSelector)
             returnValue = responder.resignFirstResponder()
@@ -132,8 +137,8 @@ class UIResponderTests: SpyTestCase {
     }
 
     func testSpyingOnResignFirstResponderWithoutContext() {
-        association = UIResponder.SpyAssociations.resignFirstResponder
-        inspectImplementations(forAssociation: association)
+        association = UIResponderSpyAssociations.resignFirstResponder
+        inspectImplementations()
         responder = textField
 
         XCTAssertFalse(responder.resignFirstResponderCalled,
@@ -148,15 +153,15 @@ class UIResponderTests: SpyTestCase {
                       "The responder should indicate having been asked to resign first responder status")
         XCTAssertTrue(returnValue,
                       "The method call should be forwarded to the original implementation")
+        responder.resignFirstResponderCalled = false
+        returnValue = false
 
         responder.addMethodCallForwardingException(forSelector: association.originalSelector)
         returnValue = responder.resignFirstResponder()
         XCTAssertTrue(returnValue, "The unforwarded method call should return the default value")
 
         responder.endSpyingOnResignFirstResponder()
-
         validateMethodsAreNotSwizzled()
-
         XCTAssertFalse(responder.resignFirstResponderCalled,
                        "The flag should be cleared after spying is complete")
     }

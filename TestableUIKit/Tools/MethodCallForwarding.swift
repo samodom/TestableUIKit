@@ -37,36 +37,23 @@ fileprivate extension NSObject {
     private static let MethodCallForwardingExceptions = ObjectAssociationKey("MethodCallForwardingExceptions")
 
     var methodCallForwardingExceptions: Set<Selector> {
-        get {
-            return forwardingExceptionsSelectorStrings.reduce(Set<Selector>()) {
-                var accumulator = $0.0
-                let selectorString = $0.1
-                accumulator.insert(NSSelectorFromString(selectorString))
-                return accumulator
-            }
-        }
-        set {
-            forwardingExceptionsSelectorStrings = newValue.reduce(Set<String>()) {
-                var accumulator = $0.0
-                let selector = $0.1
-                accumulator.insert(NSStringFromSelector(selector))
-                return accumulator
-            }
-        }
-    }
 
-    private var forwardingExceptionsSelectorStrings: Set<String> {
         get {
-            let exceptions = association(for: NSObject.MethodCallForwardingExceptions) as? Set<String>
-            return exceptions ?? []
+            guard let exceptions = association(for: NSObject.MethodCallForwardingExceptions) as? [Selector] else {
+                return []
+            }
+
+            return Set(exceptions)
         }
+
         set {
             guard !newValue.isEmpty else {
                 return removeAssociation(for: NSObject.MethodCallForwardingExceptions)
             }
 
-            associate(newValue, with: NSObject.MethodCallForwardingExceptions)
+            associate(Array(newValue), with: NSObject.MethodCallForwardingExceptions)
         }
+
     }
 
 }

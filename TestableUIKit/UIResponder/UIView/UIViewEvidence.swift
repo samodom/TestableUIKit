@@ -52,7 +52,7 @@ enum UIViewSpyCaptureKeys {
 public extension UIView {
 
     /// Indicates whether the `updateConstraints` method has been called on this object.
-    public var updateConstraintsCalled: Bool {
+    public final var updateConstraintsCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.updateConstraintsCalled, defaultValue: false)
         }
@@ -68,7 +68,7 @@ public extension UIView {
 
 
     /// Indicates whether the `draw(_:)` method has been called on this object.
-    public var drawCalled: Bool {
+    public final var drawCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.drawCalled, defaultValue: false)
         }
@@ -84,7 +84,7 @@ public extension UIView {
 
 
     /// Provides the rect that was passed to `draw(:)`, if called.
-    public var drawRect: CGRect? {
+    public final var drawRect: CGRect? {
         get {
             return association(for: UIViewSpyCaptureKeys.drawRect) as? CGRect
         }
@@ -100,7 +100,7 @@ public extension UIView {
 
 
     /// Indicates whether the `encodeRestorableState(with:)` method has been called on this object.
-    public var encodeRestorableStateCalled: Bool {
+    public final var encodeRestorableStateCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.encodeRestorableStateCalled, defaultValue: false)
         }
@@ -116,7 +116,7 @@ public extension UIView {
 
 
     /// Provides the coder that was passed to `encodeRestorableState(with:)`, if called.
-    public var encodeRestorableStateCoder: NSCoder? {
+    public final var encodeRestorableStateCoder: NSCoder? {
         get {
             return association(for: UIViewSpyCaptureKeys.encodeRestorableStateCoder) as? NSCoder
         }
@@ -132,7 +132,7 @@ public extension UIView {
 
 
     /// Indicates whether the `decodeRestorableState(with:)` method has been called on this object.
-    public var decodeRestorableStateCalled: Bool {
+    public final var decodeRestorableStateCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.decodeRestorableStateCalled, defaultValue: false)
         }
@@ -148,7 +148,7 @@ public extension UIView {
 
 
     /// Provides the coder that was passed to `decodeRestorableState(with:)`, if called.
-    public var decodeRestorableStateCoder: NSCoder? {
+    public final var decodeRestorableStateCoder: NSCoder? {
         get {
             return association(for: UIViewSpyCaptureKeys.decodeRestorableStateCoder) as? NSCoder
         }
@@ -164,7 +164,7 @@ public extension UIView {
 
 
     /// Indicates whether the `setNeedsLayout` method has been called on this object.
-    public var setNeedsLayoutCalled: Bool {
+    public final var setNeedsLayoutCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.setNeedsLayoutCalled, defaultValue: false)
         }
@@ -180,7 +180,7 @@ public extension UIView {
     
 
     /// Indicates whether the `invalidateIntrinsicContentSize` method has been called on this object.
-    public var invalidateIntrinsicContentSizeCalled: Bool {
+    public final var invalidateIntrinsicContentSizeCalled: Bool {
         get {
             return booleanAssociation(
                 for: UIViewSpyCaptureKeys.invalidateIntrinsicContentSizeCalled,
@@ -199,7 +199,7 @@ public extension UIView {
 
 
     /// Indicates whether the `setNeedsUpdateConstraints` method has been called on this object.
-    public var setNeedsUpdateConstraintsCalled: Bool {
+    public final var setNeedsUpdateConstraintsCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.setNeedsUpdateConstraintsCalled, defaultValue: false)
         }
@@ -215,7 +215,7 @@ public extension UIView {
 
 
     /// Indicates whether the `setNeedsDisplay` method has been called on this object.
-    public var setNeedsDisplayCalled: Bool {
+    public final var setNeedsDisplayCalled: Bool {
         get {
             return booleanAssociation(for: UIViewSpyCaptureKeys.setNeedsDisplayCalled, defaultValue: false)
         }
@@ -231,7 +231,7 @@ public extension UIView {
 
 
     /// Provides the rect that was passed to `setNeedsDisplay(_:)`, if called.
-    public var setNeedsDisplayRect: CGRect? {
+    public final var setNeedsDisplayRect: CGRect? {
         get {
             return association(for: UIViewSpyCaptureKeys.setNeedsDisplayRect) as? CGRect
         }

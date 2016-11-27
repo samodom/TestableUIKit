@@ -37,7 +37,7 @@ class UIViewSpyTests: SpyTestCase {
                       "By default this spy should forward method calls")
 
         UIViewSpyAssociations.allOriginalSelectors.forEach { selector in
-            XCTAssertTrue(plainView.forwardsMethodCalls(forSelector: selector),
+            XCTAssertTrue(plainView.forwardsMethodCalls(for: selector),
                           "By default `UIView` should forward spied calls to `\(selector)`")
         }
     }

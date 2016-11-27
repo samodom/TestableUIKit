@@ -90,9 +90,11 @@ public extension UIWebView {
         loadHtmlStringString = string
         loadHtmlStringBaseUrl = baseURL
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadHtmlString) {
-            spy_loadHTMLString(string, baseURL: baseURL)
+        guard forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadHtmlString) else {
+            return
         }
+
+        spy_loadHTMLString(string, baseURL: baseURL)
     }
 
 
@@ -126,9 +128,11 @@ public extension UIWebView {
         loadRequestCalled = true
         loadRequestRequest = request
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadRequest) {
-            spy_loadRequest(request)
+        guard forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadRequest) else {
+            return
         }
+
+        spy_loadRequest(request)
     }
 
 

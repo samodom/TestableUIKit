@@ -78,7 +78,7 @@ class UIWebViewSpyTests: SpyTestCase {
         XCTAssertNil(webView.loadDataBaseUrl, "The base URL should be cleared after spying is complete")
     }
 
-    func testLoadCallWithoutContext() {
+    func testLoadDataCallWithoutContext() {
         association = UIWebViewSpyAssociations.loadData
         inspectImplementations()
 

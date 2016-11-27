@@ -16,10 +16,7 @@
 		0A261EDF1B5829700070EDFE /* UIToolbarCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7321A4A1AC90091747D /* UIToolbarCallsTests.swift */; };
 		0A261EE11B5829700070EDFE /* UIViewControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */; };
 		0A261EE21B5829700070EDFE /* UIViewControllerSuperCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */; };
-		0A261EE41B5829700070EDFE /* UIWebViewCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */; };
 		0A261EE51B5829700070EDFE /* UIWindowCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E71F1A4A10290091747D /* UIWindowCallsTests.swift */; };
-		0AD4E71B1A4A06E30091747D /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7191A4A06E30091747D /* UIWebView.swift */; };
-		0AD4E71D1A4A06E30091747D /* UIWebViewCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */; };
 		0AD4E7251A4A116C0091747D /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7231A4A116C0091747D /* UIWindow.swift */; };
 		0AD4E7271A4A116C0091747D /* UIWindowCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7241A4A116C0091747D /* UIWindowCalls.swift */; };
 		0AD4E72E1A4A15B70091747D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E72C1A4A15B70091747D /* UINavigationBar.swift */; };
@@ -33,8 +30,13 @@
 		0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312C8E1DE41A3B007A2B76 /* UIResponderEvidence.swift */; };
 		0A312C901DE50B95007A2B76 /* UIViewEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E621A49F1BD00FF48D7 /* UIViewEvidence.swift */; };
 		0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* MethodCallForwarding.swift */; };
+		0AA16CF91DE66D82007E3F2E /* UIWebViewSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */; };
+		0AA16CFB1DE66DF5007E3F2E /* UIWebViewEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */; };
+		0AA16CFD1DE66E08007E3F2E /* UIWebViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */; };
+		0AA16CFF1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */; };
 		0AA16D011DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D001DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift */; };
 		0AA16D031DE8F9CE007E3F2E /* DataFileAssociationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D021DE8F9CE007E3F2E /* DataFileAssociationsTests.swift */; };
+		0AA16D051DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */; };
 		0ABD48BE1DE03EDF005DD470 /* CustomForwardingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD48BD1DE03EDF005DD470 /* CustomForwardingObject.swift */; };
 		0ABD48BF1DE1170E005DD470 /* UIResponderSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderSpyTests.swift */; };
 		0ABD48C11DE11B2D005DD470 /* UIResponderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E5A1A49F1BD00FF48D7 /* UIResponderSpy.swift */; };
@@ -112,14 +114,16 @@
 		0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCallsTests.swift; sourceTree = "<group>"; };
 		0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCallsTests.swift; sourceTree = "<group>"; };
 		0A6128AD1A476D4C00B69BBC /* MethodForwardingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodForwardingListTests.swift; sourceTree = "<group>"; };
+		0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewEvidence.swift; sourceTree = "<group>"; };
+		0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpy.swift; sourceTree = "<group>"; };
+		0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewMethodAssociations.swift; sourceTree = "<group>"; };
 		0AA16D001DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexObjectAssociationKey.swift; sourceTree = "<group>"; };
 		0AA16D021DE8F9CE007E3F2E /* DataFileAssociationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileAssociationsTests.swift; sourceTree = "<group>"; };
+		0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpyCaptureKeys.swift; sourceTree = "<group>"; };
 		0ABD48BD1DE03EDF005DD470 /* CustomForwardingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomForwardingObject.swift; sourceTree = "<group>"; };
 		0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationHelpers.swift; sourceTree = "<group>"; };
 		0ABD48CA1DE15EEA005DD470 /* SpyTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyTestCase.swift; sourceTree = "<group>"; };
-		0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewCallsTests.swift; sourceTree = "<group>"; };
-		0AD4E7191A4A06E30091747D /* UIWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
-		0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewCalls.swift; sourceTree = "<group>"; };
+		0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpyTests.swift; sourceTree = "<group>"; };
 		0AD4E71F1A4A10290091747D /* UIWindowCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowCallsTests.swift; sourceTree = "<group>"; };
 		0AD4E7231A4A116C0091747D /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		0AD4E7241A4A116C0091747D /* UIWindowCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowCalls.swift; sourceTree = "<group>"; };
@@ -236,8 +240,10 @@
 		0AD4E7181A4A06E30091747D /* UIWebView */ = {
 			isa = PBXGroup;
 			children = (
-				0AD4E7191A4A06E30091747D /* UIWebView.swift */,
-				0AD4E71A1A4A06E30091747D /* UIWebViewCalls.swift */,
+				0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */,
+				0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */,
+				0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */,
+				0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */,
 			);
 			path = UIWebView;
 			sourceTree = "<group>";
@@ -463,7 +469,7 @@
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
 				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewSpyTests.swift */,
-				0AD4E7161A4A04950091747D /* UIWebViewCallsTests.swift */,
+				0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */,
 				0AD4E71F1A4A10290091747D /* UIWindowCallsTests.swift */,
 			);
 			path = Tests;
@@ -801,7 +807,6 @@
 				0AF08E811A49F1BD00FF48D7 /* UINavigationController.swift in Sources */,
 				0AF08E831A49F1BD00FF48D7 /* UINavigationControllerCalls.swift in Sources */,
 				0AD4E73A1A4A1B5E0091747D /* UIToolbarCalls.swift in Sources */,
-				0AD4E71D1A4A06E30091747D /* UIWebViewCalls.swift in Sources */,
 				0AF08E711A49F1BD00FF48D7 /* UIResponderCalls.swift in Sources */,
 				0AF08E751A49F1BD00FF48D7 /* UICollectionViewCalls.swift in Sources */,
 				0AF08E851A49F1BD00FF48D7 /* UITabBarController.swift in Sources */,
@@ -814,11 +819,14 @@
 				0AD4E7381A4A1B5E0091747D /* UIToolbar.swift in Sources */,
 				0AD4E7301A4A15B70091747D /* UINavigationBarCalls.swift in Sources */,
 				0AF08E871A49F1BD00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
-				0AD4E71B1A4A06E30091747D /* UIWebView.swift in Sources */,
 				0AF08E791A49F1BD00FF48D7 /* UITableViewCalls.swift in Sources */,
 				0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
+				0AA16D051DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift in Sources */,
+				0AA16CFF1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift in Sources */,
+				0AA16CFD1DE66E08007E3F2E /* UIWebViewSpy.swift in Sources */,
 				0ABD48C11DE11B2D005DD470 /* UIResponderSpy.swift in Sources */,
 				0A312C901DE50B95007A2B76 /* UIViewEvidence.swift in Sources */,
+				0AA16CFB1DE66DF5007E3F2E /* UIWebViewEvidence.swift in Sources */,
 				0A312C8D1DE4197C007A2B76 /* UIViewSpy.swift in Sources */,
 				0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */,
 				0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */,
@@ -840,11 +848,11 @@
 				0A261EDF1B5829700070EDFE /* UIToolbarCallsTests.swift in Sources */,
 				0A261EE11B5829700070EDFE /* UIViewControllerCallsTests.swift in Sources */,
 				0A261EE21B5829700070EDFE /* UIViewControllerSuperCallsTests.swift in Sources */,
-				0A261EE41B5829700070EDFE /* UIWebViewCallsTests.swift in Sources */,
 				0A261EE51B5829700070EDFE /* UIWindowCallsTests.swift in Sources */,
 				0ABD48BE1DE03EDF005DD470 /* CustomForwardingObject.swift in Sources */,
 				0A261ED71B5829700070EDFE /* MethodForwardingListTests.swift in Sources */,
 				0ABD48C71DE120F5005DD470 /* ApplicationHelpers.swift in Sources */,
+				0AA16CF91DE66D82007E3F2E /* UIWebViewSpyTests.swift in Sources */,
 				0ABD48BF1DE1170E005DD470 /* UIResponderSpyTests.swift in Sources */,
 				0A312C8B1DE4184C007A2B76 /* UIViewSpyTests.swift in Sources */,
 				0ABD48CB1DE15EEA005DD470 /* SpyTestCase.swift in Sources */,

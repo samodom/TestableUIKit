@@ -1,38 +1,127 @@
-### Capturing calls to `UIWebView` methods
+`UIWebView` Spy
+============
 
-Each of the methods below have spy method equivalents that capture the calls to the method and any parameters, if available.  The properties listed below the method names list the new properties of `UIWebView` that you can use to validate method calls.
+> This spy DOES NOT forward all methods by default.
 
-`loadData:MIMEType:textEncodingName:baseURL:`
- - `var loadDataCalled: Bool`
- - `var loadDataData: NSData?`
- - `var loadDataMIMEType: String?`
- - `var loadDataTextEncodingName: String?`
- - `var loadDataBaseURL: NSURL?`
-
-`loadHTMLString:baseURL:`
- - `var loadHTMLStringCalled: Bool`
- - `var loadHTMLStringHTMLString: String?`
- - `var loadHTMLStringBaseURL: NSURL?`
-
-`loadRequest:`
- - `var loadRequestCalled: Bool`
- - `var loadRequestRequest: NSURLRequest?`
-
-`stopLoading`
- - `var stopLoadingCalled: Bool`
-
-`reload`
- - `var reloadCalled: Bool`
-
-`goBack`
- - `var goBackCalled: Bool`
-
-`goForward`
- - `var goForwardCalled: Bool`
+**Available spy methods:**
 
 
-> After capturing the call to the method, these spies DO NOT forward the call to the superclass (real) implementation.  If you would like for any of these spies to forward the method call to the superclass implementation, simply insert the following call at the beginning of your test with an appropriate selector:
->
-> `webView.setShouldForwardMethodCallWithSelector("loadRequest:", true)`
->
-> This can be reversed in your test at any time by another call to the same method with the value `false`.
+ * [`load(_:mimeType:textEncodingName:baseURL:)`](#spying-on-load_MIMETypetextEncodingNamebaseURL)
+ * [`loadHTMLString(_:baseURL:)`](#spying-on-loadHTMLString_baseURL)
+ * [`loadRequest(_:)`](#spying-on-loadRequest_)
+ * [`stopLoading`](#spying-on-stopLoading)
+ * [`reload`](#spying-on-reload)
+ * [`goBack`](#spying-on-goBack)
+ * [`goForward`](#spying-on-goForward)
+
+
+## Spying on `load(_:mimeType:textEncodingName:baseURL:)`
+
+Use this spy to validate that a web view has been asked to load a page's contents as raw data.
+
+### Spy Methods
+
+* `spyOnLoad(in:)`
+* `beginSpyingOnLoad`
+* `endSpyingOnLoad`
+
+### Spy Variables
+
+* `var loadCalled: Bool`
+* `var loadData: Data?`
+* `var loadMimeType: String?`
+* `var loadTextEncodingName: String?`
+* `var loadBaseUrl: URL?`
+
+
+## Spying on `loadHTMLString(_:baseURL:)`
+
+Use this spy to validate that a web view has been asked to load a page's contents as an HTML string.
+
+### Spy Methods
+
+* `spyOnLoadHTMLString(in:)`
+* `beginSpyingOnLoadHTMLString`
+* `endSpyingOnLoadHTMLString`
+
+### Spy Variables
+
+* `var loadHTMLStringCalled: Bool`
+* `var loadHTMLStringString: String?`
+* `var loadHTMLStringBaseUrl: URL?`
+
+
+## Spying on `loadRequest(_:)`
+
+Use this spy to validate that a web view has been asked to load a page using a URL request.
+
+### Spy Methods
+
+* `spyOnLoadRequest(in:)`
+* `beginSpyingOnLoadRequest`
+* `endSpyingOnLoadRequest`
+
+### Spy Variables
+
+* `var loadRequestCalled: Bool`
+* `var loadRequestRequest: URLRequest?`
+
+
+## Spying on `stopLoading`
+
+Use this spy to validate that a web view has been asked to stop loading a page.
+
+### Spy Methods
+
+* `spyOnStopLoading(in:)`
+* `beginSpyingOnStopLoading`
+* `endSpyingOnStopLoading`
+
+### Spy Variables
+
+* `var stopLoadingCalled: Bool`
+
+
+## Spying on `reload`
+
+Use this spy to validate that a web view has been asked to reload a page.
+
+### Spy Methods
+
+* `spyOnReload(in:)`
+* `beginSpyingOnReload`
+* `endSpyingOnReload`
+
+### Spy Variables
+
+* `var reloadCalled: Bool`
+
+
+## Spying on `goBack`
+
+Use this spy to validate that a web view has been asked to go back to the previous page.
+
+### Spy Methods
+
+* `spyOnGoBack(in:)`
+* `beginSpyingOnGoBack`
+* `endSpyingOnGoBack`
+
+### Spy Variables
+
+* `var goBackCalled: Bool`
+
+
+## Spying on `goForward`
+
+Use this spy to validate that a web view has been asked to go forward to a page to which it has just come back.
+
+### Spy Methods
+
+* `spyOnGoForward(in:)`
+* `beginSpyingOnGoForward`
+* `endSpyingOnGoForward`
+
+### Spy Variables
+
+* `var goForwardCalled: Bool`

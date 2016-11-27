@@ -3,8 +3,8 @@
 
 > This spy DOES NOT forward all methods by default.
 
-**Available spy methods:**
 
+**Available spy methods:**
 
  * [`load(_:mimeType:textEncodingName:baseURL:)`](#spying-on-load_MIMETypetextEncodingNamebaseURL)
  * [`loadHTMLString(_:baseURL:)`](#spying-on-loadHTMLString_baseURL)

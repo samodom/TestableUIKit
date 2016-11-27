@@ -33,6 +33,8 @@
 		0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312C8E1DE41A3B007A2B76 /* UIResponderEvidence.swift */; };
 		0A312C901DE50B95007A2B76 /* UIViewEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E621A49F1BD00FF48D7 /* UIViewEvidence.swift */; };
 		0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A363CFB1A46961700DD9995 /* MethodCallForwarding.swift */; };
+		0AA16D011DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D001DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift */; };
+		0AA16D031DE8F9CE007E3F2E /* DataFileAssociationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D021DE8F9CE007E3F2E /* DataFileAssociationsTests.swift */; };
 		0ABD48BE1DE03EDF005DD470 /* CustomForwardingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD48BD1DE03EDF005DD470 /* CustomForwardingObject.swift */; };
 		0ABD48BF1DE1170E005DD470 /* UIResponderSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderSpyTests.swift */; };
 		0ABD48C11DE11B2D005DD470 /* UIResponderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E5A1A49F1BD00FF48D7 /* UIResponderSpy.swift */; };
@@ -110,6 +112,8 @@
 		0A5E63E91A48F36D00F3A0A4 /* UITableViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCallsTests.swift; sourceTree = "<group>"; };
 		0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCallsTests.swift; sourceTree = "<group>"; };
 		0A6128AD1A476D4C00B69BBC /* MethodForwardingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodForwardingListTests.swift; sourceTree = "<group>"; };
+		0AA16D001DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexObjectAssociationKey.swift; sourceTree = "<group>"; };
+		0AA16D021DE8F9CE007E3F2E /* DataFileAssociationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileAssociationsTests.swift; sourceTree = "<group>"; };
 		0ABD48BD1DE03EDF005DD470 /* CustomForwardingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomForwardingObject.swift; sourceTree = "<group>"; };
 		0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationHelpers.swift; sourceTree = "<group>"; };
 		0ABD48CA1DE15EEA005DD470 /* SpyTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyTestCase.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		0A363CFA1A4695F900DD9995 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0AA16D001DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift */,
 				0A363CFB1A46961700DD9995 /* MethodCallForwarding.swift */,
 				0A312C891DE3F33B007A2B76 /* Spy.swift */,
 			);
@@ -445,6 +450,7 @@
 		0AF379721A452031004606F6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0AA16D021DE8F9CE007E3F2E /* DataFileAssociationsTests.swift */,
 				0A6128AD1A476D4C00B69BBC /* MethodForwardingListTests.swift */,
 				0A5E63F61A491CE400F3A0A4 /* UICollectionViewCallsTests.swift */,
 				0AD4E7291A4A135B0091747D /* UINavigationBarCallsTests.swift */,
@@ -817,6 +823,7 @@
 				0A363CFC1A46961700DD9995 /* MethodCallForwarding.swift in Sources */,
 				0A312C8F1DE41A3B007A2B76 /* UIResponderEvidence.swift in Sources */,
 				0A312C8A1DE3F33B007A2B76 /* Spy.swift in Sources */,
+				0AA16D011DE8F17C007E3F2E /* ComplexObjectAssociationKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +848,7 @@
 				0ABD48BF1DE1170E005DD470 /* UIResponderSpyTests.swift in Sources */,
 				0A312C8B1DE4184C007A2B76 /* UIViewSpyTests.swift in Sources */,
 				0ABD48CB1DE15EEA005DD470 /* SpyTestCase.swift in Sources */,
+				0AA16D031DE8F9CE007E3F2E /* DataFileAssociationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

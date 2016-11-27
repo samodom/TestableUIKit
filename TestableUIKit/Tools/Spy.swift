@@ -20,4 +20,37 @@ extension Spy {
             }
         }
     }
+
+    func associateData(_ data: Data, with key: ComplexObjectAssociationKey) {
+        let url = storageUrl(for: key)
+        do {
+            try data.write(to: url)
+        }
+        catch {
+            print(error)
+        }
+    }
+
+    func associatedData(for key: ComplexObjectAssociationKey) -> Data? {
+        let url = storageUrl(for: key)
+        return try? Data(contentsOf: url)
+    }
+
+    func removeStoredAssociation(for key: ComplexObjectAssociationKey) {
+        let url = storageUrl(for: key)
+        try? FileManager.default.removeItem(at: url)
+    }
+
+    private func storageUrl(for key: ComplexObjectAssociationKey) -> URL {
+        let baseUrl = DocumentsDirectoryURL.appendingPathComponent("associations")
+        do {
+            try FileManager.default.createDirectory(at: baseUrl, withIntermediateDirectories: true)
+        }
+        catch {
+            fatalError(error.localizedDescription)
+        }
+
+        return baseUrl.appendingPathComponent(key.fileKey)
+    }
+
 }

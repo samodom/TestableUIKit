@@ -48,7 +48,7 @@ public extension UIResponder {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnBecomeFirstResponder(in context: NullaryVoidClosure) {
         UIResponderSpyAssociations.becomeFirstResponder.withAlternateImplementation(context: context)
-        clearSpyKeys(UIResponderSpyCaptureKeys.becomeFirstResponder)
+        clearSpyAssociations(keys: UIResponderSpyCaptureKeys.becomeFirstResponder)
     }
 
 
@@ -62,7 +62,7 @@ public extension UIResponder {
     /// Ends spying on calls to `becomeFirstResponder`
     public final func endSpyingOnBecomeFirstResponder() {
         UIResponderSpyAssociations.becomeFirstResponder.useOriginalImplementation()
-        clearSpyKeys(UIResponderSpyCaptureKeys.becomeFirstResponder)
+        clearSpyAssociations(keys: UIResponderSpyCaptureKeys.becomeFirstResponder)
     }
 
 
@@ -70,7 +70,7 @@ public extension UIResponder {
     public func spy_becomeFirstResponder() -> Bool {
         becomeFirstResponderCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIResponderOriginalSelectors.becomeFirstResponder) else {
+        guard forwardsMethodCalls(for: UIResponderOriginalSelectors.becomeFirstResponder) else {
             return true
         }
 
@@ -84,7 +84,7 @@ public extension UIResponder {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnResignFirstResponder(in context: NullaryVoidClosure) {
         UIResponderSpyAssociations.resignFirstResponder.withAlternateImplementation(context: context)
-        clearSpyKeys(UIResponderSpyCaptureKeys.resignFirstResponder)
+        clearSpyAssociations(keys: UIResponderSpyCaptureKeys.resignFirstResponder)
     }
 
 
@@ -98,7 +98,7 @@ public extension UIResponder {
     /// Ends spying on calls to `resignFirstResponder`
     public final func endSpyingOnResignFirstResponder() {
         UIResponderSpyAssociations.resignFirstResponder.useOriginalImplementation()
-        clearSpyKeys(UIResponderSpyCaptureKeys.resignFirstResponder)
+        clearSpyAssociations(keys: UIResponderSpyCaptureKeys.resignFirstResponder)
     }
 
 
@@ -106,7 +106,7 @@ public extension UIResponder {
     public func spy_resignFirstResponder() -> Bool {
         resignFirstResponderCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIResponderOriginalSelectors.resignFirstResponder) else {
+        guard forwardsMethodCalls(for: UIResponderOriginalSelectors.resignFirstResponder) else {
             return true
         }
 

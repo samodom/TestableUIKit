@@ -10,8 +10,14 @@ import FoundationSwagger
 
 public protocol Spy: ObjectAssociating {}
 
-public extension Spy {
-    func clearSpyKeys(_ keys: [UnsafeRawPointer]) {
-        keys.forEach { removeAssociation(for: $0) }
+extension Spy {
+
+    func clearSpyAssociations(keys: [SpyKey]) {
+        keys.forEach { key in
+            removeAssociation(for: key.simpleKey)
+            if let complexKey = key as? ComplexObjectAssociationKey {
+                removeStoredAssociation(for: complexKey)
+            }
+        }
     }
 }

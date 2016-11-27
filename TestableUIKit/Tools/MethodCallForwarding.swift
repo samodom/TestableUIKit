@@ -16,16 +16,16 @@ extension NSObject {
 
 public extension NSObject {
 
-    public final func forwardsMethodCalls(forSelector selector: Selector) -> Bool {
+    public final func forwardsMethodCalls(for selector: Selector) -> Bool {
         let isException = methodCallForwardingExceptions.contains(selector)
         return isException ? !forwardsMethodCallsByDefault : forwardsMethodCallsByDefault
     }
 
-    public final func addMethodCallForwardingException(forSelector selector: Selector) {
+    public final func addMethodCallForwardingException(for selector: Selector) {
         methodCallForwardingExceptions.insert(selector)
     }
 
-    public final func removeMethodCallForwardingException(forSelector selector: Selector) {
+    public final func removeMethodCallForwardingException(for selector: Selector) {
         methodCallForwardingExceptions.remove(selector)
     }
 

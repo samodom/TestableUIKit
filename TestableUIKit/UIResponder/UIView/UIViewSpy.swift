@@ -111,7 +111,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnUpdateConstraints(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.updateConstraints.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.updateConstraints)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.updateConstraints)
     }
 
 
@@ -125,7 +125,7 @@ public extension UIView {
     /// Ends spying on calls to `updateConstraints`
     public final func endSpyingOnUpdateConstraints() {
         UIViewSpyAssociations.updateConstraints.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.updateConstraints)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.updateConstraints)
     }
 
 
@@ -133,7 +133,7 @@ public extension UIView {
     public func spy_updateConstraints() {
         updateConstraintsCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.updateConstraints) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.updateConstraints) else {
             return
         }
 
@@ -147,7 +147,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnDraw(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.draw.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.draw)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.draw)
     }
 
 
@@ -161,7 +161,7 @@ public extension UIView {
     /// Ends spying on calls to `draw(_:)`
     public final func endSpyingOnDraw() {
         UIViewSpyAssociations.draw.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.draw)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.draw)
     }
 
 
@@ -170,7 +170,7 @@ public extension UIView {
         drawCalled = true
         drawRect = rect
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.draw) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.draw) else {
             return
         }
 
@@ -185,7 +185,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnEncodeRestorableState(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.encodeRestorableState.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.encodeRestorableState)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.encodeRestorableState)
     }
 
 
@@ -199,7 +199,7 @@ public extension UIView {
     /// Ends spying on calls to `encodeRestorableState(with:)`
     public final func endSpyingOnEncodeRestorableState() {
         UIViewSpyAssociations.encodeRestorableState.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.encodeRestorableState)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.encodeRestorableState)
     }
 
 
@@ -208,7 +208,7 @@ public extension UIView {
         encodeRestorableStateCalled = true
         encodeRestorableStateCoder = coder
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.encodeRestorableState) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.encodeRestorableState) else {
             return
         }
         
@@ -223,7 +223,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnDecodeRestorableState(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.decodeRestorableState.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.decodeRestorableState)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.decodeRestorableState)
     }
 
 
@@ -237,7 +237,7 @@ public extension UIView {
     /// Ends spying on calls to `decodeRestorableState(with:)`
     public final func endSpyingOnDecodeRestorableState() {
         UIViewSpyAssociations.decodeRestorableState.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.decodeRestorableState)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.decodeRestorableState)
     }
 
 
@@ -246,7 +246,7 @@ public extension UIView {
         decodeRestorableStateCalled = true
         decodeRestorableStateCoder = coder
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.decodeRestorableState) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.decodeRestorableState) else {
             return
         }
 
@@ -260,7 +260,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnSetNeedsLayout(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.setNeedsLayout.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsLayout)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsLayout)
     }
 
 
@@ -274,7 +274,7 @@ public extension UIView {
     /// Ends spying on calls to `setNeedsLayout`
     public final func endSpyingOnSetNeedsLayout() {
         UIViewSpyAssociations.setNeedsLayout.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsLayout)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsLayout)
     }
 
 
@@ -282,7 +282,7 @@ public extension UIView {
     public func spy_setNeedsLayout() {
         setNeedsLayoutCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.setNeedsLayout) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsLayout) else {
             return
         }
 
@@ -297,7 +297,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnInvalidateIntrinsicContentSize(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.invalidateIntrinsicContentSize.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.invalidateIntrinsicContentSize)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.invalidateIntrinsicContentSize)
     }
 
 
@@ -311,7 +311,7 @@ public extension UIView {
     /// Ends spying on calls to `invalidateIntrinsicContentSize`
     public final func endSpyingOnInvalidateIntrinsicContentSize() {
         UIViewSpyAssociations.invalidateIntrinsicContentSize.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.invalidateIntrinsicContentSize)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.invalidateIntrinsicContentSize)
     }
 
 
@@ -319,7 +319,7 @@ public extension UIView {
     public func spy_invalidateIntrinsicContentSize() {
         invalidateIntrinsicContentSizeCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.invalidateIntrinsicContentSize) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.invalidateIntrinsicContentSize) else {
             return
         }
 
@@ -334,7 +334,7 @@ public extension UIView {
     /// - parameter context: Logic to execute while the spy method is active.
     public final func spyOnSetNeedsUpdateConstraints(in context: NullaryVoidClosure) {
         UIViewSpyAssociations.setNeedsUpdateConstraints.withAlternateImplementation(context: context)
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsUpdateConstraints)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsUpdateConstraints)
     }
 
 
@@ -348,7 +348,7 @@ public extension UIView {
     /// Ends spying on calls to `setNeedsUpdateConstraints`
     public final func endSpyingOnSetNeedsUpdateConstraints() {
         UIViewSpyAssociations.setNeedsUpdateConstraints.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsUpdateConstraints)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsUpdateConstraints)
     }
 
 
@@ -356,7 +356,7 @@ public extension UIView {
     public func spy_setNeedsUpdateConstraints() {
         setNeedsUpdateConstraintsCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.setNeedsUpdateConstraints) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsUpdateConstraints) else {
             return
         }
 
@@ -373,7 +373,7 @@ public extension UIView {
         beginSpyingOnSetNeedsDisplay()
         context()
         endSpyingOnSetNeedsDisplay()
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsDisplay)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsDisplay)
     }
 
 
@@ -389,7 +389,7 @@ public extension UIView {
     public final func endSpyingOnSetNeedsDisplay() {
         UIViewSpyAssociations.setNeedsDisplay.useOriginalImplementation()
         UIViewSpyAssociations.setNeedsDisplayInRect.useOriginalImplementation()
-        clearSpyKeys(UIViewSpyCaptureKeys.setNeedsDisplay)
+        clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsDisplay)
     }
 
 
@@ -397,7 +397,7 @@ public extension UIView {
     public func spy_setNeedsDisplay() {
         setNeedsDisplayCalled = true
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.setNeedsDisplay) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsDisplay) else {
             return
         }
 
@@ -410,7 +410,7 @@ public extension UIView {
         setNeedsDisplayCalled = true
         setNeedsDisplayRect = rect
 
-        guard forwardsMethodCalls(forSelector: UIViewOriginalSelectors.setNeedsDisplayInRect) else {
+        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsDisplayInRect) else {
             return
         }
 

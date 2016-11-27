@@ -19,7 +19,7 @@ class MethodCallForwardingTests: XCTestCase {
     func testDefaultForwarding() {
         XCTAssertTrue(defaultForwardingObject.forwardsMethodCallsByDefault,
                       "Objects should intend to forward swizzled method calls by default")
-        XCTAssertTrue(defaultForwardingObject.forwardsMethodCalls(forSelector: selector),
+        XCTAssertTrue(defaultForwardingObject.forwardsMethodCalls(for: selector),
                       "Objects should intend to forward swizzled method calls by default")
     }
 
@@ -27,7 +27,7 @@ class MethodCallForwardingTests: XCTestCase {
         customForwardingObject.forwardsMethodCallsByDefault = true
         XCTAssertTrue(customForwardingObject.forwardsMethodCallsByDefault,
                       "This object should intend to forward swizzled method calls by default")
-        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(for: selector),
                       "This object should intend to forward swizzled method calls by default")
     }
 
@@ -35,31 +35,31 @@ class MethodCallForwardingTests: XCTestCase {
         customForwardingObject.forwardsMethodCallsByDefault = false
         XCTAssertFalse(customForwardingObject.forwardsMethodCallsByDefault,
                        "This object should not intend to forward swizzled method calls by default")
-        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(for: selector),
                        "This object should not intend to forward swizzled method calls by default")
     }
 
     func testExceptionsWithDefaultForwarding() {
         customForwardingObject.forwardsMethodCallsByDefault = true
 
-        customForwardingObject.addMethodCallForwardingException(forSelector: selector)
-        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        customForwardingObject.addMethodCallForwardingException(for: selector)
+        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(for: selector),
                        "The selector should not be forwarded since it is an exception")
 
-        customForwardingObject.removeMethodCallForwardingException(forSelector: selector)
-        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        customForwardingObject.removeMethodCallForwardingException(for: selector)
+        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(for: selector),
                       "The selector should now be forwarded again")
     }
 
     func testExceptionsWithoutDefaultForwarding() {
         customForwardingObject.forwardsMethodCallsByDefault = false
 
-        customForwardingObject.addMethodCallForwardingException(forSelector: selector)
-        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        customForwardingObject.addMethodCallForwardingException(for: selector)
+        XCTAssertTrue(customForwardingObject.forwardsMethodCalls(for: selector),
                       "The selector should be forwarded since it is an exception")
 
-        customForwardingObject.removeMethodCallForwardingException(forSelector: selector)
-        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(forSelector: selector),
+        customForwardingObject.removeMethodCallForwardingException(for: selector)
+        XCTAssertFalse(customForwardingObject.forwardsMethodCalls(for: selector),
                        "The selector should no longer be forwarded")
     }
 

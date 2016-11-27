@@ -32,9 +32,9 @@ class UIResponderSpyTests: SpyTestCase {
     func testDefaultMethodCallForwarding() {
         XCTAssertTrue(responder.forwardsMethodCallsByDefault,
                       "By default this spy should forward method calls")
-        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponderSpyAssociations.becomeFirstResponder.originalSelector),
+        XCTAssertTrue(responder.forwardsMethodCalls(for: UIResponderSpyAssociations.becomeFirstResponder.originalSelector),
                       "By default `UIResponder` should forward spied calls to `becomeFirstResponder`")
-        XCTAssertTrue(responder.forwardsMethodCalls(forSelector: UIResponderSpyAssociations.resignFirstResponder.originalSelector),
+        XCTAssertTrue(responder.forwardsMethodCalls(for: UIResponderSpyAssociations.resignFirstResponder.originalSelector),
                       "By default `UIResponder` should forward spied calls to `resignFirstResponder`")
     }
 
@@ -61,7 +61,7 @@ class UIResponderSpyTests: SpyTestCase {
             responder.becomeFirstResponderCalled = false
             returnValue = false
 
-            responder.addMethodCallForwardingException(forSelector: association.originalSelector)
+            responder.addMethodCallForwardingException(for: association.originalSelector)
             returnValue = responder.becomeFirstResponder()
             XCTAssertTrue(returnValue, "The unforwarded method call should return the default value")
         }
@@ -91,7 +91,7 @@ class UIResponderSpyTests: SpyTestCase {
         responder.becomeFirstResponderCalled = false
         returnValue = false
 
-        responder.addMethodCallForwardingException(forSelector: association.originalSelector)
+        responder.addMethodCallForwardingException(for: association.originalSelector)
         returnValue = responder.becomeFirstResponder()
         XCTAssertTrue(returnValue, "The unforwarded method call should return the default value")
 
@@ -125,7 +125,7 @@ class UIResponderSpyTests: SpyTestCase {
             responder.resignFirstResponderCalled = false
             returnValue = false
 
-            responder.addMethodCallForwardingException(forSelector: association.originalSelector)
+            responder.addMethodCallForwardingException(for: association.originalSelector)
             returnValue = responder.resignFirstResponder()
             XCTAssertTrue(returnValue, "The unforwarded method call should return the default value")
         }
@@ -156,7 +156,7 @@ class UIResponderSpyTests: SpyTestCase {
         responder.resignFirstResponderCalled = false
         returnValue = false
 
-        responder.addMethodCallForwardingException(forSelector: association.originalSelector)
+        responder.addMethodCallForwardingException(for: association.originalSelector)
         returnValue = responder.resignFirstResponder()
         XCTAssertTrue(returnValue, "The unforwarded method call should return the default value")
 

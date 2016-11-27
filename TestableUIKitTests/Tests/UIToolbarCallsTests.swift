@@ -7,31 +7,116 @@
 //
 
 import XCTest
-@testable import TestableUIKit
+import TestableUIKit
 
-class UIToolbarCallsTests: XCTestCase {
+class UIToolbarCallsTests: SpyTestCase {
 
-    let bar = UIToolbar()
+    let toolbar = UIToolbar()
+    let selector = #selector(UIToolbarCallsTests.handler)
+    var items: [UIBarButtonItem]!
 
-    func testShimMethodForwarding() {
-        XCTAssertTrue(bar.shouldForwardByDefault, "This shim should forward methods by default")
-        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should be forwarded by default")
-        bar.setShouldForwardMethodCallWithSelector("someSelector", false)
-        XCTAssertFalse(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should not be forwarded now")
-        bar.setShouldForwardMethodCallWithSelector("someSelector", true)
-        XCTAssertTrue(bar.shouldForwardMethodCallWithSelector("someSelector"), "The method should now be forwarded again")
+    @IBAction func handler() {}
+
+    override func setUp() {
+        super.setUp()
+
+        UIApplication.rootView.addSubview(toolbar)
+
+        items = [
+            UIBarButtonItem(
+                title: "Item 1",
+                style: .plain,
+                target: self,
+                action: selector
+            ),
+            UIBarButtonItem(
+                title: "Item 2",
+                style: .plain,
+                target: self,
+                action: selector
+            )
+        ]
     }
 
-    func testSetItemsCall() {
-        let item1 = UIBarButtonItem(title: "Item 1", style: .plain, target: nil, action: Selector("foobar"))
-        let item2 = UIBarButtonItem(title: "Item 2", style: .plain, target: nil, action: Selector("barfoo"))
-        XCTAssertFalse(bar.setItemsCalled, "The toolbar should not indicate having had setItems called by default");
-        XCTAssertNil(bar.setItemsItems, "The items should be missing by default")
-        XCTAssertNil(bar.setItemsAnimated, "The animation flag should be missing by default")
-        bar.setItems([item1, item2], animated: true)
-        XCTAssertTrue(bar.setItemsCalled, "The toolbar should now indicate having had setItems called");
-        XCTAssertEqual(bar.setItemsItems!, [item1, item2], "The navigation item should be captured")
-        XCTAssertTrue(bar.setItemsAnimated!, "The animation flag should be captured")
+    override func tearDown() {
+        toolbar.removeFromSuperview()
+
+        super.tearDown()
     }
+
+    func testDefaultMethodCallForwarding() {
+        XCTAssertTrue(toolbar.forwardsMethodCallsByDefault, "By default this spy should forward its method")
+        UIToolbarSpyAssociations.allAssociations.forEach { association in
+            let selector = association.originalSelector
+            XCTAssertTrue(toolbar.forwardsMethodCalls(for: selector),
+                           "By default `UIToolbar` should forward spied calls to `\(selector)`")
+        }
+    }
+
+
+    //  MARK: - `setItems(_:animated:)`
+
+    func testSetItemsCallWithContext() {
+        association = UIToolbarSpyAssociations.setItems
+        inspectImplementations()
+
+        XCTAssertFalse(toolbar.setItemsCalled,
+                       "The toolbar should not indicate having had `setItems(_:animated:)` called by default")
+        XCTAssertNil(toolbar.setItemsItems, "The items should be missing by default")
+        XCTAssertNil(toolbar.setItemsAnimated, "The animation flag should be missing by default")
+
+        toolbar.spyOnSetItems {
+            validateMethodsAreSwizzled()
+
+            toolbar.setItems(items, animated: true)
+            XCTAssertTrue(toolbar.setItemsCalled,
+                          "The toolbar should now indicate having had `setItems(_:animated:)` called")
+            XCTAssertEqual(toolbar.setItemsItems!, items, "The items should be captured")
+            XCTAssertTrue(toolbar.setItemsAnimated!, "The animation flag should be captured")
+        }
+
+        validateMethodsAreNotSwizzled()
+
+        XCTAssertFalse(toolbar.setItemsCalled,
+                       "The flag should be cleared after spying is complete")
+        XCTAssertNil(toolbar.setItemsItems, "The items should be cleared after spying is complete")
+        XCTAssertNil(toolbar.setItemsAnimated, "The animation flag should be cleared after spying is complete")
+    }
+
+    func testSetItemsCallWithoutContext() {
+        association = UIToolbarSpyAssociations.setItems
+        inspectImplementations()
+
+        XCTAssertFalse(toolbar.setItemsCalled,
+                       "The toolbar should not indicate having had `setItems(_:animated:)` called by default")
+        XCTAssertNil(toolbar.setItemsItems, "The items should be missing by default")
+        XCTAssertNil(toolbar.setItemsAnimated, "The animation flag should be missing by default")
+
+        toolbar.beginSpyingOnSetItems()
+        validateMethodsAreSwizzled()
+
+        toolbar.setItems(items, animated: true)
+        XCTAssertTrue(toolbar.setItemsCalled,
+                      "The toolbar should now indicate having had `setItems(_:animated:)` called")
+        XCTAssertEqual(toolbar.setItemsItems!, items, "The items should be captured")
+        XCTAssertTrue(toolbar.setItemsAnimated!, "The animation flag should be captured")
+
+        toolbar.endSpyingOnSetItems()
+        validateMethodsAreNotSwizzled()
+
+        XCTAssertFalse(toolbar.setItemsCalled,
+                       "The flag should be cleared after spying is complete")
+        XCTAssertNil(toolbar.setItemsItems, "The items should be cleared after spying is complete")
+        XCTAssertNil(toolbar.setItemsAnimated, "The animation flag should be cleared after spying is complete")
+    }
+
+}
+
+
+fileprivate extension UIToolbarSpyAssociations {
+
+    static let allAssociations = [
+        UIToolbarSpyAssociations.setItems
+    ]
 
 }

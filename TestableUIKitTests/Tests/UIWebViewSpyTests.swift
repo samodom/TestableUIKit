@@ -1,5 +1,5 @@
 //
-//  UIWebViewCallsTests.swift
+//  UIWebViewSpyTests.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/23/14.

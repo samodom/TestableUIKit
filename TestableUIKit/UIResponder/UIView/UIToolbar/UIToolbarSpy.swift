@@ -10,11 +10,11 @@ import UIKit
 import FoundationSwagger
 
 
-enum UIToolbarOriginalSelectors {
+fileprivate enum UIToolbarOriginalSelectors {
     static let setItems = #selector(UIToolbar.setItems(_:animated:))
 }
 
-enum UIToolbarSpySelectors {
+fileprivate enum UIToolbarSpySelectors {
     static let setItems = #selector(UIToolbar.spy_setItems(_:animated:))
 }
 
@@ -62,7 +62,7 @@ public extension UIToolbar {
         setItemsItems = items
         setItemsAnimated = animated
 
-        guard forwardsMethodCalls(for: UIToolbarOriginalSelectors.setItems) else {
+        guard forwardsMethodCalls(for: UIToolbarSpyAssociations.setItems.originalSelector) else {
             return
         }
 

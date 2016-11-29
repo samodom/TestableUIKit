@@ -12,18 +12,19 @@ import FoundationSwagger
 
 extension UIResponder: Spy {}
 
-enum UIResponderOriginalSelectors {
+fileprivate enum UIResponderOriginalSelectors {
     static let becomeFirstResponder = #selector(UIResponder.becomeFirstResponder)
     static let resignFirstResponder = #selector(UIResponder.resignFirstResponder)
 }
 
-enum UIResponderSpySelectors {
+fileprivate enum UIResponderSpySelectors {
     static let becomeFirstResponder = #selector(UIResponder.spy_becomeFirstResponder)
     static let resignFirstResponder = #selector(UIResponder.spy_resignFirstResponder)
 }
 
 
 public enum UIResponderSpyAssociations {
+
     public static let becomeFirstResponder = MethodAssociation(
         forClass: UIResponder.self,
         ofType: .instance,
@@ -37,6 +38,7 @@ public enum UIResponderSpyAssociations {
         originalSelector: UIResponderOriginalSelectors.resignFirstResponder,
         alternateSelector: UIResponderSpySelectors.resignFirstResponder
     )
+
 }
 
 
@@ -70,7 +72,7 @@ public extension UIResponder {
     public func spy_becomeFirstResponder() -> Bool {
         becomeFirstResponderCalled = true
 
-        guard forwardsMethodCalls(for: UIResponderOriginalSelectors.becomeFirstResponder) else {
+        guard forwardsMethodCalls(for: UIResponderSpyAssociations.becomeFirstResponder.originalSelector) else {
             return true
         }
 
@@ -106,7 +108,7 @@ public extension UIResponder {
     public func spy_resignFirstResponder() -> Bool {
         resignFirstResponderCalled = true
 
-        guard forwardsMethodCalls(for: UIResponderOriginalSelectors.resignFirstResponder) else {
+        guard forwardsMethodCalls(for: UIResponderSpyAssociations.resignFirstResponder.originalSelector) else {
             return true
         }
 

@@ -10,7 +10,7 @@ import UIKit
 import FoundationSwagger
 
 
-enum UIViewOriginalSelectors {
+fileprivate enum UIViewOriginalSelectors {
     static let updateConstraints = #selector(UIView.updateConstraints)
     static let draw = #selector(UIView.draw(_:))
     static let encodeRestorableState = #selector(UIView.encodeRestorableState(with:))
@@ -22,7 +22,7 @@ enum UIViewOriginalSelectors {
     static let setNeedsDisplayInRect = #selector(UIView.setNeedsDisplay(_:))
 }
 
-enum UIViewSpySelectors {
+fileprivate enum UIViewSpySelectors {
     static let updateConstraints = #selector(UIView.spy_updateConstraints)
     static let draw = #selector(UIView.spy_draw(_:))
     static let encodeRestorableState = #selector(UIView.spy_encodeRestorableState(with:))
@@ -133,7 +133,7 @@ public extension UIView {
     public func spy_updateConstraints() {
         updateConstraintsCalled = true
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.updateConstraints) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.updateConstraints.originalSelector) else {
             return
         }
 
@@ -170,7 +170,7 @@ public extension UIView {
         drawCalled = true
         drawRect = rect
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.draw) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.draw.originalSelector) else {
             return
         }
 
@@ -208,7 +208,7 @@ public extension UIView {
         encodeRestorableStateCalled = true
         encodeRestorableStateCoder = coder
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.encodeRestorableState) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.encodeRestorableState.originalSelector) else {
             return
         }
         
@@ -246,7 +246,7 @@ public extension UIView {
         decodeRestorableStateCalled = true
         decodeRestorableStateCoder = coder
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.decodeRestorableState) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.decodeRestorableState.originalSelector) else {
             return
         }
 
@@ -282,7 +282,7 @@ public extension UIView {
     public func spy_setNeedsLayout() {
         setNeedsLayoutCalled = true
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsLayout) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.setNeedsLayout.originalSelector) else {
             return
         }
 
@@ -319,7 +319,7 @@ public extension UIView {
     public func spy_invalidateIntrinsicContentSize() {
         invalidateIntrinsicContentSizeCalled = true
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.invalidateIntrinsicContentSize) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.invalidateIntrinsicContentSize.originalSelector) else {
             return
         }
 
@@ -356,7 +356,7 @@ public extension UIView {
     public func spy_setNeedsUpdateConstraints() {
         setNeedsUpdateConstraintsCalled = true
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsUpdateConstraints) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.setNeedsUpdateConstraints.originalSelector) else {
             return
         }
 
@@ -397,7 +397,7 @@ public extension UIView {
     public func spy_setNeedsDisplay() {
         setNeedsDisplayCalled = true
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsDisplay) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.setNeedsDisplay.originalSelector) else {
             return
         }
 
@@ -410,7 +410,7 @@ public extension UIView {
         setNeedsDisplayCalled = true
         setNeedsDisplayRect = rect
 
-        guard forwardsMethodCalls(for: UIViewOriginalSelectors.setNeedsDisplayInRect) else {
+        guard forwardsMethodCalls(for: UIViewSpyAssociations.setNeedsDisplayInRect.originalSelector) else {
             return
         }
 

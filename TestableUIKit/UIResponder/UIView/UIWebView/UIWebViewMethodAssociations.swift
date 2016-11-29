@@ -9,7 +9,7 @@
 import FoundationSwagger
 
 
-enum UIWebViewOriginalSelectors {
+fileprivate enum UIWebViewOriginalSelectors {
     static let loadData = #selector(UIWebView.load(_:mimeType:textEncodingName:baseURL:))
     static let loadHtmlString = #selector(UIWebView.loadHTMLString(_:baseURL:))
     static let loadRequest = #selector(UIWebView.loadRequest(_:))
@@ -19,7 +19,7 @@ enum UIWebViewOriginalSelectors {
     static let goForward = #selector(UIWebView.goForward)
 }
 
-enum UIWebViewSpySelectors {
+fileprivate enum UIWebViewSpySelectors {
     static let loadData = #selector(UIWebView.spy_load(_:mimeType:textEncodingName:baseURL:))
     static let loadHtmlString = #selector(UIWebView.spy_loadHTMLString(_:baseURL:))
     static let loadRequest = #selector(UIWebView.spy_loadRequest(_:))

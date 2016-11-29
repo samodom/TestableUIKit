@@ -6,7 +6,7 @@
 
 ## Spying on `setItems(_:animated:)`
 
-Use this spy to validate that a toolbar's items have ben set with optional animation.
+Use this spy to validate that a toolbar's items have been set with optional animation.
 
 ### Spy Methods
 

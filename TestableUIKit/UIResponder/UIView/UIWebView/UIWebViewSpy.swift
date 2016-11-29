@@ -51,7 +51,7 @@ public extension UIWebView {
         loadDataTextEncodingName = textEncodingName
         loadDataBaseUrl = baseURL
 
-        guard forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadData) else {
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.loadData.originalSelector) else {
             return
         }
 
@@ -90,7 +90,7 @@ public extension UIWebView {
         loadHtmlStringString = string
         loadHtmlStringBaseUrl = baseURL
 
-        guard forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadHtmlString) else {
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.loadHtmlString.originalSelector) else {
             return
         }
 
@@ -128,7 +128,7 @@ public extension UIWebView {
         loadRequestCalled = true
         loadRequestRequest = request
 
-        guard forwardsMethodCalls(for: UIWebViewOriginalSelectors.loadRequest) else {
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.loadRequest.originalSelector) else {
             return
         }
 
@@ -165,9 +165,11 @@ public extension UIWebView {
     public func spy_stopLoading() {
         stopLoadingCalled = true
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.stopLoading) {
-            spy_stopLoading()
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.stopLoading.originalSelector) else {
+            return
         }
+
+        spy_stopLoading()
     }
 
 
@@ -200,9 +202,11 @@ public extension UIWebView {
     public func spy_reload() {
         reloadCalled = true
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.reload) {
-            spy_reload()
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.reload.originalSelector) else {
+            return
         }
+
+        spy_reload()
     }
 
 
@@ -235,9 +239,11 @@ public extension UIWebView {
     public func spy_goBack() {
         goBackCalled = true
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.goBack) {
-            spy_goBack()
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.goBack.originalSelector) else {
+            return
         }
+
+        spy_goBack()
     }
 
 
@@ -270,9 +276,11 @@ public extension UIWebView {
     public func spy_goForward() {
         goForwardCalled = true
 
-        if forwardsMethodCalls(for: UIWebViewOriginalSelectors.goForward) {
-            spy_goForward()
+        guard forwardsMethodCalls(for: UIWebViewSpyAssociations.goForward.originalSelector) else {
+            return
         }
+
+        spy_goForward()
     }
 
 }

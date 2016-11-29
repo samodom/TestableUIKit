@@ -1,5 +1,5 @@
 //
-//  UIToolbarCallsTests.swift
+//  UIToolbarSpyTests.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/23/14.
@@ -9,10 +9,10 @@
 import XCTest
 import TestableUIKit
 
-class UIToolbarCallsTests: SpyTestCase {
+class UIToolbarSpyTests: SpyTestCase {
 
     let toolbar = UIToolbar()
-    let selector = #selector(UIToolbarCallsTests.handler)
+    let selector = #selector(UIToolbarSpyTests.handler)
     var items: [UIBarButtonItem]!
 
     @IBAction func handler() {}

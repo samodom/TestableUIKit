@@ -9,12 +9,12 @@
 import FoundationSwagger
 
 
-enum UIWindowOriginalSelectors {
+fileprivate enum UIWindowOriginalSelectors {
     static let makeKey = #selector(UIWindow.makeKey)
     static let makeKeyAndVisible = #selector(UIWindow.makeKeyAndVisible)
 }
 
-enum UIWindowSpySelectors {
+fileprivate enum UIWindowSpySelectors {
     static let makeKey = #selector(UIWindow.spy_makeKey)
     static let makeKeyAndVisible = #selector(UIWindow.spy_makeKeyAndVisible)
 }
@@ -70,9 +70,11 @@ public extension UIWindow {
     public func spy_makeKey() {
         makeKeyCalled = true
 
-        if forwardsMethodCalls(for: UIWindowOriginalSelectors.makeKey) {
-            spy_makeKey()
+        guard forwardsMethodCalls(for: UIWindowSpyAssociations.makeKey.originalSelector) else {
+            return
         }
+
+        spy_makeKey()
     }
 
 
@@ -105,9 +107,11 @@ public extension UIWindow {
     public func spy_makeKeyAndVisible() {
         makeKeyAndVisibleCalled = true
 
-        if forwardsMethodCalls(for: UIWindowOriginalSelectors.makeKeyAndVisible) {
-            spy_makeKeyAndVisible()
+        guard forwardsMethodCalls(for: UIWindowSpyAssociations.makeKeyAndVisible.originalSelector) else {
+            return
         }
+
+        spy_makeKeyAndVisible()
     }
 
 }

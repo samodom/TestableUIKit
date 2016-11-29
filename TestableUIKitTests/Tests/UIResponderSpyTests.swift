@@ -32,10 +32,11 @@ class UIResponderSpyTests: SpyTestCase {
     func testDefaultMethodCallForwarding() {
         XCTAssertTrue(responder.forwardsMethodCallsByDefault,
                       "By default this spy should forward method calls")
-        XCTAssertTrue(responder.forwardsMethodCalls(for: UIResponderSpyAssociations.becomeFirstResponder.originalSelector),
-                      "By default `UIResponder` should forward spied calls to `becomeFirstResponder`")
-        XCTAssertTrue(responder.forwardsMethodCalls(for: UIResponderSpyAssociations.resignFirstResponder.originalSelector),
-                      "By default `UIResponder` should forward spied calls to `resignFirstResponder`")
+        UIResponderSpyAssociations.allAssociations.forEach { association in
+            let selector = association.originalSelector
+            XCTAssertTrue(responder.forwardsMethodCalls(for: selector),
+                          "By default `UIResponder` should forward spied calls to `\(selector)`")
+        }
     }
 
 
@@ -165,5 +166,16 @@ class UIResponderSpyTests: SpyTestCase {
         XCTAssertFalse(responder.resignFirstResponderCalled,
                        "The flag should be cleared after spying is complete")
     }
+
+}
+
+
+
+fileprivate extension UIResponderSpyAssociations {
+
+    static let allAssociations = [
+        UIResponderSpyAssociations.becomeFirstResponder,
+        UIResponderSpyAssociations.resignFirstResponder
+    ]
 
 }

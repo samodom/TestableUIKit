@@ -18,8 +18,8 @@ class UIViewSpyTests: SpyTestCase {
     let plainView = UIView()
     let emptyView = EmptyView()
 
-    var capturedViews: [UIView]!
-    var callingViews = [UIView]()
+    var goodViews: [UIView]!
+    var allViews: [UIView]!
 
     let sampleFrame = CGRect(x: 1, y: 2, width: 3, height: 4)
     let sampleCoder = NSCoder()
@@ -27,10 +27,17 @@ class UIViewSpyTests: SpyTestCase {
     override func setUp() {
         super.setUp()
 
-        capturedViews = [goodView, subView, plainView, emptyView]
-        callingViews += [goodView, plainView, emptyView, subView]
+        goodViews = [goodView, subView, plainView, emptyView]
+        allViews = goodViews + [badView]
+        let root = UIApplication.rootView
+        allViews.forEach { root.addSubview($0) }
     }
 
+    override func tearDown() {
+        allViews.forEach { $0.removeFromSuperview() }
+
+        super.tearDown()
+    }
 
     func testDefaultMethodCallForwarding() {
         XCTAssertTrue(plainView.forwardsMethodCallsByDefault,
@@ -49,7 +56,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.updateConstraints
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.updateConstraintsCalled,
                            "By default the view should not indicate having been asked to update its constraints")
 
@@ -81,7 +88,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.updateConstraints
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.updateConstraintsCalled,
                            "By default the view should not indicate having been asked to update its constraints")
 
@@ -115,7 +122,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.draw
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.drawCalled,
                            "By default the view should not indicate having been asked to draw its contents")
             XCTAssertNil(view.drawRect, "By default there should be no captured rect")
@@ -150,7 +157,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.draw
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.drawCalled,
                            "By default the view should not indicate having been asked to draw its contents")
             XCTAssertNil(view.drawRect, "By default there should be no captured rect")
@@ -187,7 +194,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.encodeRestorableState
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.encodeRestorableStateCalled,
                            "By default the view should not indicate having been asked to encode its restorable state")
             XCTAssertNil(view.encodeRestorableStateCoder, "By default there should be no captured coder")
@@ -223,7 +230,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.encodeRestorableState
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.encodeRestorableStateCalled,
                            "By default the view should not indicate having been asked to encode its restorable state")
             XCTAssertNil(view.encodeRestorableStateCoder, "By default there should be no captured coder")
@@ -261,7 +268,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.decodeRestorableState
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.decodeRestorableStateCalled,
                            "By default the view should not indicate having been asked to decode its restorable state")
             XCTAssertNil(view.decodeRestorableStateCoder, "By default there should be no captured coder")
@@ -298,7 +305,7 @@ class UIViewSpyTests: SpyTestCase {
         association = UIViewSpyAssociations.decodeRestorableState
         inspectImplementations()
 
-        callingViews.forEach { view in
+        goodViews.forEach { view in
             XCTAssertFalse(view.decodeRestorableStateCalled,
                            "By default the view should not indicate having been asked to decode its restorable state")
             XCTAssertNil(view.decodeRestorableStateCoder, "By default there should be no captured coder")

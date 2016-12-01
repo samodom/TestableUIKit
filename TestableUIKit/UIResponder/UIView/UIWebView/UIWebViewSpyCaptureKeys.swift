@@ -33,12 +33,7 @@ enum UIWebViewSpyCaptureKeys {
 
 
     /// `loadHTMLString(_:baseURL:)`
-    static let loadHtmlString: [SpyKey] = [
-        loadHtmlStringCalled,
-        loadHtmlStringString,
-        loadHtmlStringBaseUrl
-    ]
-
+    static let loadHtmlString = [loadHtmlStringCalled, loadHtmlStringString, loadHtmlStringBaseUrl]
     private static let loadHtmlStringBase = "loadHtmlString"
     static let loadHtmlStringCalled = ObjectAssociationKey(loadHtmlStringBase + calledSuffix)
     static let loadHtmlStringString = ObjectAssociationKey(loadHtmlStringBase + "String")
@@ -46,29 +41,29 @@ enum UIWebViewSpyCaptureKeys {
 
 
     /// `loadRequest(_:)`
-    static let loadRequest: [SpyKey] = [loadRequestCalled, loadRequestRequest]
+    static let loadRequest = [loadRequestCalled, loadRequestRequest]
     private static let loadRequestBase = "loadRequest"
     static let loadRequestCalled = ObjectAssociationKey(loadRequestBase + calledSuffix)
     static let loadRequestRequest = ObjectAssociationKey(loadRequestBase + "Request")
 
 
     /// `stopLoading`
-    static let stopLoading: [SpyKey] = [stopLoadingCalled]
+    static let stopLoading = [stopLoadingCalled]
     static let stopLoadingCalled = ObjectAssociationKey("stopLoadingCalled")
 
 
     /// `reload`
-    static let reload: [SpyKey] = [reloadCalled]
+    static let reload = [reloadCalled]
     static let reloadCalled = ObjectAssociationKey("reloadCalled")
 
 
     /// `goBack`
-    static let goBack: [SpyKey] = [goBackCalled]
+    static let goBack = [goBackCalled]
     static let goBackCalled = ObjectAssociationKey("goBackCalled")
 
 
     /// `goForward`
-    static let goForward: [SpyKey] = [goForwardCalled]
+    static let goForward = [goForwardCalled]
     static let goForwardCalled = ObjectAssociationKey("goForwardCalled")
 
 }

@@ -11,18 +11,11 @@ import FoundationSwagger
 
 
 enum UIToolbarSpyCaptureKeys {
-
-    static let setItems: [SpyKey] = [
-        setItemsCalled,
-        setItemsItems,
-        setItemsAnimated
-    ]
-
+    static let setItems = [setItemsCalled, setItemsItems, setItemsAnimated]
     private static let setItemsBase = "setItems"
     static let setItemsCalled = ObjectAssociationKey(setItemsBase + "Called")
     static let setItemsItems = ObjectAssociationKey(setItemsBase + "Items")
     static let setItemsAnimated = ObjectAssociationKey(setItemsBase + "Animated")
-
 }
 
 

@@ -15,28 +15,18 @@ enum UINavigationBarSpyCaptureKeys {
     private static let calledSuffix = "Called"
     private static let animatedSuffix = "Animated"
 
-    static let pushItem: [SpyKey] = [
-        pushItemCalled,
-        pushItemItem,
-        pushItemAnimated
-    ]
-
+    static let pushItem = [pushItemCalled, pushItemItem, pushItemAnimated]
     private static let pushItemBase = "pushItem"
     static let pushItemCalled = ObjectAssociationKey(pushItemBase + calledSuffix)
     static let pushItemItem = ObjectAssociationKey(pushItemBase + "Item")
     static let pushItemAnimated = ObjectAssociationKey(pushItemBase + animatedSuffix)
 
-    static let popItem: [SpyKey] = [popItemCalled, popItemAnimated]
+    static let popItem = [popItemCalled, popItemAnimated]
     private static let popItemBase = "popItem"
     static let popItemCalled = ObjectAssociationKey(popItemBase + calledSuffix)
     static let popItemAnimated = ObjectAssociationKey(popItemBase + animatedSuffix)
 
-    static let setItems: [SpyKey] = [
-        setItemsCalled,
-        setItemsItems,
-        setItemsAnimated
-    ]
-
+    static let setItems = [setItemsCalled, setItemsItems, setItemsAnimated]
     private static let setItemsBase = "setItems"
     static let setItemsCalled = ObjectAssociationKey(setItemsBase + calledSuffix)
     static let setItemsItems = ObjectAssociationKey(setItemsBase + "Items")

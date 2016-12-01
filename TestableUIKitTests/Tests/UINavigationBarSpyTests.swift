@@ -20,6 +20,13 @@ class UINavigationBarSpyTests: SpyTestCase {
         super.setUp()
 
         items = [item1, item2]
+        UIApplication.rootView.addSubview(navigationBar)
+    }
+
+    override func tearDown() {
+        navigationBar.removeFromSuperview()
+
+        super.tearDown()
     }
 
     func testMethodCallForwarding() {

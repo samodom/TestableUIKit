@@ -6,9 +6,9 @@
 
 **Available spy methods:**
 
-[`pushItem(_:animated:)`](#spying-on-pushItem_animated)
-[`popItem(animated:)`](#spying-on-popItemanimated)
-[`setItems(_:animated:)`](#spying-on-setItems_animated)
+* [`pushItem(_:animated:)`](#spying-on-pushItem_animated)
+* [`popItem(animated:)`](#spying-on-popItemanimated)
+* [`setItems(_:animated:)`](#spying-on-setItems_animated)
 
 
 ## Spying on `pushItem(_:animated:)`

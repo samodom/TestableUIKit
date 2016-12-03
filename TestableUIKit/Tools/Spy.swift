@@ -10,19 +10,38 @@ import FoundationSwagger
 
 public protocol Spy: ObjectAssociating {}
 
+protocol SpyKey {}
+
+extension ObjectAssociationKey: SpyKey {}
+
+typealias ObjectAssociationFilename = String
+extension ObjectAssociationFilename: SpyKey {}
+
+
+func UUIDKeyString() -> [CChar] {
+    return NSUUID().uuidString.cString(using: .utf8)!
+}
+
+
 extension Spy {
 
     func clearSpyAssociations(keys: [SpyKey]) {
-        keys.forEach { key in
-            removeAssociation(for: key.simpleKey)
-            if let complexKey = key as? ComplexObjectAssociationKey {
-                removeStoredAssociation(for: complexKey)
+        keys.forEach { spyKey in
+            switch spyKey {
+            case let key as ObjectAssociationKey:
+                removeAssociation(for: key)
+
+            case let filename as ObjectAssociationFilename:
+                removeStoredAssociation(for: filename)
+
+            default:
+                print("Attempting to clear a spy association with an unknown key type")
             }
         }
     }
 
-    func associateData(_ data: Data, with key: ComplexObjectAssociationKey) {
-        let url = storageUrl(for: key)
+    func associateData(_ data: Data, with filename: ObjectAssociationFilename) {
+        let url = storageUrl(for: filename)
         do {
             try data.write(to: url)
         }
@@ -31,17 +50,17 @@ extension Spy {
         }
     }
 
-    func associatedData(for key: ComplexObjectAssociationKey) -> Data? {
-        let url = storageUrl(for: key)
+    func associatedData(for filename: ObjectAssociationFilename) -> Data? {
+        let url = storageUrl(for: filename)
         return try? Data(contentsOf: url)
     }
 
-    func removeStoredAssociation(for key: ComplexObjectAssociationKey) {
-        let url = storageUrl(for: key)
+    func removeStoredAssociation(for filename: ObjectAssociationFilename) {
+        let url = storageUrl(for: filename)
         try? FileManager.default.removeItem(at: url)
     }
 
-    private func storageUrl(for key: ComplexObjectAssociationKey) -> URL {
+    private func storageUrl(for filename: ObjectAssociationFilename) -> URL {
         let baseUrl = DocumentsDirectoryURL.appendingPathComponent("associations")
         do {
             try FileManager.default.createDirectory(at: baseUrl, withIntermediateDirectories: true)
@@ -50,7 +69,7 @@ extension Spy {
             fatalError(error.localizedDescription)
         }
 
-        return baseUrl.appendingPathComponent(key.fileKey)
+        return baseUrl.appendingPathComponent(filename)
     }
 
 }

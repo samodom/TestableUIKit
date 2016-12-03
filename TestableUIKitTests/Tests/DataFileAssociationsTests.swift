@@ -12,27 +12,24 @@ import FoundationSwagger
 
 class DataFileAssociationsTests: XCTestCase {
 
-    static let complexKey = ComplexObjectAssociationKey(
-        simpleKey: ObjectAssociationKey("sample"),
-        fileKey: "sample"
-    )
+    let filename = "sample" as ObjectAssociationFilename
 
     class TestSpy: Spy {}
     let spy = TestSpy()
 
     let data = "sample string".data(using: .utf8)!
-    let url = DocumentsDirectoryURL
+    let expectedUrl = DocumentsDirectoryURL
         .appendingPathComponent("associations")
         .appendingPathComponent("sample")
 
     func testDataFileAssociation() {
-        spy.associateData(data, with: DataFileAssociationsTests.complexKey)
+        spy.associateData(data, with: filename)
 
-        var storedData = spy.associatedData(for: DataFileAssociationsTests.complexKey)
+        var storedData = spy.associatedData(for: filename)
         XCTAssertEqual(storedData, data, "The stored data should be retrieved using the complex key")
 
-        spy.removeStoredAssociation(for: DataFileAssociationsTests.complexKey)
-        storedData = spy.associatedData(for: DataFileAssociationsTests.complexKey)
+        spy.removeStoredAssociation(for: filename)
+        storedData = spy.associatedData(for: filename)
         XCTAssertNil(storedData, "The stored data should have been cleared")
     }
 

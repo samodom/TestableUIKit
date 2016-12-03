@@ -10,13 +10,20 @@ import FoundationSwagger
 
 
 enum UIWindowSpyCaptureKeys {
-    private static let calledSuffix = "Called"
+
+    /// `makeKey`
 
     static let makeKey = [makeKeyCalled]
-    static let makeKeyCalled = ObjectAssociationKey("makeKey" + calledSuffix)
+    private static let makeKeyCalledString = UUIDKeyString()
+    static let makeKeyCalled = ObjectAssociationKey(makeKeyCalledString)
+
+
+    /// `makeKeyAndVisible`
 
     static let makeKeyAndVisible = [makeKeyAndVisibleCalled]
-    static let makeKeyAndVisibleCalled = ObjectAssociationKey("makeKeyAndVisible" + calledSuffix)
+    private static let makeKeyAndVisibleCalledString = UUIDKeyString()
+    static let makeKeyAndVisibleCalled = ObjectAssociationKey(makeKeyAndVisibleCalledString)
+
 }
 
 

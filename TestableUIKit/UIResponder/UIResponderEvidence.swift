@@ -10,13 +10,21 @@ import FoundationSwagger
 
 
 enum UIResponderSpyCaptureKeys {
-    private static let calledSuffix = "Called"
+
+
+    //  `becomeFirstResponder`
 
     static let becomeFirstResponder = [becomeFirstResponderCalled]
-    static let becomeFirstResponderCalled = ObjectAssociationKey("becomeFirstResponder" + calledSuffix)
+    private static let becomeFirstResponderCalledString = UUIDKeyString()
+    static let becomeFirstResponderCalled = ObjectAssociationKey(becomeFirstResponderCalledString)
+
+
+    //  `resignFirstResponder`
 
     static let resignFirstResponder = [resignFirstResponderCalled]
-    static let resignFirstResponderCalled = ObjectAssociationKey("resignFirstResponder" + calledSuffix)
+    private static let resignFirstResponderCalledString = UUIDKeyString()
+    static let resignFirstResponderCalled = ObjectAssociationKey(resignFirstResponderCalledString)
+
 }
 
 

@@ -12,25 +12,36 @@ import FoundationSwagger
 
 enum UINavigationBarSpyCaptureKeys {
 
-    private static let calledSuffix = "Called"
-    private static let animatedSuffix = "Animated"
+
+    /// `pushItem(_:animated:)`
 
     static let pushItem = [pushItemCalled, pushItemItem, pushItemAnimated]
-    private static let pushItemBase = "pushItem"
-    static let pushItemCalled = ObjectAssociationKey(pushItemBase + calledSuffix)
-    static let pushItemItem = ObjectAssociationKey(pushItemBase + "Item")
-    static let pushItemAnimated = ObjectAssociationKey(pushItemBase + animatedSuffix)
+    private static let pushItemCalledString = UUIDKeyString()
+    private static let pushItemItemString = UUIDKeyString()
+    private static let pushItemAnimatedString = UUIDKeyString()
+    static let pushItemCalled = ObjectAssociationKey(pushItemCalledString)
+    static let pushItemItem = ObjectAssociationKey(pushItemItemString)
+    static let pushItemAnimated = ObjectAssociationKey(pushItemAnimatedString)
+
+
+    /// `popItem(animated:)`
 
     static let popItem = [popItemCalled, popItemAnimated]
-    private static let popItemBase = "popItem"
-    static let popItemCalled = ObjectAssociationKey(popItemBase + calledSuffix)
-    static let popItemAnimated = ObjectAssociationKey(popItemBase + animatedSuffix)
+    private static let popItemCalledString = UUIDKeyString()
+    private static let popItemAnimatedString = UUIDKeyString()
+    static let popItemCalled = ObjectAssociationKey(popItemCalledString)
+    static let popItemAnimated = ObjectAssociationKey(popItemAnimatedString)
+
+
+    /// `setItems(_:animated:)`
 
     static let setItems = [setItemsCalled, setItemsItems, setItemsAnimated]
-    private static let setItemsBase = "setItems"
-    static let setItemsCalled = ObjectAssociationKey(setItemsBase + calledSuffix)
-    static let setItemsItems = ObjectAssociationKey(setItemsBase + "Items")
-    static let setItemsAnimated = ObjectAssociationKey(setItemsBase + animatedSuffix)
+    private static let setItemsCalledString = UUIDKeyString()
+    private static let setItemsItemsString = UUIDKeyString()
+    private static let setItemsAnimatedString = UUIDKeyString()
+    static let setItemsCalled = ObjectAssociationKey(setItemsCalledString)
+    static let setItemsItems = ObjectAssociationKey(setItemsItemsString)
+    static let setItemsAnimated = ObjectAssociationKey(setItemsAnimatedString)
 
 }
 

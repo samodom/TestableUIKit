@@ -1,5 +1,5 @@
-`UICollectionView ` Spy
-=======================
+`UICollectionView` Spy
+======================
 
 > This spy forwards all methods by default.
 

@@ -1,5 +1,5 @@
-`UINavigationBar ` Spy
-======================
+`UINavigationBar` Spy
+=====================
 
 > This spy forwards its method by default.
 

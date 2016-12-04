@@ -1,5 +1,5 @@
-`UITableView ` Spy
-==================
+`UITableView` Spy
+=================
 
 > This spy forwards all methods by default.
 

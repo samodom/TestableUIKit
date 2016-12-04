@@ -56,6 +56,7 @@ class UIWebViewSpyTests: SpyTestCase {
         let textEncodingName = "utf-8"
 
         webView.spyOnLoadData {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.load(data, mimeType: mimeType, textEncodingName: textEncodingName, baseURL: baseUrl)
@@ -68,6 +69,7 @@ class UIWebViewSpyTests: SpyTestCase {
             XCTAssertEqual(webView.loadDataBaseUrl, baseUrl, "The base URL should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.loadDataCalled,
@@ -127,6 +129,7 @@ class UIWebViewSpyTests: SpyTestCase {
         XCTAssertNil(webView.loadHtmlStringBaseUrl, "The base URL should be missing by default")
 
         webView.spyOnLoadHtmlString {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.loadHTMLString(htmlString, baseURL: baseUrl)
@@ -136,6 +139,7 @@ class UIWebViewSpyTests: SpyTestCase {
             XCTAssertEqual(webView.loadHtmlStringBaseUrl, baseUrl, "The base URL should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.loadHtmlStringCalled,
@@ -183,6 +187,7 @@ class UIWebViewSpyTests: SpyTestCase {
         XCTAssertNil(webView.loadRequestRequest, "The URL request should be missing by default")
 
         webView.spyOnLoadRequest {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             let request = URLRequest(url: baseUrl)
@@ -192,6 +197,7 @@ class UIWebViewSpyTests: SpyTestCase {
             XCTAssertEqual(webView.loadRequestRequest, request, "The URL request should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.loadRequestCalled,
@@ -235,6 +241,7 @@ class UIWebViewSpyTests: SpyTestCase {
                        "The web view should not indicate having had `stopLoading` called by default")
 
         webView.spyOnStopLoading {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.stopLoading()
@@ -242,6 +249,7 @@ class UIWebViewSpyTests: SpyTestCase {
                           "The web view should now indicate having had `stopLoading` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.stopLoadingCalled,
@@ -279,6 +287,7 @@ class UIWebViewSpyTests: SpyTestCase {
                        "The web view should not indicate having had `reload` called by default")
 
         webView.spyOnReload {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.reload()
@@ -286,6 +295,7 @@ class UIWebViewSpyTests: SpyTestCase {
                           "The web view should now indicate having had `reload` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.reloadCalled,
@@ -323,6 +333,7 @@ class UIWebViewSpyTests: SpyTestCase {
                        "The web view should not indicate having had `goBack` called by default")
 
         webView.spyOnGoBack {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.goBack()
@@ -330,6 +341,7 @@ class UIWebViewSpyTests: SpyTestCase {
                           "The web view should now indicate having had `goBack` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.goBackCalled,
@@ -367,6 +379,7 @@ class UIWebViewSpyTests: SpyTestCase {
                        "The web view should not indicate having had `goForward` called by default")
 
         webView.spyOnGoForward {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             webView.goForward()
@@ -374,6 +387,7 @@ class UIWebViewSpyTests: SpyTestCase {
                           "The web view should now indicate having had `goForward` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(webView.goForwardCalled,

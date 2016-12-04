@@ -51,6 +51,7 @@ class UINavigationBarSpyTests: SpyTestCase {
         XCTAssertNil(navigationBar.pushItemAnimated, "The animation flag should be missing by default")
 
         navigationBar.spyOnPushItem {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             navigationBar.pushItem(item1, animated: true)
@@ -61,6 +62,7 @@ class UINavigationBarSpyTests: SpyTestCase {
             XCTAssertTrue(navigationBar.pushItemAnimated!, "The animation flag should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(navigationBar.pushItemCalled, "The flag should be cleared after spying is complete")
@@ -107,6 +109,7 @@ class UINavigationBarSpyTests: SpyTestCase {
         XCTAssertNil(navigationBar.popItemAnimated, "The animation flag should be missing by default")
 
         navigationBar.spyOnPopItem {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             navigationBar.popItem(animated: true)
@@ -116,6 +119,7 @@ class UINavigationBarSpyTests: SpyTestCase {
             XCTAssertTrue(navigationBar.popItemAnimated!, "The animation flag should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(navigationBar.popItemCalled, "The flag should be cleared after spying is complete")
@@ -159,6 +163,7 @@ class UINavigationBarSpyTests: SpyTestCase {
         XCTAssertNil(navigationBar.setItemsAnimated, "The animation flag should be missing by default")
 
         navigationBar.spyOnSetItems {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             navigationBar.setItems(items, animated: true)
@@ -168,6 +173,7 @@ class UINavigationBarSpyTests: SpyTestCase {
             XCTAssertTrue(navigationBar.setItemsAnimated!, "The animation flag should be captured")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(navigationBar.setItemsCalled,

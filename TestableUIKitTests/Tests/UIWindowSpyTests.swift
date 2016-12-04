@@ -33,6 +33,7 @@ class UIWindowSpyTests: SpyTestCase {
                        "The window should not indicate having had `makeKey` called by default")
 
         window.spyOnMakeKey {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             window.makeKey()
@@ -40,6 +41,7 @@ class UIWindowSpyTests: SpyTestCase {
                           "The window should now indicate having had `makeKey` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(window.makeKeyCalled,
@@ -77,6 +79,7 @@ class UIWindowSpyTests: SpyTestCase {
                        "The window should not indicate having had `makeKeyAndVisible` called by default")
 
         window.spyOnMakeKeyAndVisible {
+            contextExecuted = true
             validateMethodsAreSwizzled()
 
             window.makeKeyAndVisible()
@@ -84,6 +87,7 @@ class UIWindowSpyTests: SpyTestCase {
                           "The window should now indicate having had `makeKeyAndVisible` called")
         }
 
+        XCTAssertTrue(contextExecuted, "The context should be executed")
         validateMethodsAreNotSwizzled()
 
         XCTAssertFalse(window.makeKeyAndVisibleCalled,

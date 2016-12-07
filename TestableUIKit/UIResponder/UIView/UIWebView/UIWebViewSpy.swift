@@ -23,7 +23,7 @@ public extension UIWebView {
     /// Spies on calls to `load(_:mimeType:textEncodingName:baseURL:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnLoadData(in context: NullaryVoidClosure) {
+    public final func spyOnLoadData(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.loadData.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.loadData)
     }
@@ -64,7 +64,7 @@ public extension UIWebView {
     /// Spies on calls to `loadHTMLString(_:baseURL:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnLoadHtmlString(in context: NullaryVoidClosure) {
+    public final func spyOnLoadHtmlString(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.loadHtmlString.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.loadHtmlString)
     }
@@ -103,7 +103,7 @@ public extension UIWebView {
     /// Spies on calls to `loadRequest(_:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnLoadRequest(in context: NullaryVoidClosure) {
+    public final func spyOnLoadRequest(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.loadRequest.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.loadRequest)
     }
@@ -141,7 +141,7 @@ public extension UIWebView {
     /// Spies on calls to `stopLoading` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnStopLoading(in context: NullaryVoidClosure) {
+    public final func spyOnStopLoading(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.stopLoading.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.stopLoading)
     }
@@ -178,7 +178,7 @@ public extension UIWebView {
     /// Spies on calls to `reload` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReload(in context: NullaryVoidClosure) {
+    public final func spyOnReload(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.reload.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.reload)
     }
@@ -215,7 +215,7 @@ public extension UIWebView {
     /// Spies on calls to `goBack` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnGoBack(in context: NullaryVoidClosure) {
+    public final func spyOnGoBack(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.goBack.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.goBack)
     }
@@ -252,7 +252,7 @@ public extension UIWebView {
     /// Spies on calls to `goForward` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnGoForward(in context: NullaryVoidClosure) {
+    public final func spyOnGoForward(in context: SpyExecutionContext) {
         UIWebViewSpyAssociations.goForward.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWebViewSpyCaptureKeys.goForward)
     }

@@ -17,7 +17,7 @@ public extension UICollectionView {
     /// Spies on calls to `reloadData` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadData(in context: NullaryVoidClosure) {
+    public final func spyOnReloadData(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.reloadData.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.reloadData)
     }
@@ -54,7 +54,7 @@ public extension UICollectionView {
     /// Spies on calls to `insertSections(_:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnInsertSections(in context: NullaryVoidClosure) {
+    public final func spyOnInsertSections(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.insertSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.insertSections)
     }
@@ -92,7 +92,7 @@ public extension UICollectionView {
     /// Spies on calls to `deleteSections(_:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDeleteSections(in context: NullaryVoidClosure) {
+    public final func spyOnDeleteSections(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.deleteSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.deleteSections)
     }
@@ -130,7 +130,7 @@ public extension UICollectionView {
     /// Spies on calls to `reloadSections(_:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadSections(in context: NullaryVoidClosure) {
+    public final func spyOnReloadSections(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.reloadSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.reloadSections)
     }
@@ -168,7 +168,7 @@ public extension UICollectionView {
     /// Spies on calls to `moveSection(_:toSection:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMoveSection(in context: NullaryVoidClosure) {
+    public final func spyOnMoveSection(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.moveSection.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.moveSection)
     }
@@ -207,7 +207,7 @@ public extension UICollectionView {
     /// Spies on calls to `insertItems(at:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnInsertItems(in context: NullaryVoidClosure) {
+    public final func spyOnInsertItems(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.insertItems.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.insertItems)
     }
@@ -245,7 +245,7 @@ public extension UICollectionView {
     /// Spies on calls to `deleteItems(at:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDeleteItems(in context: NullaryVoidClosure) {
+    public final func spyOnDeleteItems(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.deleteItems.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.deleteItems)
     }
@@ -283,7 +283,7 @@ public extension UICollectionView {
     /// Spies on calls to `reloadItems(at:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadItems(in context: NullaryVoidClosure) {
+    public final func spyOnReloadItems(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.reloadItems.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.reloadItems)
     }
@@ -321,7 +321,7 @@ public extension UICollectionView {
     /// Spies on calls to `moveItem(at:to:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMoveItem(in context: NullaryVoidClosure) {
+    public final func spyOnMoveItem(in context: SpyExecutionContext) {
         UICollectionViewSpyAssociations.moveItem.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UICollectionViewSpyCaptureKeys.moveItem)
     }

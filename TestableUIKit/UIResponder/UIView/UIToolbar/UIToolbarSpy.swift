@@ -36,7 +36,7 @@ public extension UIToolbar {
     /// Spies on calls to `setItems(_:animated:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnSetItems(in context: NullaryVoidClosure) {
+    public final func spyOnSetItems(in context: SpyExecutionContext) {
         UIToolbarSpyAssociations.setItems.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIToolbarSpyCaptureKeys.setItems)
     }

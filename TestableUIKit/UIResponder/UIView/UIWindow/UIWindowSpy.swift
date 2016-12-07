@@ -46,7 +46,7 @@ public extension UIWindow {
     /// Spies on calls to `makeKey` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMakeKey(in context: NullaryVoidClosure) {
+    public final func spyOnMakeKey(in context: SpyExecutionContext) {
         UIWindowSpyAssociations.makeKey.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWindowSpyCaptureKeys.makeKey)
     }
@@ -83,7 +83,7 @@ public extension UIWindow {
     /// Spies on calls to `makeKeyAndVisible` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMakeKeyAndVisible(in context: NullaryVoidClosure) {
+    public final func spyOnMakeKeyAndVisible(in context: SpyExecutionContext) {
         UIWindowSpyAssociations.makeKeyAndVisible.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIWindowSpyCaptureKeys.makeKeyAndVisible)
     }

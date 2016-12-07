@@ -16,3 +16,12 @@ public final func addMethodCallForwardingException(for: Selector)
 /// Method for resetting the forwarding behavior of a particular method
 public final func removeMethodCallForwardingException(for: Selector)
 ```
+
+
+## Common spy types
+
+### Execution context
+
+Each spy has a context-based method and a pair of begin/end methods for executing test code.
+
+Context-based methods use a non-escaping nullary void closure with the typealias `SpyExecutionContext` equal to `() -> Void`.

@@ -17,7 +17,7 @@ public extension UITableView {
     /// Spies on calls to `reloadData` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadData(in context: NullaryVoidClosure) {
+    public final func spyOnReloadData(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.reloadData.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.reloadData)
     }
@@ -54,7 +54,7 @@ public extension UITableView {
     /// Spies on calls to `beginUpdates` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnBeginUpdates(in context: NullaryVoidClosure) {
+    public final func spyOnBeginUpdates(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.beginUpdates.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.beginUpdates)
     }
@@ -91,7 +91,7 @@ public extension UITableView {
     /// Spies on calls to `endUpdates` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnEndUpdates(in context: NullaryVoidClosure) {
+    public final func spyOnEndUpdates(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.endUpdates.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.endUpdates)
     }
@@ -128,7 +128,7 @@ public extension UITableView {
     /// Spies on calls to `insertSections(_:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnInsertSections(in context: NullaryVoidClosure) {
+    public final func spyOnInsertSections(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.insertSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.insertSections)
     }
@@ -167,7 +167,7 @@ public extension UITableView {
     /// Spies on calls to `deleteSections(_:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDeleteSections(in context: NullaryVoidClosure) {
+    public final func spyOnDeleteSections(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.deleteSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.deleteSections)
     }
@@ -206,7 +206,7 @@ public extension UITableView {
     /// Spies on calls to `reloadSections(_:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadSections(in context: NullaryVoidClosure) {
+    public final func spyOnReloadSections(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.reloadSections.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.reloadSections)
     }
@@ -245,7 +245,7 @@ public extension UITableView {
     /// Spies on calls to `moveSection(_:toSection:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMoveSection(in context: NullaryVoidClosure) {
+    public final func spyOnMoveSection(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.moveSection.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.moveSection)
     }
@@ -284,7 +284,7 @@ public extension UITableView {
     /// Spies on calls to `reloadSectionIndexTitles` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadSectionIndexTitles(in context: NullaryVoidClosure) {
+    public final func spyOnReloadSectionIndexTitles(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.reloadSectionIndexTitles.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.reloadSectionIndexTitles)
     }
@@ -321,7 +321,7 @@ public extension UITableView {
     /// Spies on calls to `insertRows(at:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnInsertRows(in context: NullaryVoidClosure) {
+    public final func spyOnInsertRows(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.insertRows.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.insertRows)
     }
@@ -360,7 +360,7 @@ public extension UITableView {
     /// Spies on calls to `deleteRows(at:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDeleteRows(in context: NullaryVoidClosure) {
+    public final func spyOnDeleteRows(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.deleteRows.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.deleteRows)
     }
@@ -399,7 +399,7 @@ public extension UITableView {
     /// Spies on calls to `reloadRows(at:with:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnReloadRows(in context: NullaryVoidClosure) {
+    public final func spyOnReloadRows(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.reloadRows.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.reloadRows)
     }
@@ -438,7 +438,7 @@ public extension UITableView {
     /// Spies on calls to `moveRow(at:to:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnMoveRow(in context: NullaryVoidClosure) {
+    public final func spyOnMoveRow(in context: SpyExecutionContext) {
         UITableViewSpyAssociations.moveRow.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UITableViewSpyCaptureKeys.moveRow)
     }

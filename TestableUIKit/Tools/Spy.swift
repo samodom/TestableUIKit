@@ -23,6 +23,9 @@ func UUIDKeyString() -> [CChar] {
 }
 
 
+public typealias SpyExecutionContext = NullaryVoidClosure
+
+
 extension Spy {
 
     func clearSpyAssociations(keys: [SpyKey]) {

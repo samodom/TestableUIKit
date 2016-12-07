@@ -109,7 +109,7 @@ public extension UIView {
 
     /// Spies on calls to `updateConstraints` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnUpdateConstraints(in context: NullaryVoidClosure) {
+    public final func spyOnUpdateConstraints(in context: SpyExecutionContext) {
         UIViewSpyAssociations.updateConstraints.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.updateConstraints)
     }
@@ -145,7 +145,7 @@ public extension UIView {
 
     /// Spies on calls to `draw(_:)` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDraw(in context: NullaryVoidClosure) {
+    public final func spyOnDraw(in context: SpyExecutionContext) {
         UIViewSpyAssociations.draw.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.draw)
     }
@@ -183,7 +183,7 @@ public extension UIView {
     /// Spies on calls to `encodeRestorableState(with:)` and executes the provided context 
     /// while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnEncodeRestorableState(in context: NullaryVoidClosure) {
+    public final func spyOnEncodeRestorableState(in context: SpyExecutionContext) {
         UIViewSpyAssociations.encodeRestorableState.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.encodeRestorableState)
     }
@@ -221,7 +221,7 @@ public extension UIView {
     /// Spies on calls to `decodeRestorableState(with:)` and executes the provided context
     /// while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnDecodeRestorableState(in context: NullaryVoidClosure) {
+    public final func spyOnDecodeRestorableState(in context: SpyExecutionContext) {
         UIViewSpyAssociations.decodeRestorableState.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.decodeRestorableState)
     }
@@ -258,7 +258,7 @@ public extension UIView {
 
     /// Spies on calls to `setNeedsLayout` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnSetNeedsLayout(in context: NullaryVoidClosure) {
+    public final func spyOnSetNeedsLayout(in context: SpyExecutionContext) {
         UIViewSpyAssociations.setNeedsLayout.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsLayout)
     }
@@ -295,7 +295,7 @@ public extension UIView {
     /// Spies on calls to `invalidateIntrinsicContentSize` and executes the provided context 
     /// while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnInvalidateIntrinsicContentSize(in context: NullaryVoidClosure) {
+    public final func spyOnInvalidateIntrinsicContentSize(in context: SpyExecutionContext) {
         UIViewSpyAssociations.invalidateIntrinsicContentSize.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.invalidateIntrinsicContentSize)
     }
@@ -332,7 +332,7 @@ public extension UIView {
     /// Spies on calls to `setNeedsUpdateConstraints` and executes the provided context 
     /// while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnSetNeedsUpdateConstraints(in context: NullaryVoidClosure) {
+    public final func spyOnSetNeedsUpdateConstraints(in context: SpyExecutionContext) {
         UIViewSpyAssociations.setNeedsUpdateConstraints.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIViewSpyCaptureKeys.setNeedsUpdateConstraints)
     }
@@ -369,7 +369,7 @@ public extension UIView {
     /// Spies on calls to `setNeedsDisplay` and `setNeedsDisplay(_:)` and executes the provided context
     /// while the spy methods are active
     /// - parameter context: Logic to execute while the spy methods are active.
-    public final func spyOnSetNeedsDisplay(in context: NullaryVoidClosure) {
+    public final func spyOnSetNeedsDisplay(in context: SpyExecutionContext) {
         beginSpyingOnSetNeedsDisplay()
         context()
         endSpyingOnSetNeedsDisplay()

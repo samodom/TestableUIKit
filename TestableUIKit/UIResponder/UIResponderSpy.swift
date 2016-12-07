@@ -48,7 +48,7 @@ public extension UIResponder {
 
     /// Spies on calls to `becomeFirstResponder` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnBecomeFirstResponder(in context: NullaryVoidClosure) {
+    public final func spyOnBecomeFirstResponder(in context: SpyExecutionContext) {
         UIResponderSpyAssociations.becomeFirstResponder.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIResponderSpyCaptureKeys.becomeFirstResponder)
     }
@@ -84,7 +84,7 @@ public extension UIResponder {
 
     /// Spies on calls to `resignFirstResponder` and executes the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnResignFirstResponder(in context: NullaryVoidClosure) {
+    public final func spyOnResignFirstResponder(in context: SpyExecutionContext) {
         UIResponderSpyAssociations.resignFirstResponder.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UIResponderSpyCaptureKeys.resignFirstResponder)
     }

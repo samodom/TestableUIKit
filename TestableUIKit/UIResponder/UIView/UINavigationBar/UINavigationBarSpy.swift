@@ -56,7 +56,7 @@ public extension UINavigationBar {
     /// Spies on calls to `pushItem(_:animated:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnPushItem(in context: NullaryVoidClosure) {
+    public final func spyOnPushItem(in context: SpyExecutionContext) {
         UINavigationBarSpyAssociations.pushItem.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UINavigationBarSpyCaptureKeys.pushItem)
     }
@@ -95,7 +95,7 @@ public extension UINavigationBar {
     /// Spies on calls to `popItem(animated:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnPopItem(in context: NullaryVoidClosure) {
+    public final func spyOnPopItem(in context: SpyExecutionContext) {
         UINavigationBarSpyAssociations.popItem.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UINavigationBarSpyCaptureKeys.popItem)
     }
@@ -131,7 +131,7 @@ public extension UINavigationBar {
     /// Spies on calls to `setItems(_:animated:)` and executes
     /// the provided context while the spy method is active
     /// - parameter context: Logic to execute while the spy method is active.
-    public final func spyOnSetItems(in context: NullaryVoidClosure) {
+    public final func spyOnSetItems(in context: SpyExecutionContext) {
         UINavigationBarSpyAssociations.setItems.withAlternateImplementation(context: context)
         clearSpyAssociations(keys: UINavigationBarSpyCaptureKeys.setItems)
     }

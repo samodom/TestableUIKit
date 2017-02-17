@@ -52,11 +52,6 @@
                BlueprintName = "TestableUIKitTests"
                ReferencedContainer = "container:TestableUIKit.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "SpyTestCase">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

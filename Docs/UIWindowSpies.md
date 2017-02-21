@@ -12,7 +12,7 @@ These spies forward all method calls to the original method implementation.
 
 ## Spying on `makeKey`
 
-Use this spy to validate that a window has been made the key window.
+Use this spy to validate that a window has been made the key window.  The spy controller is named `UIWindow.MakeKeySpyController`.
 
 A single evidence property indicates whether the method was called:
 
@@ -21,7 +21,7 @@ A single evidence property indicates whether the method was called:
 
 ## Spying on `makeKeyAndVisible`
 
-Use this spy to validate that a window has been made the key window and visible.
+Use this spy to validate that a window has been made the key window and visible.  The spy controller is named `UIWindow.MakeKeySpyController`.
 
 A single evidence property indicates whether the method was called:
 

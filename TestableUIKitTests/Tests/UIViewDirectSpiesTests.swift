@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import SampleTypes
 import TestSwagger
 import TestableUIKit
 

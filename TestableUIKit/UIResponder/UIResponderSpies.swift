@@ -11,7 +11,7 @@ import FoundationSwagger
 import TestSwagger
 
 
-extension UIResponder: SpyableObject {}
+extension UIResponder: ObjectSpyable {}
 
 
 public extension UIResponder { // MARK: Spying on `becomeFirstResponder`
@@ -21,11 +21,13 @@ public extension UIResponder { // MARK: Spying on `becomeFirstResponder`
     public enum BecomeFirstResponderSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIResponder.self
         public static let vector = SpyVector.direct
-        public static let coselectors = SpyCoselectors(
-            methodType: .instance,
-            original: #selector(UIResponder.becomeFirstResponder),
-            spy: #selector(UIResponder.spy_becomeFirstResponder)
-        )
+        public static let coselectors: Set<SpyCoselectors> = [
+            SpyCoselectors(
+                methodType: .instance,
+                original: #selector(UIResponder.becomeFirstResponder),
+                spy: #selector(UIResponder.spy_becomeFirstResponder)
+            )
+        ]
         public static let evidence = [becomeFirstResponderCalledReference] as Set
         public static let forwardingBehavior = MethodForwardingBehavior.always
     }
@@ -46,11 +48,14 @@ public extension UIResponder { // MARK: Spying on `resignFirstResponder`
     public enum ResignFirstResponderSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIResponder.self
         public static let vector = SpyVector.direct
-        public static let coselectors = SpyCoselectors(
-            methodType: .instance,
-            original: #selector(UIResponder.resignFirstResponder),
-            spy: #selector(UIResponder.spy_resignFirstResponder)
-        )
+        public static let coselectors: Set<SpyCoselectors> =
+            [
+                SpyCoselectors(
+                    methodType: .instance,
+                    original: #selector(UIResponder.resignFirstResponder),
+                    spy: #selector(UIResponder.spy_resignFirstResponder)
+                )
+        ]
         public static let evidence = [resignFirstResponderCalledReference] as Set
         public static let forwardingBehavior = MethodForwardingBehavior.always
     }

@@ -1,6 +1,6 @@
 PODS:
   - FoundationSwagger (0.2.13)
-  - TestSwagger (0.1.3):
+  - TestSwagger (0.1.4):
     - FoundationSwagger
 
 DEPENDENCIES:
@@ -8,7 +8,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FoundationSwagger: 7cbf965cfeab4b8064b4913369b9ec4d991793a3
-  TestSwagger: eee17581a6a284d9710f5586f70c0eeced3ddc8a
+  TestSwagger: f4ab6efda23b34f41c47e9da0c57f584ce426d1e
 
 PODFILE CHECKSUM: 0dc4ac6b895cdc2c826b53de783c1d4f358d810b
 

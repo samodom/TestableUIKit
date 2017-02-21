@@ -3,7 +3,7 @@
 
 These spies forward all method calls to the original method implementation.
 
-**Direct spies:**
+**Indirect spies:**
 
  * [`updateConstraints`](#spying-on-updateConstraints)
  * [`draw(_:)`](#spying-on-draw_)
@@ -11,7 +11,7 @@ These spies forward all method calls to the original method implementation.
  * [`decodeRestorableState(with:)`](#spying-on-decodeRestorableStatewith)
 
 
-**Indirect spies:**
+**Direct spies:**
 
  * [`setNeedsLayout`](#spying-on-setNeedsLayout)
  * [`invalidateIntrinsicContentSize`](#spying-on-invalidateIntrinsicContentSize)
@@ -58,7 +58,7 @@ Two properties provide evidence about a potential method call:
 * `var decodeRestorableStateCoder: NSCoder?`
 
 
-## Spying on setNeedsLayout
+## Spying on `setNeedsLayout`
 
 Use this spy to validate that a view has been asked to flag itself as needing layout.  The spy controller is named `UIView.SetNeedsLayoutSpyController`.
 
@@ -88,7 +88,7 @@ A single evidence property indicates whether the method was called:
 
 ## Spying on `setNeedsDisplay` and `setNeedsDisplay(_:)`
 
-Use this spy to validate that a view has been asked to flag itself as needing to be redrawn.  The spy controller is named `UIView.SetNeedDisplaySpyController`.
+Use this spy to validate that a view has been asked to flag itself as needing to be redrawn.  The spy controller is named `UIView.SetNeedsDisplaySpyController`.
 
 Two properties provide evidence about a potential method call:
 

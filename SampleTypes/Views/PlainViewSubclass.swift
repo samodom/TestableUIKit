@@ -1,5 +1,5 @@
 //
-//  EmptyView.swift
+//  PlainViewSubclass.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/20/14.
@@ -8,6 +8,4 @@
 
 import UIKit
 
-open class EmptyView: UIView {
-
-}
+open class PlainView: UIView {}

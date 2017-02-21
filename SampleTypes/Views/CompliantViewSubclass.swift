@@ -1,5 +1,5 @@
 //
-//  GoodView.swift
+//  CompliantViewSubclass.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/20/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class GoodView: UIView {
+open class CompliantViewSubclass: CompliantView {
 
     open override func updateConstraints() {
         super.updateConstraints()

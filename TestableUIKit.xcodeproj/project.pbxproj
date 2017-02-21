@@ -49,10 +49,6 @@
 		0AE2CBF71DDC1632001ABEE3 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEE1DDC1632001ABEE3 /* EmptyViewController.swift */; };
 		0AE2CBF81DDC1632001ABEE3 /* GoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEF1DDC1632001ABEE3 /* GoodViewController.swift */; };
 		0AE2CBF91DDC1632001ABEE3 /* GoodViewControllerSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF01DDC1632001ABEE3 /* GoodViewControllerSubclass.swift */; };
-		0AE2CBFA1DDC1632001ABEE3 /* BadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF21DDC1632001ABEE3 /* BadView.swift */; };
-		0AE2CBFB1DDC1632001ABEE3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF31DDC1632001ABEE3 /* EmptyView.swift */; };
-		0AE2CBFC1DDC1632001ABEE3 /* GoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF41DDC1632001ABEE3 /* GoodView.swift */; };
-		0AE2CBFD1DDC1632001ABEE3 /* GoodViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF51DDC1632001ABEE3 /* GoodViewSubclass.swift */; };
 		0AF08E811A49F1BD00FF48D7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E671A49F1BD00FF48D7 /* UINavigationController.swift */; };
 		0AF08E831A49F1BD00FF48D7 /* UINavigationControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E681A49F1BD00FF48D7 /* UINavigationControllerCalls.swift */; };
 		0AF08E851A49F1BD00FF48D7 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6A1A49F1BD00FF48D7 /* UITabBarController.swift */; };
@@ -62,6 +58,10 @@
 		0AF08E8D1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6E1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift */; };
 		0AF08E941A49F47500FF48D7 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E921A49F47500FF48D7 /* UIPageViewController.swift */; };
 		0AF08E961A49F47500FF48D7 /* UIPageViewControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E931A49F47500FF48D7 /* UIPageViewControllerCalls.swift */; };
+		0AE2CBFA1DDC1632001ABEE3 /* NonCompliantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF21DDC1632001ABEE3 /* NonCompliantView.swift */; };
+		0AE2CBFB1DDC1632001ABEE3 /* PlainViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF31DDC1632001ABEE3 /* PlainViewSubclass.swift */; };
+		0AE2CBFC1DDC1632001ABEE3 /* CompliantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF41DDC1632001ABEE3 /* CompliantView.swift */; };
+		0AE2CBFD1DDC1632001ABEE3 /* CompliantViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF51DDC1632001ABEE3 /* CompliantViewSubclass.swift */; };
 		0AF3795C1A451FC7004606F6 /* TestableUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3795B1A451FC7004606F6 /* TestableUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF379851A452579004606F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379841A452579004606F6 /* AppDelegate.swift */; };
 		0AF3798A1A452579004606F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF379881A452579004606F6 /* Main.storyboard */; };
@@ -138,10 +138,10 @@
 		0AE2CBEE1DDC1632001ABEE3 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		0AE2CBEF1DDC1632001ABEE3 /* GoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewController.swift; sourceTree = "<group>"; };
 		0AE2CBF01DDC1632001ABEE3 /* GoodViewControllerSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewControllerSubclass.swift; sourceTree = "<group>"; };
-		0AE2CBF21DDC1632001ABEE3 /* BadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadView.swift; sourceTree = "<group>"; };
-		0AE2CBF31DDC1632001ABEE3 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		0AE2CBF41DDC1632001ABEE3 /* GoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodView.swift; sourceTree = "<group>"; };
-		0AE2CBF51DDC1632001ABEE3 /* GoodViewSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewSubclass.swift; sourceTree = "<group>"; };
+		0AE2CBF21DDC1632001ABEE3 /* NonCompliantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonCompliantView.swift; sourceTree = "<group>"; };
+		0AE2CBF31DDC1632001ABEE3 /* PlainViewSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainViewSubclass.swift; sourceTree = "<group>"; };
+		0AE2CBF41DDC1632001ABEE3 /* CompliantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompliantView.swift; sourceTree = "<group>"; };
+		0AE2CBF51DDC1632001ABEE3 /* CompliantViewSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompliantViewSubclass.swift; sourceTree = "<group>"; };
 		0AF08E4C1A49E9BA00FF48D7 /* UIResponderSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderSpiesTests.swift; sourceTree = "<group>"; };
 		0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerCallsTests.swift; sourceTree = "<group>"; };
 		0AF08E5A1A49F1BD00FF48D7 /* UIResponderSpies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponderSpies.swift; sourceTree = "<group>"; };
@@ -286,10 +286,10 @@
 		0AE2CBF11DDC1632001ABEE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0AE2CBF21DDC1632001ABEE3 /* BadView.swift */,
-				0AE2CBF31DDC1632001ABEE3 /* EmptyView.swift */,
-				0AE2CBF41DDC1632001ABEE3 /* GoodView.swift */,
-				0AE2CBF51DDC1632001ABEE3 /* GoodViewSubclass.swift */,
+				0AE2CBF41DDC1632001ABEE3 /* CompliantView.swift */,
+				0AE2CBF51DDC1632001ABEE3 /* CompliantViewSubclass.swift */,
+				0AE2CBF21DDC1632001ABEE3 /* NonCompliantView.swift */,
+				0AE2CBF31DDC1632001ABEE3 /* PlainViewSubclass.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -774,11 +774,11 @@
 			files = (
 				0AE2CBF71DDC1632001ABEE3 /* EmptyViewController.swift in Sources */,
 				0AE2CBF81DDC1632001ABEE3 /* GoodViewController.swift in Sources */,
-				0AE2CBFC1DDC1632001ABEE3 /* GoodView.swift in Sources */,
-				0AE2CBFA1DDC1632001ABEE3 /* BadView.swift in Sources */,
+				0AE2CBFC1DDC1632001ABEE3 /* CompliantView.swift in Sources */,
+				0AE2CBFA1DDC1632001ABEE3 /* NonCompliantView.swift in Sources */,
 				0AE2CBF91DDC1632001ABEE3 /* GoodViewControllerSubclass.swift in Sources */,
-				0AE2CBFD1DDC1632001ABEE3 /* GoodViewSubclass.swift in Sources */,
-				0AE2CBFB1DDC1632001ABEE3 /* EmptyView.swift in Sources */,
+				0AE2CBFD1DDC1632001ABEE3 /* CompliantViewSubclass.swift in Sources */,
+				0AE2CBFB1DDC1632001ABEE3 /* PlainViewSubclass.swift in Sources */,
 				0AE2CBF61DDC1632001ABEE3 /* BadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

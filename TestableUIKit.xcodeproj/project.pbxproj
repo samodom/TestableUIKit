@@ -26,11 +26,6 @@
 		0A7601021DF3C61200B4242A /* UICollectionViewMethodAssociations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7600FE1DF3C61200B4242A /* UICollectionViewMethodAssociations.swift */; };
 		0A7601031DF3C61200B4242A /* UICollectionViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7600FF1DF3C61200B4242A /* UICollectionViewSpy.swift */; };
 		0A7601041DF3C61200B4242A /* UICollectionViewSpyCaptureKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7601001DF3C61200B4242A /* UICollectionViewSpyCaptureKeys.swift */; };
-		0AA16CF91DE66D82007E3F2E /* UIWebViewSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */; };
-		0AA16CFB1DE66DF5007E3F2E /* UIWebViewEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */; };
-		0AA16CFD1DE66E08007E3F2E /* UIWebViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */; };
-		0AA16CFF1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */; };
-		0AA16D051DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */; };
 		0A83201E1E5CEF4D00CD4C11 /* UIWindowMakeKeySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A83201D1E5CEF4D00CD4C11 /* UIWindowMakeKeySpy.swift */; };
 		0A8320201E5CF03500CD4C11 /* UIWindowMakeKeyAndVisibleSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A83201F1E5CF03500CD4C11 /* UIWindowMakeKeyAndVisibleSpy.swift */; };
 		0A8320221E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8320211E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift */; };
@@ -59,6 +54,12 @@
 		0ABAA5561E5E713800E8E928 /* UITableViewDeleteRowsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5551E5E713800E8E928 /* UITableViewDeleteRowsSpy.swift */; };
 		0ABAA5581E5E73EC00E8E928 /* UITableViewReloadRowsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5571E5E73EC00E8E928 /* UITableViewReloadRowsSpy.swift */; };
 		0ABAA55A1E5E76E700E8E928 /* UITableViewMoveRowSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5591E5E76E700E8E928 /* UITableViewMoveRowSpy.swift */; };
+		0ABAA55C1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA55B1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift */; };
+		0ABAA55E1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA55D1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift */; };
+		0ABAA5601E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA55F1E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift */; };
+		0ABAA5621E5E90AC00E8E928 /* UIWebViewReloadSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5611E5E90AC00E8E928 /* UIWebViewReloadSpy.swift */; };
+		0ABAA5641E5E915F00E8E928 /* UIWebViewGoBackSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5631E5E915F00E8E928 /* UIWebViewGoBackSpy.swift */; };
+		0ABAA5661E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAA5651E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift */; };
 		0ABD48BF1DE1170E005DD470 /* UIResponderSpiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4C1A49E9BA00FF48D7 /* UIResponderSpiesTests.swift */; };
 		0ABD48C11DE11B2D005DD470 /* UIResponderBecomeFirstResponderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E5A1A49F1BD00FF48D7 /* UIResponderBecomeFirstResponderSpy.swift */; };
 		0ABD48C71DE120F5005DD470 /* ApplicationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */; };
@@ -141,10 +142,6 @@
 		0A83201F1E5CF03500CD4C11 /* UIWindowMakeKeyAndVisibleSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowMakeKeyAndVisibleSpy.swift; sourceTree = "<group>"; };
 		0A8320211E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIToolbarSpiesTests.swift; sourceTree = "<group>"; };
 		0A8320231E5CF57600CD4C11 /* UIToolbarSetItemsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIToolbarSetItemsSpy.swift; sourceTree = "<group>"; };
-		0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewEvidence.swift; sourceTree = "<group>"; };
-		0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpy.swift; sourceTree = "<group>"; };
-		0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewMethodAssociations.swift; sourceTree = "<group>"; };
-		0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpyCaptureKeys.swift; sourceTree = "<group>"; };
 		0AB5F15B1E5CDF520058825F /* UIViewInvalidateIntrinsicContentSizeSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewInvalidateIntrinsicContentSizeSpy.swift; sourceTree = "<group>"; };
 		0AB5F15D1E5CE0A40058825F /* UIViewSetNeedsUpdateConstraintsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSetNeedsUpdateConstraintsSpy.swift; sourceTree = "<group>"; };
 		0AB5F15F1E5CE37B0058825F /* UIViewSetNeedsDisplaySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSetNeedsDisplaySpy.swift; sourceTree = "<group>"; };
@@ -167,8 +164,13 @@
 		0ABAA5551E5E713800E8E928 /* UITableViewDeleteRowsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDeleteRowsSpy.swift; sourceTree = "<group>"; };
 		0ABAA5571E5E73EC00E8E928 /* UITableViewReloadRowsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewReloadRowsSpy.swift; sourceTree = "<group>"; };
 		0ABAA5591E5E76E700E8E928 /* UITableViewMoveRowSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewMoveRowSpy.swift; sourceTree = "<group>"; };
+		0ABAA55B1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpiesTests.swift; sourceTree = "<group>"; };
+		0ABAA55D1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewLoadSpy.swift; sourceTree = "<group>"; };
+		0ABAA55F1E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewStopLoadingSpy.swift; sourceTree = "<group>"; };
+		0ABAA5611E5E90AC00E8E928 /* UIWebViewReloadSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewReloadSpy.swift; sourceTree = "<group>"; };
+		0ABAA5631E5E915F00E8E928 /* UIWebViewGoBackSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewGoBackSpy.swift; sourceTree = "<group>"; };
+		0ABAA5651E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewGoForwardSpy.swift; sourceTree = "<group>"; };
 		0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationHelpers.swift; sourceTree = "<group>"; };
-		0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewSpyTests.swift; sourceTree = "<group>"; };
 		0AE2CBE41DDC15B0001ABEE3 /* SampleTypes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SampleTypes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE2CBE61DDC15B0001ABEE3 /* SampleTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleTypes.h; sourceTree = "<group>"; };
 		0AE2CBE71DDC15B0001ABEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,10 +265,11 @@
 		0AD4E7181A4A06E30091747D /* UIWebView */ = {
 			isa = PBXGroup;
 			children = (
-				0AA16CFA1DE66DF5007E3F2E /* UIWebViewEvidence.swift */,
-				0AA16CFE1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift */,
-				0AA16CFC1DE66E08007E3F2E /* UIWebViewSpy.swift */,
-				0AA16D041DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift */,
+				0ABAA5631E5E915F00E8E928 /* UIWebViewGoBackSpy.swift */,
+				0ABAA5651E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift */,
+				0ABAA55D1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift */,
+				0ABAA5611E5E90AC00E8E928 /* UIWebViewReloadSpy.swift */,
+				0ABAA55F1E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift */,
 			);
 			path = UIWebView;
 			sourceTree = "<group>";
@@ -509,7 +512,7 @@
 				0A8320211E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewDirectSpiesTests.swift */,
 				0A4896EC1E5BF85E00B30B06 /* UIViewIndirectSpiesTests.swift */,
-				0AD4E7161A4A04950091747D /* UIWebViewSpyTests.swift */,
+				0ABAA55B1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift */,
 				0AB5F1611E5CE6EC0058825F /* UIWindowSpiesTests.swift */,
 			);
 			path = Tests;
@@ -850,17 +853,14 @@
 				0AF08E961A49F47500FF48D7 /* UIPageViewControllerCalls.swift in Sources */,
 				0AF08E871A49F1BD00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
 				0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
-				0AA16D051DEA5A18007E3F2E /* UIWebViewSpyCaptureKeys.swift in Sources */,
-				0AA16CFF1DE7C59A007E3F2E /* UIWebViewMethodAssociations.swift in Sources */,
-				0AA16CFD1DE66E08007E3F2E /* UIWebViewSpy.swift in Sources */,
 				0A7601021DF3C61200B4242A /* UICollectionViewMethodAssociations.swift in Sources */,
 				0A7601041DF3C61200B4242A /* UICollectionViewSpyCaptureKeys.swift in Sources */,
 				0A589AFB1DEA8D1F002CFD80 /* UIToolbarEvidence.swift in Sources */,
 				0A7601011DF3C61200B4242A /* UICollectionViewEvidence.swift in Sources */,
-				0AA16CFB1DE66DF5007E3F2E /* UIWebViewEvidence.swift in Sources */,
 				0A7601031DF3C61200B4242A /* UICollectionViewSpy.swift in Sources */,
 				0A8320241E5CF57600CD4C11 /* UIToolbarSetItemsSpy.swift in Sources */,
 				0ABAA5401E5E321B00E8E928 /* UIResponderResignFirstResponderSpy.swift in Sources */,
+				0ABAA5661E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift in Sources */,
 				0ABAA5541E5E5DEC00E8E928 /* UITableViewInsertRowsSpy.swift in Sources */,
 				0A4896F01E5CB72100B30B06 /* UIViewSetNeedsLayoutSpy.swift in Sources */,
 				0ABAA5501E5E541F00E8E928 /* UITableViewMoveSectionSpy.swift in Sources */,
@@ -881,12 +881,16 @@
 				0ABAA5561E5E713800E8E928 /* UITableViewDeleteRowsSpy.swift in Sources */,
 				0ABAA5421E5E325600E8E928 /* UIResponderObjectSpyable.swift in Sources */,
 				0ABAA55A1E5E76E700E8E928 /* UITableViewMoveRowSpy.swift in Sources */,
+				0ABAA5641E5E915F00E8E928 /* UIWebViewGoBackSpy.swift in Sources */,
 				0ABD48C11DE11B2D005DD470 /* UIResponderBecomeFirstResponderSpy.swift in Sources */,
 				0A4896E91E5BF58800B30B06 /* UIViewEncodeRestorableStateSpy.swift in Sources */,
 				0AB5F15E1E5CE0A40058825F /* UIViewSetNeedsUpdateConstraintsSpy.swift in Sources */,
 				0ABAA5581E5E73EC00E8E928 /* UITableViewReloadRowsSpy.swift in Sources */,
+				0ABAA55E1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift in Sources */,
 				0ABAA54C1E5E3BEB00E8E928 /* UITableViewDeleteSectionsSpy.swift in Sources */,
 				0A4896E51E5BED3900B30B06 /* UIViewDrawSpy.swift in Sources */,
+				0ABAA5621E5E90AC00E8E928 /* UIWebViewReloadSpy.swift in Sources */,
+				0ABAA5601E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift in Sources */,
 				0ABAA5441E5E33BD00E8E928 /* UITableViewReloadDataSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,8 +910,8 @@
 				0A7600FA1DF3BCF800B4242A /* UICollectionViewSpyTests.swift in Sources */,
 				0A8320221E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift in Sources */,
 				0ABD48C71DE120F5005DD470 /* ApplicationHelpers.swift in Sources */,
-				0AA16CF91DE66D82007E3F2E /* UIWebViewSpyTests.swift in Sources */,
 				0A007E9A1E5CF980001BB011 /* UINavigationBarSpiesTests.swift in Sources */,
+				0ABAA55C1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift in Sources */,
 				0AB7634F1E5BA28600B13373 /* UIViewDirectSpiesTests.swift in Sources */,
 				0ABD48BF1DE1170E005DD470 /* UIResponderSpiesTests.swift in Sources */,
 				0A4896F11E5CB9B300B30B06 /* UIViewIndirectSpiesTests.swift in Sources */,

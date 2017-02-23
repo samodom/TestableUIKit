@@ -101,5 +101,3 @@ Two properties provide evidence about a potential method call:
 * `var setNeedsDisplayRect: CGRect?`
 
   **Note:** This property, which only gets set for calls to `setNeedsDisplay(_:)`, may need to be explicitly reset to `nil` before testing code that is expected to call the method.
-
-  **Note:** This property is only captured with calls to `setNeedsDisplay(_:)`.

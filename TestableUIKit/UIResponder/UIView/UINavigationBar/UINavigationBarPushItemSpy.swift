@@ -105,9 +105,9 @@ public extension UINavigationBar {
             guard let animated = newValue else {
                 return removeEvidence(with: reference)
             }
-
+            
             saveEvidence(animated, with: reference)
         }
     }
-
+    
 }

@@ -53,7 +53,7 @@ public extension UITableView {
     }
 
 
-    /// Spy method that replaces the true implementation of `deleteRows(at:with)`
+    /// Spy method that replaces the true implementation of `deleteRows(at:with:)`
     dynamic public func spy_deleteRows(
         at indexPaths: [IndexPath],
         with animation: UITableViewRowAnimation
@@ -83,7 +83,7 @@ public extension UITableView {
     }
 
 
-    /// Provides the sections passed to `deleteRows(at:with:)` if called.
+    /// Provides the index paths passed to `deleteRows(at:with:)` if called.
     public final var deleteRowsIndexPaths: [IndexPath]? {
         get {
             return loadEvidence(with: UITableView.deleteRowsIndexPathsReference) as? [IndexPath]

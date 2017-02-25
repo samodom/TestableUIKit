@@ -1,5 +1,5 @@
-`UITableView` Spy
-=================
+`UITableView` Spies
+===================
 
 These spies forward all method calls to the original method implementation.
 

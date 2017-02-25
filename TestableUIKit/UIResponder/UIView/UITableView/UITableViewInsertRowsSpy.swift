@@ -53,7 +53,7 @@ public extension UITableView {
     }
 
 
-    /// Spy method that replaces the true implementation of `insertRows(at:with)`
+    /// Spy method that replaces the true implementation of `insertRows(at:with:)`
     dynamic public func spy_insertRows(
         at indexPaths: [IndexPath],
         with animation: UITableViewRowAnimation
@@ -83,7 +83,7 @@ public extension UITableView {
     }
 
 
-    /// Provides the sections passed to `insertRows(at:with:)` if called.
+    /// Provides the index paths passed to `insertRows(at:with:)` if called.
     public final var insertRowsIndexPaths: [IndexPath]? {
         get {
             return loadEvidence(with: UITableView.insertRowsIndexPathsReference) as? [IndexPath]

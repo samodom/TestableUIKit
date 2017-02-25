@@ -53,7 +53,7 @@ public extension UITableView {
     }
 
 
-    /// Spy method that replaces the true implementation of `reloadRows(at:with)`
+    /// Spy method that replaces the true implementation of `reloadRows(at:with:)`
     dynamic public func spy_reloadRows(
         at indexPaths: [IndexPath],
         with animation: UITableViewRowAnimation
@@ -83,7 +83,7 @@ public extension UITableView {
     }
 
 
-    /// Provides the sections passed to `reloadRows(at:with:)` if called.
+    /// Provides the index paths passed to `reloadRows(at:with:)` if called.
     public final var reloadRowsIndexPaths: [IndexPath]? {
         get {
             return loadEvidence(with: UITableView.reloadRowsIndexPathsReference) as? [IndexPath]

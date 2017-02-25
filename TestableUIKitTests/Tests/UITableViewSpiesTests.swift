@@ -282,9 +282,9 @@ class UITableViewSpiesTests: XCTestCase {
                        "The source section should be captured")
         XCTAssertEqual(tableView.moveSectionToSection!, toSection,
                        "The destination section should be captured")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 0), initialRowCounts.reversed()[0],
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), initialRowCounts.reversed()[0],
                       "The spy method should always forward the method call to the original implementation")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 1), initialRowCounts.reversed()[1],
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), initialRowCounts.reversed()[1],
                        "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
@@ -356,9 +356,9 @@ class UITableViewSpiesTests: XCTestCase {
                        "The inserted rows should be captured")
         XCTAssertEqual(tableView.insertRowsAnimation!, animation,
                        "The animation type should be captured")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 0), 4,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 4,
                        "The spy method should always forward the method call to the original implementation")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 1), 3,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 3,
                        "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
@@ -403,9 +403,9 @@ class UITableViewSpiesTests: XCTestCase {
                        "The inserted rows should be captured")
         XCTAssertEqual(tableView.deleteRowsAnimation!, animation,
                        "The animation type should be captured")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 0), 4,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 4,
                        "The spy method should always forward the method call to the original implementation")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 1), 3,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 3,
                        "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
@@ -500,9 +500,9 @@ class UITableViewSpiesTests: XCTestCase {
                        "The source row should be captured")
         XCTAssertEqual(tableView.moveRowToRow!, toRow,
                        "The destination row should be captured")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 0), 4,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 4,
                        "The spy method should always forward the method call to the original implementation")
-        XCTAssertEqual(tableView.tableView(tableView, numberOfRowsInSection: 1), 1,
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1,
                        "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()

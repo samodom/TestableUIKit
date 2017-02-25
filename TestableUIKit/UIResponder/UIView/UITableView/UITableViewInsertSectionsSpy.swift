@@ -54,7 +54,11 @@ public extension UITableView {
 
 
     /// Spy method that replaces the true implementation of `insertSections(_:with:)`
-    dynamic public func spy_insertSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
+    dynamic public func spy_insertSections(
+        _ sections: IndexSet,
+        with animation: UITableViewRowAnimation
+        ) {
+
         insertSectionsCalled = true
         insertSectionsSections = sections
         insertSectionsAnimation = animation

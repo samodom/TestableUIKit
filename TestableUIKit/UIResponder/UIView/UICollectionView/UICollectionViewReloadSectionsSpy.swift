@@ -61,12 +61,7 @@ public extension UICollectionView {
             return loadEvidence(with: UICollectionView.reloadSectionsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UICollectionView.reloadSectionsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UICollectionView.reloadSectionsCalledReference)
         }
     }
 

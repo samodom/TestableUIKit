@@ -141,12 +141,7 @@ public extension UIWebView {
             return loadEvidence(with: UIWebView.loadCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIWebView.loadCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIWebView.loadCalledReference)
         }
     }
 

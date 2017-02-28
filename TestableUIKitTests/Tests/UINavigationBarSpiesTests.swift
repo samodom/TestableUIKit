@@ -18,7 +18,7 @@ class UINavigationBarSpiesTests: XCTestCase {
     let item2 = UINavigationItem(title: "Item 2")
 
 
-    //  MARK: - `pushItem(_:animated:)`
+    // MARK: - `pushItem(_:animated:)`
 
     func testPushItemControllerForwardingBehavior() {
         XCTAssertEqual(UINavigationBar.PushItemSpyController.forwardingBehavior, .always,
@@ -54,7 +54,7 @@ class UINavigationBarSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `popItem(animated:)`
+    // MARK: - `popItem(animated:)`
 
     func testPopItemControllerForwardingBehavior() {
         XCTAssertEqual(UINavigationBar.PopItemSpyController.forwardingBehavior, .always,
@@ -87,7 +87,7 @@ class UINavigationBarSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `setItems(_:animated:)`
+    // MARK: - `setItems(_:animated:)`
 
     func testSetItemsControllerForwardingBehavior() {
         XCTAssertEqual(UINavigationBar.SetItemsSpyController.forwardingBehavior, .always,

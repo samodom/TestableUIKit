@@ -61,12 +61,7 @@ public extension UICollectionView {
             return loadEvidence(with: UICollectionView.deleteItemsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UICollectionView.deleteItemsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UICollectionView.deleteItemsCalledReference)
         }
     }
 

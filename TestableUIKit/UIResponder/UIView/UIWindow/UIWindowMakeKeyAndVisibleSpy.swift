@@ -50,12 +50,7 @@ public extension UIWindow {
             return loadEvidence(with: UIWindow.makeKeyCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIWindow.makeKeyCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIWindow.makeKeyCalledReference)
         }
     }
 

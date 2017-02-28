@@ -40,7 +40,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `updateConstraints`
+    // MARK: - `updateConstraints`
 
     func testUpdateConstraintsControllerForwardingBehavior() {
         XCTAssertEqual(UIView.UpdateConstraintsSpyController.forwardingBehavior, .always,
@@ -83,7 +83,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `draw(_:)`
+    // MARK: - `draw(_:)`
 
     func testDrawControllerForwardingBehavior() {
         XCTAssertEqual(UIView.DrawSpyController.forwardingBehavior, .always,
@@ -132,7 +132,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `encodeRestorableState(with:)`
+    // MARK: - `encodeRestorableState(with:)`
 
     func testEncodeRestorableStateControllerForwardingBehavior() {
         XCTAssertEqual(UIView.EncodeRestorableStateSpyController.forwardingBehavior, .always,
@@ -182,7 +182,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `decodeRestorableState(with:)`
+    // MARK: - `decodeRestorableState(with:)`
 
     func testDecodeRestorableStateControllerForwardingBehavior() {
         XCTAssertEqual(UIView.DecodeRestorableStateSpyController.forwardingBehavior, .always,

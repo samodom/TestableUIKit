@@ -1,5 +1,5 @@
 //
-//  PlainViewSubclass.swift
+//  PlainView.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/20/14.

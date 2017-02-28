@@ -73,12 +73,7 @@ public extension UITableView {
             return loadEvidence(with: UITableView.reloadRowsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UITableView.reloadRowsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UITableView.reloadRowsCalledReference)
         }
     }
 

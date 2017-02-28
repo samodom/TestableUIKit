@@ -149,7 +149,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `insertSections(_:)`
+    // MARK: - `insertSections(_:)`
 
     func testInsertSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.InsertSectionsSpyController.forwardingBehavior, .always,
@@ -186,7 +186,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `deleteSections(_:)`
+    // MARK: - `deleteSections(_:)`
 
     func testDeleteSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.DeleteSectionsSpyController.forwardingBehavior, .always,
@@ -227,7 +227,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `reloadSections(_:)`
+    // MARK: - `reloadSections(_:)`
 
     func testReloadSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.ReloadSectionsSpyController.forwardingBehavior, .always,
@@ -264,7 +264,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `moveSection(_:toSection:)`
+    // MARK: - `moveSection(_:toSection:)`
 
     func testMoveSectionControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.MoveSectionSpyController.forwardingBehavior, .always,
@@ -314,7 +314,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `insertItems(at:)`
+    // MARK: - `insertItems(at:)`
 
     func testInsertItemsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.InsertItemsSpyController.forwardingBehavior, .always,
@@ -353,7 +353,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `deleteItems(at:)`
+    // MARK: - `deleteItems(at:)`
 
     func testDeleteItemsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.DeleteItemsSpyController.forwardingBehavior, .always,
@@ -395,7 +395,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `reloadItems(at:)`
+    // MARK: - `reloadItems(at:)`
 
     func testReloadItemsControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.ReloadItemsSpyController.forwardingBehavior, .always,
@@ -430,7 +430,7 @@ class UICollectionViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `moveItem(at:to:)`
+    // MARK: - `moveItem(at:to:)`
 
     func testMoveItemControllerForwardingBehavior() {
         XCTAssertEqual(UICollectionView.MoveItemSpyController.forwardingBehavior, .always,

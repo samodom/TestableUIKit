@@ -55,18 +55,13 @@ public extension UIView {
     }
 
 
-    /// Indicates whether the `decodeRestorableState(with:)` method has been called on this object.
+    /// Indicates whether the `decodeRestorableState(with:)` method has been called on this object's superclass.
     public final var superclassDecodeRestorableStateCalled: Bool {
         get {
             return loadEvidence(with: UIView.decodeRestorableStateCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIView.decodeRestorableStateCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIView.decodeRestorableStateCalledReference)
         }
     }
 

@@ -69,12 +69,7 @@ public extension UITableView {
             return loadEvidence(with: UITableView.moveSectionCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UITableView.moveSectionCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UITableView.moveSectionCalledReference)
         }
     }
 

@@ -69,12 +69,7 @@ public extension UITableView {
             return loadEvidence(with: UITableView.deleteSectionsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UITableView.deleteSectionsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UITableView.deleteSectionsCalledReference)
         }
     }
 

@@ -50,7 +50,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `loadView`
+    // MARK: - `loadView`
 
     func testLoadViewControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.LoadViewSpyController.forwardingBehavior, .always,
@@ -95,7 +95,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `viewDidLoad`
+    // MARK: - `viewDidLoad`
 
     func testViewDidLoadControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.ViewDidLoadSpyController.forwardingBehavior, .always,
@@ -139,7 +139,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `viewWillAppear(_:)`
+    // MARK: - `viewWillAppear(_:)`
 
     func testViewWillAppearControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.ViewWillAppearSpyController.forwardingBehavior, .always,
@@ -189,7 +189,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `viewDidAppear(_:)`
+    // MARK: - `viewDidAppear(_:)`
 
     func testViewDidAppearControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.ViewDidAppearSpyController.forwardingBehavior, .always,
@@ -239,7 +239,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `viewWillDisappear(_:)`
+    // MARK: - `viewWillDisappear(_:)`
 
     func testViewWillDisappearControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.ViewWillDisappearSpyController.forwardingBehavior, .always,
@@ -289,7 +289,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `viewDidDisappear(_:)`
+    // MARK: - `viewDidDisappear(_:)`
 
     func testViewDidDisappearControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.ViewDidDisappearSpyController.forwardingBehavior, .always,
@@ -339,7 +339,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `didReceiveMemoryWarning`
+    // MARK: - `didReceiveMemoryWarning`
 
     func testDidReceiveMemoryWarningControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.DidReceiveMemoryWarningSpyController.forwardingBehavior, .always,
@@ -383,7 +383,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `updateViewConstraints`
+    // MARK: - `updateViewConstraints`
 
     func testUpdateViewConstraintsControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.UpdateViewConstraintsSpyController.forwardingBehavior, .always,
@@ -427,7 +427,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `addChildViewController(_:)`
+    // MARK: - `addChildViewController(_:)`
 
     func testAddChildViewControllerControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.AddChildViewControllerSpyController.forwardingBehavior, .always,
@@ -476,7 +476,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `removeFromParentViewController`
+    // MARK: - `removeFromParentViewController`
 
     func testRemoveFromParentViewControllerControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.RemoveFromParentViewControllerSpyController.forwardingBehavior, .always,
@@ -521,7 +521,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `transition(from:to:duration:options:animations:completion:)`
+    // MARK: - `transition(from:to:duration:options:animations:completion:)`
 
     func testTransitionSpyWithCompliantControllersWithoutForwarding() {
 
@@ -695,7 +695,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `setEditing(_:animated:)`
+    // MARK: - `setEditing(_:animated:)`
 
     func testSetEditingControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.SetEditingSpyController.forwardingBehavior, .always,
@@ -751,7 +751,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `encodeRestorableState(with:)`
+    // MARK: - `encodeRestorableState(with:)`
 
     func testEncodeRestorableStateControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.EncodeRestorableStateSpyController.forwardingBehavior, .always,
@@ -802,7 +802,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `decodeRestorableState(with:)`
+    // MARK: - `decodeRestorableState(with:)`
 
     func testDecodeRestorableStateControllerForwardingBehavior() {
         XCTAssertEqual(UIViewController.DecodeRestorableStateSpyController.forwardingBehavior, .always,

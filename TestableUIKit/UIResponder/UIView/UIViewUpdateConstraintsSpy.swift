@@ -44,18 +44,13 @@ public extension UIView {
     }
 
 
-    /// Indicates whether the `updateConstraints` method has been called on this object.
+    /// Indicates whether the `updateConstraints` method has been called on this object's superclass.
     public final var superclassUpdateConstraintsCalled: Bool {
         get {
             return loadEvidence(with: UIView.updateConstraintsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIView.updateConstraintsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIView.updateConstraintsCalledReference)
         }
     }
 

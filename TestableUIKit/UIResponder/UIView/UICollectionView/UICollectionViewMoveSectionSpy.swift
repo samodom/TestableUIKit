@@ -69,12 +69,7 @@ public extension UICollectionView {
             return loadEvidence(with: UICollectionView.moveSectionCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UICollectionView.moveSectionCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(true, with: UICollectionView.moveSectionCalledReference)
         }
     }
 

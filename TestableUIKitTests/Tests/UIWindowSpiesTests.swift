@@ -28,10 +28,10 @@ class TestWindow: UIWindow {
 
 class UIWindowSpiesTests: XCTestCase {
 
-    let testWindow = TestWindow()
+    let window = TestWindow()
 
 
-    //  MARK: - `makeKey`
+    // MARK: - `makeKey`
 
     func testMakeKeyControllerForwardingBehavior() {
         XCTAssertEqual(UIWindow.MakeKeySpyController.forwardingBehavior, .always,
@@ -39,27 +39,27 @@ class UIWindowSpiesTests: XCTestCase {
     }
 
     func testMakeKeySpy() {
-        testWindow.makeKeyTestMethodCalled = false
-        XCTAssertFalse(testWindow.makeKeyCalled,
+        window.makeKeyTestMethodCalled = false
+        XCTAssertFalse(window.makeKeyCalled,
                        "By default the window should not indicate having been made the key window")
 
-        let spy = UIWindow.MakeKeySpyController.createSpy(on: testWindow)!
+        let spy = UIWindow.MakeKeySpyController.createSpy(on: window)!
         spy.beginSpying()
 
-        testWindow.makeKey()
-        XCTAssertTrue(testWindow.makeKeyCalled,
+        window.makeKey()
+        XCTAssertTrue(window.makeKeyCalled,
                       "A window being spied upon should indicate having had `makeKey` called on it")
-        XCTAssertTrue(testWindow.makeKeyTestMethodCalled,
+        XCTAssertTrue(window.makeKeyTestMethodCalled,
                       "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
 
-        XCTAssertFalse(testWindow.makeKeyCalled,
+        XCTAssertFalse(window.makeKeyCalled,
                        "The flag should be cleared after spying is complete")
     }
 
 
-    //  MARK: - `makeKeyAndVisible`
+    // MARK: - `makeKeyAndVisible`
 
     func testMakeKeyAndVisibleControllerForwardingBehavior() {
         XCTAssertEqual(UIWindow.MakeKeyAndVisibleSpyController.forwardingBehavior, .always,
@@ -67,22 +67,22 @@ class UIWindowSpiesTests: XCTestCase {
     }
 
     func testMakeKeyAndVisibleSpy() {
-        testWindow.makeKeyAndVisibleTestMethodCalled = false
-        XCTAssertFalse(testWindow.makeKeyAndVisibleCalled,
+        window.makeKeyAndVisibleTestMethodCalled = false
+        XCTAssertFalse(window.makeKeyAndVisibleCalled,
                        "By default the window should not indicate having been made the key window and visible")
 
-        let spy = UIWindow.MakeKeyAndVisibleSpyController.createSpy(on: testWindow)!
+        let spy = UIWindow.MakeKeyAndVisibleSpyController.createSpy(on: window)!
         spy.beginSpying()
 
-        testWindow.makeKeyAndVisible()
-        XCTAssertTrue(testWindow.makeKeyAndVisibleCalled,
+        window.makeKeyAndVisible()
+        XCTAssertTrue(window.makeKeyAndVisibleCalled,
                       "A window being spied upon should indicate having had `makeKeyAndVisible` called on it")
-        XCTAssertTrue(testWindow.makeKeyAndVisibleTestMethodCalled,
+        XCTAssertTrue(window.makeKeyAndVisibleTestMethodCalled,
                       "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
 
-        XCTAssertFalse(testWindow.makeKeyAndVisibleCalled,
+        XCTAssertFalse(window.makeKeyAndVisibleCalled,
                        "The flag should be cleared after spying is complete")
     }
 

@@ -52,18 +52,13 @@ public extension UIView {
     }
 
 
-    /// Indicates whether the `draw(_:)` method has been called on this object.
+    /// Indicates whether the `draw(_:)` method has been called on this object's superclass.
     public final var superclassDrawCalled: Bool {
         get {
             return loadEvidence(with: UIView.drawCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIView.drawCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIView.drawCalledReference)
         }
     }
 

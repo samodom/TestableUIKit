@@ -58,7 +58,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `setNeedsLayout`
+    // MARK: - `setNeedsLayout`
 
     func testSetNeedsLayoutControllerForwardingBehavior() {
         XCTAssertEqual(UIView.SetNeedsLayoutSpyController.forwardingBehavior, .always,
@@ -134,7 +134,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `invalidateIntrinsicContentSize`
+    // MARK: - `invalidateIntrinsicContentSize`
 
     func testInvalidateIntrinsicContentSizeControllerForwardingBehavior() {
         XCTAssertEqual(UIView.InvalidateIntrinsicContentSizeSpyController.forwardingBehavior, .always,
@@ -163,7 +163,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `setNeedsUpdateConstraints`
+    // MARK: - `setNeedsUpdateConstraints`
 
     func testSetNeedsUpdateConstraintsControllerForwardingBehavior() {
         XCTAssertEqual(UIView.SetNeedsUpdateConstraintsSpyController.forwardingBehavior, .always,
@@ -190,7 +190,7 @@ class UIViewDirectSpiesTests: XCTestCase {
                        "The flag should be cleared after spying is complete")
     }
 
-    //  MARK: - `setNeedsDisplay` and `setNeedsDisplay(_:)`
+    // MARK: - `setNeedsDisplay` and `setNeedsDisplay(_:)`
 
     func testSetNeedsDisplayControllerForwardingBehavior() {
         XCTAssertEqual(UIView.SetNeedsDisplaySpyController.forwardingBehavior, .always,

@@ -61,12 +61,7 @@ public extension UINavigationBar {
             return loadEvidence(with: UINavigationBar.popItemCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UINavigationBar.popItemCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UINavigationBar.popItemCalledReference)
         }
     }
 

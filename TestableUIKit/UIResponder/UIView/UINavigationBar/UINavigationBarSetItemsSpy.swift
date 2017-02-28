@@ -69,12 +69,7 @@ public extension UINavigationBar {
             return loadEvidence(with: UINavigationBar.setItemsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UINavigationBar.setItemsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UINavigationBar.setItemsCalledReference)
         }
     }
 

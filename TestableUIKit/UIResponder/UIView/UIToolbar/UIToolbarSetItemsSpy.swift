@@ -69,12 +69,7 @@ public extension UIToolbar {
             return loadEvidence(with: UIToolbar.setItemsCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIToolbar.setItemsCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIToolbar.setItemsCalledReference)
         }
     }
 

@@ -61,12 +61,7 @@ public extension UIView {
             return loadEvidence(with: UIView.setNeedsLayoutCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIView.setNeedsLayoutCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIView.setNeedsLayoutCalledReference)
         }
     }
 

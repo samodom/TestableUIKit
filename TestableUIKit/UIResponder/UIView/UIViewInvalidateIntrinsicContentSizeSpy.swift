@@ -50,12 +50,7 @@ public extension UIView {
             return loadEvidence(with: UIView.invalidateIntrinsicContentSizeCalledReference) as? Bool ?? false
         }
         set {
-            let reference = UIView.invalidateIntrinsicContentSizeCalledReference
-            guard newValue else {
-                return removeEvidence(with: reference)
-            }
-
-            saveEvidence(true, with: reference)
+            saveEvidence(newValue, with: UIView.invalidateIntrinsicContentSizeCalledReference)
         }
     }
 

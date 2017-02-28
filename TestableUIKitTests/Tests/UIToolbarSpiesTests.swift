@@ -23,7 +23,7 @@ class TestToolbar: UIToolbar {
 
 class UIToolbarSpiesTests: XCTestCase {
 
-    let testToolbar = TestToolbar()
+    let toolbar = TestToolbar()
     var items: [UIBarButtonItem]!
     let selector = #selector(UIToolbarSpiesTests.handler)
 
@@ -49,7 +49,7 @@ class UIToolbarSpiesTests: XCTestCase {
     @IBAction func handler() {}
 
 
-    //  MARK: - `setItems(_:animated:)`
+    // MARK: - `setItems(_:animated:)`
 
     func testSetItemsControllerForwardingBehavior() {
         XCTAssertEqual(UIToolbar.SetItemsSpyController.forwardingBehavior, .always,
@@ -57,58 +57,58 @@ class UIToolbarSpiesTests: XCTestCase {
     }
 
     func testSetItemsSpyWithPositiveInput() {
-        testToolbar.setItemsTestMethodCalled = false
-        XCTAssertFalse(testToolbar.setItemsCalled,
+        toolbar.setItemsTestMethodCalled = false
+        XCTAssertFalse(toolbar.setItemsCalled,
                        "By default the toolbar should not indicate having had its items set")
-        XCTAssertNil(testToolbar.setItemsItems, "By default the items should be empty")
-        XCTAssertNil(testToolbar.setItemsAnimated, "By default the animation flag should be empty")
+        XCTAssertNil(toolbar.setItemsItems, "By default the items should be empty")
+        XCTAssertNil(toolbar.setItemsAnimated, "By default the animation flag should be empty")
 
-        let spy = UIToolbar.SetItemsSpyController.createSpy(on: testToolbar)!
+        let spy = UIToolbar.SetItemsSpyController.createSpy(on: toolbar)!
         spy.beginSpying()
 
-        testToolbar.setItems(items, animated: true)
-        XCTAssertTrue(testToolbar.setItemsCalled,
+        toolbar.setItems(items, animated: true)
+        XCTAssertTrue(toolbar.setItemsCalled,
                       "A toolbar being spied upon should indicate having had `setItems(_:animated:)` called on it")
-        XCTAssertEqual(testToolbar.setItemsItems!, items, "The items being set should be captured")
-        XCTAssertTrue(testToolbar.setItemsAnimated!, "The animation flag should be captured")
-        XCTAssertTrue(testToolbar.setItemsTestMethodCalled,
+        XCTAssertEqual(toolbar.setItemsItems!, items, "The items being set should be captured")
+        XCTAssertTrue(toolbar.setItemsAnimated!, "The animation flag should be captured")
+        XCTAssertTrue(toolbar.setItemsTestMethodCalled,
                       "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
 
-        XCTAssertFalse(testToolbar.setItemsCalled,
+        XCTAssertFalse(toolbar.setItemsCalled,
                        "The flag should be cleared after spying is complete")
-        XCTAssertNil(testToolbar.setItemsItems,
+        XCTAssertNil(toolbar.setItemsItems,
                      "The items should be cleared after spying is complete")
-        XCTAssertNil(testToolbar.setItemsAnimated,
+        XCTAssertNil(toolbar.setItemsAnimated,
                      "The animation flag should be cleared after spying is complete")
     }
 
     func testSetItemsSpyWithNegativeInput() {
-        testToolbar.setItemsTestMethodCalled = false
-        XCTAssertFalse(testToolbar.setItemsCalled,
+        toolbar.setItemsTestMethodCalled = false
+        XCTAssertFalse(toolbar.setItemsCalled,
                        "By default the toolbar should not indicate having had its items set")
-        XCTAssertNil(testToolbar.setItemsItems, "By default the items should be empty")
-        XCTAssertNil(testToolbar.setItemsAnimated, "By default the animation flag should be empty")
+        XCTAssertNil(toolbar.setItemsItems, "By default the items should be empty")
+        XCTAssertNil(toolbar.setItemsAnimated, "By default the animation flag should be empty")
 
-        let spy = UIToolbar.SetItemsSpyController.createSpy(on: testToolbar)!
+        let spy = UIToolbar.SetItemsSpyController.createSpy(on: toolbar)!
         spy.beginSpying()
 
-        testToolbar.setItems(nil, animated: false)
-        XCTAssertTrue(testToolbar.setItemsCalled,
+        toolbar.setItems(nil, animated: false)
+        XCTAssertTrue(toolbar.setItemsCalled,
                       "A toolbar being spied upon should indicate having had `setItems` called on it")
-        XCTAssertNil(testToolbar.setItemsItems, "The items being set should be captured")
-        XCTAssertFalse(testToolbar.setItemsAnimated!, "The animation flag should be captured")
-        XCTAssertTrue(testToolbar.setItemsTestMethodCalled,
+        XCTAssertNil(toolbar.setItemsItems, "The items being set should be captured")
+        XCTAssertFalse(toolbar.setItemsAnimated!, "The animation flag should be captured")
+        XCTAssertTrue(toolbar.setItemsTestMethodCalled,
                       "The spy method should always forward the method call to the original implementation")
 
         spy.endSpying()
 
-        XCTAssertFalse(testToolbar.setItemsCalled,
+        XCTAssertFalse(toolbar.setItemsCalled,
                        "The flag should be cleared after spying is complete")
-        XCTAssertNil(testToolbar.setItemsItems,
+        XCTAssertNil(toolbar.setItemsItems,
                      "The items should be cleared after spying is complete")
-        XCTAssertNil(testToolbar.setItemsAnimated,
+        XCTAssertNil(toolbar.setItemsAnimated,
                      "The animation flag should be cleared after spying is complete")
     }
 

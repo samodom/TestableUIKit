@@ -115,7 +115,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `insertSections(_:with:)`
+    // MARK: - `insertSections(_:with:)`
 
     func testInsertSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.InsertSectionsSpyController.forwardingBehavior, .always,
@@ -158,7 +158,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `deleteSections(_:with:)`
+    // MARK: - `deleteSections(_:with:)`
 
     func testDeleteSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.DeleteSectionsSpyController.forwardingBehavior, .always,
@@ -205,7 +205,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `reloadSections(_:with:)`
+    // MARK: - `reloadSections(_:with:)`
 
     func testReloadSectionsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.ReloadSectionsSpyController.forwardingBehavior, .always,
@@ -248,7 +248,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `moveSection(_:toSection:)`
+    // MARK: - `moveSection(_:toSection:)`
 
     func testMoveSectionControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.MoveSectionSpyController.forwardingBehavior, .always,
@@ -327,7 +327,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `insertRows(at:with:)`
+    // MARK: - `insertRows(at:with:)`
 
     func testInsertRowsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.InsertRowsSpyController.forwardingBehavior, .always,
@@ -372,7 +372,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `deleteRows(at:with:)`
+    // MARK: - `deleteRows(at:with:)`
 
     func testDeleteRowsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.DeleteRowsSpyController.forwardingBehavior, .always,
@@ -419,7 +419,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `reloadRows(at:with:)`
+    // MARK: - `reloadRows(at:with:)`
 
     func testReloadRowsControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.ReloadRowsSpyController.forwardingBehavior, .always,
@@ -467,7 +467,7 @@ class UITableViewSpiesTests: XCTestCase {
     }
 
 
-    //  MARK: - `moveRow(at:to:)`
+    // MARK: - `moveRow(at:to:)`
 
     func testMoveRowControllerForwardingBehavior() {
         XCTAssertEqual(UITableView.MoveRowSpyController.forwardingBehavior, .always,

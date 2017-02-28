@@ -22,8 +22,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
     var compliantViews: [UIView]!
     var allViews: [UIView]!
 
-    let sampleFrame = CGRect(x: 1, y: 2, width: 3, height: 4)
-    let sampleCoder = NSCoder()
+//    let sampleCoder = NSCoder()
 
     override func setUp() {
         super.setUp()
@@ -73,9 +72,6 @@ class UIViewIndirectSpiesTests: XCTestCase {
     }
     
     func testUpdateConstraintsSpyWithNonCompliantView() {
-        XCTAssertFalse(nonCompliantView.superclassUpdateConstraintsCalled,
-                       "By default the view should not indicate having asked its superclass to update its constraints")
-
         let spy = UIView.UpdateConstraintsSpyController.createSpy(on: nonCompliantView)!
         spy.beginSpying()
 
@@ -104,10 +100,10 @@ class UIViewIndirectSpiesTests: XCTestCase {
             let spy = UIView.DrawSpyController.createSpy(on: view)!
             spy.beginSpying()
 
-            view.draw(sampleFrame)
+            view.draw(SampleFrame)
             XCTAssertTrue(view.superclassDrawCalled,
                           "A `UIView` subclass that calls its superclass's implementation of `draw(_:)` should indicate having called that method when being spied upon")
-            XCTAssertEqual(view.superclassDrawRect, sampleFrame,
+            XCTAssertEqual(view.superclassDrawRect, SampleFrame,
                            "The rect passed to the method should captured")
 
             if view === subCompliantView {
@@ -128,7 +124,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
         let spy = UIView.DrawSpyController.createSpy(on: nonCompliantView)!
         spy.beginSpying()
 
-        nonCompliantView.draw(sampleFrame)
+        nonCompliantView.draw(SampleFrame)
         XCTAssertFalse(nonCompliantView.superclassDrawCalled,
                        "A `UIView` subclass that does not call its superclass implementation of `draw(_:)` should not indicate having called that method when being spied upon")
         
@@ -153,10 +149,11 @@ class UIViewIndirectSpiesTests: XCTestCase {
             let spy = UIView.EncodeRestorableStateSpyController.createSpy(on: view)!
             spy.beginSpying()
 
-            view.encodeRestorableState(with: sampleCoder)
+            let coder = NSCoder()
+            view.encodeRestorableState(with: coder)
             XCTAssertTrue(view.superclassEncodeRestorableStateCalled,
                           "A `UIView` subclass that calls its superclass's implementation of `encodeRestorableState(with:)` should indicate having called that method when being spied upon")
-            XCTAssertEqual(view.superclassEncodeRestorableStateCoder, sampleCoder,
+            XCTAssertEqual(view.superclassEncodeRestorableStateCoder, coder,
                            "The coder passed to the method should captured")
 
             if view === subCompliantView {
@@ -177,7 +174,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
         let spy = UIView.EncodeRestorableStateSpyController.createSpy(on: nonCompliantView)!
         spy.beginSpying()
 
-        nonCompliantView.draw(sampleFrame)
+        nonCompliantView.draw(SampleFrame)
         XCTAssertFalse(nonCompliantView.superclassEncodeRestorableStateCalled,
                        "A `UIView` subclass that does not call its superclass implementation of `encodeRestorableState(with:)` should not indicate having called that method when being spied upon")
         
@@ -202,10 +199,11 @@ class UIViewIndirectSpiesTests: XCTestCase {
             let spy = UIView.DecodeRestorableStateSpyController.createSpy(on: view)!
             spy.beginSpying()
 
-            view.decodeRestorableState(with: sampleCoder)
+            let coder = NSCoder()
+            view.decodeRestorableState(with: coder)
             XCTAssertTrue(view.superclassDecodeRestorableStateCalled,
                           "A `UIView` subclass that calls its superclass's implementation of `decodeRestorableState(with:)` should indicate having called that method when being spied upon")
-            XCTAssertEqual(view.superclassDecodeRestorableStateCoder, sampleCoder,
+            XCTAssertEqual(view.superclassDecodeRestorableStateCoder, coder,
                            "The coder passed to the method should captured")
 
             if view === subCompliantView {
@@ -226,7 +224,7 @@ class UIViewIndirectSpiesTests: XCTestCase {
         let spy = UIView.DecodeRestorableStateSpyController.createSpy(on: nonCompliantView)!
         spy.beginSpying()
 
-        nonCompliantView.draw(sampleFrame)
+        nonCompliantView.draw(SampleFrame)
         XCTAssertFalse(nonCompliantView.superclassDecodeRestorableStateCalled,
                        "A `UIView` subclass that does not call its superclass implementation of `decodeRestorableState(with:)` should not indicate having called that method when being spied upon")
         

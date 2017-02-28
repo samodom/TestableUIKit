@@ -1,5 +1,5 @@
 //
-//  EmptyViewController.swift
+//  PlainController.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 12/19/14.
@@ -8,6 +8,4 @@
 
 import UIKit
 
-open class EmptyViewController: UIViewController {
-
-}
+open class PlainController: UIViewController {}

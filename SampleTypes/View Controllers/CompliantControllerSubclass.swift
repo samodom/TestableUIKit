@@ -1,5 +1,5 @@
 //
-//  GoodViewControllerSubclass.swift
+//  CompliantControllerSubclass.swift
 //  TestableApplication
 //
 //  Created by Sam Odom on 12/19/14.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-open class GoodViewControllerSubclass: GoodViewController {
+open class CompliantControllerSubclass: CompliantController {
 
+    public final var compliantControllerSubclassLoadViewCalled = false
     open override func loadView() {
+        compliantControllerSubclassLoadViewCalled = true
         view = UIView()
     }
 
@@ -42,16 +44,31 @@ open class GoodViewControllerSubclass: GoodViewController {
         super.updateViewConstraints()
     }
 
-    open override func addChildViewController(_ childController: UIKit.UIViewController) {
-        super.addChildViewController(childController)
+    open override func addChildViewController(_ controller: UIViewController) {
+        super.addChildViewController(controller)
     }
 
     open override func removeFromParentViewController() {
         super.removeFromParentViewController()
     }
 
-    open override func transition(from fromViewController: UIKit.UIViewController, to toViewController: UIKit.UIViewController, duration: TimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
-        super.transition(from: fromViewController, to: toViewController, duration: duration, options: options, animations: animations, completion: completion)
+    open override func transition(
+        from sourceController: UIViewController,
+        to destinationController: UIViewController,
+        duration: TimeInterval,
+        options: UIViewAnimationOptions,
+        animations: (() -> Void)?,
+        completion: ((Bool) -> Void)?
+        ) {
+
+        super.transition(
+            from: sourceController,
+            to: destinationController,
+            duration: duration,
+            options: options,
+            animations: animations,
+            completion: completion
+        )
     }
 
     open override func setEditing(_ editing: Bool, animated: Bool) {
@@ -66,21 +83,17 @@ open class GoodViewControllerSubclass: GoodViewController {
         super.decodeRestorableState(with: coder)
     }
 
-    open override func performSegue(withIdentifier identifier: String?, sender: Any?) {
+    open override func performSegue(withIdentifier identifier: String?, sender: Any?) {}
 
-    }
+    open override func present(
+        _ viewControllerToPresent: UIViewController,
+        animated: Bool,
+        completion: (() -> ())?
+        ) {}
 
-    open override func present(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Bool, completion: (() -> ())?) {
-        
-    }
+    open override func dismiss(animated: Bool, completion: (() -> Void)?) {}
 
-    open override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
-
-    }
-
-    open override func show(_ vc: UIKit.UIViewController, sender: Any?) {
-
-    }
+    open override func show(_ controller: UIViewController, sender: Any?) {}
 
 }
 

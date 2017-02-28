@@ -11,8 +11,23 @@
 		0A261EDB1B5829700070EDFE /* UIPageViewControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E8F1A49F31100FF48D7 /* UIPageViewControllerCallsTests.swift */; };
 		0A261EDD1B5829700070EDFE /* UITabBarControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */; };
 		0A261EE11B5829700070EDFE /* UIViewControllerCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */; };
-		0A261EE21B5829700070EDFE /* UIViewControllerSuperCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */; };
 		0A007E9A1E5CF980001BB011 /* UINavigationBarSpiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A007E991E5CF980001BB011 /* UINavigationBarSpiesTests.swift */; };
+		0A0B2A671E62283300D7B105 /* UIViewControllerLoadViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A661E62283300D7B105 /* UIViewControllerLoadViewSpy.swift */; };
+		0A0B2A691E6228D300D7B105 /* UIViewControllerIndirectSpiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A681E6228D300D7B105 /* UIViewControllerIndirectSpiesTests.swift */; };
+		0A0B2A6B1E635CFF00D7B105 /* UIViewControllerViewDidLoadSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A6A1E635CFF00D7B105 /* UIViewControllerViewDidLoadSpy.swift */; };
+		0A0B2A6D1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A6C1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift */; };
+		0A0B2A6F1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A6E1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift */; };
+		0A0B2A711E63C96400D7B105 /* UIViewControllerViewWillDisappearSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A701E63C96400D7B105 /* UIViewControllerViewWillDisappearSpy.swift */; };
+		0A0B2A731E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A721E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift */; };
+		0A0B2A751E63CC0A00D7B105 /* UIViewControllerDidReceiveMemoryWarningSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A741E63CC0A00D7B105 /* UIViewControllerDidReceiveMemoryWarningSpy.swift */; };
+		0A0B2A771E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */; };
+		0A0B2A791E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A781E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift */; };
+		0A0B2A7B1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */; };
+		0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */; };
+		0A0B2A7F1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7E1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift */; };
+		0A0B2A811E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */; };
+		0A0B2A831E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A821E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift */; };
+		0A0B2A851E651F7500D7B105 /* UIViewControllerDecodeRestorableStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A841E651F7500D7B105 /* UIViewControllerDecodeRestorableStateSpy.swift */; };
 		0A0CA3971DEFFDC8003559BC /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CA3961DEFFDC8003559BC /* TestTableView.swift */; };
 		0A4896E51E5BED3900B30B06 /* UIViewDrawSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896E41E5BED3900B30B06 /* UIViewDrawSpy.swift */; };
 		0A4896E71E5BF2D300B30B06 /* MethodForwardingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896E61E5BF2D300B30B06 /* MethodForwardingBehavior.swift */; };
@@ -71,19 +86,17 @@
 		0ABD48C11DE11B2D005DD470 /* UIResponderBecomeFirstResponderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E5A1A49F1BD00FF48D7 /* UIResponderBecomeFirstResponderSpy.swift */; };
 		0ABD48C71DE120F5005DD470 /* ApplicationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */; };
 		0AE2CBE81DDC15B0001ABEE3 /* SampleTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE2CBE61DDC15B0001ABEE3 /* SampleTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE2CBF61DDC1632001ABEE3 /* BadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBED1DDC1632001ABEE3 /* BadViewController.swift */; };
-		0AE2CBF71DDC1632001ABEE3 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEE1DDC1632001ABEE3 /* EmptyViewController.swift */; };
-		0AE2CBF81DDC1632001ABEE3 /* GoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEF1DDC1632001ABEE3 /* GoodViewController.swift */; };
-		0AE2CBF91DDC1632001ABEE3 /* GoodViewControllerSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF01DDC1632001ABEE3 /* GoodViewControllerSubclass.swift */; };
 		0AF08E811A49F1BD00FF48D7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E671A49F1BD00FF48D7 /* UINavigationController.swift */; };
 		0AF08E831A49F1BD00FF48D7 /* UINavigationControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E681A49F1BD00FF48D7 /* UINavigationControllerCalls.swift */; };
 		0AF08E851A49F1BD00FF48D7 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6A1A49F1BD00FF48D7 /* UITabBarController.swift */; };
 		0AF08E871A49F1BD00FF48D7 /* UITabBarControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6B1A49F1BD00FF48D7 /* UITabBarControllerCalls.swift */; };
-		0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6C1A49F1BD00FF48D7 /* UIViewController.swift */; };
 		0AF08E8B1A49F1BD00FF48D7 /* UIViewControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6D1A49F1BD00FF48D7 /* UIViewControllerCalls.swift */; };
-		0AF08E8D1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E6E1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift */; };
 		0AF08E941A49F47500FF48D7 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E921A49F47500FF48D7 /* UIPageViewController.swift */; };
 		0AF08E961A49F47500FF48D7 /* UIPageViewControllerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF08E931A49F47500FF48D7 /* UIPageViewControllerCalls.swift */; };
+		0AE2CBF61DDC1632001ABEE3 /* NonCompliantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBED1DDC1632001ABEE3 /* NonCompliantController.swift */; };
+		0AE2CBF71DDC1632001ABEE3 /* PlainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEE1DDC1632001ABEE3 /* PlainController.swift */; };
+		0AE2CBF81DDC1632001ABEE3 /* CompliantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBEF1DDC1632001ABEE3 /* CompliantController.swift */; };
+		0AE2CBF91DDC1632001ABEE3 /* CompliantControllerSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF01DDC1632001ABEE3 /* CompliantControllerSubclass.swift */; };
 		0AE2CBFA1DDC1632001ABEE3 /* NonCompliantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF21DDC1632001ABEE3 /* NonCompliantView.swift */; };
 		0AE2CBFB1DDC1632001ABEE3 /* PlainViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF31DDC1632001ABEE3 /* PlainViewSubclass.swift */; };
 		0AE2CBFC1DDC1632001ABEE3 /* CompliantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CBF41DDC1632001ABEE3 /* CompliantView.swift */; };
@@ -131,6 +144,22 @@
 /* Begin PBXFileReference section */
 		0A007E991E5CF980001BB011 /* UINavigationBarSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarSpiesTests.swift; sourceTree = "<group>"; };
 		0A459F1A1A494BA1005DDCFB /* UINavigationControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCallsTests.swift; sourceTree = "<group>"; };
+		0A0B2A661E62283300D7B105 /* UIViewControllerLoadViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerLoadViewSpy.swift; sourceTree = "<group>"; };
+		0A0B2A681E6228D300D7B105 /* UIViewControllerIndirectSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerIndirectSpiesTests.swift; sourceTree = "<group>"; };
+		0A0B2A6A1E635CFF00D7B105 /* UIViewControllerViewDidLoadSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewDidLoadSpy.swift; sourceTree = "<group>"; };
+		0A0B2A6C1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewWillAppearSpy.swift; sourceTree = "<group>"; };
+		0A0B2A6E1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewDidAppearSpy.swift; sourceTree = "<group>"; };
+		0A0B2A701E63C96400D7B105 /* UIViewControllerViewWillDisappearSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewWillDisappearSpy.swift; sourceTree = "<group>"; };
+		0A0B2A721E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewDidDisappearSpy.swift; sourceTree = "<group>"; };
+		0A0B2A741E63CC0A00D7B105 /* UIViewControllerDidReceiveMemoryWarningSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerDidReceiveMemoryWarningSpy.swift; sourceTree = "<group>"; };
+		0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerUpdateViewConstraintsSpy.swift; sourceTree = "<group>"; };
+		0A0B2A781E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerAddChildViewControllerSpy.swift; sourceTree = "<group>"; };
+		0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerRemoveFromParentViewControllerSpy.swift; sourceTree = "<group>"; };
+		0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitionSpy.swift; sourceTree = "<group>"; };
+		0A0B2A7E1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerClosureTypes.swift; sourceTree = "<group>"; };
+		0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSetEditingSpy.swift; sourceTree = "<group>"; };
+		0A0B2A821E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEncodeRestorableStateSpy.swift; sourceTree = "<group>"; };
+		0A0B2A841E651F7500D7B105 /* UIViewControllerDecodeRestorableStateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerDecodeRestorableStateSpy.swift; sourceTree = "<group>"; };
 		0A0CA3961DEFFDC8003559BC /* TestTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		0A363CF21A468CCE00DD9995 /* UIViewDirectSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDirectSpiesTests.swift; sourceTree = "<group>"; };
 		0A4896E41E5BED3900B30B06 /* UIViewDrawSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawSpy.swift; sourceTree = "<group>"; };
@@ -188,10 +217,10 @@
 		0AE2CBE41DDC15B0001ABEE3 /* SampleTypes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SampleTypes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE2CBE61DDC15B0001ABEE3 /* SampleTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleTypes.h; sourceTree = "<group>"; };
 		0AE2CBE71DDC15B0001ABEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AE2CBED1DDC1632001ABEE3 /* BadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadViewController.swift; sourceTree = "<group>"; };
-		0AE2CBEE1DDC1632001ABEE3 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
-		0AE2CBEF1DDC1632001ABEE3 /* GoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewController.swift; sourceTree = "<group>"; };
-		0AE2CBF01DDC1632001ABEE3 /* GoodViewControllerSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewControllerSubclass.swift; sourceTree = "<group>"; };
+		0AE2CBED1DDC1632001ABEE3 /* NonCompliantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonCompliantController.swift; sourceTree = "<group>"; };
+		0AE2CBEE1DDC1632001ABEE3 /* PlainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainController.swift; sourceTree = "<group>"; };
+		0AE2CBEF1DDC1632001ABEE3 /* CompliantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompliantController.swift; sourceTree = "<group>"; };
+		0AE2CBF01DDC1632001ABEE3 /* CompliantControllerSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompliantControllerSubclass.swift; sourceTree = "<group>"; };
 		0AE2CBF21DDC1632001ABEE3 /* NonCompliantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonCompliantView.swift; sourceTree = "<group>"; };
 		0AE2CBF31DDC1632001ABEE3 /* PlainViewSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainViewSubclass.swift; sourceTree = "<group>"; };
 		0AE2CBF41DDC1632001ABEE3 /* CompliantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompliantView.swift; sourceTree = "<group>"; };
@@ -203,9 +232,7 @@
 		0AF08E681A49F1BD00FF48D7 /* UINavigationControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCalls.swift; sourceTree = "<group>"; };
 		0AF08E6A1A49F1BD00FF48D7 /* UITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
 		0AF08E6B1A49F1BD00FF48D7 /* UITabBarControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerCalls.swift; sourceTree = "<group>"; };
-		0AF08E6C1A49F1BD00FF48D7 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0AF08E6D1A49F1BD00FF48D7 /* UIViewControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCalls.swift; sourceTree = "<group>"; };
-		0AF08E6E1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSuperCalls.swift; sourceTree = "<group>"; };
 		0AF08E8F1A49F31100FF48D7 /* UIPageViewControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerCallsTests.swift; sourceTree = "<group>"; };
 		0AF08E921A49F47500FF48D7 /* UIPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
 		0AF08E931A49F47500FF48D7 /* UIPageViewControllerCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerCalls.swift; sourceTree = "<group>"; };
@@ -214,14 +241,12 @@
 		0AF3795B1A451FC7004606F6 /* TestableUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestableUIKit.h; sourceTree = "<group>"; };
 		0AF379611A451FC7004606F6 /* TestableUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestableUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF379671A451FC7004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSuperCallsTests.swift; sourceTree = "<group>"; };
 		0AF379801A452579004606F6 /* TestableApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestableApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF379831A452579004606F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF379841A452579004606F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AF379891A452579004606F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AF3798B1A452579004606F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0AF3798E1A45257A004606F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCallsTests.swift; sourceTree = "<group>"; };
 		0AFFECD11DFCA4FB00D4409C /* UIViewUpdateConstraintsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUpdateConstraintsSpy.swift; sourceTree = "<group>"; };
 		674D998DDCADBBFF32497E14 /* Pods_TestableUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestableUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDB419DB044409FB33AAC88 /* Pods_TestableUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestableUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +290,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0B2A651E6227FF00D7B105 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A0B2A781E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift */,
+				0A0B2A7E1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift */,
+				0A0B2A841E651F7500D7B105 /* UIViewControllerDecodeRestorableStateSpy.swift */,
+				0A0B2A741E63CC0A00D7B105 /* UIViewControllerDidReceiveMemoryWarningSpy.swift */,
+				0A0B2A821E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift */,
+				0A0B2A661E62283300D7B105 /* UIViewControllerLoadViewSpy.swift */,
+				0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */,
+				0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */,
+				0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */,
+				0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */,
+				0A0B2A6E1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift */,
+				0A0B2A721E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift */,
+				0A0B2A6A1E635CFF00D7B105 /* UIViewControllerViewDidLoadSpy.swift */,
+				0A0B2A6C1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift */,
+				0A0B2A701E63C96400D7B105 /* UIViewControllerViewWillDisappearSpy.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		0ABD48BC1DE03EC7005DD470 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,10 +377,10 @@
 		0AE2CBEC1DDC1632001ABEE3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AE2CBED1DDC1632001ABEE3 /* BadViewController.swift */,
-				0AE2CBEE1DDC1632001ABEE3 /* EmptyViewController.swift */,
-				0AE2CBEF1DDC1632001ABEE3 /* GoodViewController.swift */,
-				0AE2CBF01DDC1632001ABEE3 /* GoodViewControllerSubclass.swift */,
+				0AE2CBEF1DDC1632001ABEE3 /* CompliantController.swift */,
+				0AE2CBF01DDC1632001ABEE3 /* CompliantControllerSubclass.swift */,
+				0AE2CBED1DDC1632001ABEE3 /* NonCompliantController.swift */,
+				0AE2CBEE1DDC1632001ABEE3 /* PlainController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -356,6 +403,7 @@
 				0ABAA5411E5E325600E8E928 /* UIResponderObjectSpyable.swift */,
 				0ABAA53F1E5E321B00E8E928 /* UIResponderResignFirstResponderSpy.swift */,
 				0AF08E5B1A49F1BD00FF48D7 /* UIView */,
+				0A0B2A651E6227FF00D7B105 /* UIViewController */,
 			);
 			path = UIResponder;
 			sourceTree = "<group>";
@@ -423,9 +471,7 @@
 				0AF08E661A49F1BD00FF48D7 /* UINavigationController */,
 				0AF08E911A49F47500FF48D7 /* UIPageViewController */,
 				0AF08E691A49F1BD00FF48D7 /* UITabBarController */,
-				0AF08E6C1A49F1BD00FF48D7 /* UIViewController.swift */,
 				0AF08E6D1A49F1BD00FF48D7 /* UIViewControllerCalls.swift */,
-				0AF08E6E1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -528,9 +574,9 @@
 				0AF08E4C1A49E9BA00FF48D7 /* UIResponderSpiesTests.swift */,
 				0AF08E4F1A49EAFC00FF48D7 /* UITabBarControllerCallsTests.swift */,
 				0AF379C31A465D43004606F6 /* UIViewControllerCallsTests.swift */,
-				0AF379731A452054004606F6 /* UIViewControllerSuperCallsTests.swift */,
 				0ABAA53D1E5D0D3C00E8E928 /* UITableViewSpiesTests.swift */,
 				0A8320211E5CF27D00CD4C11 /* UIToolbarSpiesTests.swift */,
+				0A0B2A681E6228D300D7B105 /* UIViewControllerIndirectSpiesTests.swift */,
 				0A363CF21A468CCE00DD9995 /* UIViewDirectSpiesTests.swift */,
 				0A4896EC1E5BF85E00B30B06 /* UIViewIndirectSpiesTests.swift */,
 				0ABAA55B1E5E7E8900E8E928 /* UIWebViewSpiesTests.swift */,
@@ -850,14 +896,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AE2CBF71DDC1632001ABEE3 /* EmptyViewController.swift in Sources */,
-				0AE2CBF81DDC1632001ABEE3 /* GoodViewController.swift in Sources */,
+				0AE2CBF71DDC1632001ABEE3 /* PlainController.swift in Sources */,
+				0AE2CBF81DDC1632001ABEE3 /* CompliantController.swift in Sources */,
 				0AE2CBFC1DDC1632001ABEE3 /* CompliantView.swift in Sources */,
 				0AE2CBFA1DDC1632001ABEE3 /* NonCompliantView.swift in Sources */,
-				0AE2CBF91DDC1632001ABEE3 /* GoodViewControllerSubclass.swift in Sources */,
+				0AE2CBF91DDC1632001ABEE3 /* CompliantControllerSubclass.swift in Sources */,
 				0AE2CBFD1DDC1632001ABEE3 /* CompliantViewSubclass.swift in Sources */,
 				0AE2CBFB1DDC1632001ABEE3 /* PlainViewSubclass.swift in Sources */,
-				0AE2CBF61DDC1632001ABEE3 /* BadViewController.swift in Sources */,
+				0AE2CBF61DDC1632001ABEE3 /* NonCompliantController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,28 +912,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF08E8B1A49F1BD00FF48D7 /* UIViewControllerCalls.swift in Sources */,
-				0AF08E8D1A49F1BD00FF48D7 /* UIViewControllerSuperCalls.swift in Sources */,
 				0AF08E811A49F1BD00FF48D7 /* UINavigationController.swift in Sources */,
 				0AF08E831A49F1BD00FF48D7 /* UINavigationControllerCalls.swift in Sources */,
 				0AF08E851A49F1BD00FF48D7 /* UITabBarController.swift in Sources */,
 				0AF08E941A49F47500FF48D7 /* UIPageViewController.swift in Sources */,
 				0AF08E961A49F47500FF48D7 /* UIPageViewControllerCalls.swift in Sources */,
 				0AF08E871A49F1BD00FF48D7 /* UITabBarControllerCalls.swift in Sources */,
-				0AF08E891A49F1BD00FF48D7 /* UIViewController.swift in Sources */,
 				0A8320241E5CF57600CD4C11 /* UIToolbarSetItemsSpy.swift in Sources */,
+				0A0B2A811E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift in Sources */,
 				0ABAA5401E5E321B00E8E928 /* UIResponderResignFirstResponderSpy.swift in Sources */,
 				0ABAA5751E5FA82000E8E928 /* UICollectionViewMoveSectionSpy.swift in Sources */,
 				0ABAA56B1E5F780B00E8E928 /* UICollectionViewReloadDataSpy.swift in Sources */,
+				0A0B2A771E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift in Sources */,
+				0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift in Sources */,
+				0A0B2A6D1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift in Sources */,
 				0ABAA5661E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift in Sources */,
 				0ABAA5541E5E5DEC00E8E928 /* UITableViewInsertRowsSpy.swift in Sources */,
 				0A4896F01E5CB72100B30B06 /* UIViewSetNeedsLayoutSpy.swift in Sources */,
 				0ABAA5501E5E541F00E8E928 /* UITableViewMoveSectionSpy.swift in Sources */,
+				0A0B2A751E63CC0A00D7B105 /* UIViewControllerDidReceiveMemoryWarningSpy.swift in Sources */,
 				0A4896EB1E5BF7CC00B30B06 /* UIViewDecodeRestorableStateSpy.swift in Sources */,
 				0ABAA56F1E5F7B6200E8E928 /* UICollectionViewInsertSectionsSpy.swift in Sources */,
 				0AB5F15C1E5CDF520058825F /* UIViewInvalidateIntrinsicContentSizeSpy.swift in Sources */,
 				0ABAA5461E5E353E00E8E928 /* UITableViewBeginUpdatesSpy.swift in Sources */,
 				0AB763501E5BB76200B13373 /* UIViewUpdateConstraintsSpy.swift in Sources */,
+				0A0B2A851E651F7500D7B105 /* UIViewControllerDecodeRestorableStateSpy.swift in Sources */,
+				0A0B2A711E63C96400D7B105 /* UIViewControllerViewWillDisappearSpy.swift in Sources */,
 				0ABAA57B1E5FADA500E8E928 /* UICollectionViewReloadItemsSpy.swift in Sources */,
+				0A0B2A6F1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift in Sources */,
 				0ABAA5791E5FAABD00E8E928 /* UICollectionViewDeleteItemsSpy.swift in Sources */,
 				0ABAA53C1E5D017400E8E928 /* UINavigationBarPopItemSpy.swift in Sources */,
 				0A83201E1E5CEF4D00CD4C11 /* UIWindowMakeKeySpy.swift in Sources */,
@@ -896,18 +948,23 @@
 				0ABAA5811E5FBAC900E8E928 /* UICollectionViewPerformBatchUpdatesSpy.swift in Sources */,
 				0ABAA54A1E5E392700E8E928 /* UITableViewInsertSectionsSpy.swift in Sources */,
 				0ABAA5521E5E582200E8E928 /* UITableViewReloadSectionIndexTitlesSpy.swift in Sources */,
+				0A0B2A7F1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift in Sources */,
+				0A0B2A791E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift in Sources */,
 				0ABAA54E1E5E513100E8E928 /* UITableViewReloadSectionsSpy.swift in Sources */,
 				0ABAA5481E5E35BF00E8E928 /* UITableViewEndUpdatesSpy.swift in Sources */,
 				0ABAA5381E5CFFBA00E8E928 /* UINavigationBarSetItemsSpy.swift in Sources */,
 				0ABAA5361E5CFD8800E8E928 /* UINavigationBarPushItemSpy.swift in Sources */,
 				0ABAA5561E5E713800E8E928 /* UITableViewDeleteRowsSpy.swift in Sources */,
+				0A0B2A731E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift in Sources */,
 				0ABAA5421E5E325600E8E928 /* UIResponderObjectSpyable.swift in Sources */,
 				0ABAA55A1E5E76E700E8E928 /* UITableViewMoveRowSpy.swift in Sources */,
 				0ABAA5641E5E915F00E8E928 /* UIWebViewGoBackSpy.swift in Sources */,
+				0A0B2A671E62283300D7B105 /* UIViewControllerLoadViewSpy.swift in Sources */,
 				0ABD48C11DE11B2D005DD470 /* UIResponderBecomeFirstResponderSpy.swift in Sources */,
 				0A4896E91E5BF58800B30B06 /* UIViewEncodeRestorableStateSpy.swift in Sources */,
 				0AB5F15E1E5CE0A40058825F /* UIViewSetNeedsUpdateConstraintsSpy.swift in Sources */,
 				0ABAA5581E5E73EC00E8E928 /* UITableViewReloadRowsSpy.swift in Sources */,
+				0A0B2A7B1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift in Sources */,
 				0ABAA5771E5FA8D300E8E928 /* UICollectionViewInsertItemsSpy.swift in Sources */,
 				0ABAA55E1E5E82EF00E8E928 /* UIWebViewLoadSpy.swift in Sources */,
 				0ABAA54C1E5E3BEB00E8E928 /* UITableViewDeleteSectionsSpy.swift in Sources */,
@@ -915,6 +972,8 @@
 				0ABAA5621E5E90AC00E8E928 /* UIWebViewReloadSpy.swift in Sources */,
 				0ABAA5731E5FA7C400E8E928 /* UICollectionViewReloadSectionsSpy.swift in Sources */,
 				0ABAA57D1E5FAE9600E8E928 /* UICollectionViewMoveItemSpy.swift in Sources */,
+				0A0B2A6B1E635CFF00D7B105 /* UIViewControllerViewDidLoadSpy.swift in Sources */,
+				0A0B2A831E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift in Sources */,
 				0ABAA5601E5E8F9500E8E928 /* UIWebViewStopLoadingSpy.swift in Sources */,
 				0ABAA5441E5E33BD00E8E928 /* UITableViewReloadDataSpy.swift in Sources */,
 				0ABAA5711E5FA73A00E8E928 /* UICollectionViewDeleteSectionsSpy.swift in Sources */,
@@ -929,8 +988,8 @@
 				0A261EDB1B5829700070EDFE /* UIPageViewControllerCallsTests.swift in Sources */,
 				0A261EDD1B5829700070EDFE /* UITabBarControllerCallsTests.swift in Sources */,
 				0A261EE11B5829700070EDFE /* UIViewControllerCallsTests.swift in Sources */,
-				0A261EE21B5829700070EDFE /* UIViewControllerSuperCallsTests.swift in Sources */,
 				0AB5F1621E5CE6EC0058825F /* UIWindowSpiesTests.swift in Sources */,
+				0A0B2A691E6228D300D7B105 /* UIViewControllerIndirectSpiesTests.swift in Sources */,
 				0ABAA53E1E5D0D3C00E8E928 /* UITableViewSpiesTests.swift in Sources */,
 				0A7600FC1DF3C16D00B4242A /* TestCollectionView.swift in Sources */,
 				0ABAA56D1E5F796C00E8E928 /* StaticValues.swift in Sources */,

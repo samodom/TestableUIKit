@@ -34,9 +34,9 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `viewDidLoad`
-    public func spy_viewDidLoad() -> Bool {
+    public func spy_viewDidLoad() {
         superclassViewDidLoadCalled = true
-        return spy_viewDidLoad()
+        spy_viewDidLoad()
     }
 
 

@@ -36,9 +36,9 @@ public extension UITableView {
 
 
     /// Spy method that replaces the true implementation of `reloadSectionIndexTitles`
-    public func spy_reloadSectionIndexTitles() -> Bool {
+    public func spy_reloadSectionIndexTitles() {
         reloadSectionIndexTitlesCalled = true
-        return spy_reloadSectionIndexTitles()
+        spy_reloadSectionIndexTitles()
     }
 
 

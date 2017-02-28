@@ -93,7 +93,7 @@ class UIViewDirectSpiesTests: XCTestCase {
             testPerformed.fulfill()
         }
 
-        waitForExpectations(timeout: 0.1) { [testView] _ in
+        waitForExpectations(timeout: 1) { [testView] _ in
             XCTAssertFalse(testView.setNeedsLayoutCalled,
                            "The flag should be cleared after spying is complete")
         }
@@ -127,7 +127,7 @@ class UIViewDirectSpiesTests: XCTestCase {
             testPerformed.fulfill()
         }
 
-        waitForExpectations(timeout: 0.1) { [testView] _ in
+        waitForExpectations(timeout: 1) { [testView] _ in
             XCTAssertFalse(testView.setNeedsLayoutCalled,
                            "The flag should be cleared after spying is complete")
         }

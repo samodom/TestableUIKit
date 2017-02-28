@@ -32,8 +32,8 @@ public extension UIViewController {
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
-                original: #selector(UIViewController.setEditing),
-                spy: #selector(UIViewController.spy_setEditing)
+                original: #selector(UIViewController.setEditing(_:animated:)),
+                spy: #selector(UIViewController.spy_setEditing(_:animated:))
             )
         ] as Set
         public static let evidence = [
@@ -51,7 +51,7 @@ public extension UIViewController {
         superclassSetEditingEditing = editing
         superclassSetEditingAnimated = animated
 
-        return spy_setEditing(editing, animated: animated)
+        spy_setEditing(editing, animated: animated)
     }
 
 

@@ -36,9 +36,9 @@ public extension UITableView {
 
 
     /// Spy method that replaces the true implementation of `beginUpdates`
-    public func spy_beginUpdates() -> Bool {
+    public func spy_beginUpdates() {
         beginUpdatesCalled = true
-        return spy_beginUpdates()
+        spy_beginUpdates()
     }
 
 

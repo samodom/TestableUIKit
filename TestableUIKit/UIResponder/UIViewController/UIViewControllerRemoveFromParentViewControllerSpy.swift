@@ -34,9 +34,9 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `removeFromParentViewController`
-    public func spy_removeFromParentViewController() -> Bool {
+    public func spy_removeFromParentViewController() {
         superclassRemoveFromParentViewControllerCalled = true
-        return spy_removeFromParentViewController()
+        spy_removeFromParentViewController()
     }
 
 

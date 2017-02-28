@@ -36,9 +36,9 @@ public extension UITableView {
 
 
     /// Spy method that replaces the true implementation of `endUpdates`
-    public func spy_endUpdates() -> Bool {
+    public func spy_endUpdates() {
         endUpdatesCalled = true
-        return spy_endUpdates()
+        spy_endUpdates()
     }
 
 

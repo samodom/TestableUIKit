@@ -34,9 +34,9 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `loadView`
-    public func spy_loadView() -> Bool {
+    public func spy_loadView() {
         superclassLoadViewCalled = true
-        return spy_loadView()
+        spy_loadView()
     }
 
 

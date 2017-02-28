@@ -36,9 +36,9 @@ public extension UITableView {
 
 
     /// Spy method that replaces the true implementation of `reloadData`
-    public func spy_reloadData() -> Bool {
+    public func spy_reloadData() {
         reloadDataCalled = true
-        return spy_reloadData()
+        spy_reloadData()
     }
 
 

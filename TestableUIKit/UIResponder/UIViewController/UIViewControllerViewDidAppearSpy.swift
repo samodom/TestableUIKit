@@ -28,8 +28,8 @@ public extension UIViewController {
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
-                original: #selector(UIViewController.viewDidAppear),
-                spy: #selector(UIViewController.spy_viewDidAppear)
+                original: #selector(UIViewController.viewDidAppear(_:)),
+                spy: #selector(UIViewController.spy_viewDidAppear(_:))
             )
             ] as Set
         public static let evidence = [
@@ -41,11 +41,11 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `viewDidAppear(_:)`
-    public func spy_viewDidAppear(_ animated: Bool) -> Bool {
+    public func spy_viewDidAppear(_ animated: Bool) {
         superclassViewDidAppearCalled = true
         superclassViewDidAppearAnimated = animated
 
-        return spy_viewDidAppear(animated)
+        spy_viewDidAppear(animated)
     }
 
 

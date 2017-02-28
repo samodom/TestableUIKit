@@ -28,8 +28,8 @@ public extension UIViewController {
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
-                original: #selector(UIViewController.decodeRestorableState),
-                spy: #selector(UIViewController.spy_decodeRestorableState)
+                original: #selector(UIViewController.decodeRestorableState(with:)),
+                spy: #selector(UIViewController.spy_decodeRestorableState(with:))
             )
         ] as Set
         public static let evidence = [
@@ -45,7 +45,7 @@ public extension UIViewController {
         superclassDecodeRestorableStateCalled = true
         superclassDecodeRestorableStateCoder = coder
 
-        return spy_decodeRestorableState(with: coder)
+        spy_decodeRestorableState(with: coder)
     }
 
 

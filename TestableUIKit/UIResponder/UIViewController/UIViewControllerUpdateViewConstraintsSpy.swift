@@ -34,9 +34,9 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `updateViewConstraints`
-    public func spy_updateViewConstraints() -> Bool {
+    public func spy_updateViewConstraints() {
         superclassUpdateViewConstraintsCalled = true
-        return spy_updateViewConstraints()
+        spy_updateViewConstraints()
     }
 
 

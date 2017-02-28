@@ -48,8 +48,8 @@ public extension UIViewController {
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
-                original: #selector(UIViewController.transition),
-                spy: #selector(UIViewController.spy_transition)
+                original: #selector(UIViewController.transition(from:to:duration:options:animations:completion:)),
+                spy: #selector(UIViewController.spy_transition(from:to:duration:options:animations:completion:))
             )
         ] as Set
         public static let evidence = [

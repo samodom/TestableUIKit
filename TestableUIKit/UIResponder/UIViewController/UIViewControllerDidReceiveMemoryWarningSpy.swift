@@ -34,9 +34,9 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `didReceiveMemoryWarning`
-    public func spy_didReceiveMemoryWarning() -> Bool {
+    public func spy_didReceiveMemoryWarning() {
         superclassDidReceiveMemoryWarningCalled = true
-        return spy_didReceiveMemoryWarning()
+        spy_didReceiveMemoryWarning()
     }
 
 

@@ -28,8 +28,8 @@ public extension UIViewController {
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
-                original: #selector(UIViewController.addChildViewController),
-                spy: #selector(UIViewController.spy_addChildViewController)
+                original: #selector(UIViewController.addChildViewController(_:)),
+                spy: #selector(UIViewController.spy_addChildViewController(_:))
             )
             ] as Set
         public static let evidence = [
@@ -45,7 +45,7 @@ public extension UIViewController {
         superclassAddChildViewControllerCalled = true
         superclassAddChildViewControllerChild = child
 
-        return spy_addChildViewController(child)
+        spy_addChildViewController(child)
     }
 
 

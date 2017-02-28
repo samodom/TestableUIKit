@@ -14,8 +14,23 @@ extension UIApplication {
         return UIApplication.shared.delegate!.window!!
     }
 
+    final class var rootViewController: UIViewController {
+        get {
+            return window.rootViewController!
+        }
+        set {
+            window.rootViewController = newValue
+        }
+    }
+
     final class var rootView: UIView {
-        return UIApplication.shared.delegate!.window!!.rootViewController!.view
+        get {
+            return UIApplication.shared.delegate!.window!!.rootViewController!.view
+        }
+        set {
+            rootViewController.view?.removeFromSuperview()
+            rootViewController.view = newValue
+        }
     }
 
 }

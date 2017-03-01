@@ -1,11 +1,10 @@
-source 'git@github.com:cocoapods/Specs.git'
-source 'git@github.com:samodom/internal-cocoapod-specs.git'
+platform :ios, '8.0'
 
-target 'TestableUIKit' do
+abstract_target 'TestableUIKitWorkspace' do
   use_frameworks!
   pod 'TestSwagger'
   
-  target 'TestableUIKitTests' do
-    inherit! :search_paths
-  end
+  target 'TestableUIKit'
+  target 'TestableUIKitTests'
 end
+

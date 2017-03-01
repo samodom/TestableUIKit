@@ -1,0 +1,15 @@
+PODS:
+  - FoundationSwagger (0.2.13)
+  - TestSwagger (0.1.5):
+    - FoundationSwagger
+
+DEPENDENCIES:
+  - TestSwagger
+
+SPEC CHECKSUMS:
+  FoundationSwagger: 7cbf965cfeab4b8064b4913369b9ec4d991793a3
+  TestSwagger: 022fdacdda98604e32ab50d46f48971bc1241658
+
+PODFILE CHECKSUM: 0dc4ac6b895cdc2c826b53de783c1d4f358d810b
+
+COCOAPODS: 1.2.0

@@ -42,7 +42,7 @@ public extension UICollectionView {
             reloadSectionsCalledReference,
             reloadSectionsSectionsReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

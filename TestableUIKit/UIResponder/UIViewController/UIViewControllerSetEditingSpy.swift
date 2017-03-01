@@ -41,7 +41,7 @@ public extension UIViewController {
             setEditingEditingReference,
             setEditingAnimatedReference
         ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

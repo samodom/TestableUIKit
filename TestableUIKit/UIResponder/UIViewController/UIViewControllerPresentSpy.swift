@@ -46,7 +46,7 @@ public extension UIViewController {
             presentAnimatedReference,
             presentCompletionReference
         ] as Set
-        public static var forwardingBehavior = MethodForwardingBehavior.always
+        public static var forwardsInvocations = true
     }
 
 
@@ -61,7 +61,7 @@ public extension UIViewController {
         presentController = controller
         presentAnimated = animated
 
-        if UIViewController.PresentSpyController.forwardingBehavior.forwards {
+        if UIViewController.PresentSpyController.forwardsInvocations {
             spy_present(controller, animated: animated, completion: completion)
         }
         else {

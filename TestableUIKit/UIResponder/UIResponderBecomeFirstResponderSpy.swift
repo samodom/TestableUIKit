@@ -24,15 +24,15 @@ public extension UIResponder {
     public enum BecomeFirstResponderSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIResponder.self
         public static let vector = SpyVector.direct
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UIResponder.becomeFirstResponder),
                 spy: #selector(UIResponder.spy_becomeFirstResponder)
             )
-        ]
+        ] as Set
         public static let evidence = [becomeFirstResponderCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

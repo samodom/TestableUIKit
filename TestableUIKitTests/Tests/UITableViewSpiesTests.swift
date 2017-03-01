@@ -31,8 +31,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `reloadData`
 
     func testReloadDataControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.ReloadDataSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadData` should always forward their method invocations")
+        XCTAssertTrue(UITableView.ReloadDataSpyController.forwardsInvocations,
+                      "Spies on `reloadData` should always forward their method invocations")
     }
 
     func testSpyingOnReloadData() {
@@ -60,8 +60,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `beginUpdates`
 
     func testBeginUpdatesControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.BeginUpdatesSpyController.forwardingBehavior, .always,
-                       "Spies on `beginUpdates` should always forward their method invocations")
+        XCTAssertTrue(UITableView.BeginUpdatesSpyController.forwardsInvocations,
+                      "Spies on `beginUpdates` should always forward their method invocations")
     }
 
     func testSpyingOnBeginUpdates() {
@@ -89,8 +89,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `endUpdates`
 
     func testEndUpdatesControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.EndUpdatesSpyController.forwardingBehavior, .always,
-                       "Spies on `endUpdates` should always forward their method invocations")
+        XCTAssertTrue(UITableView.EndUpdatesSpyController.forwardsInvocations,
+                      "Spies on `endUpdates` should always forward their method invocations")
     }
 
     func testSpyingOnEndUpdates() {
@@ -118,8 +118,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `insertSections(_:with:)`
 
     func testInsertSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.InsertSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `insertSections(_:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.InsertSectionsSpyController.forwardsInvocations,
+                      "Spies on `insertSections(_:with:)` should always forward their method invocations")
     }
 
     func testInsertSectionsSpy() {
@@ -161,8 +161,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `deleteSections(_:with:)`
 
     func testDeleteSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.DeleteSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `deleteSections(_:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.DeleteSectionsSpyController.forwardsInvocations,
+                      "Spies on `deleteSections(_:with:)` should always forward their method invocations")
     }
 
     func testDeleteSectionsSpy() {
@@ -208,8 +208,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `reloadSections(_:with:)`
 
     func testReloadSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.ReloadSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadSections(_:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.ReloadSectionsSpyController.forwardsInvocations,
+                      "Spies on `reloadSections(_:with:)` should always forward their method invocations")
     }
 
     func testReloadSectionsSpy() {
@@ -251,8 +251,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `moveSection(_:toSection:)`
 
     func testMoveSectionControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.MoveSectionSpyController.forwardingBehavior, .always,
-                       "Spies on `moveSection(_:toSection:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.MoveSectionSpyController.forwardsInvocations,
+                      "Spies on `moveSection(_:toSection:)` should always forward their method invocations")
     }
 
     func testMoveSectionSpy() {
@@ -301,8 +301,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `reloadSectionIndexTitles`
 
     func testReloadSectionIndexTitlesControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.ReloadSectionIndexTitlesSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadSectionIndexTitles` should always forward their method invocations")
+        XCTAssertTrue(UITableView.ReloadSectionIndexTitlesSpyController.forwardsInvocations,
+                      "Spies on `reloadSectionIndexTitles` should always forward their method invocations")
     }
 
     func testSpyingOnReloadSectionIndexTitles() {
@@ -330,8 +330,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `insertRows(at:with:)`
 
     func testInsertRowsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.InsertRowsSpyController.forwardingBehavior, .always,
-                       "Spies on `insertRows(at:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.InsertRowsSpyController.forwardsInvocations,
+                      "Spies on `insertRows(at:with:)` should always forward their method invocations")
     }
 
     func testInsertRowsSpy() {
@@ -375,8 +375,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `deleteRows(at:with:)`
 
     func testDeleteRowsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.DeleteRowsSpyController.forwardingBehavior, .always,
-                       "Spies on `deleteRows(at:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.DeleteRowsSpyController.forwardsInvocations,
+                      "Spies on `deleteRows(at:with:)` should always forward their method invocations")
     }
 
     func testDeleteRowsSpy() {
@@ -422,8 +422,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `reloadRows(at:with:)`
 
     func testReloadRowsControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.ReloadRowsSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadRows(at:with:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.ReloadRowsSpyController.forwardsInvocations,
+                      "Spies on `reloadRows(at:with:)` should always forward their method invocations")
     }
 
     func testReloadRowsSpy() {
@@ -470,8 +470,8 @@ class UITableViewSpiesTests: XCTestCase {
     // MARK: - `moveRow(at:to:)`
 
     func testMoveRowControllerForwardingBehavior() {
-        XCTAssertEqual(UITableView.MoveRowSpyController.forwardingBehavior, .always,
-                       "Spies on `moveRow(at:to:)` should always forward their method invocations")
+        XCTAssertTrue(UITableView.MoveRowSpyController.forwardsInvocations,
+                      "Spies on `moveRow(at:to:)` should always forward their method invocations")
     }
 
     func testMoveRowSpy() {

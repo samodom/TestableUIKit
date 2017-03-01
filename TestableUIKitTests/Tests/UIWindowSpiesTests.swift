@@ -34,8 +34,8 @@ class UIWindowSpiesTests: XCTestCase {
     // MARK: - `makeKey`
 
     func testMakeKeyControllerForwardingBehavior() {
-        XCTAssertEqual(UIWindow.MakeKeySpyController.forwardingBehavior, .always,
-                       "Spies on `makeKey` should always forward their method invocations")
+        XCTAssertTrue(UIWindow.MakeKeySpyController.forwardsInvocations,
+                      "Spies on `makeKey` should always forward their method invocations")
     }
 
     func testMakeKeySpy() {
@@ -62,8 +62,8 @@ class UIWindowSpiesTests: XCTestCase {
     // MARK: - `makeKeyAndVisible`
 
     func testMakeKeyAndVisibleControllerForwardingBehavior() {
-        XCTAssertEqual(UIWindow.MakeKeyAndVisibleSpyController.forwardingBehavior, .always,
-                       "Spies on `makeKeyAndVisible` should always forward their method invocations")
+        XCTAssertTrue(UIWindow.MakeKeyAndVisibleSpyController.forwardsInvocations,
+                      "Spies on `makeKeyAndVisible` should always forward their method invocations")
     }
 
     func testMakeKeyAndVisibleSpy() {

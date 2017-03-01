@@ -46,7 +46,7 @@ public extension UIViewController {
             showControllerReference,
             showSenderReference
         ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

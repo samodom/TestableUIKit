@@ -47,7 +47,7 @@ public extension UICollectionView {
             performBatchUpdatesUpdatesReference,
             performBatchUpdatesCompletionReference
         ]
-        public static var forwardingBehavior = MethodForwardingBehavior.never
+        public static var forwardsInvocations = false
     }
 
 
@@ -59,7 +59,7 @@ public extension UICollectionView {
 
         performBatchUpdatesCalled = true
 
-        if PerformBatchUpdatesSpyController.forwardingBehavior.forwards {
+        if PerformBatchUpdatesSpyController.forwardsInvocations {
             spy_performBatchUpdates(updates, completion: completion)
         }
         else {

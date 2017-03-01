@@ -34,8 +34,8 @@ class UINavigationControllerSpiesTests: XCTestCase {
     // MARK: - `pushViewController(_:animated:)`
 
     func testPushViewControllerControllerForwardingBehavior() {
-        XCTAssertEqual(UINavigationController.PushViewControllerSpyController.forwardingBehavior, .always,
-                       "Spies on `pushViewController(_:animated:)` should always forward their method invocations")
+        XCTAssertTrue(UINavigationController.PushViewControllerSpyController.forwardsInvocations,
+                      "Spies on `pushViewController(_:animated:)` should always forward their method invocations")
     }
 
     func testSpyingOnPushViewController() {
@@ -74,8 +74,8 @@ class UINavigationControllerSpiesTests: XCTestCase {
     // MARK: - `popViewController(animated:)`, `popToViewController(_:animated:)` and `popToRootViewController(animated:)`
 
     func testPopControllerForwardingBehavior() {
-        XCTAssertEqual(UINavigationController.PopSpyController.forwardingBehavior, .always,
-                       "Spies on `popViewController(animated:)`, `popToViewController(_:animated:)` and `popToRootViewController(animated:)` should always forward their method invocations")
+        XCTAssertTrue(UINavigationController.PopSpyController.forwardsInvocations,
+                      "Spies on `popViewController(animated:)`, `popToViewController(_:animated:)` and `popToRootViewController(animated:)` should always forward their method invocations")
     }
 
     func testSpyingOnPopViewController() {

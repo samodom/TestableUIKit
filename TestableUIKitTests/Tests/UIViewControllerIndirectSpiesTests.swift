@@ -53,8 +53,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `loadView`
 
     func testLoadViewControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.LoadViewSpyController.forwardingBehavior, .always,
-                       "Spies on `loadView` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.LoadViewSpyController.forwardsInvocations,
+                      "Spies on `loadView` should always forward their method invocations")
     }
 
     func testLoadViewSpyWithCompliantControllers() {
@@ -98,8 +98,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `viewDidLoad`
 
     func testViewDidLoadControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ViewDidLoadSpyController.forwardingBehavior, .always,
-                       "Spies on `viewDidLoad` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ViewDidLoadSpyController.forwardsInvocations,
+                      "Spies on `viewDidLoad` should always forward their method invocations")
     }
 
     func testViewDidLoadSpyWithCompliantControllers() {
@@ -142,8 +142,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `viewWillAppear(_:)`
 
     func testViewWillAppearControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ViewWillAppearSpyController.forwardingBehavior, .always,
-                       "Spies on `viewWillAppear(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ViewWillAppearSpyController.forwardsInvocations,
+                      "Spies on `viewWillAppear(_:)` should always forward their method invocations")
     }
 
     func testViewWillAppearSpyWithCompliantControllers() {
@@ -192,8 +192,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `viewDidAppear(_:)`
 
     func testViewDidAppearControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ViewDidAppearSpyController.forwardingBehavior, .always,
-                       "Spies on `viewDidAppear(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ViewDidAppearSpyController.forwardsInvocations,
+                      "Spies on `viewDidAppear(_:)` should always forward their method invocations")
     }
 
     func testViewDidAppearSpyWithCompliantControllers() {
@@ -242,8 +242,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `viewWillDisappear(_:)`
 
     func testViewWillDisappearControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ViewWillDisappearSpyController.forwardingBehavior, .always,
-                       "Spies on `viewWillDisappear(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ViewWillDisappearSpyController.forwardsInvocations,
+                      "Spies on `viewWillDisappear(_:)` should always forward their method invocations")
     }
 
     func testViewWillDisappearSpyWithCompliantControllers() {
@@ -292,8 +292,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `viewDidDisappear(_:)`
 
     func testViewDidDisappearControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ViewDidDisappearSpyController.forwardingBehavior, .always,
-                       "Spies on `viewDidDisappear(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ViewDidDisappearSpyController.forwardsInvocations,
+                      "Spies on `viewDidDisappear(_:)` should always forward their method invocations")
     }
 
     func testViewDidDisappearSpyWithCompliantControllers() {
@@ -342,8 +342,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `didReceiveMemoryWarning`
 
     func testDidReceiveMemoryWarningControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.DidReceiveMemoryWarningSpyController.forwardingBehavior, .always,
-                       "Spies on `didReceiveMemoryWarning` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.DidReceiveMemoryWarningSpyController.forwardsInvocations,
+                      "Spies on `didReceiveMemoryWarning` should always forward their method invocations")
     }
 
     func testDidReceiveMemoryWarningSpyWithCompliantControllers() {
@@ -386,8 +386,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `updateViewConstraints`
 
     func testUpdateViewConstraintsControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.UpdateViewConstraintsSpyController.forwardingBehavior, .always,
-                       "Spies on `updateViewConstraints` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.UpdateViewConstraintsSpyController.forwardsInvocations,
+                      "Spies on `updateViewConstraints` should always forward their method invocations")
     }
 
     func testUpdateViewConstraintsSpyWithCompliantControllers() {
@@ -430,8 +430,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `addChildViewController(_:)`
 
     func testAddChildViewControllerControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.AddChildViewControllerSpyController.forwardingBehavior, .always,
-                       "Spies on `addChildViewController(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.AddChildViewControllerSpyController.forwardsInvocations,
+                      "Spies on `addChildViewController(_:)` should always forward their method invocations")
     }
 
     func testAddChildViewControllerSpyWithCompliantControllers() {
@@ -479,8 +479,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `removeFromParentViewController`
 
     func testRemoveFromParentViewControllerControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.RemoveFromParentViewControllerSpyController.forwardingBehavior, .always,
-                       "Spies on `removeFromParentViewController` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.RemoveFromParentViewControllerSpyController.forwardsInvocations,
+                      "Spies on `removeFromParentViewController` should always forward their method invocations")
     }
 
     func testRemoveFromParentViewControllerSpyWithCompliantControllers() {
@@ -547,7 +547,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
             animationsClosureInvoked = false
             completionHandlerInvoked = false
 
-            UIViewController.TransitionSpyController.forwardingBehavior = .custom(false)
+            UIViewController.TransitionSpyController.forwardsInvocations = false
             let spy = UIViewController.TransitionSpyController.createSpy(on: controller)!
             spy.beginSpying()
 
@@ -626,7 +626,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
             animationsClosureInvoked = false
             completionHandlerInvoked = false
 
-            UIViewController.TransitionSpyController.forwardingBehavior = .custom(true)
+            UIViewController.TransitionSpyController.forwardsInvocations = true
             let spy = UIViewController.TransitionSpyController.createSpy(on: controller)!
             spy.beginSpying()
 
@@ -698,8 +698,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `setEditing(_:animated:)`
 
     func testSetEditingControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.SetEditingSpyController.forwardingBehavior, .always,
-                       "Spies on `setEditing(_:animated:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.SetEditingSpyController.forwardsInvocations,
+                      "Spies on `setEditing(_:animated:)` should always forward their method invocations")
     }
 
     func testSetEditingSpyWithCompliantControllers() {
@@ -754,8 +754,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `encodeRestorableState(with:)`
 
     func testEncodeRestorableStateControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.EncodeRestorableStateSpyController.forwardingBehavior, .always,
-                       "Spies on `encodeRestorableState(with:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.EncodeRestorableStateSpyController.forwardsInvocations,
+                      "Spies on `encodeRestorableState(with:)` should always forward their method invocations")
     }
 
     func testEncodeRestorableStateSpyWithCompliantControllers() {
@@ -805,8 +805,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     // MARK: - `decodeRestorableState(with:)`
 
     func testDecodeRestorableStateControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.DecodeRestorableStateSpyController.forwardingBehavior, .always,
-                       "Spies on `decodeRestorableState(with:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.DecodeRestorableStateSpyController.forwardsInvocations,
+                      "Spies on `decodeRestorableState(with:)` should always forward their method invocations")
     }
 
     func testDecodeRestorableStateSpyWithCompliantControllers() {

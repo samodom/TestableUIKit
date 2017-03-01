@@ -38,7 +38,6 @@
 		0A0B2AA01E6654B700D7B105 /* UITabBarControllerSetViewControllersSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A9F1E6654B700D7B105 /* UITabBarControllerSetViewControllersSpy.swift */; };
 		0A0CA3971DEFFDC8003559BC /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CA3961DEFFDC8003559BC /* TestTableView.swift */; };
 		0A4896E51E5BED3900B30B06 /* UIViewDrawSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896E41E5BED3900B30B06 /* UIViewDrawSpy.swift */; };
-		0A4896E71E5BF2D300B30B06 /* MethodForwardingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896E61E5BF2D300B30B06 /* MethodForwardingBehavior.swift */; };
 		0A4896E91E5BF58800B30B06 /* UIViewEncodeRestorableStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896E81E5BF58800B30B06 /* UIViewEncodeRestorableStateSpy.swift */; };
 		0A4896EB1E5BF7CC00B30B06 /* UIViewDecodeRestorableStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896EA1E5BF7CC00B30B06 /* UIViewDecodeRestorableStateSpy.swift */; };
 		0A4896F01E5CB72100B30B06 /* UIViewSetNeedsLayoutSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4896EF1E5CB72100B30B06 /* UIViewSetNeedsLayoutSpy.swift */; };
@@ -175,7 +174,6 @@
 		0A0CA3961DEFFDC8003559BC /* TestTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		0A363CF21A468CCE00DD9995 /* UIViewDirectSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDirectSpiesTests.swift; sourceTree = "<group>"; };
 		0A4896E41E5BED3900B30B06 /* UIViewDrawSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawSpy.swift; sourceTree = "<group>"; };
-		0A4896E61E5BF2D300B30B06 /* MethodForwardingBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodForwardingBehavior.swift; sourceTree = "<group>"; };
 		0A4896E81E5BF58800B30B06 /* UIViewEncodeRestorableStateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEncodeRestorableStateSpy.swift; sourceTree = "<group>"; };
 		0A4896EA1E5BF7CC00B30B06 /* UIViewDecodeRestorableStateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDecodeRestorableStateSpy.swift; sourceTree = "<group>"; };
 		0A4896EC1E5BF85E00B30B06 /* UIViewIndirectSpiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewIndirectSpiesTests.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				0ABD48C61DE120F5005DD470 /* ApplicationHelpers.swift */,
-				0A4896E61E5BF2D300B30B06 /* MethodForwardingBehavior.swift */,
 				0ABAA56C1E5F796C00E8E928 /* StaticValues.swift */,
 				0A7600FB1DF3C16D00B4242A /* TestCollectionView.swift */,
 				0A0CA3961DEFFDC8003559BC /* TestTableView.swift */,
@@ -999,7 +996,6 @@
 				0A4896F11E5CB9B300B30B06 /* UIViewIndirectSpiesTests.swift in Sources */,
 				0A0CA3971DEFFDC8003559BC /* TestTableView.swift in Sources */,
 				0A0B2A981E661CAE00D7B105 /* UIPageViewControllerSpiesTests.swift in Sources */,
-				0A4896E71E5BF2D300B30B06 /* MethodForwardingBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

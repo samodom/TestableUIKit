@@ -23,15 +23,15 @@ public extension UITableView {
     public enum ReloadDataSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UITableView.self
         public static let vector = SpyVector.direct
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UITableView.reloadData),
                 spy: #selector(UITableView.spy_reloadData)
             )
-        ]
+        ] as Set
         public static let evidence = [reloadDataCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

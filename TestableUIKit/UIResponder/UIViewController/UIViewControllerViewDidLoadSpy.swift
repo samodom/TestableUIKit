@@ -29,7 +29,7 @@ public extension UIViewController {
             )
             ] as Set
         public static let evidence = [viewDidLoadCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

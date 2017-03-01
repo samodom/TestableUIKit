@@ -61,7 +61,7 @@ public extension UIViewController {
             transitionAnimationsReference,
             transitionCompletionReference
         ] as Set
-        public static var forwardingBehavior = MethodForwardingBehavior.always
+        public static var forwardsInvocations = true
     }
 
 
@@ -81,7 +81,7 @@ public extension UIViewController {
         superclassTransitionDuration = duration
         superclassTransitionOptions = options
 
-        if UIViewController.TransitionSpyController.forwardingBehavior.forwards {
+        if UIViewController.TransitionSpyController.forwardsInvocations {
             spy_transition(
                 from: sourceController,
                 to: destinationController,

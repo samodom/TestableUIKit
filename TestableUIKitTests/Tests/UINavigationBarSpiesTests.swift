@@ -21,8 +21,8 @@ class UINavigationBarSpiesTests: XCTestCase {
     // MARK: - `pushItem(_:animated:)`
 
     func testPushItemControllerForwardingBehavior() {
-        XCTAssertEqual(UINavigationBar.PushItemSpyController.forwardingBehavior, .always,
-                       "Spies on `pushItem(_:animated:)` should always forward their method invocations")
+        XCTAssertTrue(UINavigationBar.PushItemSpyController.forwardsInvocations,
+                      "Spies on `pushItem(_:animated:)` should always forward their method invocations")
     }
 
     func testPushItemSpy() {
@@ -57,8 +57,8 @@ class UINavigationBarSpiesTests: XCTestCase {
     // MARK: - `popItem(animated:)`
 
     func testPopItemControllerForwardingBehavior() {
-        XCTAssertEqual(UINavigationBar.PopItemSpyController.forwardingBehavior, .always,
-                       "Spies on `popItem(animated:)` should always forward their method invocations")
+        XCTAssertTrue(UINavigationBar.PopItemSpyController.forwardsInvocations,
+                      "Spies on `popItem(animated:)` should always forward their method invocations")
     }
 
     func testPopItemSpy() {
@@ -90,8 +90,8 @@ class UINavigationBarSpiesTests: XCTestCase {
     // MARK: - `setItems(_:animated:)`
 
     func testSetItemsControllerForwardingBehavior() {
-        XCTAssertEqual(UINavigationBar.SetItemsSpyController.forwardingBehavior, .always,
-                       "Spies on `setItems` should always forward their method invocations")
+        XCTAssertTrue(UINavigationBar.SetItemsSpyController.forwardsInvocations,
+                      "Spies on `setItems` should always forward their method invocations")
     }
 
     func testSetItemsSpyWithPositiveInput() {

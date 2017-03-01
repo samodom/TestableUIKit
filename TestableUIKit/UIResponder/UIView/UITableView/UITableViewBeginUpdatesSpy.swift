@@ -23,15 +23,15 @@ public extension UITableView {
     public enum BeginUpdatesSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UITableView.self
         public static let vector = SpyVector.direct
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UITableView.beginUpdates),
                 spy: #selector(UITableView.spy_beginUpdates)
             )
-        ]
+        ] as Set
         public static let evidence = [beginUpdatesCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

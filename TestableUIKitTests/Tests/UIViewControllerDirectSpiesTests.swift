@@ -42,7 +42,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
     // MARK: - `performSegue(withIdentifier:sender:)`
 
     func testPerformSegueControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.PerformSegueSpyController.forwardingBehavior, .always,
+        XCTAssertTrue(UIViewController.PerformSegueSpyController.forwardsInvocations,
                        "Spies on `setViewControllers(_:animated:)` should always forward their method invocations")
     }
 
@@ -91,7 +91,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         XCTAssertNil(controller.presentCompletion,
                      "By default there should be no captured completion handler")
 
-        UIViewController.PresentSpyController.forwardingBehavior = .custom(false)
+        UIViewController.PresentSpyController.forwardsInvocations = false
         let spy = UIViewController.PresentSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -141,7 +141,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         XCTAssertNil(controller.presentCompletion,
                      "By default there should be no captured completion handler")
 
-        UIViewController.PresentSpyController.forwardingBehavior = .custom(true)
+        UIViewController.PresentSpyController.forwardsInvocations = true
         let spy = UIViewController.PresentSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -185,7 +185,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         let dismissable = UIViewController()
         controller.present(dismissable, animated: false)
 
-        UIViewController.DismissSpyController.forwardingBehavior = .custom(false)
+        UIViewController.DismissSpyController.forwardsInvocations = false
         let spy = UIViewController.DismissSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -227,7 +227,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         XCTAssertNil(controller.dismissCompletion,
                      "By default there should be no captured completion handler")
 
-        UIViewController.DismissSpyController.forwardingBehavior = .custom(true)
+        UIViewController.DismissSpyController.forwardsInvocations = true
         let spy = UIViewController.DismissSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -268,8 +268,8 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
     // MARK: - `show(_:sender:)` and `showDetailViewController(_:sender:)`
 
     func testShowSpyControllerForwardingBehavior() {
-        XCTAssertEqual(UIViewController.ShowSpyController.forwardingBehavior, .always,
-                       "Spies on `show(_:sender:)` and `showDetailViewController(_:sender:)` should always forward their method invocations")
+        XCTAssertTrue(UIViewController.ShowSpyController.forwardsInvocations,
+                      "Spies on `show(_:sender:)` and `showDetailViewController(_:sender:)` should always forward their method invocations")
     }
 
     func testSpyingOnShow() {

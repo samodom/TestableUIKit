@@ -23,15 +23,15 @@ public extension UITableView {
     public enum EndUpdatesSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UITableView.self
         public static let vector = SpyVector.direct
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UITableView.endUpdates),
                 spy: #selector(UITableView.spy_endUpdates)
             )
-        ]
+        ] as Set
         public static let evidence = [endUpdatesCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

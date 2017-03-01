@@ -43,8 +43,8 @@ class UIViewIndirectSpiesTests: XCTestCase {
     // MARK: - `updateConstraints`
 
     func testUpdateConstraintsControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.UpdateConstraintsSpyController.forwardingBehavior, .always,
-                       "Spies on `updateConstraints` should always forward their method invocations")
+        XCTAssertTrue(UIView.UpdateConstraintsSpyController.forwardsInvocations,
+                      "Spies on `updateConstraints` should always forward their method invocations")
     }
 
     func testUpdateConstraintsSpyWithCompliantViews() {
@@ -86,8 +86,8 @@ class UIViewIndirectSpiesTests: XCTestCase {
     // MARK: - `draw(_:)`
 
     func testDrawControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.DrawSpyController.forwardingBehavior, .always,
-                       "Spies on `draw(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIView.DrawSpyController.forwardsInvocations,
+                      "Spies on `draw(_:)` should always forward their method invocations")
     }
 
     func testDrawSpyWithCompliantViews() {
@@ -135,8 +135,8 @@ class UIViewIndirectSpiesTests: XCTestCase {
     // MARK: - `encodeRestorableState(with:)`
 
     func testEncodeRestorableStateControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.EncodeRestorableStateSpyController.forwardingBehavior, .always,
-                       "Spies on `encodeRestorableState(with:)` should always forward their method invocations")
+        XCTAssertTrue(UIView.EncodeRestorableStateSpyController.forwardsInvocations,
+                      "Spies on `encodeRestorableState(with:)` should always forward their method invocations")
     }
 
     func testEncodeRestorableStateSpyWithCompliantViews() {
@@ -185,8 +185,8 @@ class UIViewIndirectSpiesTests: XCTestCase {
     // MARK: - `decodeRestorableState(with:)`
 
     func testDecodeRestorableStateControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.DecodeRestorableStateSpyController.forwardingBehavior, .always,
-                       "Spies on `decodeRestorableState(with:)` should always forward their method invocations")
+        XCTAssertTrue(UIView.DecodeRestorableStateSpyController.forwardsInvocations,
+                      "Spies on `decodeRestorableState(with:)` should always forward their method invocations")
     }
 
     func testDecodeRestorableStateSpyWithCompliantViews() {

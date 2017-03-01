@@ -36,7 +36,7 @@ public extension UIViewController {
             decodeRestorableStateCalledReference,
             decodeRestorableStateCoderReference
         ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

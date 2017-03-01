@@ -40,8 +40,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `reloadData`
 
     func testReloadDataControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.ReloadDataSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadData` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.ReloadDataSpyController.forwardsInvocations,
+                      "Spies on `reloadData` should always forward their method invocations")
     }
 
     func testSpyingOnReloadData() {
@@ -86,7 +86,7 @@ class UICollectionViewSpiesTests: XCTestCase {
             completionHandlerInvoked = true
         }
 
-        UICollectionView.PerformBatchUpdatesSpyController.forwardingBehavior = .custom(false)
+        UICollectionView.PerformBatchUpdatesSpyController.forwardsInvocations = false
         let spy = UICollectionView.PerformBatchUpdatesSpyController.createSpy(on: collectionView)!
 
         spy.beginSpying()
@@ -125,7 +125,7 @@ class UICollectionViewSpiesTests: XCTestCase {
         XCTAssertNil(collectionView.performBatchUpdatesCompletion,
                      "By default there should be no completion handler")
 
-        UICollectionView.PerformBatchUpdatesSpyController.forwardingBehavior = .custom(true)
+        UICollectionView.PerformBatchUpdatesSpyController.forwardsInvocations = true
         let spy = UICollectionView.PerformBatchUpdatesSpyController.createSpy(on: collectionView)!
 
         spy.beginSpying()
@@ -152,8 +152,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `insertSections(_:)`
 
     func testInsertSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.InsertSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `insertSections(_:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.InsertSectionsSpyController.forwardsInvocations,
+                      "Spies on `insertSections(_:)` should always forward their method invocations")
     }
 
     func testInsertSectionsSpy() {
@@ -189,8 +189,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `deleteSections(_:)`
 
     func testDeleteSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.DeleteSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `deleteSections(_:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.DeleteSectionsSpyController.forwardsInvocations,
+                      "Spies on `deleteSections(_:)` should always forward their method invocations")
     }
 
     func testDeleteSectionsSpy() {
@@ -230,8 +230,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `reloadSections(_:)`
 
     func testReloadSectionsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.ReloadSectionsSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadSections(_:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.ReloadSectionsSpyController.forwardsInvocations,
+                      "Spies on `reloadSections(_:)` should always forward their method invocations")
     }
 
     func testReloadSectionsSpy() {
@@ -267,8 +267,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `moveSection(_:toSection:)`
 
     func testMoveSectionControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.MoveSectionSpyController.forwardingBehavior, .always,
-                       "Spies on `moveSection(_:toSection:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.MoveSectionSpyController.forwardsInvocations,
+                      "Spies on `moveSection(_:toSection:)` should always forward their method invocations")
     }
 
     func testMoveSectionSpy() {
@@ -317,8 +317,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `insertItems(at:)`
 
     func testInsertItemsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.InsertItemsSpyController.forwardingBehavior, .always,
-                       "Spies on `insertItems(at:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.InsertItemsSpyController.forwardsInvocations,
+                      "Spies on `insertItems(at:)` should always forward their method invocations")
     }
 
     func testInsertItemsSpy() {
@@ -356,8 +356,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `deleteItems(at:)`
 
     func testDeleteItemsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.DeleteItemsSpyController.forwardingBehavior, .always,
-                       "Spies on `deleteItems(at:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.DeleteItemsSpyController.forwardsInvocations,
+                      "Spies on `deleteItems(at:)` should always forward their method invocations")
     }
 
     func testDeleteItemsSpy() {
@@ -398,8 +398,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `reloadItems(at:)`
 
     func testReloadItemsControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.ReloadItemsSpyController.forwardingBehavior, .always,
-                       "Spies on `reloadItems(at:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.ReloadItemsSpyController.forwardsInvocations,
+                      "Spies on `reloadItems(at:)` should always forward their method invocations")
     }
 
     func testReloadItemsSpy() {
@@ -433,8 +433,8 @@ class UICollectionViewSpiesTests: XCTestCase {
     // MARK: - `moveItem(at:to:)`
 
     func testMoveItemControllerForwardingBehavior() {
-        XCTAssertEqual(UICollectionView.MoveItemSpyController.forwardingBehavior, .always,
-                       "Spies on `moveItem(at:to:)` should always forward their method invocations")
+        XCTAssertTrue(UICollectionView.MoveItemSpyController.forwardsInvocations,
+                      "Spies on `moveItem(at:to:)` should always forward their method invocations")
     }
 
     func testMoveItemSpy() {

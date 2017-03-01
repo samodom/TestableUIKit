@@ -41,7 +41,7 @@ public extension UINavigationController {
             pushedControllerReference,
             pushViewControllerAnimatedReference
         ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

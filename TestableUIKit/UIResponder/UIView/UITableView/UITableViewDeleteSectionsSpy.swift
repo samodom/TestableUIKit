@@ -49,7 +49,7 @@ public extension UITableView {
             deleteSectionsSectionsReference,
             deleteSectionsAnimationReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

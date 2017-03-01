@@ -52,7 +52,7 @@ class UIToolbarSpiesTests: XCTestCase {
     // MARK: - `setItems(_:animated:)`
 
     func testSetItemsControllerForwardingBehavior() {
-        XCTAssertEqual(UIToolbar.SetItemsSpyController.forwardingBehavior, .always,
+        XCTAssertTrue(UIToolbar.SetItemsSpyController.forwardsInvocations,
                        "Spies on `setItems(_:animated:)` should always forward their method invocations")
     }
 

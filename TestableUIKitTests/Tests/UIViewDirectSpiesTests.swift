@@ -61,8 +61,8 @@ class UIViewDirectSpiesTests: XCTestCase {
     // MARK: - `setNeedsLayout`
 
     func testSetNeedsLayoutControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.SetNeedsLayoutSpyController.forwardingBehavior, .always,
-                       "Spies on `setNeedsLayout` should always forward their method invocations")
+        XCTAssertTrue(UIView.SetNeedsLayoutSpyController.forwardsInvocations,
+                      "Spies on `setNeedsLayout` should always forward their method invocations")
     }
 
     func testSetNeedsLayoutSpyOffMainThread() {
@@ -137,8 +137,8 @@ class UIViewDirectSpiesTests: XCTestCase {
     // MARK: - `invalidateIntrinsicContentSize`
 
     func testInvalidateIntrinsicContentSizeControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.InvalidateIntrinsicContentSizeSpyController.forwardingBehavior, .always,
-                       "Spies on `invalidateIntrinsicContentSize` should always forward their method invocations")
+        XCTAssertTrue(UIView.InvalidateIntrinsicContentSizeSpyController.forwardsInvocations,
+                      "Spies on `invalidateIntrinsicContentSize` should always forward their method invocations")
     }
 
 
@@ -166,8 +166,8 @@ class UIViewDirectSpiesTests: XCTestCase {
     // MARK: - `setNeedsUpdateConstraints`
 
     func testSetNeedsUpdateConstraintsControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.SetNeedsUpdateConstraintsSpyController.forwardingBehavior, .always,
-                       "Spies on `setNeedsUpdateConstraints` should always forward their method invocations")
+        XCTAssertTrue(UIView.SetNeedsUpdateConstraintsSpyController.forwardsInvocations,
+                      "Spies on `setNeedsUpdateConstraints` should always forward their method invocations")
     }
 
     func testSetNeedsUpdateConstraintsSpyOffMainThread() {
@@ -193,8 +193,8 @@ class UIViewDirectSpiesTests: XCTestCase {
     // MARK: - `setNeedsDisplay` and `setNeedsDisplay(_:)`
 
     func testSetNeedsDisplayControllerForwardingBehavior() {
-        XCTAssertEqual(UIView.SetNeedsDisplaySpyController.forwardingBehavior, .always,
-                       "Spies on `setNeedsDisplay` and `setNeedsDisplay(_:)` should always forward their method invocations")
+        XCTAssertTrue(UIView.SetNeedsDisplaySpyController.forwardsInvocations,
+                      "Spies on `setNeedsDisplay` and `setNeedsDisplay(_:)` should always forward their method invocations")
     }
 
     func testNullarySetNeedsDisplaySpy() {

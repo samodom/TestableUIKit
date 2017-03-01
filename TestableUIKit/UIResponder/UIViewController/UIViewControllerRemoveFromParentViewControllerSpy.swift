@@ -21,15 +21,15 @@ public extension UIViewController {
     public enum RemoveFromParentViewControllerSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIViewController.self
         public static let vector = SpyVector.indirect
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UIViewController.removeFromParentViewController),
                 spy: #selector(UIViewController.spy_removeFromParentViewController)
             )
-        ]
+        ] as Set
         public static let evidence = [removeFromParentViewControllerCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

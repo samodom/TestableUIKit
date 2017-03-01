@@ -33,7 +33,7 @@ public extension UIView {
         public static let vector = SpyVector.direct
         public static let coselectors: Set = [invalidateIntrinsicContentSizeCoselectors]
         public static let evidence: Set = [invalidateIntrinsicContentSizeCalledReference]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

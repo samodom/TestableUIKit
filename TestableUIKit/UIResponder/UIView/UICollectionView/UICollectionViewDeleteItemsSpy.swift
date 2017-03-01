@@ -42,7 +42,7 @@ public extension UICollectionView {
             deleteItemsCalledReference,
             deleteItemsIndexPathsReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

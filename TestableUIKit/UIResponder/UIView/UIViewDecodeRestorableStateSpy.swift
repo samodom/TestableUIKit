@@ -42,7 +42,7 @@ public extension UIView {
             decodeRestorableStateCalledReference,
             decodeRestorableStateCoderReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

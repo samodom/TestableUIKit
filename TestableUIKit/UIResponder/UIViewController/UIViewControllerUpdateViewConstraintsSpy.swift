@@ -21,15 +21,15 @@ public extension UIViewController {
     public enum UpdateViewConstraintsSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIViewController.self
         public static let vector = SpyVector.indirect
-        public static let coselectors: Set<SpyCoselectors> = [
+        public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UIViewController.updateViewConstraints),
                 spy: #selector(UIViewController.spy_updateViewConstraints)
             )
-        ]
+        ] as Set
         public static let evidence = [updateViewConstraintsCalledReference] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

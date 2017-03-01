@@ -56,7 +56,7 @@ class UIPageViewControllerSpiesTests: XCTestCase {
         XCTAssertNil(controller.setViewControllersCompletion,
                      "By default there should be no captured completion handler")
 
-        UIPageViewController.SetViewControllersSpyController.forwardingBehavior = .custom(false)
+        UIPageViewController.SetViewControllersSpyController.forwardsInvocations = false
         let spy = UIPageViewController.SetViewControllersSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -112,7 +112,7 @@ class UIPageViewControllerSpiesTests: XCTestCase {
         XCTAssertNil(controller.setViewControllersCompletion,
                      "By default there should be no captured completion handler")
 
-        UIPageViewController.SetViewControllersSpyController.forwardingBehavior = .custom(true)
+        UIPageViewController.SetViewControllersSpyController.forwardsInvocations = true
         let spy = UIPageViewController.SetViewControllersSpyController.createSpy(on: controller)!
         spy.beginSpying()
 

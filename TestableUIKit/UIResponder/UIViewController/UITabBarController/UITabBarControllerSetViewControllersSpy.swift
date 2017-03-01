@@ -41,17 +41,13 @@ public extension UITabBarController {
             setViewControllersControllersReference,
             setViewControllersAnimatedReference
         ] as Set
-        public static var forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 
-    /// Spy method that replaces the true implementation of 
+    /// Spy method that replaces the true implementation of
     /// `setViewControllers(_:direction:animated:completion:)`
-    public func spy_setViewControllers(
-        _ controllers: [UIViewController]?,
-        animated: Bool
-        ) {
-
+    public func spy_setViewControllers(_ controllers: [UIViewController]?, animated: Bool) {
         setViewControllersCalled = true
         setViewControllersControllers = controllers
         setViewControllersAnimated = animated
@@ -89,7 +85,7 @@ public extension UITabBarController {
     }
 
 
-    /// Provides the animation flag passed to `setViewControllers(_:direction:animated:completion:)`
+    /// Provides the animation flag passed to `setViewControllers(_:animated:)`
     /// if called.
     public final var setViewControllersAnimated: Bool? {
         get {

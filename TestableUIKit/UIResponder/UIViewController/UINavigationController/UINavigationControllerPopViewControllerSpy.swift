@@ -52,7 +52,7 @@ public extension UINavigationController {
             poppedControllerReference,
             popAnimatedReference
         ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

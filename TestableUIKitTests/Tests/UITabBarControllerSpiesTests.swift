@@ -19,8 +19,8 @@ class UITabBarControllerSpiesTests: XCTestCase {
     // MARK: - `setViewControllers(_:animated:)`
 
     func testSetViewControllersControllerForwardingBehavior() {
-        XCTAssertEqual(UITabBarController.SetViewControllersSpyController.forwardingBehavior, .always,
-                       "Spies on `setViewControllers(_:animated:)` should always forward their method invocations")
+        XCTAssertTrue(UITabBarController.SetViewControllersSpyController.forwardsInvocations,
+                      "Spies on `setViewControllers(_:animated:)` should always forward their method invocations")
     }
 
     func testSpyingOnSetViewControllers() {
@@ -31,7 +31,6 @@ class UITabBarControllerSpiesTests: XCTestCase {
         XCTAssertNil(controller.setViewControllersAnimated,
                      "By default there should be no captured animation flag")
 
-        UITabBarController.SetViewControllersSpyController.forwardingBehavior = .custom(false)
         let spy = UITabBarController.SetViewControllersSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
@@ -41,7 +40,8 @@ class UITabBarControllerSpiesTests: XCTestCase {
                       "The controller should indicate having been asked to setViewControllers a view controller")
         XCTAssertEqual(controller.setViewControllersControllers!, tabs,
                        "The view controller should be captured")
-        XCTAssertTrue(controller.setViewControllersAnimated!, "The animation flag should be captured")
+        XCTAssertTrue(controller.setViewControllersAnimated!,
+                      "The animation flag should be captured")
         XCTAssertEqual(controller.viewControllers!, tabs,
                       "The spy method should forward the method call to the original implementation")
 

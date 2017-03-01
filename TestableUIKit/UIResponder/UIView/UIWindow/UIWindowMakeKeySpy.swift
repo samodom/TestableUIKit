@@ -33,7 +33,7 @@ public extension UIWindow {
         public static let vector = SpyVector.direct
         public static let coselectors: Set = [makeKeyAndVisibleCoselectors]
         public static let evidence: Set = [makeKeyAndVisibleCalledReference]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

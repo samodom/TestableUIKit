@@ -49,7 +49,7 @@ public extension UITableView {
             moveSectionFromSectionReference,
             moveSectionToSectionReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

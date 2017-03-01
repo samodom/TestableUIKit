@@ -36,7 +36,7 @@ public extension UIViewController {
             viewDidDisappearCalledReference,
             viewDidDisappearAnimatedReference
             ] as Set
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

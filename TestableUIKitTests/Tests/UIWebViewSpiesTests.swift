@@ -71,7 +71,7 @@ class UIWebViewSpiesTests: XCTestCase {
 
 
     func testLoadControllerForwardingBehavior() {
-        XCTAssertEqual(UIWebView.LoadSpyController.forwardingBehavior, .never,
+        XCTAssertFalse(UIWebView.LoadSpyController.forwardsInvocations,
                        "Spies on the various load methods should never forward their method invocations")
     }
 

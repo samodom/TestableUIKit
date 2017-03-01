@@ -49,7 +49,7 @@ public extension UICollectionView {
             moveItemFromItemReference,
             moveItemToItemReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

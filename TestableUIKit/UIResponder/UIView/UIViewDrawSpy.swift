@@ -39,7 +39,7 @@ public extension UIView {
         public static let vector = SpyVector.indirect
         public static let coselectors: Set = [drawCoselectors]
         public static let evidence: Set = [drawCalledReference, drawRectReference]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

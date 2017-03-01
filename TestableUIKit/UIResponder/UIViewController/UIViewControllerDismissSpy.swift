@@ -41,7 +41,7 @@ public extension UIViewController {
             dismissAnimatedReference,
             dismissCompletionReference
         ] as Set
-        public static var forwardingBehavior = MethodForwardingBehavior.always
+        public static var forwardsInvocations = true
     }
 
 
@@ -50,7 +50,7 @@ public extension UIViewController {
         dismissCalled = true
         dismissAnimated = animated
 
-        if UIViewController.DismissSpyController.forwardingBehavior.forwards {
+        if UIViewController.DismissSpyController.forwardsInvocations {
             spy_dismiss(animated: animated, completion: completion)
         }
         else {

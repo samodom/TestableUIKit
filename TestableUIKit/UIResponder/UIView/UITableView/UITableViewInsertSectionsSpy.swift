@@ -49,7 +49,7 @@ public extension UITableView {
             insertSectionsSectionsReference,
             insertSectionsAnimationReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

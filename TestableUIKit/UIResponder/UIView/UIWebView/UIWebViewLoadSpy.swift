@@ -95,7 +95,7 @@ public extension UIWebView {
             loadRequestReference,
             loadBaseUrlReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.never
+        public static let forwardsInvocations = false
     }
 
 

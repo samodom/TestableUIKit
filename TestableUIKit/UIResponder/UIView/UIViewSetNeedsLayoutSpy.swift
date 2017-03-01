@@ -42,7 +42,7 @@ public extension UIView {
             setNeedsLayoutCalledReference,
             setNeedsLayoutCalledOnMainThreadReference
         ]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

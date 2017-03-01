@@ -33,7 +33,7 @@ public extension UIWebView {
         public static let vector = SpyVector.direct
         public static let coselectors: Set = [reloadCoselectors]
         public static let evidence: Set = [reloadCalledReference]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

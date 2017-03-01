@@ -31,8 +31,8 @@ class UIResponderSpiesTests: XCTestCase {
     // MARK: - `becomeFirstResponder`
 
     func testBecomeFirstResponderControllerForwardingBehavior() {
-        XCTAssertEqual(UIResponder.BecomeFirstResponderSpyController.forwardingBehavior, .always,
-                       "Spies on `becomeFirstResponder` should always forward their method invocations")
+        XCTAssertTrue(UIResponder.BecomeFirstResponderSpyController.forwardsInvocations,
+                      "Spies on `becomeFirstResponder` should always forward their method invocations")
     }
 
     func testSpyingOnBecomeFirstResponder() {
@@ -61,8 +61,8 @@ class UIResponderSpiesTests: XCTestCase {
     // MARK: - `resignFirstResponder`
 
     func testResignFirstResponderControllerForwardingBehavior() {
-        XCTAssertEqual(UIResponder.ResignFirstResponderSpyController.forwardingBehavior, .always,
-                       "Spies on `resignFirstResponder` should always forward their method invocations")
+        XCTAssertTrue(UIResponder.ResignFirstResponderSpyController.forwardsInvocations,
+                      "Spies on `resignFirstResponder` should always forward their method invocations")
     }
 
     func testSpyingOnResignFirstResponder() {

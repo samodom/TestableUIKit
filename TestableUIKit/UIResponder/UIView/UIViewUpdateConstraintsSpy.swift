@@ -33,7 +33,7 @@ public extension UIView {
         public static let vector = SpyVector.indirect
         public static let coselectors: Set = [updateConstraintsCoselectors]
         public static let evidence: Set = [updateConstraintsCalledReference]
-        public static let forwardingBehavior = MethodForwardingBehavior.always
+        public static let forwardsInvocations = true
     }
 
 

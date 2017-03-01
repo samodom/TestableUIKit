@@ -51,7 +51,7 @@ public extension UIPageViewController {
             setViewControllersAnimatedReference,
             setViewControllersCompletionReference
         ] as Set
-        public static var forwardingBehavior = MethodForwardingBehavior.always
+        public static var forwardsInvocations = true
     }
 
 
@@ -68,7 +68,7 @@ public extension UIPageViewController {
         setViewControllersDirection = direction
         setViewControllersAnimated = animated
 
-        if UIPageViewController.SetViewControllersSpyController.forwardingBehavior.forwards {
+        if UIPageViewController.SetViewControllersSpyController.forwardsInvocations {
             spy_setViewControllers(
                 controllers,
                 direction: direction,

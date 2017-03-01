@@ -41,6 +41,11 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
 
     // MARK: - `performSegue(withIdentifier:sender:)`
 
+    func testPerformSegueControllerForwardingBehavior() {
+        XCTAssertEqual(UIViewController.PerformSegueSpyController.forwardingBehavior, .always,
+                       "Spies on `setViewControllers(_:animated:)` should always forward their method invocations")
+    }
+
     func testSpyingOnPerformSegue() {
         controller.performSegueTestMethodCalled = false
         XCTAssertFalse(controller.performSegueCalled,
@@ -261,6 +266,11 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
 
 
     // MARK: - `show(_:sender:)` and `showDetailViewController(_:sender:)`
+
+    func testShowSpyControllerForwardingBehavior() {
+        XCTAssertEqual(UIViewController.ShowSpyController.forwardingBehavior, .always,
+                       "Spies on `show(_:sender:)` and `showDetailViewController(_:sender:)` should always forward their method invocations")
+    }
 
     func testSpyingOnShow() {
         XCTAssertFalse(controller.showCalled,

@@ -33,6 +33,11 @@ class UINavigationControllerSpiesTests: XCTestCase {
 
     // MARK: - `pushViewController(_:animated:)`
 
+    func testPushViewControllerControllerForwardingBehavior() {
+        XCTAssertEqual(UINavigationController.PushViewControllerSpyController.forwardingBehavior, .always,
+                       "Spies on `pushViewController(_:animated:)` should always forward their method invocations")
+    }
+
     func testSpyingOnPushViewController() {
         XCTAssertFalse(controller.pushViewControllerCalled,
                        "By default the navitation controller should not indicate having been asked to push a view controller")
@@ -67,6 +72,11 @@ class UINavigationControllerSpiesTests: XCTestCase {
 
 
     // MARK: - `popViewController(animated:)`, `popToViewController(_:animated:)` and `popToRootViewController(animated:)`
+
+    func testPopControllerForwardingBehavior() {
+        XCTAssertEqual(UINavigationController.PopSpyController.forwardingBehavior, .always,
+                       "Spies on `popViewController(animated:)`, `popToViewController(_:animated:)` and `popToRootViewController(animated:)` should always forward their method invocations")
+    }
 
     func testSpyingOnPopViewController() {
         XCTAssertFalse(controller.popCalled,

@@ -3,7 +3,7 @@
 
 > `UIViewAnimations` is a type alias animation closures.
 > 
-> `UIViewAnimationCompletion` is a type alias for animation completion handlers.
+> `UIViewAnimationsCompletion` is a type alias for animation completion handlers.
 
 
 **Indirect spies:**
@@ -141,7 +141,7 @@ Seven evidence properties provide evidence about a potential method call:
 * `var transitionDuration: TimeInterval?`
 * `var transitionOptions: UIViewAnimationOptions?`
 * `var transitionAnimations: UIViewAnimations?`
-* `var transitionCompletion: UIViewAnimationCompletion?`
+* `var transitionCompletion: UIViewAnimationsCompletion?`
 
 **Note:** When forwarding spy method calls, neither closure is captured.
 

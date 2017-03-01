@@ -1,35 +1,32 @@
 TestableUIKit
 =============
 
-This is a framework that uses the same class names as some classes from UIKit and extends them using the fully qualified name of the real class.  This allows for a *shim* layer between your application code and UIKit **only while testing**.
+This is a library that uses `TestSwagger` to create spies for testing iOS applications.
 
-Much, much more will be coming shortly.  For now, here is what the framework contains:
-
-- `UIResponder`
-  - [Capturing instance calls](UIResponderCalls.md)
-    - `UIView`
-      - [Capturing superclass calls](UIViewSuperCalls.md)
-      - [Capturing instance calls](UIViewCalls.md)
-      - `UICollectionView`
-        - [Capturing instance calls](UICollectionViewCalls.md)
-      - `UINavigationBar`
-        - [Capturing instance calls](UINavigationBarCalls.md)
-      - `UITableView`
-        - [Capturing instance calls](UITableViewCalls.md)
-      - `UIToolbar`
-        - [Capturing instance calls](UIToolbarCalls.md)
-      - `UIWebView`
-        - [Capturing instance calls](UIWebViewCalls.md)
-      - `UIWindow`
-        - [Capturing instance calls](UIWindowCalls.md)
+* [`UIResponder`](Docs/UIResponderCalls.md)
+* `UIView`
+   * [Ensuring superclass calls](Docs/UIViewSuperCalls.md)
+   * [Capturing instance calls](Docs/UIViewCalls.md)
+   * `UICollectionView`
+      * [Capturing instance calls](Docs/UICollectionViewCalls.md)
+   * `UINavigationBar`
+      * [Capturing instance calls](Docs/UINavigationBarCalls.md)
+   * `UITableView`
+      * [Capturing instance calls](Docs/UITableViewCalls.md)
+   * `UIToolbar`
+      * [Capturing instance calls](Docs/UIToolbarCalls.md)
+   * `UIWebView`
+      * [Capturing instance calls](Docs/UIWebViewCalls.md)
+   * `UIWindow`
+      * [Capturing instance calls](Docs/UIWindowCalls.md)
 
 
-- `UIViewController`
-  - [Capturing superclass calls](UIViewControllerSuperCalls.md)
-  - [Capturing instance calls](UIViewControllerCalls.md)
-  - `UINavigationController`
-    - [Capturing instance calls](UINavigationControllerCalls.md)
-  - `UIPageViewController`
-    - [Capturing instance calls](UIPageViewControllerCalls.md)
-  - `UITabBarController`
-    - [Capturing instance calls](UITabBarControllerCalls.md)
+* `UIViewController`
+   * [Ensuring superclass calls](Docs/UIViewControllerSuperCalls.md)
+   * [Capturing instance calls](Docs/UIViewControllerCalls.md)
+   * `UINavigationController`
+      * [Capturing instance calls](Docs/UINavigationControllerCalls.md)
+   * `UIPageViewController`
+      * [Capturing instance calls](Docs/UIPageViewControllerCalls.md)
+   * `UITabBarController`
+      * [Capturing instance calls](Docs/UITabBarControllerCalls.md)

@@ -68,7 +68,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     func testSetNeedsLayoutSpyOffMainThread() {
         testView.setNeedsLayoutTestMethodCalled = false
         XCTAssertFalse(testView.setNeedsLayoutCalled,
-                       "By default the view should not indicate having been told that it needs layout")
+                       "By default the view should not indicate having been told that it needs to redraw itself")
         XCTAssertFalse(testView.setNeedsLayoutCalledOnMainThread,
                        "By default the main thread flag should be false")
 
@@ -102,7 +102,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     func testSetNeedsLayoutSpyOnMainThread() {
         testView.setNeedsLayoutTestMethodCalled = false
         XCTAssertFalse(testView.setNeedsLayoutCalled,
-                       "By default the view should not indicate having been told that it needs layout")
+                       "By default the view should not indicate having been told that it needs to redraw itself")
         XCTAssertFalse(testView.setNeedsLayoutCalledOnMainThread,
                        "By default the main thread flag should be false")
 
@@ -190,6 +190,7 @@ class UIViewDirectSpiesTests: XCTestCase {
                        "The flag should be cleared after spying is complete")
     }
 
+
     // MARK: - `setNeedsDisplay` and `setNeedsDisplay(_:)`
 
     func testSetNeedsDisplayControllerForwardingBehavior() {
@@ -200,7 +201,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     func testNullarySetNeedsDisplaySpy() {
         testView.setNeedsDisplayNullaryTestMethodCalled = false
         XCTAssertFalse(testView.setNeedsDisplayCalled,
-                       "By default the view should not indicate having been told that it needs layout")
+                       "By default the view should not indicate having been told that it needs to redraw itself")
 
         let spy = UIView.SetNeedsDisplaySpyController.createSpy(on: testView)!
         spy.beginSpying()
@@ -220,7 +221,7 @@ class UIViewDirectSpiesTests: XCTestCase {
     func testUnarySetNeedsDisplaySpy() {
         testView.setNeedsDisplayUnaryTestMethodCalled = false
         XCTAssertFalse(testView.setNeedsDisplayCalled,
-                       "By default the view should not indicate having been told that it needs layout")
+                       "By default the view should not indicate having been told that it needs to redraw itself")
         XCTAssertNil(testView.setNeedsDisplayRect, "By default there should be no captured rect")
 
         let spy = UIView.SetNeedsDisplaySpyController.createSpy(on: testView)!

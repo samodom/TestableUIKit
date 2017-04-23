@@ -1,6 +1,9 @@
 TestableUIKit Changelog
 =======================
 
+### v0.2.1 (Saturday, April 22, 2017)
+ - Added view controller transition direct spy
+
 ### v0.2.0 (Tuesday, February 28, 2017)
  - Updated for Swift 3
  - Uses TestSwagger

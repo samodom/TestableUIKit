@@ -1,5 +1,5 @@
 //
-//  UIViewControllerTransitionSpy.swift
+//  UIViewControllerTransitionDirectSpy.swift
 //  TestableUIKit
 //
 //  Created by Sam Odom on 2/25/17.
@@ -16,16 +16,21 @@ public extension UIViewController {
     private static let transitionCalledReference = SpyEvidenceReference(key: transitionCalledKey)
 
     private static let transitionFromControllerString = UUIDKeyString()
-    private static let transitionFromControllerKey = ObjectAssociationKey(transitionFromControllerString)
-    private static let transitionFromControllerReference = SpyEvidenceReference(key: transitionFromControllerKey)
+    private static let transitionFromControllerKey =
+        ObjectAssociationKey(transitionFromControllerString)
+    private static let transitionFromControllerReference =
+        SpyEvidenceReference(key: transitionFromControllerKey)
 
     private static let transitionToControllerString = UUIDKeyString()
-    private static let transitionToControllerKey = ObjectAssociationKey(transitionToControllerString)
-    private static let transitionToControllerReference = SpyEvidenceReference(key: transitionToControllerKey)
+    private static let transitionToControllerKey =
+        ObjectAssociationKey(transitionToControllerString)
+    private static let transitionToControllerReference =
+        SpyEvidenceReference(key: transitionToControllerKey)
 
     private static let transitionDurationString = UUIDKeyString()
     private static let transitionDurationKey = ObjectAssociationKey(transitionDurationString)
-    private static let transitionDurationReference = SpyEvidenceReference(key: transitionDurationKey)
+    private static let transitionDurationReference =
+        SpyEvidenceReference(key: transitionDurationKey)
 
     private static let transitionOptionsString = UUIDKeyString()
     private static let transitionOptionsKey = ObjectAssociationKey(transitionOptionsString)
@@ -33,23 +38,24 @@ public extension UIViewController {
 
     private static let transitionAnimationsString = UUIDKeyString()
     private static let transitionAnimationsKey = ObjectAssociationKey(transitionAnimationsString)
-    private static let transitionAnimationsReference = SpyEvidenceReference(key: transitionAnimationsKey)
+    private static let transitionAnimationsReference =
+        SpyEvidenceReference(key: transitionAnimationsKey)
 
     private static let transitionCompletionString = UUIDKeyString()
     private static let transitionCompletionKey = ObjectAssociationKey(transitionCompletionString)
-    private static let transitionCompletionReference = SpyEvidenceReference(key: transitionCompletionKey)
+    private static let transitionCompletionReference =
+        SpyEvidenceReference(key: transitionCompletionKey)
 
-
-    /// Spy controller for ensuring a controller has called its superclass's
-    /// implementation of `transition(from:to:duration:options:animations:completion:)`.
-    public enum TransitionSpyController: SpyController {
+    /// Spy controller for ensuring a controller has had its implementation of
+    /// `transition(from:to:duration:options:animations:completion:)` invoked.
+    public enum TransitionDirectSpyController: SpyController {
         public static let rootSpyableClass: AnyClass = UIViewController.self
-        public static let vector = SpyVector.indirect
+        public static let vector = SpyVector.direct
         public static let coselectors = [
             SpyCoselectors(
                 methodType: .instance,
                 original: #selector(UIViewController.transition(from:to:duration:options:animations:completion:)),
-                spy: #selector(UIViewController.spy_transition(from:to:duration:options:animations:completion:))
+                spy: #selector(UIViewController.directspy_transition(from:to:duration:options:animations:completion:))
             )
         ] as Set
         public static let evidence = [
@@ -66,7 +72,7 @@ public extension UIViewController {
 
 
     /// Spy method that replaces the true implementation of `transition(from:to:duration:options:animations:completion:)`
-    public func spy_transition(
+    public func directspy_transition(
         from sourceController: UIViewController,
         to destinationController: UIViewController,
         duration: TimeInterval,
@@ -75,14 +81,14 @@ public extension UIViewController {
         completion: ((Bool) -> Void)?
         ) {
 
-        superclassTransitionCalled = true
-        superclassTransitionFromController = sourceController
-        superclassTransitionToController = destinationController
-        superclassTransitionDuration = duration
-        superclassTransitionOptions = options
+        transitionCalled = true
+        transitionFromController = sourceController
+        transitionToController = destinationController
+        transitionDuration = duration
+        transitionOptions = options
 
-        if UIViewController.TransitionSpyController.forwardsInvocations {
-            spy_transition(
+        if UIViewController.TransitionDirectSpyController.forwardsInvocations {
+            directspy_transition(
                 from: sourceController,
                 to: destinationController,
                 duration: duration,
@@ -92,14 +98,15 @@ public extension UIViewController {
             )
         }
         else {
-            superclassTransitionAnimations = animations
-            superclassTransitionCompletion = completion
+            transitionAnimations = animations
+            transitionCompletion = completion
         }
     }
 
 
-    /// Indicates whether the `transition(from:to:duration:options:animations:completion:)` method has been called on this object's superclass.
-    public final var superclassTransitionCalled: Bool {
+    /// Indicates whether the `transition(from:to:duration:options:animations:completion:)` method
+    /// has been called on this object.
+    public final var transitionCalled: Bool {
         get {
             return loadEvidence(with: UIViewController.transitionCalledReference) as? Bool ?? false
         }
@@ -111,7 +118,7 @@ public extension UIViewController {
 
     /// Provides the source controller passed to
     /// `transition(from:to:duration:options:animations:completion:)` if called.
-    public final var superclassTransitionFromController: UIViewController? {
+    public final var transitionFromController: UIViewController? {
         get {
             return loadEvidence(with: UIViewController.transitionFromControllerReference) as? UIViewController
         }
@@ -128,7 +135,7 @@ public extension UIViewController {
 
     /// Provides the destination controller passed to
     /// `transition(from:to:duration:options:animations:completion:)` if called.
-    public final var superclassTransitionToController: UIViewController? {
+    public final var transitionToController: UIViewController? {
         get {
             return loadEvidence(with: UIViewController.transitionToControllerReference) as? UIViewController
         }
@@ -145,7 +152,7 @@ public extension UIViewController {
 
     /// Provides the duration passed to
     /// `transition(from:to:duration:options:animations:completion:)` if called.
-    public final var superclassTransitionDuration: TimeInterval? {
+    public final var transitionDuration: TimeInterval? {
         get {
             return loadEvidence(with: UIViewController.transitionDurationReference) as? TimeInterval
         }
@@ -162,7 +169,7 @@ public extension UIViewController {
 
     /// Provides the options passed to `transition(from:to:duration:options:animations:completion:)`
     /// if called.
-    public final var superclassTransitionOptions: UIViewAnimationOptions? {
+    public final var transitionOptions: UIViewAnimationOptions? {
         get {
             return loadEvidence(with: UIViewController.transitionOptionsReference) as? UIViewAnimationOptions
         }
@@ -179,7 +186,7 @@ public extension UIViewController {
 
     /// Provides the animations closure passed to
     /// `transition(from:to:duration:options:animations:completion:)` if called.
-    public final var superclassTransitionAnimations: UIViewAnimations? {
+    public final var transitionAnimations: UIViewAnimations? {
         get {
             return loadEvidence(with: UIViewController.transitionAnimationsReference) as? UIViewAnimations
         }
@@ -196,7 +203,7 @@ public extension UIViewController {
 
     /// Provides the completion handler passed to
     /// `transition(from:to:duration:options:animations:completion:)` if called.
-    public final var superclassTransitionCompletion: UIViewAnimationsCompletion? {
+    public final var transitionCompletion: UIViewAnimationsCompletion? {
         get {
             return loadEvidence(with: UIViewController.transitionCompletionReference) as? UIViewAnimationsCompletion
         }

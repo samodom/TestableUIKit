@@ -13,10 +13,8 @@ import TestSwagger
 public extension UITableView {
 
     private static let reloadDataCalledString = UUIDKeyString()
-    private static let reloadDataCalledKey =
-        ObjectAssociationKey(reloadDataCalledString)
-    private static let reloadDataCalledReference =
-        SpyEvidenceReference(key: reloadDataCalledKey)
+    private static let reloadDataCalledKey = ObjectAssociationKey(reloadDataCalledString)
+    private static let reloadDataCalledReference = SpyEvidenceReference(key: reloadDataCalledKey)
 
 
     /// Spy controller for ensuring a table view has had `reloadData` called on it.

@@ -225,3 +225,20 @@ Three evidence properties provide evidence about a potential method call:
 * `var showCalled: Bool`
 * `var showController: UIViewController?`
 * `var showSender: Any?`
+
+
+## Spying on `transition(from:to:duration:options:animations:completion:)`
+
+Use this spy to validate that a view controller has been asked to transition between child view controllers.  The spy controller is named `UIViewController.TransitionDirectSpyController`.  The spy method forwards the invocation to the original implementation by default; the forwarding behavior is configurable.
+
+Seven evidence properties provide evidence about a potential method call:
+
+* `var transitionCalled: Bool`
+* `var transitionFromController: UIViewController?`
+* `var transitionToController: UIViewController?`
+* `var transitionDuration: TimeInterval?`
+* `var transitionOptions: UIViewAnimationOptions?`
+* `var transitionAnimations: UIViewAnimations?`
+* `var transitionCompletion: UIViewAnimationsCompletion?`
+
+**Note:** When forwarding spy method calls, neither closure is captured.

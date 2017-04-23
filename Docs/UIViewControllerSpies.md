@@ -39,7 +39,7 @@ Use this spy to validate that a view controller has ***not*** called its supercl
 
 A single evidence property indicates whether the method was called:
 
-* `var loadViewCalled: Bool`
+* `var superclassLoadViewCalled: Bool`
 
 
 ## Spying on `viewDidLoad`
@@ -49,7 +49,7 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 A single evidence property indicates whether the method was called:
 
-* `var viewDidLoadCalled: Bool`
+* `var superclassViewDidLoadCalled: Bool`
 
 
 ## Spying on `viewWillAppear(_:)`
@@ -58,8 +58,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var viewWillAppearCalled: Bool`
-* `var viewWillAppearAnimated: Bool?`
+* `var superclassViewWillAppearCalled: Bool`
+* `var superclassViewWillAppearAnimated: Bool?`
 
 
 ## Spying on `viewDidAppear(_:)`
@@ -68,8 +68,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var viewDidAppearCalled: Bool`
-* `var viewDidAppearAnimated: Bool?`
+* `var superclassViewDidAppearCalled: Bool`
+* `var superclassViewDidAppearAnimated: Bool?`
 
 
 ## Spying on `viewWillDisappear(_:)`
@@ -78,8 +78,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var viewWillDisappearCalled: Bool`
-* `var viewWillDisappearAnimated: Bool?`
+* `var superclassViewWillDisappearCalled: Bool`
+* `var superclassViewWillDisappearAnimated: Bool?`
 
 
 ## Spying on `viewDidDisappear(_:)`
@@ -88,8 +88,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var viewDidDisappearCalled: Bool`
-* `var viewDidDisappearAnimated: Bool?`
+* `var superclassViewDidDisappearCalled: Bool`
+* `var superclassViewDidDisappearAnimated: Bool?`
 
 
 ## Spying on `didReceiveMemoryWarning`
@@ -98,7 +98,7 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 A single evidence property indicates whether the method was called:
 
-* `var didReceiveMemoryWarningCalled: Bool`
+* `var superclassDidReceiveMemoryWarningCalled: Bool`
 
 
 ## Spying on `updateViewConstraints`
@@ -107,7 +107,7 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 A single evidence property indicates whether the method was called:
 
-* `var updateViewConstraintsCalled: Bool`
+* `var superclassUpdateViewConstraintsCalled: Bool`
 
 
 ## Spying on `addChildViewController(_:)`
@@ -116,8 +116,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var addChildViewControllerCalled: Bool`
-* `var addChildViewControllerChild: UIViewController?`
+* `var superclassAddChildViewControllerCalled: Bool`
+* `var superclassAddChildViewControllerChild: UIViewController?`
 
 
 ## Spying on `removeFromParentViewController`
@@ -126,22 +126,22 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 A single evidence property indicates whether the method was called:
 
-* `var removeFromParentViewControllerCalled: Bool`
+* `var superclassRemoveFromParentViewControllerCalled: Bool`
 
 
 ## Spying on `transition(from:to:duration:options:animations:completion:)`
 
-Use this spy to validate that a view controller has called its superclass's implementation of `transition(from:to:duration:options:animations:completion:)`.  The spy controller is named `UIViewController.TransitionSpyController`.  The spy method forwards the invocation to the original implementation by default; the forwarding behavior is configurable.
+Use this spy to validate that a view controller has called its superclass's implementation of `transition(from:to:duration:options:animations:completion:)`.  The spy controller is named `UIViewController.TransitionIndirectSpyController`.  The spy method forwards the invocation to the original implementation by default; the forwarding behavior is configurable.
 
 Seven evidence properties provide evidence about a potential method call:
 
-* `var transitionCalled: Bool`
-* `var transitionFromController: UIViewController?`
-* `var transitionToController: UIViewController?`
-* `var transitionDuration: TimeInterval?`
-* `var transitionOptions: UIViewAnimationOptions?`
-* `var transitionAnimations: UIViewAnimations?`
-* `var transitionCompletion: UIViewAnimationsCompletion?`
+* `var superclassTransitionCalled: Bool`
+* `var superclassTransitionFromController: UIViewController?`
+* `var superclassTransitionToController: UIViewController?`
+* `var superclassTransitionDuration: TimeInterval?`
+* `var superclassTransitionOptions: UIViewAnimationOptions?`
+* `var superclassTransitionAnimations: UIViewAnimations?`
+* `var superclassTransitionCompletion: UIViewAnimationsCompletion?`
 
 **Note:** When forwarding spy method calls, neither closure is captured.
 
@@ -152,9 +152,9 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Three evidence properties provide evidence about a potential method call:
 
-* `var setEditingCalled: Bool`
-* `var setEditingEditing: Bool?`
-* `var setEditingAnimated: Bool?`
+* `var superclassSetEditingCalled: Bool`
+* `var superclassSetEditingEditing: Bool?`
+* `var superclassSetEditingAnimated: Bool?`
 
 
 ## Spying on `encodeRestorableState(with:)`
@@ -163,8 +163,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var encodeRestorableStateCalled: Bool`
-* `var encodeRestorableStateCoder: NSCoder?`
+* `var superclassEncodeRestorableStateCalled: Bool`
+* `var superclassEncodeRestorableStateCoder: NSCoder?`
 
 
 ## Spying on `decodeRestorableState(with:)`
@@ -173,8 +173,8 @@ Use this spy to validate that a view controller has called its superclass's impl
 
 Two evidence properties provide evidence about a potential method call:
 
-* `var decodeRestorableStateCalled: Bool`
-* `var decodeRestorableStateCoder: NSCoder?`
+* `var superclassDecodeRestorableStateCalled: Bool`
+* `var superclassDecodeRestorableStateCoder: NSCoder?`
 
 
 ## Spying on `performSegue(withIdentifier:sender:)`
@@ -225,3 +225,20 @@ Three evidence properties provide evidence about a potential method call:
 * `var showCalled: Bool`
 * `var showController: UIViewController?`
 * `var showSender: Any?`
+
+
+## Spying on `transition(from:to:duration:options:animations:completion:)`
+
+Use this spy to validate that a view controller has been asked to transition between child view controllers.  The spy controller is named `UIViewController.TransitionDirectSpyController`.  The spy method forwards the invocation to the original implementation by default; the forwarding behavior is configurable.
+
+Seven evidence properties provide evidence about a potential method call:
+
+* `var transitionCalled: Bool`
+* `var transitionFromController: UIViewController?`
+* `var transitionToController: UIViewController?`
+* `var transitionDuration: TimeInterval?`
+* `var transitionOptions: UIViewAnimationOptions?`
+* `var transitionAnimations: UIViewAnimations?`
+* `var transitionCompletion: UIViewAnimationsCompletion?`
+
+**Note:** When forwarding spy method calls, neither closure is captured.

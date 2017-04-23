@@ -26,8 +26,22 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
     let controller = TestViewController()
     let rootViewController = UIApplication.rootViewController
 
+    var animationsClosureInvoked = false
+    var animations: UIViewAnimations!
+
+    var completionHandlerInvoked = false
+    var completion: UIViewAnimationsCompletion!
+
     override func setUp() {
         super.setUp()
+
+        animations = {
+            self.animationsClosureInvoked = true
+        }
+
+        completion = { _ in
+            self.completionHandlerInvoked = true
+        }
 
         UIApplication.rootViewController = controller
     }
@@ -97,12 +111,9 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
 
         let presentable = UIViewController()
 
-        var completionHandlerInvoked = false
-        let completion = {
-            completionHandlerInvoked = true
+        controller.present(presentable, animated: true) {
+            self.completionHandlerInvoked = true
         }
-
-        controller.present(presentable, animated: true, completion: completion)
 
         XCTAssertTrue(controller.presentCalled,
                       "The controller should indicate having been asked to present a view controller")
@@ -147,9 +158,7 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
 
         let presentable = UIViewController()
 
-        let completion = {}
-
-        controller.present(presentable, animated: true, completion: completion)
+        controller.present(presentable, animated: true, completion: {})
 
         XCTAssertTrue(controller.presentCalled,
                       "The controller should indicate having been asked to perform a segue")
@@ -189,12 +198,9 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         let spy = UIViewController.DismissSpyController.createSpy(on: controller)!
         spy.beginSpying()
 
-        var completionHandlerInvoked = false
-        let completion = {
-            completionHandlerInvoked = true
+        controller.dismiss(animated: true) {
+            self.completionHandlerInvoked = true
         }
-
-        controller.dismiss(animated: true, completion: completion)
 
         XCTAssertTrue(controller.dismissCalled,
                       "The controller should indicate having been asked to perform a segue")
@@ -234,14 +240,12 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
         let dismissable = UIViewController()
         controller.present(dismissable, animated: false)
 
-        let completion = {}
-
         let predicate = NSPredicate { [controller] _ in
             return controller.presentedViewController == nil
         }
         _ = expectation(for: predicate, evaluatedWith: [:])
 
-        controller.dismiss(animated: true, completion: completion)
+        controller.dismiss(animated: true, completion: {})
 
         XCTAssertTrue(controller.dismissCalled,
                       "The controller should indicate having been asked to perform a segue")
@@ -336,4 +340,167 @@ class UIViewControllerDirectSpiesTests: XCTestCase {
                      "The sender should be cleared after spying is complete")
     }
 
+
+    // MARK: - `transition(from:to:duration:options:animations:completion:)`
+
+    func testTransitionSpyControllerForwardingBehavior() {
+        XCTAssertTrue(UIViewController.TransitionDirectSpyController.forwardsInvocations,
+                      "Spies on `transition(from:to:duration:options:animations:completion:)` should forward their method invocations by default")
+    }
+
+    func testSpyingOnTransitionWithoutForwarding() {
+        XCTAssertFalse(controller.transitionCalled,
+                       "By default the controller should not indicate having been asked to transition between child view controllers")
+        XCTAssertNil(controller.transitionFromController,
+                     "By default there should be no captured source controller")
+        XCTAssertNil(controller.transitionToController,
+                     "By default there should be no captured destination controller")
+        XCTAssertNil(controller.transitionDuration,
+                     "By default there should be no captured duration")
+        XCTAssertNil(controller.transitionOptions,
+                     "By default there should be no captured options")
+        XCTAssertNil(controller.transitionAnimations,
+                     "By default there should be no captured animation closure")
+        XCTAssertNil(controller.transitionCompletion,
+                     "By default there should be no captured completion handler")
+
+        UIViewController.TransitionDirectSpyController.forwardsInvocations = false
+        defer {
+            UIViewController.TransitionDirectSpyController.forwardsInvocations = true
+        }
+
+        let spy = UIViewController.TransitionDirectSpyController.createSpy(on: controller)!
+        spy.beginSpying()
+
+        let source = UIViewController()
+        controller.addChildViewController(source)
+
+        let destination = UIViewController()
+        controller.addChildViewController(destination)
+        
+        let options: UIViewAnimationOptions = [.allowAnimatedContent, .allowUserInteraction]
+
+        controller.transition(
+            from: source,
+            to: destination,
+            duration: 0.14,
+            options: options,
+            animations: animations,
+            completion: completion
+        )
+
+        XCTAssertTrue(controller.transitionCalled,
+                      "The controller should indicate having been asked to transition between child view controllers")
+        XCTAssertEqual(controller.transitionFromController, source,
+                       "The source view controller should be captured")
+        XCTAssertEqual(controller.transitionToController, destination,
+                       "The destination view controller should be captured")
+        XCTAssertEqual(controller.transitionDuration, 0.14, "The duration should be captured")
+        XCTAssertEqual(controller.transitionOptions, options,
+                       "The animation options should be captured")
+
+        guard let capturedAnimations = controller.transitionAnimations,
+            !animationsClosureInvoked
+            else {
+            return XCTFail("The animations closure should be captured and not invoked when forwarding is disabled")
+        }
+
+        capturedAnimations()
+        XCTAssertTrue(animationsClosureInvoked, "The animations closure should be captured")
+
+        guard let capturedCompletion = controller.transitionCompletion,
+            !completionHandlerInvoked
+            else {
+                return XCTFail("The completion handler should be captured and not invoked when forwarding is disabled")
+        }
+
+        capturedCompletion(true)
+        XCTAssertTrue(completionHandlerInvoked, "The completion handler should be captured")
+
+        spy.endSpying()
+
+        XCTAssertFalse(controller.transitionCalled,
+                       "The flag should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionFromController,
+                     "The source controller should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionToController,
+                     "The destination controller should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionDuration,
+                     "The duration should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionOptions,
+                     "The options should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionAnimations,
+                     "The animations closure should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionCompletion,
+                     "The completion handler should be cleared after spying is complete")
+    }
+
+    func testSpyingOnTransitionWithForwarding() {
+        XCTAssertFalse(controller.transitionCalled,
+                       "By default the controller should not indicate having been asked to transition between child view controllers")
+        XCTAssertNil(controller.transitionFromController,
+                     "By default there should be no captured source controller")
+        XCTAssertNil(controller.transitionToController,
+                     "By default there should be no captured destination controller")
+        XCTAssertNil(controller.transitionDuration,
+                     "By default there should be no captured duration")
+        XCTAssertNil(controller.transitionOptions,
+                     "By default there should be no captured options")
+        XCTAssertNil(controller.transitionAnimations,
+                     "By default there should be no captured animation closure")
+        XCTAssertNil(controller.transitionCompletion,
+                     "By default there should be no captured completion handler")
+
+        let spy = UIViewController.TransitionDirectSpyController.createSpy(on: controller)!
+        spy.beginSpying()
+
+        let source = UIViewController()
+        controller.addChildViewController(source)
+
+        let destination = UIViewController()
+        controller.addChildViewController(destination)
+
+        let options: UIViewAnimationOptions = [.allowAnimatedContent, .allowUserInteraction]
+
+        controller.transition(
+            from: source,
+            to: destination,
+            duration: 0.14,
+            options: options,
+            animations: animations,
+            completion: completion
+        )
+
+        XCTAssertTrue(controller.transitionCalled,
+                      "The controller should indicate having been asked to transition between child view controllers")
+        XCTAssertEqual(controller.transitionFromController, source,
+                       "The source view controller should be captured")
+        XCTAssertEqual(controller.transitionToController, destination,
+                       "The destination view controller should be captured")
+        XCTAssertEqual(controller.transitionDuration, 0.14, "The duration should be captured")
+        XCTAssertEqual(controller.transitionOptions, options,
+                       "The animation options should be captured")
+        XCTAssertNil(controller.transitionAnimations,
+                     "The animations closure should not be captured when forwarding is enabled")
+        XCTAssertNil(controller.transitionCompletion,
+                     "The completion handler should not be captured when forwarding is enabled")
+
+        spy.endSpying()
+
+        XCTAssertFalse(controller.transitionCalled,
+                       "The flag should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionFromController,
+                     "The source controller should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionToController,
+                     "The destination controller should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionDuration,
+                     "The duration should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionOptions,
+                     "The options should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionAnimations,
+                     "The animations closure should be cleared after spying is complete")
+        XCTAssertNil(controller.transitionCompletion,
+                     "The completion handler should be cleared after spying is complete")
+    }
+    
 }

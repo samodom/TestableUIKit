@@ -547,8 +547,8 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
             animationsClosureInvoked = false
             completionHandlerInvoked = false
 
-            UIViewController.TransitionSpyController.forwardsInvocations = false
-            let spy = UIViewController.TransitionSpyController.createSpy(on: controller)!
+            UIViewController.TransitionIndirectSpyController.forwardsInvocations = false
+            let spy = UIViewController.TransitionIndirectSpyController.createSpy(on: controller)!
             spy.beginSpying()
 
             controller.transition(
@@ -584,6 +584,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
             XCTAssertTrue(completionHandlerInvoked, "The completion handler should be captured")
 
             spy.endSpying()
+            UIViewController.TransitionIndirectSpyController.forwardsInvocations = true
 
             XCTAssertFalse(controller.superclassTransitionCalled,
                            "The flag should be cleared after spying is complete")
@@ -626,8 +627,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
             animationsClosureInvoked = false
             completionHandlerInvoked = false
 
-            UIViewController.TransitionSpyController.forwardsInvocations = true
-            let spy = UIViewController.TransitionSpyController.createSpy(on: controller)!
+            let spy = UIViewController.TransitionIndirectSpyController.createSpy(on: controller)!
             spy.beginSpying()
 
             controller.transition(
@@ -676,7 +676,7 @@ class UIViewControllerIndirectSpiesTests: XCTestCase {
     }
 
     func testTransitionSpyWithNonCompliantController() {
-        let spy = UIViewController.TransitionSpyController.createSpy(on: nonCompliantController)!
+        let spy = UIViewController.TransitionIndirectSpyController.createSpy(on: nonCompliantController)!
         spy.beginSpying()
 
         nonCompliantController.transition(

@@ -19,7 +19,7 @@
 		0A0B2A771E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */; };
 		0A0B2A791E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A781E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift */; };
 		0A0B2A7B1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */; };
-		0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */; };
+		0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionIndirectSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionIndirectSpy.swift */; };
 		0A0B2A7F1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A7E1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift */; };
 		0A0B2A811E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */; };
 		0A0B2A831E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B2A821E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift */; };
@@ -156,7 +156,7 @@
 		0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerUpdateViewConstraintsSpy.swift; sourceTree = "<group>"; };
 		0A0B2A781E63CEE600D7B105 /* UIViewControllerAddChildViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerAddChildViewControllerSpy.swift; sourceTree = "<group>"; };
 		0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerRemoveFromParentViewControllerSpy.swift; sourceTree = "<group>"; };
-		0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitionSpy.swift; sourceTree = "<group>"; };
+		0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionIndirectSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitionIndirectSpy.swift; sourceTree = "<group>"; };
 		0A0B2A7E1E650D7B00D7B105 /* UIViewControllerClosureTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerClosureTypes.swift; sourceTree = "<group>"; };
 		0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSetEditingSpy.swift; sourceTree = "<group>"; };
 		0A0B2A821E651BB300D7B105 /* UIViewControllerEncodeRestorableStateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerEncodeRestorableStateSpy.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 				0A0B2A7A1E63D08500D7B105 /* UIViewControllerRemoveFromParentViewControllerSpy.swift */,
 				0A0B2A801E6518C400D7B105 /* UIViewControllerSetEditingSpy.swift */,
 				0A0B2A8E1E653CDC00D7B105 /* UIViewControllerShowSpy.swift */,
-				0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift */,
+				0A0B2A7C1E63D60000D7B105 /* UIViewControllerTransitionIndirectSpy.swift */,
 				0A0B2A761E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift */,
 				0A0B2A6E1E63C84400D7B105 /* UIViewControllerViewDidAppearSpy.swift */,
 				0A0B2A721E63CA5E00D7B105 /* UIViewControllerViewDidDisappearSpy.swift */,
@@ -927,7 +927,7 @@
 				0A0B2A8D1E65377500D7B105 /* UIViewControllerDismissSpy.swift in Sources */,
 				0ABAA56B1E5F780B00E8E928 /* UICollectionViewReloadDataSpy.swift in Sources */,
 				0A0B2A771E63CD3500D7B105 /* UIViewControllerUpdateViewConstraintsSpy.swift in Sources */,
-				0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionSpy.swift in Sources */,
+				0A0B2A7D1E63D60000D7B105 /* UIViewControllerTransitionIndirectSpy.swift in Sources */,
 				0A0B2A6D1E63C5C900D7B105 /* UIViewControllerViewWillAppearSpy.swift in Sources */,
 				0ABAA5661E5E91B100E8E928 /* UIWebViewGoForwardSpy.swift in Sources */,
 				0ABAA5541E5E5DEC00E8E928 /* UITableViewInsertRowsSpy.swift in Sources */,

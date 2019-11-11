@@ -1,5 +1,4 @@
-TestableUIKit
-=============
+# TestableUIKit - DEPRECATED
 
 This is a library that uses `TestSwagger` to create spies for testing iOS applications.
 
